@@ -1,6 +1,7 @@
 # hello-world
-testing git knowledge
+testing git.
 
-This is the git README.md file content.
+This is README.md file.
+
 =======
 
