@@ -1,9 +1,12 @@
 import os
 
+# The installed gobos picture folder
 src_dir = "C:\ProgramData\MA Lighting Technologies\grandma\gma2_V_3.9\gobos"
 
+# The generated filename. Default into gobo folder
 genfile = open(src_dir + "\generated.html", "w")
 
+# Generate HTML Head and title
 genfile.write("<!DOCTYPE html>\n<html>\n<head><title>Gobók listaja</title><meta charset=\"UTF-8\"></head><body style=\"background-color:DodgerBlue;\">\n")
 # r = root
 # d = directories
