@@ -12,7 +12,7 @@ szekhelyek = ['Kecskemét', 'Pécs', 'Békéscsaba', 'Miskolc', 'Szeged', 'Szék
 
 
 lista = [1, 3, 4, 6, 4, 7, 8, 2, 3]
-
+# zip going through multiple lists and extract them
 for megye,szeh in zip(megyek, szekhelyek):
     print('Megye: {} - Székhely: {}'.format(megye,szeh))
 
