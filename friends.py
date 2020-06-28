@@ -24,5 +24,5 @@ Bob.setJob("Stagehand")
 Alice.setAge(27)
 Bob.setAge(35)
 
-print("Bob is: {}, age: {}".format(Bob.job,Bob.age))
-print("Alice is: {}, age: {}".format(Alice.job,Alice.age))
+print("Bob is: {}, age: {}".format(Bob.job, Bob.age))
+print("Alice is: {}, age: {}".format(Alice.job, Alice.age))
