@@ -15,6 +15,7 @@ class Friend:
     def setJob(self, job):
         self.job = job
 
+
 Alice = Friend()
 Bob = Friend()
 
