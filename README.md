@@ -1,5 +1,5 @@
-# hello-world
-testing git.
+# Python Exercises
+Python exercises.
 
 This is README.md file.
 
