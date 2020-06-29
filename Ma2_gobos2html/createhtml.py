@@ -1,4 +1,5 @@
 import os
+
 from mako.template import Template
 
 myTemplate = Template(filename='template.html', strict_undefined=True)
@@ -9,16 +10,15 @@ src_dir = "C:/ProgramData/MA Lighting Technologies/grandma/gma2_V_3.9/gobos"
 genfile = open(src_dir + "\generated.html", "w")
 
 i = 1
-egysor = {1: {'sorszam': 0, 'filename': 'lófasz'},}
+egysor = {1: {'sorszam': 0, 'filename': 'lófasz'}, }
 for r, d, f in os.walk(src_dir):
     for file in f:
         if ".png" in file or ".bmp" in file:
             filename = os.path.join(r, file)
             if i % 5 == 0:
-                egysor[i] = {'filename':  filename}
+                egysor[i] = {'filename': filename}
             else:
-                egysor[i] = {'filename':  filename}
+                egysor[i] = {'filename': filename}
             i += 1
-#        genfile.write(egysor)
 genfile.write(myTemplate.render(rows=egysor, mappa=src_dir))
 genfile.close()
