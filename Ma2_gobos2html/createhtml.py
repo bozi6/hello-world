@@ -1,27 +1,24 @@
 import os
+from mako.template import Template
+
+myTemplate = Template(filename='template.txt', strict_undefined=True)
 
 # The installed gobos picture folder
 src_dir = "C:\ProgramData\MA Lighting Technologies\grandma\gma2_V_3.9\gobos"
 # The generated filename. Default into gobo folder
 genfile = open(src_dir + "\generated.html", "w")
 
-# Generate HTML Head and title
-genfile.write("<!DOCTYPE html>\n<html>\n<head>><title>Gobók listaja</title></head><body style=\"background-color:Black;\">\n")
-# r = root
-# d = directories
-# f = files
-
 i = 1
-egysor = ""
+egysor = {1: {'sorszam': 0, 'filename': 'lófasz'},}
 for r, d, f in os.walk(src_dir):
     for file in f:
         if ".png" in file or ".bmp" in file:
+            filename = os.path.join(r, file)
             if i % 5 == 0:
-                egysor = '<br>{}<img src="file:///{}" title="{}" width="128" height="128" style="border:3px solid blue">\n'.format(i, os.path.join(r, file), os.path.join(r, file))
+                egysor[i] = {'filename':  filename}
             else:
-                egysor = '{}<img src="file:///{}" title="{}" width="128" height="128" style="border:3px solid blue">\n'.format(i, os.path.join(r, file), os.path.join(r, file))
+                egysor[i] = {'filename':  filename}
             i += 1
-        genfile.write(egysor)
-
-genfile.write("</body>\n</html>\n")
+#        genfile.write(egysor)
+genfile.write(myTemplate.render(rows=egysor))
 genfile.close()

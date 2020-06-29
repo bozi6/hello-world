@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>>
+<title>Gobók listaja</title>
+</head>
+<body style="background-color:Black;">
+<table>
+    % for row in rows:
+        <tr>
+            <td><img src="file:///${rows[row]['filename']}"
+            title="${rows[row]['filename']}" width="128" height="128"></td>
+        </tr>
+    % endfor
+</table>
+</body>
+</html>
