@@ -1,10 +1,10 @@
 import os
 from mako.template import Template
 
-myTemplate = Template(filename='template.txt', strict_undefined=True)
+myTemplate = Template(filename='template.html', strict_undefined=True)
 
 # The installed gobos picture folder
-src_dir = "C:\ProgramData\MA Lighting Technologies\grandma\gma2_V_3.9\gobos"
+src_dir = "C:/ProgramData/MA Lighting Technologies/grandma/gma2_V_3.9/gobos"
 # The generated filename. Default into gobo folder
 genfile = open(src_dir + "\generated.html", "w")
 
@@ -20,5 +20,5 @@ for r, d, f in os.walk(src_dir):
                 egysor[i] = {'filename':  filename}
             i += 1
 #        genfile.write(egysor)
-genfile.write(myTemplate.render(rows=egysor))
+genfile.write(myTemplate.render(rows=egysor, mappa=src_dir))
 genfile.close()
