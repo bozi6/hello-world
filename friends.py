@@ -1,5 +1,9 @@
 class Friend:
-    def __init__(self):
+    """
+    Haverok osztálya
+    """
+    def __init__(self, name):
+        self.name = name
         self.job = "None"
         self.age = "None"
 
@@ -16,13 +20,18 @@ class Friend:
         self.job = job
 
 
-Alice = Friend()
-Bob = Friend()
+x = Friend('ALice')
+y = Friend('Bob')
+z = Friend('Jim')
 
-Alice.setJob("Carpenter")
-Bob.setJob("Stagehand")
-Alice.setAge(27)
-Bob.setAge(35)
+nepek = (x, y, z)
 
-print("Bob is: {}, age: {}".format(Bob.job, Bob.age))
-print("Alice is: {}, age: {}".format(Alice.job, Alice.age))
+x.setJob("Carpenter")
+y.setJob("Stagehand")
+z.setAge(42)
+z.setJob('Electrician')
+x.setAge(27)
+y.setAge(35)
+
+for nep in nepek:
+    print("{} is: {}, age: {}".format(nep.name, nep.job, nep.age))

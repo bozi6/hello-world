@@ -5,7 +5,7 @@ from python_mysql_dbconfig import read_db_config
 def connect():
     """ Connect to MySQL database """
 
-    db_config = read_db_config()
+    db_config = read_db_config(filename='..\\config.ini')
     conn = None
     try:
         print('Kapcsolódás a MySQL adatbázishoz...')

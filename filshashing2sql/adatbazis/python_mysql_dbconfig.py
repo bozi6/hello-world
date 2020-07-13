@@ -1,7 +1,7 @@
-from configparser import  ConfigParser
+from configparser import ConfigParser
 
 
-def read_db_config(filename='../config.ini', section='mysql'):
+def read_db_config(filename='config.ini', section='mysql'):
     """
     Read config.ini file for MySQL settings
     :param filename: name of the configuration file
@@ -19,6 +19,6 @@ def read_db_config(filename='../config.ini', section='mysql'):
         for item in items:
             db[item[0]] = item[1]
     else:
-        raise Exception('Nem találom a {} részt a {} fileban.'.format(section, filename))
+        raise Exception('Nem találom a {} részt a {} file-ban.'.format(section, filename))
 
     return db
