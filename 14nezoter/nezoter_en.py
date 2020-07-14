@@ -1,6 +1,5 @@
 #!/bin/env python3
 
-
 class NezoTer:
     """
     Nézőtéri alaposztály, székekkel, meg széksorokkal, meg foglaltsággal.
@@ -8,15 +7,23 @@ class NezoTer:
     szekszam = 0
     sorokszama = 0
     foglalt = 0
-
+    fogkat = []
+    # (Sor,szék,foglalt,kategória)
     def __init__(self, foglfile, katfile):
         self.foglalt = 0
         self.file1 = foglfile
         self.file2 = katfile
         self.setSor()
+        self.setFogkat()
 
-    def setFoglalt(self):
-        pass
+    def setFogkat(self):
+        with open(self.file1,'r') as foglaltsag, open(self.file2,'r') as kateg: # foglalt.txt sorokba
+            for egysor in foglaltsag:
+                egysor = egysor.strip()
+                katsor = next(kateg).strip()
+                NezoTer.fogkat.append([[egysor[i], katsor[i],]] for i in range(len(egysor)))
+
+
 
     def getFoglalt(self, sorszam, szekszam):
         with open(self.file1, 'r') as sor:
@@ -56,5 +63,7 @@ szksz = int(input("Adja meg a szék számát:"))
 print(nezoter.getSor())
 print(nezoter.getSzek())
 print(nezoter.getFoglalt(ssz, szksz))
+print(nezoter.fogkat[ssz-1])
+
 
 
