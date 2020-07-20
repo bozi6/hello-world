@@ -1,29 +1,36 @@
 #!/bin/env python3
 
+
 class NezoTer:
     """
-    Nézőtéri alaposztály, székekkel, meg széksorokkal, meg foglaltsággal.
+    Nézőtéri osztály, székekkel, meg széksorokkal, meg foglaltsággal.
     """
-    szekszam = 0
-    sorokszama = 0
-    foglalt = 0
+    szekszam: int = 0
+    sorokszama: int = 0
     fogkat = []
+    katstat = dict()
+    foglalt: int = 0
     # (Sor,szék,foglalt,kategória)
+
     def __init__(self, foglfile, katfile):
-        self.foglalt = 0
         self.file1 = foglfile
         self.file2 = katfile
         self.setSor()
         self.setFogkat()
+        self.getbev()
 
     def setFogkat(self):
-        with open(self.file1,'r') as foglaltsag, open(self.file2,'r') as kateg: # foglalt.txt sorokba
-            for egysor in foglaltsag:
+        """Foglaltság és kategória fájlok beolvasása, és áthelyzése a fogkat listába"""
+        with open(self.file1, 'r') as foglaltsag, open(self.file2, 'r') as kateg:  # foglalt.txt sorokba
+            for sor, egysor in enumerate(foglaltsag):
                 egysor = egysor.strip()
                 katsor = next(kateg).strip()
-                NezoTer.fogkat.append([[egysor[i], katsor[i],]] for i in range(len(egysor)))
+                for i in range(len(egysor)):  # fogkat = [sor,szék,foglalt,árkategória]
+                    NezoTer.fogkat.append([sor + 1, i + 1, egysor[i], int(katsor[i])])
 
-
+    def getFogkat(self):
+        cols = tuple(NezoTer.fogkat)
+        print(cols)
 
     def getFoglalt(self, sorszam, szekszam):
         with open(self.file1, 'r') as sor:
@@ -32,38 +39,95 @@ class NezoTer:
                     for idsz, szekek in enumerate(egysor):
                         if idsz == szekszam:
                             if szekek == 'x':
-                                return '{}. sor, {}. szék foglalt.'.format(sorszam,szekszam)
+                                return '\t{}. sor, {}. szék foglalt.'.format(sorszam, szekszam)
                             else:
-                                return '{}. sor, {}. szék szabad.'.format(sorszam,szekszam)
+                                return '\t{}. sor, {}. szék szabad.'.format(sorszam, szekszam)
                 # return 'Foglalt helyek összesen: {} db'.format(NezoTer.foglalt)
 
     def setSor(self):
+        """Nézőtéri szekszam és sorokszáma feltöltése, meg a foglaltság feltöltése is"""
         with open(self.file1, 'r') as sor:
             for egysor in sor:
                 NezoTer.szekszam += len(egysor)
                 NezoTer.sorokszama += 1
                 for szek in egysor:
                     if szek == 'x':
-                        NezoTer.foglalt += 1
+                        self.foglalt += 1
 
     def getSor(self):
+        """Nézőtéri sorok számának visszaadása"""
         return 'Sorok száma a nézőtéren: {} db'.format(NezoTer.sorokszama)
 
     def getSzek(self):
+        """Nézőtéri székek visszadaása"""
         return 'Összes szék száma: {} db'.format(NezoTer.szekszam)
 
-    def setSzek(self, szek):
-        pass
+    def hanyjegyet(self):
+        # fogkat = [sor,szék,foglalt,árkategória]
+        eladott = 0
+        for fogl in self.fogkat:
+            if fogl[2] == 'x':
+                eladott += 1
+        return eladott
+
+    def eladottszazalek(self):
+        return round((100 / NezoTer.szekszam) * self.foglalt)
+
+    def getKatRog(self):
+        # fogkat = [sor,szék,foglalt,árkategória]
+        for kateglist in NezoTer.fogkat:
+            if kateglist[2] == 'x':
+                kateg = kateglist[3]
+                NezoTer.katstat[kateg] = NezoTer.katstat.get(kateg, 0) + 1
+        legtobb = max(NezoTer.katstat.values())
+        for kategoria, db in NezoTer.katstat.items():
+            if db == legtobb:
+                return kategoria
+
+    def getbev(self):
+        bevetel: int = 0
+        arak = (5000, 4000, 3000, 2000, 1500)
+        for kat, db in NezoTer.katstat.items():
+            bevetel += arak[kat - 1] * db
+        return bevetel
+
+    def egyeduliek(self):
+        egyeduli: int = 0
+        for egysor in self.fogkat:
+            ures_szakasz = 0
+            # fogkat = [sor,szék,foglalt,árkategória]
+            if egysor[2] == "o":
+                ures_szakasz += 1
+            else:
+                if ures_szakasz == 1:
+                    egyeduli += 1
+                ures_szakasz = 0
+            if ures_szakasz == 1:
+                egyeduli += 1
+        return egyeduli
 
 
 nezoter = NezoTer('foglaltsag.txt', 'kategoria.txt')
-print("Első feladat:")
-ssz = int(input("Adja meg a sor számát:"))
-szksz = int(input("Adja meg a szék számát:"))
-print(nezoter.getSor())
-print(nezoter.getSzek())
-print(nezoter.getFoglalt(ssz, szksz))
-print(nezoter.fogkat[ssz-1])
-
-
-
+print("1. feladat...")
+print('\tBeolvasva eltárolva.')
+# print(nezoter.getFogkat())  # Az egész tömb kiíratása.
+try:
+    # ssz = int(input("\tAdja meg a sor számát:"))
+    ssz = 5
+    # szksz = int(input("\tAdja meg a szék számát:"))
+    szksz = 5
+    print('2.feladat...')
+    print(nezoter.getFoglalt(ssz, szksz))
+except ValueError:
+    print('Egész számot tessék megadni.')
+# print(nezoter.getSor())
+# print(nezoter.getSzek())
+print('3. feladat...')
+print('\tAz előadásra eddig {} jegyet adtak el, ez a nézőtér {}%-a.'.format(nezoter.hanyjegyet(),
+                                                                            nezoter.eladottszazalek()))
+print('4.feladat...')
+print('\tA legtöbb jegyet a {}. árkategóriában rögzítették.'.format(nezoter.getKatRog()))
+print('5. feladat...')
+print('A színház bevétele: {} Ft.'.format(nezoter.getbev()))
+print('6. feladat...')
+print('Az egyedülálló helyek száma: {}'.format(nezoter.egyeduliek()))
