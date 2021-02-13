@@ -5,15 +5,19 @@ from xml.dom import minidom  # xml fájl olvasásához modul
 
 from forex_python.converter import CurrencyRates  # valutaárfolyam lekérdezőke modul
 from openpyxl import Workbook  # Excel táblázat kezeléshez modul
-from openpyxl.styles import NamedStyle, Font, numbers  # Stílus importálása modul
+from openpyxl.styles import NamedStyle, Font  # Stílus importálása modul
 
-logging.basicConfig(stream=sys.stderr, level=logging.INFO)  # loggolás beálltása INFO -ra(minimál)
+logging.basicConfig(stream=sys.stderr, level=logging.INFO)  # loggolás beálltása INFO-ra(minimál)
+
+# xml fájl betöltése
+mydoc = minidom.parse('sms_full.xml')
+
 c = CurrencyRates()  # Aktuális árfolyam lekérdezése
 arfolyamok = c.get_rates('HUF')  # átszámítás forint vs. valutákra
 
 # Munkalap stílusának beálítása forintra
 still = NamedStyle(name="Pénzecske")
-still.number_format = numbers.FORMAT_CURRENCY_USD
+still.number_format = '#,##0 "HUF";-#,##0 "HUF"'
 
 
 def penzvalto(mit, arfolyam=arfolyamok):
@@ -31,13 +35,6 @@ def penzvalto(mit, arfolyam=arfolyamok):
         return False
 
 
-# egydollar = c.get_rate('USD', 'HUF')
-# print(egydollar)
-
-# xml fájl betöltése
-mydoc = minidom.parse('sms_full.xml')
-
-
 # új lapok alapbeállítása
 def ujlap():
     ws['A1'] = 'Dátum:'  # A cellákba írandó alapszövegek
@@ -50,6 +47,7 @@ def ujlap():
     ws['B1'].font = Font(bold=True)
     ws['C1'].font = Font(bold=True)
     ws['D1'].font = Font(bold=True)
+    ws['B2'].font = Font(italic=True, bold=True)
     ws.column_dimensions['A'].width = 25  # Az oszlopok alapvető szélességének megadása
     ws.column_dimensions['B'].width = 15
     ws.column_dimensions['C'].width = 15
@@ -63,13 +61,12 @@ ws = wb.active
 ws.title = '2012'  # A kezdő dátuma az ami a legrégebbi sms elvileg
 ujlap()
 
-
 items = mydoc.getElementsByTagName('sms')  # smsek beolvasása az items-be
 
 sor = 3  # a táblázat írni kívánt első sora
 
 i = 1  # belső változó
-for elem in items:
+for elem in items:  # SMS-ek beolvasása
     if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem kell törődni vele
         continue  # Itt folytatjuk a ciklust
     tel = elem.attributes['address'].value  # telefonszám kinyerése az üzenetből, később lehet szűrni.
@@ -107,8 +104,13 @@ for elem in items:
         logging.debug("{}; Nem átutalásos sms: \t{}".format(i, bd))
         continue
     sor += 1
+    ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still
+    ws.cell(row=ws.max_row, column=2).font = Font(bold=True, italic=True)
 
+
+    logging.debug(ws.max_row)
+
+wb.save('balance.xlsx')  # táblázat kírása.
 print('Elkészült munkalapok:')
 for sheet in wb:
     print('{}'.format(sheet.title), end='-')
-wb.save('balance.xlsx')  # táblázat kírása.
