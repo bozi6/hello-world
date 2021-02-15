@@ -8,11 +8,11 @@ from openpyxl.styles import NamedStyle, Font, PatternFill  # Stílus importálá
 from openpyxl.styles.differential import DifferentialStyle
 from openpyxl.formatting.rule import Rule
 
-FORMAT = '%(asctime)-2s %(message)s'
+FORMAT = '%(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
 
 # xml fájl betöltése
-mydoc = minidom.parse('sms_full.xml')
+mydoc = minidom.parse('sms.xml')
 
 c = CurrencyRates()  # Aktuális árfolyam lekérdezése
 arfolyamok = c.get_rates('HUF')  # átszámítás forint vs. valutákra
@@ -66,6 +66,7 @@ def ujlap_letrehozasa(lap_elnevezese):
     ws.column_dimensions['E'].width = 57
     ws.column_dimensions['F'].width = 61
     ws.cell(row=2, column=2, value='=D3-B3').style = still
+    # A B2 cellába beírjuk a kezdőértéket első sms egyenlegéből kivonva az első levonást = nyitó egyenleg
 
 
 # Munkalap létrehozása a memóriában
@@ -74,9 +75,10 @@ wb.add_named_style(still)
 ws = wb.active
 
 items = mydoc.getElementsByTagName('sms')  # smsek beolvasása az items-be
-lapnev = items[0].attributes['readable_date'].value
-lapnev = lapnev[:4]
-ujlap_letrehozasa(lapnev)
+
+lapnev = items[0].attributes['readable_date'].value  # Az első sms dátumának kinyerése
+lapnev = lapnev[:4]  # Csak az évszám kivágása
+ujlap_letrehozasa(lapnev)  # beküldjük a funkióba
 sor = 3  # a táblázat írni kívánt első sora
 i = 1  # belső változó
 
@@ -95,7 +97,13 @@ for elem in items:  # SMS-ek beolvasása
     aktev = rd[:4]  # Az aktális évszám kinyerése a dátumból.
     if aktev != ws.title:  # Ha ez nem egyezik a lap nevével akkor új lapot nyitunk
         ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
-        ws = wb.create_sheet(aktev)
+        # összeadjuk a bevételeket.
+        ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
+        ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
+        ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
+        ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row - 4)).style = still
+
+        ws = wb.create_sheet()
         wb.active
         ujlap_letrehozasa(aktev)
         sor = 3
@@ -134,7 +142,13 @@ for elem in items:  # SMS-ek beolvasása
     ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still
     ws.cell(row=ws.max_row, column=2).font = Font(bold=True, italic=True)  # A betűtípust vastaggá tesszük az eredményen
     logging.debug('Munkalap max sorszáma: {}'.format(ws.max_row))
-# wb.save('../../../../OneDrive/Dokumentumok/balance.xlsx')  # táblázat kírása.
+ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
+# összeadjuk a bevételeket.
+ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
+ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
+ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
+ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row-4)).style = still
+wb.save('../../../../OneDrive/Dokumentumok/balance.xlsx')  # táblázat kírása.
 print('Elkészült munkalapok:')
 for sheet in wb:
     print('{}'.format(sheet.title), end='-')
