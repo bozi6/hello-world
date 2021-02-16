@@ -11,25 +11,28 @@ from openpyxl.formatting.rule import Rule
 FORMAT = '%(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
 
+olvasando_fajl = "sms_full.xml"
+kiirando_fajl = "./balance.xlsx"
+
 # xml fájl betöltése
-mydoc = minidom.parse('sms.xml')
+mydoc = minidom.parse(olvasando_fajl)
 
 c = CurrencyRates()  # Aktuális árfolyam lekérdezése
 arfolyamok = c.get_rates('HUF')  # átszámítás forint vs. valutákra
 
 # Munkalap stílusának beálítása forintra
-still = NamedStyle(name="Pénzecske")
-still.number_format = '#,##0 "HUF";-#,##0 "HUF"'
-diff_style = DifferentialStyle(fill=PatternFill(bgColor='C6EFCE', fgColor='006100'))
-rule = Rule(type="expression", dxf=diff_style)
-rule.formula = ["$B2>0"]
+still = NamedStyle(name="Pénzecske")  # Ilyen nevű stílus hozzáadása
+still.number_format = '#,##0 "HUF";-#,##0 "HUF"'  # A számformátum beállítása forintra
+diff_style = DifferentialStyle(fill=PatternFill(bgColor='C6EFCE', fgColor='006100'))  # A feltételes formázás beállítása
+rule = Rule(type="expression", dxf=diff_style)  # Feltételes kifejezés megadása
+rule.formula = ["$B2>0"]  # Formula a felt. formázáshoz
 
 
 def penzvalto(mit, arfolyam=arfolyamok):
     """ Árfolyam váltó függvény
     a bejövő mit hez 123,45 GBP
     kiszámolja, hogy az mennyi forintban """
-    valuta = mit[-3:]
+    valuta = mit[-3:]  # A bejövő valuta megnevezésének eltávolítása
     if valuta in arfolyam:
         logging.debug('Váltás 1 HUF = {} - {}-ben/ban'.format(arfolyam[valuta], valuta))
         valtoertek = arfolyam[valuta]
@@ -37,6 +40,7 @@ def penzvalto(mit, arfolyam=arfolyamok):
         mit = mit.replace(",", ".")
         return float(mit) / valtoertek
     else:
+        logging.debug('Nem találtam ilyen valutát!')
         return False
 
 
@@ -44,29 +48,28 @@ def ujlap_letrehozasa(lap_elnevezese):
     """ Új munkalap létrehozása a munkafüzetben. """
     logging.debug('ujlap funkció meghívva')
     ws['A1'] = 'Dátum:'  # A cellákba írandó alapszövegek
-    ws['A2'] = 'Nyitó:'
+    ws['A2'] = 'Nyitó összeg:'
     ws['B1'] = 'Pénzmozgás:'
     ws['C1'] = 'Valuta:'
-    ws['D1'] = 'Egyenleg:'
-    ws['E1'] = 'Kitől:'
-    ws['F1'] = 'Mit:'
-    ws.title = lap_elnevezese
+    ws['D1'] = 'LU Egyenleg:'
+    ws['E1'] = 'Üzenet:'
+    ws.title = lap_elnevezese  # Az új lap elnevezése
+    # Betűtípusok beállítása
     ws['A1'].font = Font(bold=True)
     ws['A2'].font = Font(bold=True)
     ws['B1'].font = Font(bold=True)
     ws['C1'].font = Font(bold=True)
     ws['D1'].font = Font(bold=True)
     ws['E1'].font = Font(bold=True)
-    ws['F1'].font = Font(bold=True)
     ws['B2'].font = Font(italic=True, bold=True)
     ws.column_dimensions['A'].width = 25  # Az oszlopok alapvető szélességének megadása
     ws.column_dimensions['B'].width = 15
     ws.column_dimensions['C'].width = 15
     ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 57
-    ws.column_dimensions['F'].width = 61
+    ws.column_dimensions['E'].width = 160
     ws.cell(row=2, column=2, value='=D3-B3').style = still
     # A B2 cellába beírjuk a kezdőértéket első sms egyenlegéből kivonva az első levonást = nyitó egyenleg
+    ws.sheet_view.zoomScale = 150  # A nézet kinagyítása az aktuális oldalon
 
 
 # Munkalap létrehozása a memóriában
@@ -78,7 +81,7 @@ items = mydoc.getElementsByTagName('sms')  # smsek beolvasása az items-be
 
 lapnev = items[0].attributes['readable_date'].value  # Az első sms dátumának kinyerése
 lapnev = lapnev[:4]  # Csak az évszám kivágása
-ujlap_letrehozasa(lapnev)  # beküldjük a funkióba
+ujlap_letrehozasa(lapnev)  # beküldjük az új laphoz
 sor = 3  # a táblázat írni kívánt első sora
 i = 1  # belső változó
 
@@ -97,15 +100,15 @@ for elem in items:  # SMS-ek beolvasása
     aktev = rd[:4]  # Az aktális évszám kinyerése a dátumból.
     if aktev != ws.title:  # Ha ez nem egyezik a lap nevével akkor új lapot nyitunk
         ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
-        # összeadjuk a bevételeket.
+        # összeadjuk a bevételeket. Ezt még az aktuális és nem új lapon tesszük.
         ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
         ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
         ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
         ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row - 4)).style = still
 
-        ws = wb.create_sheet()
-        wb.active
-        ujlap_letrehozasa(aktev)
+        ws = wb.create_sheet()  # Itt csinálunk új lapot
+        wb.active  # itt pedig aktívvá tesszük.
+        ujlap_letrehozasa(aktev)  # meghívjuk rá az alapbeállításokat.
         sor = 3
     try:
         x = re.search(penz_pattern, bd).group()  # megkeressük a pénzeket az üzenetből
@@ -121,21 +124,21 @@ for elem in items:  # SMS-ek beolvasása
         else:  # ha nem HUF-ban van megadva a pénz
             ws.cell(row=sor, column=3, value=x)  # Beírjuk a harmadik oszlopba az összeget
             forintban = penzvalto(x)  # Átváltjuk az összeget forintra
-            ws.cell(row=sor, column=2, value=forintban).style = still  # Ezt beírjuk  a második oszlopba
+            ws.cell(row=sor, column=2, value=forintban).style = still  # Ezt beírjuk a második oszlopba
             logging.debug('Valuta értéke:', ws.cell(row=sor, column=2).value)
         egyenleg = egyenleg.replace(".", "")
         ws.cell(row=sor, column=1, value=rd)  # A dátumot beírjuk az első oszlopba
         bd = bd.replace("...", "")  # Az üzenet elejéről a pontokat kivesszük még.
-        bd = bd.split(';')  # Üzenet feldarabolása a ; alapján
         logging.debug(bd)
-        # ws.cell(row=sor, column=5, value=bd)  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
         ws.cell(row=sor, column=4, value=float(egyenleg)).style = still  # Az egyenleget beírjuk a negyedik oszlopba
-        ws.cell(row=sor, column=5, value=bd[1])  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
-        ws.cell(row=sor, column=6, value=bd[0])  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
-        logging.debug("{}; Dátum: {} - Érték: {} - Üzi: {}".format(i, rd, x, bd))  # ha DEBUG-ra van állítva a loggolás
+        ws.cell(row=sor, column=5, value=bd)  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
+        ws.cell(row=sor, column=6, value="=SUM(D3;B4)")  # todo itten még dolgozni köll ezen a szaron!
+        ws.cell(row=sor, column=7, value="=D4-F3")  #todo meg ezen is!
+        logging.debug("Sorszám:{}; Dátum: {} - Érték: {} - Üzi: {}".format(i, rd, x, bd))
+        # ha DEBUG-ra van állítva a loggolás
         i += 1  # sorszám növelése
     except AttributeError:
-        logging.debug("{}; - Nem átutalásos sms - {}".format(i, bd))
+        logging.debug("Sorszám:{}; - Nem átutalásos sms - {}".format(i, bd))
         continue
     sor += 1
     # Az összegeket az oszlop végén öszeadjuk és beírjuk az eredményt. és hozzáadjuk a stílust
@@ -148,7 +151,7 @@ ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
 ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
 ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
 ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row-4)).style = still
-wb.save('../../../../OneDrive/Dokumentumok/balance.xlsx')  # táblázat kírása.
+wb.save(kiirando_fajl)  # táblázat elmentése
 print('Elkészült munkalapok:')
 for sheet in wb:
     print('{}'.format(sheet.title), end='-')
