@@ -4,9 +4,9 @@ from xml.dom import minidom  # xml fájl olvasásához modul
 
 from forex_python.converter import CurrencyRates  # valutaárfolyam lekérdezőke modul
 from openpyxl import Workbook  # Excel táblázat kezeléshez modul
+from openpyxl.formatting.rule import Rule
 from openpyxl.styles import NamedStyle, Font, PatternFill  # Stílus importálása modul
 from openpyxl.styles.differential import DifferentialStyle
-from openpyxl.formatting.rule import Rule
 
 FORMAT = '%(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
@@ -47,29 +47,26 @@ def penzvalto(mit, arfolyam=arfolyamok):
 def ujlap_letrehozasa(lap_elnevezese):
     """ Új munkalap létrehozása a munkafüzetben. """
     logging.debug('ujlap funkció meghívva')
-    ws['A1'] = 'Dátum:'  # A cellákba írandó alapszövegek
-    ws['A2'] = 'Nyitó összeg:'
-    ws['B1'] = 'Pénzmozgás:'
-    ws['C1'] = 'Valuta:'
-    ws['D1'] = 'LU Egyenleg:'
-    ws['E1'] = 'Üzenet:'
+    """Alapértékek megadása"""
+    szotar = {'A1': 'Dátum',
+              'A2': 'Nyitó összeg',
+              'B1': 'Pénzmozgás',
+              'C1': 'Valuta',
+              'D1': 'LU egyenleg',
+              'E1': 'Üzenet',
+              'F1': 'Egyenleg',
+              'G1': 'Ez hibádzik'}
+    for kulcs, ertek in szotar.items():
+        ws[kulcs] = ertek
+        ws[kulcs].font = Font(bold=True)
     ws.title = lap_elnevezese  # Az új lap elnevezése
-    # Betűtípusok beállítása
-    ws['A1'].font = Font(bold=True)
-    ws['A2'].font = Font(bold=True)
-    ws['B1'].font = Font(bold=True)
-    ws['C1'].font = Font(bold=True)
-    ws['D1'].font = Font(bold=True)
-    ws['E1'].font = Font(bold=True)
     ws['B2'].font = Font(italic=True, bold=True)
-    ws.column_dimensions['A'].width = 25  # Az oszlopok alapvető szélességének megadása
-    ws.column_dimensions['B'].width = 15
-    ws.column_dimensions['C'].width = 15
-    ws.column_dimensions['D'].width = 15
-    ws.column_dimensions['E'].width = 160
+    szelessegek = {'A': 25, 'B': 15, 'C': 15, 'D': 15, 'E': 160, 'F': 13, 'G': 13}
+    for kulcs, ertek in szelessegek.items():
+        ws.column_dimensions[kulcs].width = ertek
     ws.cell(row=2, column=2, value='=D3-B3').style = still
     # A B2 cellába beírjuk a kezdőértéket első sms egyenlegéből kivonva az első levonást = nyitó egyenleg
-    ws.sheet_view.zoomScale = 150  # A nézet kinagyítása az aktuális oldalon
+    ws.sheet_view.zoomScale = 100  # A nézet kinagyítása az aktuális oldalon
 
 
 # Munkalap létrehozása a memóriában
@@ -81,13 +78,14 @@ items = mydoc.getElementsByTagName('sms')  # smsek beolvasása az items-be
 
 lapnev = items[0].attributes['readable_date'].value  # Az első sms dátumának kinyerése
 lapnev = lapnev[:4]  # Csak az évszám kivágása
+
 ujlap_letrehozasa(lapnev)  # beküldjük az új laphoz
 sor = 3  # a táblázat írni kívánt első sora
 i = 1  # belső változó
 
 for elem in items:  # SMS-ek beolvasása
-    if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem kell törődni vele
-        continue  # Itt ugrunk a következő üzenetre
+    # if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem törődünk vele
+    #     continue
     tel = elem.attributes['address'].value  # telefonszám kinyerése az üzenetből, később lehet szűrni.
     rd = elem.attributes['readable_date'].value  # Dátum hozzáadása az rd változóhoz
     bd = elem.attributes['body'].value  # Az üzenet szövege
@@ -102,10 +100,9 @@ for elem in items:  # SMS-ek beolvasása
         ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
         # összeadjuk a bevételeket. Ezt még az aktuális és nem új lapon tesszük.
         ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
-        ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
+        ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row - 2)).style = still
         ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
         ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row - 4)).style = still
-
         ws = wb.create_sheet()  # Itt csinálunk új lapot
         wb.active  # itt pedig aktívvá tesszük.
         ujlap_letrehozasa(aktev)  # meghívjuk rá az alapbeállításokat.
@@ -132,8 +129,9 @@ for elem in items:  # SMS-ek beolvasása
         logging.debug(bd)
         ws.cell(row=sor, column=4, value=float(egyenleg)).style = still  # Az egyenleget beírjuk a negyedik oszlopba
         ws.cell(row=sor, column=5, value=bd)  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
-        ws.cell(row=sor, column=6, value="=SUM(D3;B4)")  # todo itten még dolgozni köll ezen a szaron!
-        ws.cell(row=sor, column=7, value="=D4-F3")  #todo meg ezen is!
+        ws.cell(row=sor, column=6, value="=SUM(D{},B{})".format(sor, sor + 1)).style = still
+        # Nem mindegy, hogy a képletbe elválsztónak , vagy ; van itt a ; hibát dob az excelben.
+        ws.cell(row=sor, column=7, value="=D{}-F{}".format(sor + 1, sor)).style = still
         logging.debug("Sorszám:{}; Dátum: {} - Érték: {} - Üzi: {}".format(i, rd, x, bd))
         # ha DEBUG-ra van állítva a loggolás
         i += 1  # sorszám növelése
@@ -148,10 +146,10 @@ for elem in items:  # SMS-ek beolvasása
 ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
 # összeadjuk a bevételeket.
 ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
-ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row-2)).style = still
+ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row - 2)).style = still
 ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
-ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row-4)).style = still
+ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row - 4)).style = still
 wb.save(kiirando_fajl)  # táblázat elmentése
 print('Elkészült munkalapok:')
 for sheet in wb:
-    print('{}'.format(sheet.title), end='-')
+    print(sheet.title, end="-")
