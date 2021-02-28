@@ -1,8 +1,8 @@
 import sys
-import unittest
+import teszteles
 
 
-class Test(unittest.TestCase):
+class Test(teszteles.TestCase):
     def abstest(self):
         self.assertEqual(abszolut_ertek(17), 17)
         self.assertEqual(abszolut_ertek(-17), 17)
@@ -36,4 +36,4 @@ def tesztkeszlet():
 
 
 if __name__ == '__main__':
-    unittest.main()
+    teszteles.main()

@@ -1,4 +1,5 @@
 import logging  # Loggoláshoz modul
+from termcolor import colored
 import re  # Reguláris kifejezésekhez modul
 from xml.dom import minidom  # xml fájl olvasásához modul
 
@@ -8,10 +9,10 @@ from openpyxl.formatting.rule import Rule
 from openpyxl.styles import NamedStyle, Font, PatternFill  # Stílus importálása modul
 from openpyxl.styles.differential import DifferentialStyle
 
-FORMAT = '%(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
+FORMAT = '%(levelname)s: %(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
 
-olvasando_fajl = "sms_full.xml"
+olvasando_fajl = "sms.xml"
 kiirando_fajl = "./balance.xlsx"
 
 # xml fájl betöltése
@@ -48,14 +49,9 @@ def ujlap_letrehozasa(lap_elnevezese):
     """ Új munkalap létrehozása a munkafüzetben. """
     logging.debug('ujlap funkció meghívva')
     """Alapértékek megadása"""
-    szotar = {'A1': 'Dátum',
-              'A2': 'Nyitó összeg',
-              'B1': 'Pénzmozgás',
-              'C1': 'Valuta',
-              'D1': 'LU egyenleg',
-              'E1': 'Üzenet',
-              'F1': 'Egyenleg',
-              'G1': 'Ez hibádzik'}
+    szotar = {'A1': 'Dátum', 'A2': 'Nyitó összeg', 'B1': 'Pénzmozgás',
+              'C1': 'Valuta', 'D1': 'LU egyenleg', 'E1': 'Üzenet',
+              'F1': 'Egyenleg', 'G1': 'Ez hibádzik'}
     for kulcs, ertek in szotar.items():
         ws[kulcs] = ertek
         ws[kulcs].font = Font(bold=True)
@@ -103,7 +99,7 @@ for elem in items:  # SMS-ek beolvasása
         ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row - 2)).style = still
         ws.cell(row=ws.max_row + 1, column=1, value='Kiadás:')
         ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_row - 4)).style = still
-        ws = wb.create_sheet()  # Itt csinálunk új lapot
+        ws = wb.create_sheet()  # itt csinálunk új lapot
         wb.active  # itt pedig aktívvá tesszük.
         ujlap_letrehozasa(aktev)  # meghívjuk rá az alapbeállításokat.
         sor = 3
@@ -152,4 +148,4 @@ ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_
 wb.save(kiirando_fajl)  # táblázat elmentése
 print('Elkészült munkalapok:')
 for sheet in wb:
-    print(sheet.title, end="-")
+    print(sheet.title)
