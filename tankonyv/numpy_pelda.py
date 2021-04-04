@@ -15,6 +15,7 @@ print(type(c))
 
 x = np.array([5, 6, 7])
 y = np.array([2, 3, 8])
+
 print('x:', x)
 print('y:', y)
 Result = x - y

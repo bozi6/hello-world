@@ -12,7 +12,7 @@ from openpyxl.styles.differential import DifferentialStyle
 FORMAT = '%(levelname)s: %(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
 
-olvasando_fajl = "sms.xml"
+olvasando_fajl = "sms_full.xml"
 kiirando_fajl = "./balance.xlsx"
 
 # xml fájl betöltése
