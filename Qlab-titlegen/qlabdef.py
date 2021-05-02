@@ -53,6 +53,10 @@ class Interface:
         self.server = Listener()
         self.client = Client()
 
+    def newcue(self, cuetype):
+        self.client.send_message('/new', cuetype)
+        return self.get_cue_id()
+
     def get_cue_text(self, cue_no):
         return self.get_cue_property(cue_no, 'text')
 
@@ -62,7 +66,13 @@ class Interface:
         if response:
             return response.get('data')
 
-    def get_cue_id(self, cue_no):
+    def movecue(self, cueid, gid, index=1):
+        """ a cueid a mozgatandó cue id-je
+        az index az hova kerüljön az új helyen
+        a gid meg az amelyik csoportba akarod id-je"""
+        self.client.send_message('/move/{cueid} {index} "{gid}"'.format(**locals()))
+
+    def get_cue_id(self, cue_no='selected'):
         return self.get_cue_property(cue_no, 'uniqueID')
 
     def set_cue_property(self, cue_no, name, value):
