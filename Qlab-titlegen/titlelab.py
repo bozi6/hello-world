@@ -32,17 +32,35 @@ def main():
         print("Nem található a fájl.")
     # A lényeg, hogy előbb jönnek a fade cuek, amik eltüntetik az előző szöveget.
     # és csak aztán jelenik meg az újabb szöveg.
-    last_cue = 100  # az újonnan kezdődő cue-k száma
+    last_cue = 300  # az újonnan kezdődő cue-k száma
     last_blank = True  # utolsó sor üres volt-e?
     last_titles_was_decimal = False
     """
-    Ide akaorm a groupokat beszúrni, de nem akaraj az új que-t belecsinálni.
+    Ide akarom a groupokat beszúrni, de nem akarja az új que-t belecsinálni.
+    a group mode oscnél az:
+     1-es a 2-es mode igazából
+     a 2-es a 3-as
+     a 3-as az 1-es
+     es a 4-es a 4-es
+     csak hogy egyértelmű legyen :-).
     
     """
     send_msg(client, '/new', 'group')
     send_msg(client, '/cue/selected/number', str(last_cue))
-    send_msg(client, '/cue/'+str(last_cue)+'/mode', 1)
+    send_msg(client, '/cue/selected/name', 'mode 2')
+    send_msg(client, '/cue/selected/mode', 2)
+    send_msg(client, '/new', 'text')
+    send_msg(client, '/cue/selected/uniqueID')
 
+    send_msg(client, '/cue/selected/text', str("miapicsa"))
+    send_msg(client, '/move/'+str(last_cue+1), 1, 100)
+
+    send_msg(client, '/disconnect')
+
+
+if __name__ == '__main__':
+    main()
+"""
     for line in file.readlines():  # sorok beolvasása
         line = line[:-1]
         this_cue = last_cue + 1  # Kezdőérték + 1
@@ -77,3 +95,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
