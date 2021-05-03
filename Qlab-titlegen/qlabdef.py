@@ -53,9 +53,18 @@ class Interface:
         self.server = Listener()
         self.client = Client()
 
+    def getwid(self):
+        """
+        Az aktuális workspace id-ével tér vissza
+        :return: Workspace ID
+        """
+        self.client.send_message('/workspaces')
+        response = self.server.get_message()
+        if response:
+            return response['data'][0]['uniqueID']
+
     def newcue(self, cuetype):
         self.client.send_message('/new', cuetype)
-        return self.get_cue_id()
 
     def get_cue_text(self, cue_no):
         return self.get_cue_property(cue_no, 'text')
@@ -69,11 +78,24 @@ class Interface:
     def movecue(self, cueid, gid, index=1):
         """ a cueid a mozgatandó cue id-je
         az index az hova kerüljön az új helyen
-        a gid meg az amelyik csoportba akarod id-je"""
-        self.client.send_message('/move/{cueid} {index} "{gid}"'.format(**locals()))
+        a gid meg az amelyik csoportba akarod id-je
+        /workspace/{id}/move/{cue_id} {new_index} {new_parent_cue_id}
+        """
+        wpid = self.getwid()
+        self.client.send_message('/workspace/{}/move/{} {} {}'.format(wpid, cueid, index, gid))
+
+    def renumber_cues(self, start=1, inc=1):
+
+        wpid = self.getwid()
+        self.client.send_message('/workspace/{}/select/*'.format(wpid))
+        self.client.send_message('/workspace/{}/renumber {} {}'.format(wpid, start, inc))
+        return True
 
     def get_cue_id(self, cue_no='selected'):
-        return self.get_cue_property(cue_no, 'uniqueID')
+        self.get_cue_property(cue_no, 'uniqueID')
+        response = self.server.get_message()
+        if response:
+            return response.get('data')
 
     def set_cue_property(self, cue_no, name, value):
         self.client.send_message('/cue/{cue_no}/{name}'.format(**locals()), value=value)

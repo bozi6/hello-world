@@ -24,14 +24,16 @@ def main():
      csak hogy egyértelmű legyen :-).
 
     """
-
-    csoportid = interface.newcue('group')
+    interface.newcue('group')
+    csoportid = interface.get_cue_id()
     interface.set_cue_property('selected', 'number', str(last_cue))
     interface.set_cue_property('selected', 'name', 'szövegsor')
     interface.set_cue_property('selected', 'mode', 2)
-    szovegid = interface.newcue('text')
+    interface.newcue('text')
+    szovegid = interface.get_cue_id()
     interface.set_cue_property('selected', 'text', 'szövegsor a fileból')
     interface.movecue(szovegid, csoportid, 1)
+    interface.renumber_cues(7500, 3)
     print(csoportid, szovegid)
 
 """ 
