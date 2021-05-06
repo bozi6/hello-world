@@ -1,82 +1,67 @@
 import qlabdef
 
-interface = qlabdef.Interface()
+ifa = qlabdef.Interface()
+cli = qlabdef.Client()
 
 
 def main():
     # file = open(args.file)
     try:
-        file = open("./example-input.txt")
+        file = open("./hutlen_dalszovegek_sima.txt")
     except IOError:
-        print("Nem található a fájl.")
-    # A lényeg, hogy előbb jönnek a fade cuek, amik eltüntetik az előző szöveget.
-    # és csak aztán jelenik meg az újabb szöveg.
-    last_cue = 300  # az újonnan kezdődő cue-k száma
-    last_blank = True  # utolsó sor üres volt-e?
+        print("File not found.")
+    last_cue = 300  # newly created cue start number
+    last_blank = True
     last_titles_was_decimal = False
+    """    ifa.newcue('group')  # Create new group cue
+    csoportid = ifa.get_cue_id() # Get uniquiId from group cue
+    ifa.set_cue_property('selected', 'number', str(last_cue))  # Set group cue number to last_cue
+    ifa.set_cue_property('selected', 'name', csoportid[:8])
+    ifa.set_cue_property('selected', 'mode', 2)  # Change group mode to 2 (It is 3 in mode box in QLab)
+    ifa.newcue('text')  # Create new Text cue
+    szovegid = ifa.get_cue_id() # Get Text cue uniqueID
+    ifa.set_cue_property('selected', 'text', szovegid[:8]) # Set text cue name to first 8 char of uniqueID
+    ifa.movecue(szovegid, csoportid, 1)  # Try to move text cue under group cue
+    ifa.renumber_cues(900, 1)
+    print("gid: {}, text cue: {}".format(csoportid, szovegid))  # Print group and text cue uniqueID-s
     """
-    Ide akarom a groupokat beszúrni, de nem akarja az új que-t belecsinálni.
-    a group mode oscnél az:
-     1-es a 2-es mode igazából
-     a 2-es a 3-as
-     a 3-as az 1-es
-     es a 4-es a 4-es
-     csak hogy egyértelmű legyen :-).
 
-    """
-    interface.newcue('group')
-    csoportid = interface.get_cue_id()
-    interface.set_cue_property('selected', 'number', str(last_cue))
-    interface.set_cue_property('selected', 'name', 'szövegsor')
-    interface.set_cue_property('selected', 'mode', 2)
-    interface.newcue('text')
-    szovegid = interface.get_cue_id()
-    interface.set_cue_property('selected', 'text', 'szövegsor a fileból')
-    interface.movecue(szovegid, csoportid, 1)
-    interface.renumber_cues(7500, 3)
-    print(csoportid, szovegid)
-
-""" 
-    send_msg(client, '/move/' + str(last_cue + 1), 1, 100)
-
-    send_msg(client, '/disconnect')
-
-
-if __name__ == '__main__':
-    main()
-
-    for line in file.readlines():  # sorok beolvasása
+    for line in file.readlines():
         line = line[:-1]
-        this_cue = last_cue + 1  # Kezdőérték + 1
+        this_cue = last_cue + 1
         this_blank = line == '.'
         broken_line = line.replace('/', '\n')
-        if not last_blank:  # A fade cuek beállításai
-            send_msg(client, '/new', 'fade')
-            send_msg(client, '/cue/selected/stopTargetWhenDone', 1)
-            send_msg(client, '/cue/selected/duration', 0.5)
-            send_msg(client, '/cue/selected/doOpacity', 1)
-            send_msg(client, '/cue/selected/opacity', 0)
-            send_msg(client, '/cue/selected/number', str(this_cue))
-            send_msg(client, '/cue/selected/cueTargetNumber',
-                     str(last_cue) + '.1' if last_titles_was_decimal else str(last_cue))
-            send_msg(client, '/cue/selected/name', 'ÜRES' if this_blank else str(last_cue)+' FO')
+        ifa.newcue('group')
+        csopid = ifa.get_cue_id()
+        if not last_blank:
+            ifa.newcue('fade')
+            fadid = ifa.get_cue_id()
+            ifa.set_cue_property('selected', 'stopTargetWhenDone', 1)
+            ifa.set_cue_property('selected', 'duration', 0.5)
+            ifa.set_cue_property('selected', 'doOpacity', 1)
+            ifa.set_cue_property('selected', 'opacity', 0)
+            ifa.set_cue_property('selected', 'number', str(this_cue))
+            ifa.set_cue_property('selected', 'cueTargetNumber', str(last_cue) + '.1' if last_titles_was_decimal else str(last_cue))
+            ifa.set_cue_property('selected', 'name', 'Üres' if this_blank else str(last_cue)+' FO')
             if not this_blank:
-                send_msg(client, '/cue/selected/continueMode', 2)
+                ifa.set_cue_property('selected', 'continueMode', 2)
+            ifa.movecue(fadid, csopid, 2)
         if not this_blank:
-            send_msg(client, '/new', 'text')
-            send_msg(client, '/cue/selected/number', str(this_cue) + '.1' if not last_blank else str(this_cue))
-            send_msg(client, '/cue/selected/text/format/fontSize', 64)
-            send_msg(client, '/cue/selected/colorName', "green")
-            send_msg(client, '/cue/selected/text', broken_line)
-            # send_msg(client, '/cue/selected/name', line if last_blank else '--')
-            send_msg(client, '/cue/selected/name', line)
+            ifa.newcue('text')
+            txtid = ifa.get_cue_id()
+            ifa.set_cue_property('selected', 'number', str(this_cue) + '.1' if not last_blank else str(this_cue))
+            ifa.set_cue_property('selected', 'text/format/fontSize', 72)
+            ifa.set_cue_property('selected', 'colorName', 'green')
+            ifa.set_cue_property('selected', 'text', broken_line)
+            ifa.set_cue_property('selected', 'name', line)
+            ifa.movecue(txtid, csopid, 1)
+        print("csid: {} - cueid: {}".format(csopid, txtid,))
         last_cue = this_cue
         last_titles_was_decimal = not last_blank
         last_blank = this_blank
 
-    send_msg(client, '/disconnect')
 
-"""
+
+
 if __name__ == '__main__':
     main()
-

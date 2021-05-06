@@ -1,4 +1,3 @@
-# import asyncio
 import json
 import socket
 from pythonosc import osc_message_builder
@@ -11,7 +10,7 @@ class Listener:
     def __init__(self):
         print('starting listener')
         self.sock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-        # Valamiért ezt kellett INET6-ra állítani AF_INET-ről
+        # Sometime it works only if set socket.AF_INET to socket.AF_INET6
 
         self.sock.bind(('localhost', 53001))
         self.last_message = None
@@ -41,10 +40,13 @@ class Client:
     def __init__(self):
         self.client = udp_client.UDPClient('localhost', 53000)
 
-    def send_message(self, address, value=None):
+    def send_message(self, address, value=None, val2=None):
         msg = osc_message_builder.OscMessageBuilder(address=address)
+        #  print('sent addr: {} - send__messageból_value: {}'.format(address,value))
         if value:
             msg.add_arg(value)
+        if val2:
+            msg.add_arg(val2)
         self.client.send(msg.build())
 
 
@@ -55,13 +57,14 @@ class Interface:
 
     def getwid(self):
         """
-        Az aktuális workspace id-ével tér vissza
+        Returns actual workspace ID
         :return: Workspace ID
         """
         self.client.send_message('/workspaces')
         response = self.server.get_message()
+        print(response)
         if response:
-            return response['data'][0]['uniqueID']
+            return response['data']
 
     def newcue(self, cuetype):
         self.client.send_message('/new', cuetype)
@@ -82,18 +85,12 @@ class Interface:
         /workspace/{id}/move/{cue_id} {new_index} {new_parent_cue_id}
         """
         wpid = self.getwid()
-        self.client.send_message('/workspace/{}/move/{} {} {}'.format(wpid, cueid, index, gid))
-
-    def renumber_cues(self, start=1, inc=1):
-
-        wpid = self.getwid()
-        self.client.send_message('/workspace/{}/select/*'.format(wpid))
-        self.client.send_message('/workspace/{}/renumber {} {}'.format(wpid, start, inc))
-        return True
+        self.client.send_message("/workspace/{}/move/{}".format(wpid, cueid), index, gid)
 
     def get_cue_id(self, cue_no='selected'):
         self.get_cue_property(cue_no, 'uniqueID')
         response = self.server.get_message()
+        print(response)
         if response:
             return response.get('data')
 
@@ -128,7 +125,7 @@ def main():
         if caption_type == 'Group':
             cue_no = interface.get_cue_property('selected', 'number')
             gid = interface.get_cue_id('selected')
-            print("Típus: {}, Cue sorszám: {} - azonosító: {}".format(caption_type, cue_no, gid))
+            print("Type: {}, Cue number: {} - cue ID: {}".format(caption_type, cue_no, gid))
         interface.select_next_cue()
 
 
