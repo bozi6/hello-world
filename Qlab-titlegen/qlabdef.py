@@ -54,6 +54,7 @@ class Interface:
     def __init__(self):
         self.server = Listener()
         self.client = Client()
+        self.wpid = self.getwid()
 
     def getwid(self):
         """
@@ -64,15 +65,25 @@ class Interface:
         response = self.server.get_message()
         print(response)
         if response:
-            return response['data']
+            return response['data'][0]['uniqueID']
 
     def newcue(self, cuetype):
         self.client.send_message('/new', cuetype)
 
     def get_cue_text(self, cue_no):
+        """
+        :param cue_no: a cue sorszáma
+        :return: a cue text paraméterének visszaadása
+        """
         return self.get_cue_property(cue_no, 'text')
 
     def get_cue_property(self, cue_no, name):
+        """
+        A cue tulajdonságainak visszaadása
+        :param cue_no: a cue sorszáma
+        :param name: a kérdéses paraméter
+        :return: a válasz adat
+        """
         self.client.send_message('/cue/{cue_no}/{name}'.format(**locals()))
         response = self.server.get_message()
         if response:
@@ -84,26 +95,21 @@ class Interface:
         a gid meg az amelyik csoportba akarod id-je
         /workspace/{id}/move/{cue_id} {new_index} {new_parent_cue_id}
         """
-        wpid = self.getwid()
+        wpid = self.wpid
         self.client.send_message("/workspace/{}/move/{}".format(wpid, cueid), index, gid)
 
     def get_cue_id(self, cue_no='selected'):
+        """
+        :param cue_no: a cue sorszáma, alapból a kiválasztott
+        :return: az egyedi azonsító
+        """
         self.get_cue_property(cue_no, 'uniqueID')
         response = self.server.get_message()
-        print(response)
         if response:
             return response.get('data')
 
     def set_cue_property(self, cue_no, name, value):
         self.client.send_message('/cue/{cue_no}/{name}'.format(**locals()), value=value)
-
-    def select_next_cue(self):
-        old = self.get_cue_property('selected', 'number')
-        self.client.send_message('/select/next')
-        cue_no = self.get_cue_property('selected', 'number')
-        while cue_no == old:
-            cue_no = self.get_cue_property('selected', 'number')
-        return cue_no
 
 
 def main():
