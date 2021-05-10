@@ -2,7 +2,6 @@ import json
 import socket
 from pythonosc import osc_message_builder
 from pythonosc import udp_client
-
 import threading
 
 
@@ -12,7 +11,7 @@ class Listener:
         self.sock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
         # Sometime it works only if set socket.AF_INET to socket.AF_INET6
 
-        self.sock.bind(('localhost', 53001))
+        self.sock.bind(('::1', 53001))
         self.last_message = None
 
     def _get_message(self):
@@ -38,15 +37,17 @@ class Listener:
 
 class Client:
     def __init__(self):
-        self.client = udp_client.UDPClient('localhost', 53000)
+        self.client = udp_client.UDPClient('::1', 53000)
 
-    def send_message(self, address, value=None, val2=None):
+    def send_message(self, address, value=None, val2=None, val3=None):
         msg = osc_message_builder.OscMessageBuilder(address=address)
         #  print('sent addr: {} - send__messageból_value: {}'.format(address,value))
         if value:
             msg.add_arg(value)
         if val2:
             msg.add_arg(val2)
+        if val3:
+            msg.add_arg(val3)
         self.client.send(msg.build())
 
 
@@ -63,7 +64,6 @@ class Interface:
         """
         self.client.send_message('/workspaces')
         response = self.server.get_message()
-        print(response)
         if response:
             return response['data'][0]['uniqueID']
 
@@ -98,6 +98,12 @@ class Interface:
         wpid = self.wpid
         self.client.send_message("/workspace/{}/move/{}".format(wpid, cueid), index, gid)
 
+    def get_surfaces(self):
+        self.client.send_message('/settings/video/surfaces')
+        response = self.server.get_message()
+        if response:
+            return response.get('data')
+
     def get_cue_id(self, cue_no='selected'):
         """
         :param cue_no: a cue sorszáma, alapból a kiválasztott
@@ -110,6 +116,9 @@ class Interface:
 
     def set_cue_property(self, cue_no, name, value):
         self.client.send_message('/cue/{cue_no}/{name}'.format(**locals()), value=value)
+        # response = self.server.get_message()
+        # if response:
+        #    print(response.get('data'))
 
 
 def main():
@@ -118,21 +127,6 @@ def main():
     # any titles' cue numbers and text
     interface = Interface()
     interface.client.send_message('/select/1')
-    while True:
-        caption_type = interface.get_cue_property('selected', 'type')
-        #  print("elfogott típus: {}".format(caption_type))
-        if caption_type == 'Text':
-            text = interface.get_cue_text('selected')
-            cue_no = interface.get_cue_property('selected', 'number')
-            print(cue_no, text)
-            if text.lower().strip() == 'the end':
-                break
-        print()
-        if caption_type == 'Group':
-            cue_no = interface.get_cue_property('selected', 'number')
-            gid = interface.get_cue_id('selected')
-            print("Type: {}, Cue number: {} - cue ID: {}".format(caption_type, cue_no, gid))
-        interface.select_next_cue()
 
 
 if __name__ == '__main__':

@@ -7,12 +7,13 @@ cli = qlabdef.Client()
 def main():
     # file = open(args.file)
     try:
-        file = open("./hutlen_dalszovegek_sima.txt")
+        file = open("./example-input.txt")
     except IOError:
         print("File not found.")
-    last_cue = 300  # newly created cue start number
+    last_cue = 200  # newly created cue start number
     last_blank = True
     last_titles_was_decimal = False
+    surf2 = ifa.get_surfaces()
     for line in file.readlines():
         line = line[:-1]
         this_cue = last_cue + 1
@@ -34,6 +35,9 @@ def main():
             ifa.set_cue_property('selected', 'number', str(this_cue) + '.1' if not last_blank else str(this_cue))
             ifa.set_cue_property('selected', 'text/format/fontSize', 72)
             ifa.set_cue_property('selected', 'colorName', 'green')
+            ifa.set_cue_property('selected', 'translationY', -440)
+            ifa.set_cue_property('selected', 'text/format/color', [1, 1, 0, 1])
+            ##  ifa.set_cue_property('selected', 'surfaceID', surf2[1]['surfaceID'])  # Mindig valtozik! és nem tudom átküldeni
             ifa.set_cue_property('selected', 'text', broken_line)
             ifa.set_cue_property('selected', 'name', line)
         last_cue = this_cue
