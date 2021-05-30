@@ -2,7 +2,6 @@
 Hol van a te lánykori boldogságod?
 A templomnak oltárára letetted,
 Onnan többé soha fel nem vehetted.
-.
 Kislány, kislány, hol van a te lányságod?
 Hol van a te lánykori boldogságod?
 A templomnak oltárára letetted,
@@ -22,14 +21,18 @@ Páros csókkal várja haza az urát.
 Keljen fel és főzze meg a vacsorát,
 Páros csókkal várja haza az urát.
 .
-?
+Nékem olyan asszony kell,
+Ha beteg is, keljen fel,
+Keljen fel és főzze meg a vacsorát,
+Páros csókkal várja haza az urát.
+Keljen fel és főzze meg a vacsorát,
+Páros csókkal várja haza az urát.
 .
 Sír a kislány az ajtóba', a kapuba'
 Mikor viszi a vőlegény más faluba.
 Sírjál anyám, mert én sírok,
 Tőled búcsúzni akarok, hateha.
 Sírjál anyám, mert én sírok,
-.
 De sok eső, de sok sár, de sok kislány megcsalt már,
 de sok kislány megcsalt már, de megcsalt már.
 Ha még ez az egy is megcsal, ha megcsal.
@@ -48,7 +51,6 @@ Kit megettél, kit a farod, kit a farodra tettél,
 egy legénynek selyem zsebkendőt vettél!
 Kit megettél, kit a farod, kit a farodra tettél,
 egy legénynek selyem zsebkendőt vettél!
-.
 De sok eső, de sok sár, de sok kislány megcsalt már,
 de sok kislány megcsalt már,de megcsalt már.
 De sok eső, de sok sár, de sok kislány megcsalt már,
@@ -61,14 +63,12 @@ Ha még ez az egy is megcsal,
 Megátkozom, rögtön meghal, csuhajja.
 Ha még ez az egy is megcsal,
 Megátkozom, rögtön meghal, csuhajja.
-.
 Nádfedeles kis házikom leégett az éjjel
 Míg a babám ölelgettem a vadvirágos réten
 A jegykendőm odaégett adjál babám másat
 Csókolom a csókra termett édes pici szádat
 A jegykendőm odaégett adjál babám másat
 Csókolom a csókra termett édes pici szádat
-.
 Kinek van, kinek van karikagyűrűje
 Annak van, annak van barna szeretője
 Lám az enyém szőke, cseréljük el véle
@@ -92,7 +92,6 @@ Szerelem szerelem átkozott gyötrelem
 Szerelem szerelem átkozott gyötrelem
 Mért nem virágoztál minden falevelen
 .
-Esti dal:
 Erdő mellett estéledtem
 Subám fejem alá tettem
 Össze tettem két kezemet
@@ -108,8 +107,6 @@ Küldje hozzá szent angyalát
 Bátorítsa szívünk álmát.
 Adjon Isten jó éjszakát
 Adjon Isten jó éjszakát
-.
-Tavasz:
 .
 Le az úton le-le-le, le-le-le
 Szeretőm elejibe, lejibe
@@ -161,8 +158,6 @@ Mer' a szívem másé lesz
 De már akkor késő lesz, de már akkor késő lesz
 Mer' a szívem másé lesz
 .
-Nyár:
-.
 Befogom a hat ökröm a járomba,
 elviszem a búzámat a malomba.
 Édes kicsi molnárom, őröld meg a búzámat,
@@ -199,8 +194,6 @@ Ahány szem van egy keresztbe,
 annyiszor jussak eszedbe,
 annyiszor jussak eszedbe.
 .
-Ősz:
-.
 Nem zörög a haraszt ha a szél nem fújja,
 szerettelek babám, az Isten is tudja.
 Titok a szerelem, ej de titok a szerelem.
@@ -232,8 +225,6 @@ Odamegyek minden este, mert én szeretem.
 Odamegyek minden este, mert én szeretem.
 Nem vagyok, nem vagyok, nem vagyok hibás,
 A szeretőm elhagyott, ez csak kifogás.
-.
-Tél:
 .
 Ma van új esztendő, ti ezt jól tudjátok.
 Akik megértétek, azon vígadjatok.
