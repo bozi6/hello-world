@@ -5,7 +5,7 @@ cli = client.Interface()
 
 def main():
     try:
-        file = open('hutlen_dalszovegek_sima.txt')
+        file = open('example-input.txt')
         """
         A szövegfájlban ha több sort akarunk akkor /-el kell a sorokat elválasztani
         Ha üres sort akakrunk akkor .-ot kell tenni a sorba
@@ -52,7 +52,16 @@ def main():
         start_number = this_cue
         last_titles_was_decimal = not last_blank
         last_blank = this_blank
-
+    cues = cli.getques()
+    print(cues)
+    """
+    for id,number,uid,type in cues:
+        print(id)
+        print(number)
+        print(uid)
+        print(type)
+    cli.select_all_cues()
+    """
 
 if __name__ == '__main__':
     main()

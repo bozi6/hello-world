@@ -13,7 +13,6 @@ class Listener:
         self.address = address
         self.port = port
         self.sock = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
-        # Sometime it works only if set socket.AF_INET to socket.AF_INET6
         self.sock.bind((self.address, self.port))
         self.last_message = None
 
@@ -111,3 +110,14 @@ class Interface:
         wpid = self.wpid
         self.select_all_cues()
         self.client.send_message('/workspace/{}/renumber'.format(wpid), [start, step])
+
+    def getques(self):
+        """
+        Receive quelists information
+        :return: a cuelista
+        """
+        wpid = self.wpid
+        self.client.send_message("/workspace/{}/cueLists/shallow".format(wpid), '')
+        response = self.server.get_message()
+        if response:
+            return response.get('data')
