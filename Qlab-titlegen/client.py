@@ -38,7 +38,7 @@ class Listener:
 
 class Interface:
     """
-    Interface for talking with QLab
+    Interface for QLab
     """
     def __init__(self):
         """
@@ -65,7 +65,7 @@ class Interface:
     def set_cue_prop(self, cue_no, name, value):
         """
         Set a cue parameters in QLab
-        :param cue_no: cue number also accept selected
+        :param cue_no: cue number, also accept selected
         :param name: changeable parameter name eg.: name
         :param value: parameter value eg.: 120
         :return: return any response from QLab
