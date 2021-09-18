@@ -52,6 +52,7 @@ def main():
             last_blank = this_blank
         cues = cli.getques()
         print(cues)
+        cli.renumber(10, 1)
         """
         for id,number,uid,type in cues:
             print(id)
