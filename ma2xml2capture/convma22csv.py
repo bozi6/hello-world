@@ -25,27 +25,30 @@ mv = root.attrib['major_vers']
 miv = root.attrib['minor_vers']
 sv = root.attrib['stream_vers']
 print("Verzió: {}.{}.{}".format(mv, miv, sv))
+
+for i in root:
+    if 'index' in i.attrib:
+        print("Rétegek: ", i.attrib['index'])
+        for fixt in root.findall('base:Layers/base:Layer/base:Fixture/[@name]', ns):
+            print(fixt.attrib)
+
+"""
 # print(Xet.tostring(root, encoding='utf8').decode('utf8'))
 for fixture in root.findall('base:Layers/base:Layer/base:Fixture/[@name]', ns):
     for adatz in fixture.findall('base:SubFixture/base:AbsolutePosition', ns):
-        print(adatz.items())
         print('Eszköznév: ', fixture.attrib['name'])
         if 'fixture_id' in fixture.attrib:
             print('Lámpaazonosító: ', fixture.attrib['fixture_id'])
         elif 'channel_id' in fixture.attrib:
             print('Csatornaazonosító: ', fixture.attrib['channel_id'])
-        print("DMX cím: ", adatz.text)
-""" Ez volt a fasza
-    for adatz in fixture.findall('base:SubFixture/base:Patch/base:Address', ns):
-        print('Eszköznév: ', fixture.attrib['name'])
-        if 'fixture_id' in fixture.attrib:
-            print('Lámpaazonosító: ', fixture.attrib['fixture_id'])
-        elif 'channel_id' in fixture.attrib:
-            print('Csatornaazonosító: ', fixture.attrib['channel_id'])
-        print("DMX cím: ", adatz.text)
-"""
-# rows.insert({"Layer": currentLayerName})
 
+for dmx in root.findall('base:Layers/base:Layer/base:Fixture/base:SubFixture/base:Patch/base:Address', ns):
+    print("DMX cím: ", dmx.text)
+# rows.append({"Layer": currentLayerName,
+                "Fixture": currentFixture,
+                "melyikcella": valtozoNev...
+                })
+"""
 
 df = pd.DataFrame(rows, columns=cols)
 
