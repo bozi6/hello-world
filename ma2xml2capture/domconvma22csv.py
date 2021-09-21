@@ -11,17 +11,18 @@ sv = collection.getAttribute('stream_vers')
 print("Verzió: {}.{}.{}".format(mv, miv, sv))
 
 # get all the fixtures in the collection
-Layers = collection.getElementsByTagName("Layers")
-
+Lnum = collection.getElementsByTagName("Layers")
+Layers = collection.getElementsByTagName("Layer")
+print("Rétegek száma: ", Lnum[0].getAttribute('index'))
 for Layer in Layers:
-        LayersNum = Layer.getAttribute('index')
         Fixture = Layer.getElementsByTagName('Fixture')
         Patch = Layer.getElementsByTagName('Address')
-        Location = Layer.getElementsByTagName('AbsolutePosition')
-        print("Rétegek széma: ", LayersNum)
+        # todo megoldani a cuccokhoz a hozzáférést mert nem megy.
+        ABSPosition = Layer.getElementsByTagName('AbsolutePosition')
         print("Lámpa neve: ", Fixture[0].getAttribute('name'))
-        print(Patch[0].firstChild.data)
-        print(Location[0].firstChild.data)
+        print("Cím: ", Patch[0].firstChild.data)
+        for loca in ABSPosition.iter('Location'):
+                print(loca)
 
 cols = ['Fixture', 'Optics', 'Wattage', 'Unit', 'Circuit', 'Channel',
         'Groups', 'Patch', 'DMX Mode', 'DMX Channles', 'Layer', 'Focus',
