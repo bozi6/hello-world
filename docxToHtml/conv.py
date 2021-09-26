@@ -10,7 +10,7 @@ def htmlcser(bej, mit, mire):
 
 
 custom_styles = """
-                table => table.table.table-bordered.table-striped.shadow
+                #table => table.table.table-bordered.table-striped.shadow.bg-light
                 #r => p.text-light.bg-dark
                 #a pt lecseréli td class p re majd beszúr egy mt-0 class text-centert
                 p => p.py-1

@@ -4,13 +4,21 @@ import csv
 
 class FixtureHandler(xml.sax.handler.ContentHandler):
     def __init__(self):
-        super().__init__()
         self.CurrentData = ""
         self.Info = ""
         self.Layers = ""
         self.Layer = ""
         self.Fixture = ""
         self.FixtureType = ""
+        self.Optics = ""
+        self.Wattage = ""
+        self.Unit = ""
+        self.Circuit = ""
+        self.Channel = ""
+        self.Groups = ""
+        self.Patch = ""
+        self.DMX_Mode = ""
+        self.DMX_Channels = ""
         self.Location = ""
         self.Rotation = ""
         self.Scaling = ""
@@ -21,6 +29,23 @@ class FixtureHandler(xml.sax.handler.ContentHandler):
         self.ry = ""
         self.rz = ""
         self.Address = ""
+        self.Focus = ""
+        self.Filters = ""
+        self.Gobos = ""
+        self.Accessories = ""
+        self.Purpose = ""
+        self.Note = ""
+        self.Weight = ""
+        self.focuspan = ""
+        self.foctilt = ""
+        self.ip = ""
+        self.psl = ""
+        self.pel = ""
+        self.it = ""
+        self.tsl = ""
+        self.tel = ""
+        self.ident = ""
+        self.xid = ""
         self.cucc = []
 
     # Call when element starts
@@ -28,53 +53,52 @@ class FixtureHandler(xml.sax.handler.ContentHandler):
         #  print("StartElement: ", self.CurrentData)
         self.CurrentData = tag
         if tag == "Info":
-            print("Információk:")
             datum = attributes["datetime"]
             showfile = attributes["showfile"]
-            print("Showfile neve: {} - Dátum: {}".format(showfile, datum))
+            self.Info = "Showfile neve:" + showfile + " - Dátum:" + datum
         if tag == "Layers":
             lsz = attributes["index"]
             self.Layers = lsz
-            print("Rétegek száma: ", lsz)
         if tag == "Layer":
             nev = attributes["name"]
-            print("Réteg neve: ", nev)
             self.Layer = nev
+            self.Groups = nev
         if tag == "FixtureType":
             if attributes["name"][2:] == "Dimmer 00":
                 self.FixtureType = "Generic Par 64"
-                self.cucc.append(self.FixtureType)
-                self.cucc.append("CP63")
-                self.cucc.append("1000W")
+                self.Optics = "CP63"
+                self.Wattage = "1000W"
             else:
                 self.FixtureType = attributes["name"][2:]
-                self.cucc.append(self.FixtureType)
         if tag == "Fixture":
             fn = attributes["name"]
             self.Fixture = fn
-            self.cucc.append(self.Fixture)
-            print("Lámpa: ", fn)
+            self.Unit = fn
         if tag == "Location":
             self.px = attributes["x"]
             self.py = attributes["y"]
             self.pz = attributes["z"]
-            print("Hely: ", self.px, self.py, self.pz)
         if tag == "Rotation":
             self.rx = attributes["x"]
             self.ry = attributes["y"]
             self.rz = attributes["z"]
-            print("Forgatás: ", self.rx, self.ry, self.rz)
-
 
     def endElement(self, tag):
-        if self.CurrentData == "Address":
-            print("DMX cím:", self.Address)
         # Ismétlődés elkerülésére kell
         self.CurrentData = ""
 
     def characters(self, content):
         if self.CurrentData == "Address":
             self.Address = content
+
+    def mimegy(self):
+        if self.Fixture != "" and self.ident != "":
+            self.cucc.append([self.Fixture, self.Optics, self.Wattage, self.Unit, self.Circuit,
+                              self.Channel, self.Groups, self.Patch, self.DMX_Mode, self.DMX_Channels,
+                              self.Layer, self.Focus, self.Filters, self.Gobos, self.Accessories,
+                              self.Purpose, self.Note, self.Weight, self.Location, self.px,
+                              self.py, self.pz, self.rx, self.ry, self.rz, self.focuspan, self.foctilt,
+                              self.ip, self.psl, self.pel, self.it, self.tsl, self.tel, self.ident, self.xid])
 
 
 if __name__ == "__main__":
@@ -100,5 +124,6 @@ if __name__ == "__main__":
     with open('mindenki_conv.csv', 'w') as csvfile:
         filewriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
         filewriter.writerow(fields)
-        filewriter.writerow([Handler.cucc])
+        filewriter.writerow(Handler.cucc)
+        print(Handler.mimegy())
     csvfile.close()
