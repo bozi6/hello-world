@@ -2,7 +2,15 @@ import xml.etree.ElementTree as Et
 import csv
 import uuid
 
-befile = 'mindenki.xml'
+class Lampa():
+    def __init__(self):
+        self.name = ''
+        self.op = '18°'
+        self.wa = '500w'
+        self.wg = '5.0kg'
+
+
+befile = 'testshow.xml'
 kifile = befile + "_conv.csv"
 # Ezek a mezők vannak a capture csv-ben
 fields = (['Fixture', 'Optics', 'Wattage', 'Unit', 'Circuit', 'Channel',
@@ -31,8 +39,10 @@ print("MA2 programverzió: {},{},{}".format(
 op = '18°'
 wa = '500W'
 wg = "5,0kg"
+mdmx = ''
+fixt_id = ''
 
-for Layer in myroot[1].findall("bas:Layer", ns):
+for Layer in myroot.findall("bas:Layer", ns):
     extuid = uuid.uuid4()  # Kamu uuid generálása
     rn = Layer.attrib['name']  # Réteg nevének és indexének kinyerése
     ridx = Layer.attrib['index']
