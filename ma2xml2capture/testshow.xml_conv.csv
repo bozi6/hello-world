@@ -1,2 +1,13 @@
-Fixture,Optics,Wattage,Unit,Circuit,Channel,Groups,Patch,DMX Mode,DMX Channles,Layer,Focus,Filters,Gobos,Accessories,Purpose,Note,Weight,Location,Position X,Position Y,Position Z,Rotation X,Rotation Y,Rotation Z,Focus,Pan,Focus Tilt,Invert Pan,Pan Start Limit,Pan End Limit,Invert Tilt,Tilt Start Limit,Tilt End Limit,Identifier,External Identifier
-[<Lamp object. Name: Mac250+2 1>],[<Lamp object. Name: Mac250+2 2>],[<Lamp object. Name: Mac250+2 3>],[<Lamp object. Name: Mac250+2 4>],[<Lamp object. Name: Mac250+2 5>],[<Lamp object. Name: Mac250+2 6>],[<Lamp object. Name: Dim 1>],[<Lamp object. Name: Dim 2>],[<Lamp object. Name: Dim 3>],[<Lamp object. Name: Dim 4>],[<Lamp object. Name: Dim 5>],[<Lamp object. Name: Dim 6>]
+Fixture,Optics,Wattage,Unit,Circuit,Channel,Groups,Patch,DMX Mode,DMX Channles,Layer,Focus,Filters,Gobos,Accessories,Purpose,Note,Weight,Location,Position X,Position Y,Position Z,Rotation X,Rotation Y,Rotation Z,Focus,Pan,Focus Tilt,Invert Pan,Pan Start Limit,Pan End Limit,Invert Tilt,Tilt Start Limit,Tilt End Limit,Identifier,External Identifier
+Mac250+2 1,"18,1°",326W,Mac250+2 1,,1,,7,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,-5m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Mac250+2 2,"18,1°",326W,Mac250+2 2,,2,,18,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,-3m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Mac250+2 3,"18,1°",326W,Mac250+2 3,,3,,29,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,-1m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Mac250+2 4,"18,1°",326W,Mac250+2 4,,4,,40,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,1m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Mac250+2 5,"18,1°",326W,Mac250+2 5,,5,,51,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,3m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Mac250+2 6,"18,1°",326W,Mac250+2 6,,6,,62,1,1,Default Layer,,,,,,Megjegyzés,"22,4kg",Location,5m,-3m,7m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,35626e53-90a1-400d-afe0-9f3f65a285e9,
+Dim 1,CP63,1000W,Dim 1,,1,,1,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,-5m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,
+Dim 2,CP63,1000W,Dim 2,,2,,2,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,-3m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,
+Dim 3,CP63,1000W,Dim 3,,3,,3,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,-1m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,
+Dim 4,CP63,1000W,Dim 4,,4,,4,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,1m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,
+Dim 5,CP63,1000W,Dim 5,,5,,5,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,3m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,
+Dim 6,CP63,1000W,Dim 6,,6,,6,1,1,Default Layer,,,,,,Megjegyzés,"1,8kg",Location,5m,-10m,7m,45°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,18db2164-cbeb-4212-909a-1d83a3f78fd3,

@@ -1,0 +1,1068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="styles/fixture+layer+layers@html@default.xsl"?>
+<?xml-stylesheet type="text/xsl" href="styles/fixture+layer+layers@csv.xsl" alternate="yes"?>
+<MA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.malighting.de/grandma2/xml/MA" xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.9.60/MA.xsd" major_vers="3" minor_vers="9" stream_vers="60">
+	<Info datetime="2021-09-29T13:12:51" showfile="testshow" />
+	<Layer index="1" name="utcak">
+		<Fixture index="0" name="S4LL QHI 1" fixture_id="7">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>73</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="-4" z="0.3" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="1" name="S4LL QHI 2" fixture_id="8">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>79</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="-4" z="0.95" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="2" name="S4LL QHI 3" fixture_id="9">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>85</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="-4" z="1.6" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="3" name="S4LL QHI 4" fixture_id="10">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>91</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="-4" z="0.3" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="4" name="S4LL QHI 5" fixture_id="11">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>97</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="-4" z="0.9" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="5" name="S4LL QHI 6" fixture_id="12">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>103</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="-4" z="1.5" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="6" name="S4LL QHI 7" fixture_id="13">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>109</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="0" z="0.3" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="7" name="S4LL QHI 8" fixture_id="14">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>115</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="0" z="0.9" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="8" name="S4LL QHI 9" fixture_id="15">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>121</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="0" z="1.5" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="9" name="S4LL QHI 10" fixture_id="16">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>127</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="0" z="0.3" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="10" name="S4LL QHI 11" fixture_id="17">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>133</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="0" z="0.9" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="11" name="S4LL QHI 12" fixture_id="18">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>139</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="0" z="1.5" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="12" name="S4LL QHI 13" fixture_id="19">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>145</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="4" z="0.3" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="13" name="S4LL QHI 14" fixture_id="20">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>151</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="4" z="0.9" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="14" name="S4LL QHI 15" fixture_id="21">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>157</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="4" z="1.5" />
+					<Rotation x="0" y="-89.985" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="15" name="S4LL QHI 16" fixture_id="22">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>163</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="4" z="0.3" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="16" name="S4LL QHI 17" fixture_id="23">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>169</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="4" z="0.9" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="17" name="S4LL QHI 18" fixture_id="24">
+			<FixtureType name="4 Source Four LED Lustr + Quick Setup - High Impact">
+				<No>4</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>175</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="4" z="1.5" />
+					<Rotation x="-0" y="89.985" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+			</SubFixture>
+		</Fixture>
+	</Layer>
+	<Layer index="2" name="robotz">
+		<Fixture index="0" name="ABe15St 1" fixture_id="25">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>181</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-3.9" y="-10" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="1" name="ABe15St 2" fixture_id="26">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>204</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="3.9" y="-10" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="2" name="ABe15St 3" fixture_id="27">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>227</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="0" y="-10" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="3" name="ABe15St 4" fixture_id="28">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>250</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-4" y="-2.963" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="4" name="ABe15St 5" fixture_id="29">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>273</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="0" y="-2.963" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="5" name="ABe15St 6" fixture_id="30">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>296</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="4" y="-2.963" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="6" name="ABe15St 7" fixture_id="31">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>319</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-4.3" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="7" name="ABe15St 8" fixture_id="32">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>342</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-2.58" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="8" name="ABe15St 9" fixture_id="33">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>365</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-0.86" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="9" name="ABe15St 10" fixture_id="34">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>388</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="0.86" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="10" name="ABe15St 11" fixture_id="35">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>411</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="2.58" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="11" name="ABe15St 12" fixture_id="36">
+			<FixtureType name="5 Alpha Beam 1500 Standard - lamp off">
+				<No>5</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>434</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="4.3" y="1.75" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+				<Channel index="9" />
+				<Channel index="10" />
+				<Channel index="11" />
+				<Channel index="12" />
+				<Channel index="13" />
+				<Channel index="14" />
+				<Channel index="15" />
+				<Channel index="16" />
+				<Channel index="17" />
+				<Channel index="18" />
+				<Channel index="19" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="12" name="Mac250+2 1" fixture_id="1">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>7</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="13" name="Mac250+2 2" fixture_id="2">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>18</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-3" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="14" name="Mac250+2 3" fixture_id="3">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>29</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-1" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="15" name="Mac250+2 4" fixture_id="4">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>40</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="1" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="16" name="Mac250+2 5" fixture_id="5">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>51</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="3" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="17" name="Mac250+2 6" fixture_id="6">
+			<FixtureType name="3 Mac 250+ Mode 2">
+				<No>3</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>62</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="-3" z="6" />
+					<Rotation x="0" y="-0" z="0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+				<Channel index="1" />
+				<Channel index="2" />
+				<Channel index="3" />
+				<Channel index="4" />
+				<Channel index="5" />
+				<Channel index="6" />
+				<Channel index="7" />
+				<Channel index="8" />
+			</SubFixture>
+		</Fixture>
+	</Layer>
+	<Layer index="3" name="dim">
+		<Fixture index="0" name="Dim 1" channel_id="1">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>1</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-5" y="-10" z="6" />
+					<Rotation x="45.282" y="-5.663" z="-5.691" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="1" name="Dim 2" channel_id="2">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>2</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-3" y="-10" z="6" />
+					<Rotation x="45" y="0" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="2" name="Dim 3" channel_id="3">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>3</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="-1" y="-10" z="6" />
+					<Rotation x="45" y="0" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="3" name="Dim 4" channel_id="4">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>4</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="1" y="-10" z="6" />
+					<Rotation x="45" y="0" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="4" name="Dim 5" channel_id="5">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>5</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="3" y="-10" z="6" />
+					<Rotation x="45" y="0" z="-0" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+		<Fixture index="5" name="Dim 6" channel_id="6">
+			<FixtureType name="2 Dimmer 00">
+				<No>2</No>
+			</FixtureType>
+			<SubFixture index="0" react_to_grandmaster="true" color="ffffff">
+				<Patch>
+					<Address>6</Address>
+				</Patch>
+				<AbsolutePosition>
+					<Location x="5" y="-10" z="6" />
+					<Rotation x="45.577" y="8.076" z="8.157" />
+					<Scaling x="1" y="1" z="1" />
+				</AbsolutePosition>
+				<Channel index="0" />
+			</SubFixture>
+		</Fixture>
+	</Layer>
+</MA>

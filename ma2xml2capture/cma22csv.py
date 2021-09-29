@@ -1,8 +1,9 @@
+import uuid
 import xml.etree.ElementTree as Et
 import csv
 from lampa import Lampa as La
 
-befile = 'testshow.xml'
+befile = 'teruletisebzes.xml'
 kifile = befile + "_conv.csv"
 # Ezek a mezők vannak a capture csv-ben
 fields = ['Fixture', 'Optics', 'Wattage', 'Unit', 'Circuit', 'Channel',
@@ -30,8 +31,10 @@ print("MA2 programverzió: {},{},{}".format(
 for Layer in myroot.findall("bas:Layer", ns):
     rn = Layer.attrib['name']  # Réteg nevének és indexének kinyerése
     ridx = Layer.attrib['index']
+    uid = uuid.uuid4()
     for Fixture in Layer:  # Lámpákon szaladunk végig.
         egylampa = La(Fixture.attrib['name'])
+        egylampa.Identifier = uid
         fi = Fixture.attrib['index']  # Lámpa index és név
         #  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
         if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
@@ -40,13 +43,13 @@ for Layer in myroot.findall("bas:Layer", ns):
         if egylampa.Patch != '0':  # ha nincs dmx címe a cuccnak akkor az előzőt adjuk a mdmxnek
             mdmx = egylampa.Patch
         fpos = Fixture[1][1][0].attrib  # Fixture/subfixture/absoluteposition/attribjai
-        egylampa.posx = fpos['x']
-        egylampa.posy = fpos['y']
-        egylampa.posz = fpos['z']
+        egylampa.posx = fpos['x']+'m'
+        egylampa.posy = fpos['y']+'m'
+        egylampa.posz = fpos['z']+'m'
         frot = Fixture[1][1][1].attrib
-        egylampa.rotx = frot['x']
-        egylampa.roty = frot['y']
-        egylampa.rotz = frot['z']
+        egylampa.rotx = frot['x']+'°'
+        egylampa.roty = frot['y']+'°'
+        egylampa.rotz = frot['z']+'°'
         if 'fixture_id' in Fixture.attrib:  # Ha robotlámpa akkor ma2 szerint fixture
             egylampa.Channel = Fixture.attrib['fixture_id']
             egylampa.Optics = "18,1°"
@@ -62,7 +65,7 @@ for Layer in myroot.findall("bas:Layer", ns):
         if 'is_multipatch' in Fixture.attrib:  # ha multipatchelt a lámpa
             egylampa.Patch = mdmx
 
-        data.append([egylampa])
+        data.append(egylampa.lamplista())
 
 '''
 for Layer in myroot.findall("bas:Layer", ns):
@@ -103,7 +106,7 @@ for Layer in myroot.findall("bas:Layer", ns):
 with open(kifile, 'w') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     filewriter.writerow(fields)
-    filewriter.writerow(data)
+    filewriter.writerows(data)
 
 csvfile.close()
 print("Az importálható cucc a {} -ban található.".format(kifile))

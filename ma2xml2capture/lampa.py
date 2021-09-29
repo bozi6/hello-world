@@ -7,38 +7,38 @@ class Lampa:
         self.Fixture = name
         self.Optics = '18°'
         self.Wattage = '500w'
-        self.Unit = '1'
-        self.Circuit = '1'
+        self.Unit = name
+        self.Circuit = ''
         self.Channel = '1'
-        self.Groups = '1'
+        self.Groups = ''
         self.Patch = '1'
         self.dmxmode = '1'
         self.dmxchannels = '1'
         self.Layer = 'Default Layer'
-        self.Focus = '1'
-        self.Filters = '1'
-        self.Gobos = '1'
-        self.Accessories = '1'
-        self.Purpose = '1'
+        self.Focus = ''
+        self.Filters = ''
+        self.Gobos = ''
+        self.Accessories = ''
+        self.Purpose = ''
         self.Note = 'Megjegyzés'
         self.Weight = '5.0kg'
-        self.Location = 'hol a lámpa'
+        self.Location = 'Location'
         self.posx = {'x': '0'}
         self.posy = {'y': '0'}
         self.posz = {'z': '0'}
         self.rotx = {'x': '0°'}
         self.roty = {'y': '0°'}
         self.rotz = {'z': '0°'}
-        self.focus = ''
-        self.pan = ''
-        self.focustilt = ''
+        self.focus = '0°'
+        self.pan = '0°'
+        self.focustilt = '0°'
         self.invertpan = 'No'
         self.panstartlimit = '0'
         self.panendlimit = '0'
         self.inverttilt = 'No'
-        self.tiltstartlim = '0'
-        self.tiltendlim = '0'
-        self.Identifier = ''
+        self.tiltstartlim = '0°'
+        self.tiltendlim = '0°'
+        self.Identifier = uuid.uuid4()
         self.extidentifier = ''
 
     def __repr__(self):
@@ -58,12 +58,12 @@ class Lampa:
         print('\tPatch:', self.Patch)
         print('\tDMX mód:', self.dmxmode)
         print('\tDMX csatornák:', self.dmxchannels)
-        print('\tRéteg:', self.layer)
-        print('\tFókusz:', self.focus)
-        print('\tFilter:', self.filters)
-        print('\tGobók:', self.gobos)
-        print('\tAccessories:', self.accessories)
-        print('\tPurpose:', self.purpose)
+        print('\tRéteg:', self.Layer)
+        print('\tFókusz:', self.Focus)
+        print('\tFilter:', self.Filters)
+        print('\tGobók:', self.Gobos)
+        print('\tAccessories:', self.Accessories)
+        print('\tPurpose:', self.Purpose)
         print('\tMegjegyzés:', self.Note)
         print('\tTömeg:', self.Weight)
         print('\tElhelyezkedés:', self.Location)
@@ -82,5 +82,14 @@ class Lampa:
         print('\tInvert Tilt:', self.inverttilt)
         print('\tTilt Start Limit:', self.tiltstartlim)
         print('\tTilt End Limit:', self.tiltendlim)
-        print('\tIdentifier:', self.identifier)
+        print('\tIdentifier:', self.Identifier)
         print('\tExternal Identifer:', self.extidentifier)
+
+    def lamplista(self):
+        lista = (self.Fixture, self.Optics, self.Wattage, self.Unit, self.Circuit, self.Channel, self.Groups,
+                 self.Patch, self.dmxmode, self.dmxchannels, self.Layer, self.Focus, self.Filters, self.Gobos,
+                 self.Accessories, self.Purpose, self.Note, self.Weight, self.Location, self.posx, self.posy,
+                 self.posz, self.rotx, self.roty, self.rotz, self.Focus, self.pan, self.focustilt, self.invertpan,
+                 self.panstartlimit, self.panendlimit, self.inverttilt, self.tiltstartlim, self.tiltendlim,
+                 self.Identifier, self.extidentifier)
+        return lista
