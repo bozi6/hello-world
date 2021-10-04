@@ -5,8 +5,8 @@ class Lampa:
 
     def __init__(self, name):
         self.Fixture = name
-        self.Optics = '18°'
-        self.Wattage = '500w'
+        self.Optics = '0°'
+        self.Wattage = '10W'
         self.Unit = name
         self.Circuit = ''
         self.Channel = '1'
@@ -20,8 +20,8 @@ class Lampa:
         self.Gobos = ''
         self.Accessories = ''
         self.Purpose = ''
-        self.Note = 'Megjegyzés'
-        self.Weight = '5.0kg'
+        self.Note = '-'
+        self.Weight = '0.0kg'
         self.Location = 'Location'
         self.posx = {'x': '0'}
         self.posy = {'y': '0'}

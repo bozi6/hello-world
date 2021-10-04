@@ -1,7 +1,7 @@
 import uuid
 import xml.etree.ElementTree as Et
 import csv
-from lampa import Lampa as La
+from ma2xml2capture.lampak.lampa import Lampa as La
 
 befile = 'teruletisebzes.xml'
 kifile = befile + "_conv.csv"
@@ -34,11 +34,13 @@ for Layer in myroot.findall("bas:Layer", ns):
     uid = uuid.uuid4()
     for Fixture in Layer:  # Lámpákon szaladunk végig.
         egylampa = La(Fixture.attrib['name'])
+        egylampa.Layer = rn
         egylampa.Identifier = uid
         fi = Fixture.attrib['index']  # Lámpa index és név
         #  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
-        if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
+        '''if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
             egylampa.Fixture = 'Martin MAC 250 Entour'  # jól kicseréljük a capture student verzióval
+        '''
         egylampa.Patch = Fixture[1][0][0].text  # Fixture/subfixture/patch szövege
         if egylampa.Patch != '0':  # ha nincs dmx címe a cuccnak akkor az előzőt adjuk a mdmxnek
             mdmx = egylampa.Patch
@@ -52,16 +54,25 @@ for Layer in myroot.findall("bas:Layer", ns):
         egylampa.rotz = frot['z']+'°'
         if 'fixture_id' in Fixture.attrib:  # Ha robotlámpa akkor ma2 szerint fixture
             egylampa.Channel = Fixture.attrib['fixture_id']
+            '''
             egylampa.Optics = "18,1°"
             egylampa.Wattage = '326W'
             egylampa.Weight = "22,4kg"
+            '''
         if 'channel_id' in Fixture.attrib:  # ha dimmer akkor channel ma2 szerint
             egylampa.Channel = Fixture.attrib['channel_id']
-            # A dimmerekből sima par64-et csinálunk !
+            if Fixture.attrib['name'][:3] == "Dim":
+                import lampak.par64
+                parcan = lampak.par64.Par_64()
+                egylampa.Fixture = parcan.Fixture
+                egylampa.Optics = parcan.Optics
+                egylampa.Weight = parcan.Weight
+                egylampa.Wattage = parcan.Wattage
+            '''# A dimmerekből sima par64-et csinálunk !
             egylampa.Name = 'Generic Par 64'
             egylampa.Optics = 'CP63'
             egylampa.Wattage = '1000W'
-            egylampa.Weight = "1,8kg"
+            egylampa.Weight = "1,8kg"'''
         if 'is_multipatch' in Fixture.attrib:  # ha multipatchelt a lámpa
             egylampa.Patch = mdmx
 
@@ -103,7 +114,7 @@ for Layer in myroot.findall("bas:Layer", ns):
              frot['z'] + '°', '0°', '0°', 'No', '0°', '0°', 'No', '0°', '0°', 'No', '', extuid])
 '''
 
-with open(kifile, 'w') as csvfile:
+with open(kifile, 'w', newline='') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     filewriter.writerow(fields)
     filewriter.writerows(data)
