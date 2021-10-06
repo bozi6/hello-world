@@ -5,9 +5,9 @@ from mako.template import Template
 myTemplate = Template(filename='template.html', strict_undefined=True)
 
 # The installed gobos picture folder
-src_dir = "C:/ProgramData/MA Lighting Technologies/grandma/gma2_V_3.9/gobos"
+src_dir = "C:/ProgramData/MA Lighting Technologies/grandma/gma2_V_3.9.60/gobos/"
 # The generated filename. Default into gobo folder
-genfile = open(src_dir + "./generated.html", "w")
+genfile = open(src_dir + "./generated.html", "w", encoding='utf8')
 
 i = 1
 egysor = {1: {'sorszam': 0, 'filename': 'lófasz'}, }
