@@ -1,13 +1,10 @@
-import uuid
-
-
 class Lampa:
 
     def __init__(self, name):
         self.Fixture = name
         self.Optics = '0°'
         self.Wattage = '10W'
-        self.Unit = name
+        self.Unit = ''
         self.Circuit = ''
         self.Channel = '1'
         self.Groups = ''
@@ -23,12 +20,12 @@ class Lampa:
         self.Note = '-'
         self.Weight = '0.0kg'
         self.Location = 'Location'
-        self.posx = {'x': '0'}
-        self.posy = {'y': '0'}
-        self.posz = {'z': '0'}
-        self.rotx = {'x': '0°'}
-        self.roty = {'y': '0°'}
-        self.rotz = {'z': '0°'}
+        self.posx = 0
+        self.posy = 0
+        self.posz = 0
+        self.rotx = 0
+        self.roty = 0
+        self.rotz = 0
         self.focus = '0°'
         self.pan = '0°'
         self.focustilt = '0°'
@@ -38,8 +35,9 @@ class Lampa:
         self.inverttilt = 'No'
         self.tiltstartlim = '0°'
         self.tiltendlim = '0°'
-        self.Identifier = uuid.uuid4()
+        self.Identifier = ''
         self.extidentifier = ''
+        self.vanilyenLampa(name)
 
     def __repr__(self):
         return '<Lamp object. Name: {}>'.format(self.Fixture)
@@ -93,3 +91,21 @@ class Lampa:
                  self.panstartlimit, self.panendlimit, self.inverttilt, self.tiltstartlim, self.tiltendlim,
                  self.Identifier, self.extidentifier)
         return lista
+
+    def vanilyenLampa(self, nev):
+        from lol.database import database
+        db = database.Database("./lampak/lampakdb", ["fixture", "optics", "wattage", "unit", 'weight'])
+        db.set_track_modification(False)
+        oid = db.filter(
+            {
+                "fixture": nev
+            }
+        )
+        if oid:
+            cucc = db.get(oid[0])
+            self.Fixture = cucc['fixture']
+            self.Optics = cucc['optics']
+            self.Wattage = cucc['wattage']
+            self.Unit = cucc['unit']
+            self.Weight = cucc['weight']
+        return True

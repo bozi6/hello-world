@@ -5,7 +5,6 @@
     xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.9.60/MA.xsd"
     major_vers="3" minor_vers="9" stream_vers="60">
     <Info datetime="2021-09-17T22:43:14" showfile="newshow"/>
-    <Layers index="3">
         <Layer index="1" name="robotz">
             <Fixture index="0" name="Mac700PB 1" fixture_id="1">
                 <FixtureType name="3 Mac 700 Profile Basic">
@@ -915,5 +914,4 @@
                 </SubFixture>
             </Fixture>
         </Layer>
-    </Layers>
 </MA>

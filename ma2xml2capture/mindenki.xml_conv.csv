@@ -1,39 +1,39 @@
-Fixture,Optics,Wattage,Unit,Circuit,Channel,Groups,Patch,DMX Mode,DMX Channles,Layer,Focus,Filters,Gobos,Accessories,Purpose,Note,Weight,Location,Position X,Position Y,Position Z,Rotation X,Rotation Y,Rotation Z,Focus,Pan,Focus Tilt,Invert Pan,Pan Start Limit,Pan End Limit,Invert Tilt,Tilt Start Limit,Tilt End Limit,Identifier,External Identifier
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,1,1,13,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-5m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,2,1,36,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-3.571m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,3,1,59,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-2.143m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,4,1,82,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-0.714m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,5,1,105,,,robotz Layer,,,,,,comment,"22,4kg",robotz,0.714m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,6,1,128,,,robotz Layer,,,,,,comment,"22,4kg",robotz,2.143m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,7,1,151,,,robotz Layer,,,,,,comment,"22,4kg",robotz,3.571m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,8,1,174,,,robotz Layer,,,,,,comment,"22,4kg",robotz,5m,-5m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,9,1,197,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-5m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,10,1,220,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-3.571m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,11,1,243,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-2.143m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,12,1,266,,,robotz Layer,,,,,,comment,"22,4kg",robotz,-0.714m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,13,1,289,,,robotz Layer,,,,,,comment,"22,4kg",robotz,0.714m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,14,1,312,,,robotz Layer,,,,,,comment,"22,4kg",robotz,2.143m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,15,1,335,,,robotz Layer,,,,,,comment,"22,4kg",robotz,3.571m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Martin MAC 250 Entour,"18,1°",326W,Martin MAC 250 Entour,,16,1,358,,,robotz Layer,,,,,,comment,"22,4kg",robotz,5m,0m,6m,0°,-0°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,6eabaff2-f63b-4e7c-8827-7225091adcd2
-Generic Par 64,CP63,1000W,Generic Par 64,,1,2,1,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-5m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,2,2,2,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-4.091m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,3,2,3,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-3.182m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,4,2,4,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-2.273m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,5,2,5,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-1.364m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,6,2,6,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,-0.455m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,7,2,7,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,0.455m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,8,2,8,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,1.364m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,9,2,9,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,2.273m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,10,2,10,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,3.182m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,11,2,11,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,4.091m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,12,2,12,,,dimmerz Layer,,,,,,comment,"1,8kg",dimmerz,5m,-10m,6m,45°,0°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,ad80cace-9d15-4f7d-b3ad-d33039aa6c78
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,-5m,-19.952m,6.012m,0°,-43.545°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,-5m,-17.952m,6.012m,0°,-43.545°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,-5m,-15.952m,6.012m,0°,-43.545°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,-5m,-13.952m,6.012m,0°,-43.545°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,-5m,-11.952m,6.012m,0°,-43.545°,0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,5m,-19.922m,6.012m,-0°,42.399°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,5m,-17.922m,6.012m,-0°,42.399°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,5m,-15.922m,6.012m,-0°,42.399°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,5m,-13.922m,6.012m,-0°,42.399°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
-Generic Par 64,CP63,1000W,Generic Par 64,,13,3,381,,,nt Layer,,,,,,comment,"1,8kg",nt,5m,-11.922m,6.012m,-0°,42.399°,-0°,0°,0°,No,0°,0°,No,0°,0°,No,,47ff2e62-47fe-44f0-a7c8-a3f866d50b3d
+Fixture,Optics,Wattage,Unit,Circuit,Channel,Groups,Patch,DMX Mode,DMX Channles,Layer,Focus,Filters,Gobos,Accessories,Purpose,Note,Weight,Location,Position X,Position Y,Position Z,Rotation X,Rotation Y,Rotation Z,Focus,Pan,Focus Tilt,Invert Pan,Pan Start Limit,Pan End Limit,Invert Tilt,Tilt Start Limit,Tilt End Limit,Identifier,External Identifier
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 1,,1,,13,1,1,robotz,,,,,,-,0.0kg,Location,-5m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 2,,2,,36,1,1,robotz,,,,,,-,0.0kg,Location,-3.571m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 3,,3,,59,1,1,robotz,,,,,,-,0.0kg,Location,-2.143m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 4,,4,,82,1,1,robotz,,,,,,-,0.0kg,Location,-0.714m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 5,,5,,105,1,1,robotz,,,,,,-,0.0kg,Location,0.714m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 6,,6,,128,1,1,robotz,,,,,,-,0.0kg,Location,2.143m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 7,,7,,151,1,1,robotz,,,,,,-,0.0kg,Location,3.571m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 8,,8,,174,1,1,robotz,,,,,,-,0.0kg,Location,5m,-5m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 9,,9,,197,1,1,robotz,,,,,,-,0.0kg,Location,-5m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 10,,10,,220,1,1,robotz,,,,,,-,0.0kg,Location,-3.571m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 11,,11,,243,1,1,robotz,,,,,,-,0.0kg,Location,-2.143m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 12,,12,,266,1,1,robotz,,,,,,-,0.0kg,Location,-0.714m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 13,,13,,289,1,1,robotz,,,,,,-,0.0kg,Location,0.714m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 14,,14,,312,1,1,robotz,,,,,,-,0.0kg,Location,2.143m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 15,,15,,335,1,1,robotz,,,,,,-,0.0kg,Location,3.571m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+3 Mac 700 Profile Basic,0Â°,10W,Mac700PB 16,,16,,358,1,1,robotz,,,,,,-,0.0kg,Location,5m,0m,6m,0Â°,-0Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,74ca93ce-b93a-4869-b85e-4ca680802243
+2 Dimmer 00,CP60,1000W,Dim 1,,1,,1,1,1,dimmerz,,,,,,-,1.8kg,Location,-5m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 2,,2,,2,1,1,dimmerz,,,,,,-,1.8kg,Location,-4.091m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 3,,3,,3,1,1,dimmerz,,,,,,-,1.8kg,Location,-3.182m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 4,,4,,4,1,1,dimmerz,,,,,,-,1.8kg,Location,-2.273m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 5,,5,,5,1,1,dimmerz,,,,,,-,1.8kg,Location,-1.364m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 6,,6,,6,1,1,dimmerz,,,,,,-,1.8kg,Location,-0.455m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 7,,7,,7,1,1,dimmerz,,,,,,-,1.8kg,Location,0.455m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 8,,8,,8,1,1,dimmerz,,,,,,-,1.8kg,Location,1.364m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 9,,9,,9,1,1,dimmerz,,,,,,-,1.8kg,Location,2.273m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 10,,10,,10,1,1,dimmerz,,,,,,-,1.8kg,Location,3.182m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 11,,11,,11,1,1,dimmerz,,,,,,-,1.8kg,Location,4.091m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 12,,12,,12,1,1,dimmerz,,,,,,-,1.8kg,Location,5m,-10m,6m,45Â°,0Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,1be8cc71-e102-4e57-a8bd-2698542a0916
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,-5m,-19.952m,6.012m,0Â°,-43.545Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,-5m,-17.952m,6.012m,0Â°,-43.545Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,-5m,-15.952m,6.012m,0Â°,-43.545Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,-5m,-13.952m,6.012m,0Â°,-43.545Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,-5m,-11.952m,6.012m,0Â°,-43.545Â°,0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,5m,-19.922m,6.012m,-0Â°,42.399Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,5m,-17.922m,6.012m,-0Â°,42.399Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,5m,-15.922m,6.012m,-0Â°,42.399Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,5m,-13.922m,6.012m,-0Â°,42.399Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08
+2 Dimmer 00,CP60,1000W,Dim 1,,13,,381,1,1,nt,,,,,,-,1.8kg,Location,5m,-11.922m,6.012m,-0Â°,42.399Â°,-0Â°,,0Â°,0Â°,No,0,0,No,0Â°,0Â°,,61f2a8e3-3075-418e-82bd-cbb79cf4af08

@@ -1,9 +1,9 @@
 import uuid
 import xml.etree.ElementTree as Et
 import csv
-from ma2xml2capture.lampak.lampa import Lampa as La
+import lampak
 
-befile = 'teruletisebzes.xml'
+befile = 'ntsz_old.xml'
 kifile = befile + "_conv.csv"
 # Ezek a mezők vannak a capture csv-ben
 fields = ['Fixture', 'Optics', 'Wattage', 'Unit', 'Circuit', 'Channel',
@@ -33,9 +33,10 @@ for Layer in myroot.findall("bas:Layer", ns):
     ridx = Layer.attrib['index']
     uid = uuid.uuid4()
     for Fixture in Layer:  # Lámpákon szaladunk végig.
-        egylampa = La(Fixture.attrib['name'])
+        egylampa = lampak.Lampa(Fixture[0].attrib['name'])
+        egylampa.Unit = Fixture.attrib['name']
         egylampa.Layer = rn
-        egylampa.Identifier = uid
+        egylampa.extidentifier = uid
         fi = Fixture.attrib['index']  # Lámpa index és név
         #  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
         '''if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
@@ -54,65 +55,13 @@ for Layer in myroot.findall("bas:Layer", ns):
         egylampa.rotz = frot['z']+'°'
         if 'fixture_id' in Fixture.attrib:  # Ha robotlámpa akkor ma2 szerint fixture
             egylampa.Channel = Fixture.attrib['fixture_id']
-            '''
-            egylampa.Optics = "18,1°"
-            egylampa.Wattage = '326W'
-            egylampa.Weight = "22,4kg"
-            '''
         if 'channel_id' in Fixture.attrib:  # ha dimmer akkor channel ma2 szerint
             egylampa.Channel = Fixture.attrib['channel_id']
-            if Fixture.attrib['name'][:3] == "Dim":
-                import lampak.par64
-                parcan = lampak.par64.Par_64()
-                egylampa.Fixture = parcan.Fixture
-                egylampa.Optics = parcan.Optics
-                egylampa.Weight = parcan.Weight
-                egylampa.Wattage = parcan.Wattage
-            '''# A dimmerekből sima par64-et csinálunk !
-            egylampa.Name = 'Generic Par 64'
-            egylampa.Optics = 'CP63'
-            egylampa.Wattage = '1000W'
-            egylampa.Weight = "1,8kg"'''
         if 'is_multipatch' in Fixture.attrib:  # ha multipatchelt a lámpa
             egylampa.Patch = mdmx
 
         data.append(egylampa.lamplista())
 
-'''
-for Layer in myroot.findall("bas:Layer", ns):
-    extuid = uuid.uuid4()  # Kamu uuid generálása
-    rn = Layer.attrib['name']  # Réteg nevének és indexének kinyerése
-    ridx = Layer.attrib['index']
-    for Fixture in Layer:
-        fi = Fixture.attrib['index']  # Lámpa index és név
-        fn = Fixture.attrib['name']
-        #  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
-        if fn[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
-            fn = 'Martin MAC 250 Entour'  # jól kicseréljük a capture student verzióval
-        fdmx = Fixture[1][0][0].text  # Fixture/subfixture/patch szövege
-        if fdmx != '0':  # ha nincs dmx címe a cuccnak akkor az előzőt adjuk a mdmxnek
-            mdmx = fdmx
-        fpos = Fixture[1][1][0].attrib  # Fixture/subfixture/absoluteposition/attribjai
-        frot = Fixture[1][1][1].attrib
-        if 'fixture_id' in Fixture.attrib:  # Ha robotlámpa akkor ma2 szerint fixture
-            fixt_id = Fixture.attrib['fixture_id']
-            op = "18,1°"
-            wa = '326W'
-            wg = "22,4kg"
-        if 'channel_id' in Fixture.attrib:  # ha dimmer akkor channel ma2 szerint
-            fixt_id = Fixture.attrib['channel_id']
-            # A dimmerekből sima par64-et csinálunk !
-            fn = 'Generic Par 64'
-            op = 'CP63'
-            wa = '1000W'
-            wg = "1,8kg"
-        if 'is_multipatch' in Fixture.attrib:  # ha multipatchelt a lámpa
-            fdmx = mdmx
-        data.append(
-            [fn, op, wa, fn, '', fixt_id, ridx, fdmx, '', '', rn + " Layer", '', '', '', '', '', 'comment', wg, rn,
-             fpos['x'] + 'm', fpos['y'] + 'm', fpos['z'] + 'm', frot['x'] + '°', frot['y'] + '°',
-             frot['z'] + '°', '0°', '0°', 'No', '0°', '0°', 'No', '0°', '0°', 'No', '', extuid])
-'''
 
 with open(kifile, 'w', newline='') as csvfile:
     filewriter = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
