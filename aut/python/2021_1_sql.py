@@ -15,7 +15,7 @@ sql = ''
 honapok = ['JANUÁR', 'FEBRUÁR', 'MÁRCIUS', 'ÁPRILIS', 'MÁJUS',
            'JÚNIUS', 'JÚLIUS', 'AUGUSZTUS', 'SZEPTEMBER', 'OKTÓBER',
            'NOVEMBER', 'DECEMBER']
-f = open(kim, 'w')
+f = open(kim, 'w', encoding='utf8')
 f.write('# Honvédelmi adatok 2021-re az autentikusból\n')
 f.write('# Készítette: Konta Boáz (kontab6@gmail.com).\n')
 f.write('USE honved2;\n')
@@ -42,8 +42,9 @@ for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
     '''
     print("Munkalap neve: ", sh.title)
     for c1, c2, c3, c4, c5, c6, c7, c8, c9 in cells:
-        if c1.value is not None and c2.value is not None:  # dátum tánckar kitöltve
+        if c1.value and c2.value:  # dátum tánckar kitöltve
             if isinstance(c1.value, datetime.date):
+                print('Ejsze, egyszer aztán igen léfutottam he.')
                 d = c1.value.strftime('%Y-%m-%d')  # d = datum
             elif c1.value not in honapok:
                 d = c1.value[0:6].replace(' ', '')
