@@ -1,4 +1,4 @@
-!#/usr/bin/env python3
+#!/usr/bin/env python3
 import re
 import datetime
 import openpyxl
@@ -9,7 +9,7 @@ logging.disable(logging.DEBUG) # Akkor kell ha már nem akarunk Debuggolni. :-)
 logging.info('Program elkezdődött.')
 
 bem = "../xlsxs/2018. Autentikus.xlsx"
-kim = "2018_Autentikus.sql"
+kim = "../sql/2018_Autentikus.sql"
 
 f = open(kim, 'w')
 f.write('# Honvédelmi adatok 2018-ra az autentikusból\n')

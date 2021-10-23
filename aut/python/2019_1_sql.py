@@ -9,7 +9,7 @@ logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 logging.info('Program elkezdődött.')
 
 bem = "../xlsxs/2019. Autentikus.xlsx"
-kim = "2019_Autentikus.sql"
+kim = "../sql/2019_Autentikus.sql"
 
 f = open(kim, 'w')
 f.write('# Honvédelmi adatok 2019-ra az autentikusból\n')

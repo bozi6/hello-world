@@ -3,8 +3,11 @@ import xml.etree.ElementTree as Et
 import csv
 import lampak
 
-befile = 'ntsz_old.xml'
-kifile = befile + "_conv.csv"
+bedir = './xmlz/'
+kidir = './csvk/'
+bef = 'ntsz_old.xml'
+befile = bedir + bef
+kifile = kidir + bef + "_conv.csv"
 # Ezek a mezők vannak a capture csv-ben
 fields = ['Fixture', 'Optics', 'Wattage', 'Unit', 'Circuit', 'Channel',
           'Groups', 'Patch', 'DMX Mode', 'DMX Channles', 'Layer', 'Focus',
@@ -38,17 +41,17 @@ for Layer in myroot.findall("bas:Layer", ns):
         egylampa.Layer = rn
         egylampa.extidentifier = uid
         fi = Fixture.attrib['index']  # Lámpa index és név
-        #  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
-        '''if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
+        ''''#  Itt csak átalakítjuk a mostani fileban a macet gagyibbra lustaságból!
+        if egylampa.Fixture[:8] == 'Mac700PB':  # levágjuk a sorszámot a lámpanévből
             egylampa.Fixture = 'Martin MAC 250 Entour'  # jól kicseréljük a capture student verzióval
         '''
         egylampa.Patch = Fixture[1][0][0].text  # Fixture/subfixture/patch szövege
         if egylampa.Patch != '0':  # ha nincs dmx címe a cuccnak akkor az előzőt adjuk a mdmxnek
             mdmx = egylampa.Patch
         fpos = Fixture[1][1][0].attrib  # Fixture/subfixture/absoluteposition/attribjai
-        egylampa.posx = fpos['x']+'m'
-        egylampa.posy = fpos['y']+'m'
-        egylampa.posz = fpos['z']+'m'
+        egylampa.posx = fpos['x'] + 'm'
+        egylampa.posy = fpos['y'] + 'm'
+        egylampa.posz = fpos['z'] + 'm'
         frot = Fixture[1][1][1].attrib
         egylampa.rotx = frot['x']+'°'
         egylampa.roty = frot['y']+'°'

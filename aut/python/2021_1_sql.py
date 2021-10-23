@@ -2,7 +2,11 @@
 import re
 import datetime
 import openpyxl
+import sqlescapy
 import logging
+import time
+
+kezd = time.time()
 
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s  - %(message)s')
 logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
@@ -71,7 +75,8 @@ for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
                 idopont = re.match('[0-9][0-9].?[0-9][0-9]', c2db[0])
                 try:
                     c2db[1] = c2db[1].strip()
-                    musor = re.escape(c2db[1])
+                    musor = sqlescapy.sqlescape(c2db[1])
+                    # musor = re.escape(c2db[1])
                 except IndexError:
                     musor = 'Nincs megadva műsor.'
                     logging.debug('IndexError - Nincs megadva műsor.')
@@ -120,3 +125,5 @@ for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
     print('{} sor feldolgozva.'.format(i))
 f.close()
 print('Fájl kiírása befejezve.')
+veg = time.time() - kezd
+print('{:.5f}. sec alatt lefutott'.format(veg))

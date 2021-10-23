@@ -1,0 +1,367 @@
+Fixture,Optics,Wattage,Unit,Circuit,Channel,Groups,Patch,DMX Mode,DMX Channles,Layer,Focus,Filters,Gobos,Accessories,Purpose,Note,Weight,Location,Position X,Position Y,Position Z,Rotation X,Rotation Y,Rotation Z,Focus,Pan,Focus Tilt,Invert Pan,Pan Start Limit,Pan End Limit,Invert Tilt,Tilt Start Limit,Tilt End Limit,Identifier,External Identifier
+2 Dimmer 00,CP60,1000W,10' ETC 1,,1,,1,1,1,Fénypáholy,,,,,,-,1.8kg,Location,-0.9m,-21.742m,9.762m,72.193°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,10' ETC 2,,2,,2,1,1,Fénypáholy,,,,,,-,1.8kg,Location,-0.337m,-21.742m,9.762m,72.193°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,10' ETC 3,,3,,3,1,1,Fénypáholy,,,,,,-,1.8kg,Location,0.254m,-21.742m,9.762m,72.193°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,10' ETC 4,,4,,4,1,1,Fénypáholy,,,,,,-,1.8kg,Location,0.821m,-21.742m,9.762m,72.193°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 79,,79,,121,1,1,Fénypáholy,,,,,,-,1.8kg,Location,-0.55m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 80,,80,,126,1,1,Fénypáholy,,,,,,-,1.8kg,Location,0.55m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 81,,81,,123,1,1,Fénypáholy,,,,,,-,1.8kg,Location,-1.14m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 82,,82,,124,1,1,Fénypáholy,,,,,,-,1.8kg,Location,1.101m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 83,,83,,125,1,1,Fénypáholy,,,,,,-,1.8kg,Location,-1.651m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,Pani 84,,84,,122,1,1,Fénypáholy,,,,,,-,1.8kg,Location,1.651m,-22.856m,11.935m,66.463°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,4ab60794-085d-4f7c-a116-297c3a81b37b
+2 Dimmer 00,CP60,1000W,19' ETC 5,,5,,5,1,1,Páholy,,,,,,-,1.8kg,Location,-6.643m,-11.911m,7.516m,42.399°,-51.566°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,19' ETC 6,,6,,6,1,1,Páholy,,,,,,-,1.8kg,Location,6.683m,-11.99m,7.516m,37.815°,52.712°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,26' ETC 7,,7,,7,1,1,Páholy,,,,,,-,1.8kg,Location,-6.683m,-9.985m,7.516m,40.107°,-49.274°,-0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,26' ETC 8,,8,,8,1,1,Páholy,,,,,,-,1.8kg,Location,6.683m,-10.063m,7.516m,41.253°,44.691°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,26' ETC 13,,13,,13,1,1,Páholy,,,,,,-,1.8kg,Location,-6.722m,-8.609m,7.516m,32.086°,-44.691°,-0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,26' ETC 14,,14,,14,1,1,Páholy,,,,,,-,1.8kg,Location,6.683m,-8.648m,7.516m,35.107°,45.843°,-5.17°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,Zoom ETC 17,,17,,17,1,1,Páholy,,,,,,-,1.8kg,Location,-6.683m,-6.132m,7.516m,34.8°,-46.106°,-9.461°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,Zoom ETC 18,,18,,18,1,1,Páholy,,,,,,-,1.8kg,Location,6.643m,-6.093m,7.516m,32.086°,50.42°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,Robert J. 19,,19,,19,1,1,Páholy,,,,,,-,1.8kg,Location,-6.683m,-7.272m,7.516m,25.21°,-50.42°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,Robert J. 20,,20,,20,1,1,Páholy,,,,,,-,1.8kg,Location,6.643m,-7.194m,7.516m,27.502°,52.712°,0°,,0°,0°,No,0,0,No,0°,0°,,d14ae246-b480-4184-be93-b01fd7a25bd4
+2 Dimmer 00,CP60,1000W,Tspot 43,,43,,43,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.578m,-3.98m,4.08m,0°,-63.025°,0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Tspot 44,,44,,44,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.578m,-3.98m,4.08m,-0°,63.025°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Tspot 45,,45,,45,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.578m,-3.98m,5.035m,10.313°,-60.734°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Tspot 46,,46,,46,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.578m,-3.98m,5.035m,10.313°,64.171°,0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Tspot 47,,47,,47,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.607m,-3.98m,5.871m,24.445°,-62.225°,3.407°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Tspot 48,,48,,48,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.578m,-3.98m,5.811m,22.918°,61.879°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,90' Pacific 49,,49,,49,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.578m,-3.98m,8.019m,0°,-55.004°,0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,90' Pacific 50,,50,,50,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.549m,-3.98m,8.019m,-0°,58.442°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,50' ETC 75,,75,,75,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.578m,-3.98m,6.587m,0°,-60.734°,0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,50' ETC 76,,76,,76,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.549m,-3.98m,6.527m,-0°,60.734°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,50' ETC 77,,77,,77,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,-6.578m,-3.98m,7.303m,0°,-61.879°,0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,50' ETC 78,,78,,78,1,1,Elsőőö torony,,,,,,-,1.8kg,Location,6.549m,-3.98m,7.243m,-0°,64.171°,-0°,,0°,0°,No,0,0,No,0°,0°,,b00f5dd8-33e8-41d9-914c-e4bcaad28fdb
+2 Dimmer 00,CP60,1000W,Ch 21,,21,,21,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,-6.607m,-1.85m,8.176m,0°,-49.274°,0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Ch 22,,22,,22,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,6.549m,-1.85m,8.176m,-0°,45.837°,-0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Junior ETC 51,,51,,51,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,-6.578m,3.939m,8.176m,0°,-42.399°,0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Junior ETC 52,,52,,52,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,6.549m,3.939m,8.176m,-0°,42.399°,-0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Ch 85,,85,,85,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,-6.607m,-1.074m,8.176m,0°,-42.399°,0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Ch 86,,86,,86,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,6.549m,-1.074m,8.176m,-0°,38.961°,-0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Ch 87,,87,,87,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,-6.578m,1.014m,8.176m,0°,-36.669°,0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Ch 88,,88,,88,1,1,Hátsó páholy,,,,,,-,1.8kg,Location,6.549m,1.014m,8.176m,-0°,34.377°,-0°,,0°,0°,No,0,0,No,0°,0°,,c9c830ce-32d5-46f4-8f4a-6a3016a5ae70
+2 Dimmer 00,CP60,1000W,Tspot 67,,67,,67,1,1,Hátsó torony,,,,,,-,1.8kg,Location,-5.004m,4.753m,3.97m,0°,-60°,0°,,0°,0°,No,0,0,No,0°,0°,,6d33e875-8dea-42d9-beb3-c33583bd72e1
+2 Dimmer 00,CP60,1000W,Tspot 68,,68,,68,1,1,Hátsó torony,,,,,,-,1.8kg,Location,4.989m,4.753m,3.961m,-0°,60°,-0°,,0°,0°,No,0,0,No,0°,0°,,6d33e875-8dea-42d9-beb3-c33583bd72e1
+2 Dimmer 00,CP60,1000W,Tspot 69,,69,,69,1,1,Hátsó torony,,,,,,-,1.8kg,Location,-4.989m,4.753m,5.953m,0°,-50°,0°,,0°,0°,No,0,0,No,0°,0°,,6d33e875-8dea-42d9-beb3-c33583bd72e1
+2 Dimmer 00,CP60,1000W,Tspot 70,,70,,70,1,1,Hátsó torony,,,,,,-,1.8kg,Location,4.97m,4.753m,5.946m,-0°,50°,-0°,,0°,0°,No,0,0,No,0°,0°,,6d33e875-8dea-42d9-beb3-c33583bd72e1
+2 Dimmer 00,CP60,1000W,90'Pacific 53,,53,,53,1,1,Gégen karzat,,,,,,-,1.8kg,Location,-2.713m,7.074m,6.988m,0°,-33°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,90'Pacific 54,,54,,54,1,1,Gégen karzat,,,,,,-,1.8kg,Location,2.49m,7.074m,6.988m,-0°,33°,-0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,50' ETC 55,,55,,55,1,1,Gégen karzat,,,,,,-,1.8kg,Location,-2.663m,9.47m,6.988m,0°,-33°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,50' ETC 56,,56,,56,1,1,Gégen karzat,,,,,,-,1.8kg,Location,2.457m,9.47m,6.988m,-0°,33°,-0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pani 59,,59,,117,1,1,Gégen karzat,,,,,,-,1.8kg,Location,-1.641m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pani 60,,60,,60,1,1,Gégen karzat,,,,,,-,1.8kg,Location,1.639m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pani 61,,61,,119,1,1,Gégen karzat,,,,,,-,1.8kg,Location,-1.093m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pani 62,,62,,120,1,1,Gégen karzat,,,,,,-,1.8kg,Location,1.126m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pacific 89,,89,,89,1,1,Gégen karzat,,,,,,-,1.8kg,Location,0.477m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+2 Dimmer 00,CP60,1000W,Pacific 90,,90,,90,1,1,Gégen karzat,,,,,,-,1.8kg,Location,-0.48m,10.999m,6.988m,-50°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ce5d3313-459a-4f10-a0d5-ec473ff006b3
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 91,,91,,91,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,-4.007m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 92,,92,,92,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,-2.757m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 93,,93,,93,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,-1.362m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+2 Dimmer 00,CP60,1000W,Ch 94,,94,,94,1,1,Gégen színváltók,,,,,,-,1.8kg,Location,-0.825m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 95,,95,,95,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,-0.394m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+2 Dimmer 00,CP60,1000W,Ch 96,,96,,96,1,1,Gégen színváltók,,,,,,-,1.8kg,Location,1.077m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 97,,97,,97,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,1.542m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 98,,98,,98,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,2.866m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 99,,99,,99,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,3.919m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 58,,58,,58,1,1,Gégen színváltók,,,,,,-,2.5kg,Location,0.612m,5.958m,6.959m,-45.837°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9fc23b16-bf8a-45e2-b933-cfd163dc654f
+2 Dimmer 00,CP60,1000W,Ch 35,,35,,35,1,1,Pót utcák,,,,,,-,1.8kg,Location,-5.471m,-3.499m,0.211m,0°,-88.235°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Ch 36,,36,,36,1,1,Pót utcák,,,,,,-,1.8kg,Location,0.1m,-4.538m,0.251m,94°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Ch 39,,39,,39,1,1,Pót utcák,,,,,,-,1.8kg,Location,-4.678m,-4.599m,0.199m,40.107°,-90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Ch 40,,40,,40,1,1,Pót utcák,,,,,,-,1.8kg,Location,4.489m,-4.639m,0.2m,40.107°,90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Tspot 63,,63,,63,1,1,Pót utcák,,,,,,-,1.8kg,Location,-5.497m,1.061m,0.22m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Tspot 64,,64,,64,1,1,Pót utcák,,,,,,-,1.8kg,Location,5.51m,1.101m,0.195m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Tspot 65,,65,,65,1,1,Pót utcák,,,,,,-,1.8kg,Location,-5.506m,-4.11m,0.396m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Tspot 66,,66,,66,1,1,Pót utcák,,,,,,-,1.8kg,Location,5.501m,-4.11m,0.396m,-0°,89.381°,-0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Csapda bal 71,,71,,71,1,1,Pót utcák,,,,,,-,1.8kg,Location,-1.787m,9.362m,0.214m,-87.09°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Csapda Jobb 72,,72,,72,1,1,Pót utcák,,,,,,-,1.8kg,Location,-0.128m,9.362m,0.214m,-87.09°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Csapda bal 73,,73,,73,1,1,Pót utcák,,,,,,-,1.8kg,Location,-2.349m,9.362m,0.214m,-87.09°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,csapda jobb 74,,74,,74,1,1,Pót utcák,,,,,,-,1.8kg,Location,2.557m,9.362m,0.214m,-87.09°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,9dcbcd2c-9c90-445a-9007-14435cbdd3c1
+2 Dimmer 00,CP60,1000W,Padlas 118,,118,,59,1,1,Padlás,,,,,,-,1.8kg,Location,-1.488m,2.389m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 119,,119,,61,1,1,Padlás,,,,,,-,1.8kg,Location,-2.401m,2.389m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 120,,120,,62,1,1,Padlás,,,,,,-,1.8kg,Location,1.312m,2.375m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 121,,121,,79,1,1,Padlás,,,,,,-,1.8kg,Location,-1.515m,-2.673m,8.815m,15°,-10°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 122,,122,,84,1,1,Padlás,,,,,,-,1.8kg,Location,1.492m,-2.673m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 123,,123,,81,1,1,Padlás,,,,,,-,1.8kg,Location,-0.892m,-2.673m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 124,,124,,82,1,1,Padlás,,,,,,-,1.8kg,Location,0.835m,-2.673m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 125,,125,,83,1,1,Padlás,,,,,,-,1.8kg,Location,-0.364m,-2.673m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 126,,126,,80,1,1,Padlás,,,,,,-,1.8kg,Location,0.266m,-2.673m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+2 Dimmer 00,CP60,1000W,Padlas 57,,57,,118,1,1,Padlás,,,,,,-,1.8kg,Location,2.119m,2.375m,8.815m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,73af0e80-8c11-42ec-ad18-6e32d61b91bb
+3 Scroller Dimmer 00,50°,12.5W,Bal 3 also,,100,,100,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.471m,1.988m,0.196m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 3 kozep,,101,,101,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.478m,1.988m,1.001m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 3 Folso,,102,,102,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.487m,1.988m,2.006m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 2 also,,103,,103,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.498m,0m,0.218m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 2 kozep,,104,,104,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.506m,0m,1.002m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 2 folso,,105,,105,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.515m,0m,2.021m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 1 also,,106,,106,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.499m,-1.986m,0.19m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 1 kozep,,107,,107,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.506m,-1.986m,1m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal 1 folso,,108,,108,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.516m,-1.986m,2.005m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 3 also,,109,,109,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.524m,1.997m,0.197m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 3 kozep,,110,,110,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.531m,1.997m,1.003m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 3 folso,,111,,111,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.541m,1.997m,2.012m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 2 also,,112,,112,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.523m,0m,0.238m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 2 kozep,,113,,113,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.53m,0m,1.003m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 2 folso,,114,,114,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.54m,0m,2.005m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 1 also,,115,,115,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.496m,-2.007m,0.196m,0°,91.673°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 1 kozep,,116,,116,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.519m,-2.007m,0.999m,0°,91.673°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb 1 folso,,117,,57,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.549m,-2.007m,2.011m,0°,91.673°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal elol also,,37,,37,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.501m,-3m,0.198m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb elol also,,38,,38,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.494m,-2.996m,0.198m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Bal elol folso,,41,,41,1,1,Utca színváltók,,,,,,-,2.5kg,Location,-5.517m,-3m,1.979m,-0°,-90.527°,-0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Jobb elol folso,,42,,42,1,1,Utca színváltók,,,,,,-,2.5kg,Location,5.51m,-2.996m,1.978m,0°,90.527°,0°,,0°,0°,No,0,0,No,0°,0°,,5d0e2a28-9a97-4343-8679-dabcb23c4b9d
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 9,,9,,9,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,-6.643m,-9.356m,7.519m,37.815°,-37.815°,-0°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 10,,10,,10,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,6.643m,-9.435m,7.519m,33.418°,42.288°,-4.623°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 11,,11,,11,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,-6.683m,-6.643m,7.519m,37.815°,-42.399°,-0°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 12,,12,,12,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,6.643m,-6.683m,7.519m,37.815°,45.837°,-0°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 15,,15,,15,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,-6.683m,-7.901m,7.519m,38.961°,-44.691°,0°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+3 Scroller Dimmer 00,50°,12.5W,Szinvalto 16,,16,,16,1,1,Pályholy szinváltók,,,,,,-,2.5kg,Location,6.683m,-7.941m,7.519m,30.94°,55.004°,-0°,,0°,0°,No,0,0,No,0°,0°,,c4b91d6a-87cb-4748-8f3c-67f9f5f010ee
+4 Mac 500 Mode 4 - Gobo mode scroll,0°,10W,Mac500 bal,,19,,1174,1,1,Mac 500 m4,,,,,,-,0.0kg,Location,-2m,6m,7m,-0°,0°,180°,,0°,0°,No,0,0,No,0°,0°,,48e28159-6dad-47a0-89ae-6ff1a5d33233
+4 Mac 500 Mode 4 - Gobo mode scroll,0°,10W,Mac500 jobb,,20,,1190,1,1,Mac 500 m4,,,,,,-,0.0kg,Location,2m,6m,7m,-0°,0°,180°,,0°,0°,No,0,0,No,0°,0°,,48e28159-6dad-47a0-89ae-6ff1a5d33233
+5 Mac 250 Entour Standard,0°,10W,Mac250 bal,,25,,1294,1,1,Mac 250 Entour,,,,,,-,0.0kg,Location,-6.578m,-5.324m,6.736m,-0.065°,-0.064°,45.837°,,0°,0°,No,0,0,No,0°,0°,,811ce521-77fe-4a9c-a48c-cbe592cfea2b
+5 Mac 250 Entour Standard,0°,10W,Mac250 jobb,,26,,1309,1,1,Mac 250 Entour,,,,,,-,0.0kg,Location,6.549m,-5.324m,6.771m,-0.087°,0.026°,-73.339°,,0°,0°,No,0,0,No,0°,0°,,811ce521-77fe-4a9c-a48c-cbe592cfea2b
+6 Mac 600 E Mode 4,0°,10W,Mac600 bal.e,,27,,1324,1,1,Mac 600 m4,,,,,,-,0.0kg,Location,-6.549m,-2.609m,7.668m,-0°,0°,90°,,0°,0°,No,0,0,No,0°,0°,,c9f3ad32-01c6-46a6-be02-2267975deb12
+6 Mac 600 E Mode 4,0°,10W,Mac600 jobb.e,,28,,1338,1,1,Mac 600 m4,,,,,,-,0.0kg,Location,6.549m,-2.609m,7.609m,0.091°,0°,89.473°,,0°,0°,No,0,0,No,0°,0°,,c9f3ad32-01c6-46a6-be02-2267975deb12
+6 Mac 600 E Mode 4,0°,10W,Mac600 hatso szinpad,,29,,1352,1,1,Mac 600 m4,,,,,,-,0.0kg,Location,0m,8m,7.217m,0°,0°,-0.091°,,0°,0°,No,0,0,No,0°,0°,,c9f3ad32-01c6-46a6-be02-2267975deb12
+7 Mac 600 NT Mode 4,0°,10W,Mac600 bal.h,,17,,1144,1,1,Mac 600 NT,,,,,,-,0.0kg,Location,6.55m,2.116m,7.559m,180°,-0°,-89.473°,,0°,0°,No,0,0,No,0°,0°,,731689c1-0932-4276-82f5-187648431b3d
+7 Mac 600 NT Mode 4,0°,10W,Mac600 jobb.h,,18,,1159,1,1,Mac 600 NT,,,,,,-,0.0kg,Location,-6.55m,2.116m,7.559m,180°,-0°,-89.473°,,0°,0°,No,0,0,No,0°,0°,,731689c1-0932-4276-82f5-187648431b3d
+8 Mac 700 Profile Basic,0°,10W,Mac700 jobb,,30,,1366,1,1,Mac 700 Profile,,,,,,-,0.0kg,Location,3.499m,7.182m,9.979m,-0°,0°,0°,,0°,0°,No,0,0,No,0°,0°,,32375c2b-417b-4802-bdee-7b757894337c
+8 Mac 700 Profile Basic,0°,10W,Mac700 bal,,31,,1389,1,1,Mac 700 Profile,,,,,,-,0.0kg,Location,-3.498m,7.182m,9.99m,-0.001°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,32375c2b-417b-4802-bdee-7b757894337c
+9 Mac 2000 Performance 16 bit,0°,10W,Mc2000 szinpad,,23,,1224,1,1,Mac 2000 Performance,,,,,,-,0.0kg,Location,-0m,-5.818m,9.984m,-2°,0.091°,0°,,0°,0°,No,0,0,No,0°,0°,,d8ee6fe4-a21b-4e0b-b676-0a5fab68b244
+9 Mac 2000 Performance 16 bit,0°,10W,Mc2000 Nt,,24,,1255,1,1,Mac 2000 Performance,,,,,,-,0.0kg,Location,-0m,-9.873m,9.984m,-0.002°,0.091°,0°,,0°,0°,No,0,0,No,0°,0°,,d8ee6fe4-a21b-4e0b-b676-0a5fab68b244
+10 Kaleido Fixed colour off,0°,10W,Griven lent,,21,,1134,1,1,Griven,,,,,,-,0.0kg,Location,0m,10.647m,0.522m,-5.711°,-90°,-39.806°,,0°,0°,No,0,0,No,0°,0°,,b656b47c-fb6b-441b-aa3e-fbdc6a94aeb9
+10 Kaleido Fixed colour off,0°,10W,Griven fent,,22,,1139,1,1,Griven,,,,,,-,0.0kg,Location,-0m,10.619m,5m,-26.565°,-90°,-26.565°,,0°,0°,No,0,0,No,0°,0°,,b656b47c-fb6b-441b-aa3e-fbdc6a94aeb9
+11 Atomic 3000 4 channel,0°,10W,Strobi bal,,13,,1124,1,1,Strobi,,,,,,-,0.0kg,Location,-6.666m,-4.008m,3.529m,20°,-55°,-0°,,0°,0°,No,0,0,No,0°,0°,,9a95bc34-13f1-4e50-a847-b9f11534c3d9
+11 Atomic 3000 4 channel,0°,10W,strobi jobb,,14,,1128,1,1,Strobi,,,,,,-,0.0kg,Location,6.637m,-4.008m,3.529m,20°,55°,0°,,0°,0°,No,0,0,No,0°,0°,,9a95bc34-13f1-4e50-a847-b9f11534c3d9
+12 Scroller Dimmer 00,0°,10W,kiskor 23,,23,,23,1,1,Prütyi,,,,,,-,0.0kg,Location,4.521m,-9.906m,9.984m,37.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 24,,24,,24,1,1,Prütyi,,,,,,-,0.0kg,Location,2.516m,-9.906m,9.984m,37.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,kiskor 25,,25,,25,1,1,Prütyi,,,,,,-,0.0kg,Location,0.943m,-9.906m,9.984m,37.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 26,,26,,26,1,1,Prütyi,,,,,,-,0.0kg,Location,-1.022m,-9.906m,9.984m,37.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,kiskor 27,,27,,27,1,1,Prütyi,,,,,,-,0.0kg,Location,-2.477m,-9.906m,9.984m,37.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 28,,28,,28,1,1,Prütyi,,,,,,-,0.0kg,Location,-4.521m,-9.906m,9.984m,48.815°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 29,,29,,29,1,1,Prütyi,,,,,,-,0.0kg,Location,4.504m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,kiskor 30,,30,,30,1,1,Prütyi,,,,,,-,0.0kg,Location,2.486m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 31,,31,,31,1,1,Prütyi,,,,,,-,0.0kg,Location,0.959m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,kiskor 32,,32,,32,1,1,Prütyi,,,,,,-,0.0kg,Location,-1.012m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,nagykor 33,,33,,33,1,1,Prütyi,,,,,,-,0.0kg,Location,-2.479m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+12 Scroller Dimmer 00,0°,10W,kiskor 34,,34,,34,1,1,Prütyi,,,,,,-,0.0kg,Location,-4.521m,-5.848m,9.984m,38.961°,0°,-0°,,0°,0°,No,0,0,No,0°,0°,,a984c63c-68cd-4360-97cf-627d25505114
+2 Dimmer 00,CP60,1000W,23x,,401,,401,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,23y,,402,,402,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,23E,,403,,403,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,24x,,404,,404,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,24y,,405,,405,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,24E,,406,,406,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,25x,,407,,407,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,25y,,408,,408,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,25E,,409,,409,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,26x,,411,,411,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,26y,,412,,412,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,26E,,413,,413,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,27x,,414,,414,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,27y,,415,,415,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,27E,,416,,416,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,28x,,417,,417,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,28y,,418,,418,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,28E,,419,,419,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,29x,,421,,421,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,29y,,422,,422,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,29E,,423,,423,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,30x,,424,,424,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,30y,,425,,425,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,30E,,426,,426,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,31x,,427,,427,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,31y,,428,,428,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,31E,,429,,429,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,32x,,431,,431,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,32y,,432,,432,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,32E,,433,,433,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,33x,,434,,434,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,33y,,435,,435,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,33E,,436,,436,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,34x,,437,,437,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,34y,,438,,438,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,34E,,439,,439,1,1,Prütyi mozgatás,,,,,,-,1.8kg,Location,0m,-15.9m,-1.423m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,21b7fe84-564b-4ba1-ab41-04ce1c5a7ad7
+2 Dimmer 00,CP60,1000W,Fejgep 1,,201,,201,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Fejgep 2,,202,,202,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Direkt 3,,203,,203,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Direkt 4,,204,,204,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Felso griven F22,,205,,205,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Mac600 F29,,206,,206,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Bal szinvaltok szinpad,,207,,207,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Jobb szinvaltok jobb,,208,,208,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Strobi bal 13,,209,,209,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Strobi jobb 14,,210,,210,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Also griven F21,,211,,211,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Direkt 12,,212,,212,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Gegen szinvalto,,213,,213,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Mac 500 F19 F20,,214,,214,1,1,Direktek,,,,,,-,1.8kg,Location,0m,10.703m,-1.224m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b3602a9f-247c-48e3-96b3-b81b0228d91e
+2 Dimmer 00,CP60,1000W,Fust 600,,600,,600,1,1,Füst,,,,,,-,1.8kg,Location,0m,-1.969m,-1.492m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,50b3e225-1670-4386-b39b-f72621e49d31
+2 Dimmer 00,CP60,1000W,Fust 601,,601,,601,1,1,Füst,,,,,,-,1.8kg,Location,0m,-1.969m,-1.492m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,50b3e225-1670-4386-b39b-f72621e49d31
+2 Dimmer 00,CP60,1000W,Kod 610,,610,,610,1,1,Köd,,,,,,-,1.8kg,Location,0m,3.342m,-1.611m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ea09fcc2-4055-4b59-a926-4bc7018b088e
+2 Dimmer 00,CP60,1000W,Kod 611,,611,,611,1,1,Köd,,,,,,-,1.8kg,Location,0m,3.342m,-1.611m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ea09fcc2-4055-4b59-a926-4bc7018b088e
+2 Dimmer 00,CP60,1000W,Kod 612,,612,,612,1,1,Köd,,,,,,-,1.8kg,Location,0m,3.342m,-1.611m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ea09fcc2-4055-4b59-a926-4bc7018b088e
+2 Dimmer 00,CP60,1000W,Dim 1,,513,,513,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-2.988m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 2,,514,,514,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-2.005m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 3,,515,,515,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-0.983m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 4,,516,,516,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,1.022m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 5,,517,,517,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,2.005m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 6,,518,,518,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,2.988m,1.022m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 7,,519,,519,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-2.988m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 8,,520,,520,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-2.005m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 9,,521,,521,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,-0.983m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 10,,522,,522,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,1.061m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 11,,523,,523,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,2.044m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 12,,524,,524,1,1,Csoportkábelek,,,,,,-,1.8kg,Location,3.027m,-1.061m,8.089m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,24f9b407-cd79-4ce4-ad0f-ba4e35f08651
+2 Dimmer 00,CP60,1000W,Dim 1,,812,,812,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 2,,813,,813,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 3,,814,,814,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 4,,815,,815,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 5,,816,,816,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 6,,817,,817,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 7,,818,,818,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 8,,819,,819,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 9,,820,,820,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 10,,821,,821,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 11,,822,,822,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 12,,823,,823,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 13,,824,,824,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 14,,825,,825,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 15,,826,,826,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 16,,827,,827,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 17,,828,,828,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 18,,829,,829,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 19,,830,,830,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 20,,831,,831,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 21,,832,,832,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 22,,833,,833,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 23,,834,,834,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 24,,835,,835,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 25,,836,,836,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 26,,837,,837,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 27,,838,,838,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 28,,839,,839,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 29,,840,,840,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 30,,841,,841,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 31,,842,,842,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 32,,843,,843,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 33,,844,,844,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 34,,845,,845,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 35,,846,,846,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 36,,847,,847,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 37,,848,,848,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 38,,849,,849,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 39,,850,,850,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 40,,851,,851,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 41,,852,,852,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 42,,853,,853,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 43,,854,,854,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 44,,855,,855,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 45,,856,,856,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 46,,857,,857,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 47,,858,,858,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 48,,859,,859,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 49,,860,,860,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 50,,861,,861,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 51,,862,,862,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 52,,863,,863,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 53,,864,,864,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 54,,865,,865,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 55,,866,,866,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 56,,867,,867,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 57,,868,,868,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 58,,869,,869,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 59,,870,,870,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 60,,871,,871,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 61,,872,,872,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 62,,873,,873,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 63,,874,,874,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 64,,875,,875,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 65,,876,,876,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 66,,877,,877,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 67,,878,,878,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 68,,879,,879,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 69,,880,,880,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 70,,881,,881,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 71,,882,,882,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 72,,883,,883,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 73,,884,,884,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 74,,885,,885,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 75,,886,,886,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 76,,887,,887,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 77,,888,,888,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 78,,889,,889,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 79,,890,,890,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 80,,891,,891,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 81,,892,,892,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 82,,893,,893,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 83,,894,,894,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 84,,895,,895,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 85,,896,,896,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 86,,897,,897,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 87,,898,,898,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 88,,899,,899,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 89,,900,,900,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 90,,901,,901,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 91,,902,,902,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 92,,903,,903,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 93,,904,,904,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 94,,905,,905,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 95,,906,,906,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 96,,907,,907,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 97,,908,,908,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 98,,909,,909,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 99,,910,,910,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 100,,911,,911,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 101,,912,,912,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 102,,913,,913,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 103,,914,,914,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 104,,915,,915,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 105,,916,,916,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 106,,917,,917,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 107,,918,,918,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 108,,919,,919,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 109,,920,,920,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 110,,921,,921,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 111,,922,,922,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 112,,923,,923,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 113,,924,,924,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 114,,925,,925,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 115,,926,,926,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 116,,927,,927,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 117,,928,,928,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 118,,929,,929,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 119,,930,,930,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 120,,931,,931,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 121,,932,,932,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 122,,933,,933,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 123,,934,,934,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 124,,935,,935,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 125,,936,,936,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 126,,937,,937,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 127,,938,,938,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 128,,939,,939,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 129,,940,,940,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 130,,941,,941,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 131,,942,,942,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 132,,943,,943,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 133,,944,,944,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 134,,945,,945,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 135,,946,,946,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 136,,947,,947,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 137,,948,,948,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 138,,949,,949,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 139,,950,,950,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 140,,951,,951,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 141,,952,,952,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 142,,953,,953,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 143,,954,,954,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 144,,955,,955,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 145,,956,,956,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 146,,957,,957,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 147,,958,,958,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 148,,959,,959,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 149,,960,,960,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Dim 150,,961,,961,1,1,Szabad c.h.,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,ed3476c2-5442-4f34-b443-b84c95a18869
+2 Dimmer 00,CP60,1000W,Kupola,,130,,130,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1
+2 Dimmer 00,CP60,1000W,Oldalfal,,131,,131,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1
+2 Dimmer 00,CP60,1000W,Kupola,,132,,132,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1
+2 Dimmer 00,CP60,1000W,Oldalfal,,133,,133,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1
+2 Dimmer 00,CP60,1000W,Oldalfal,,134,,134,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1
+2 Dimmer 00,CP60,1000W,Oldalfal,,135,,135,1,1,Nezoter,,,,,,-,1.8kg,Location,0m,0m,0m,0°,-0°,0°,,0°,0°,No,0,0,No,0°,0°,,b6c72a57-7620-42cc-9510-ba59126e2dc1

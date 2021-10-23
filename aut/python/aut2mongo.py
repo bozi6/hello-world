@@ -35,13 +35,13 @@ for lap in book.worksheets:  # Végigmegyünk a munkafüzet lapjain
     """
     for c1, c2, c3, c4, c5, c6, c7, c8, c9 in cells:
         try:
-            if(c1.value is not None and c2.value is not None):
-                f.write('\t{ _id:'+str(i))  # Elkezdjük a fileba írást
-                if(isinstance(c1.value, datetime.date)):  # megnézzük hogy datetime-e
+            if c1.value is not None and c2.value is not None:
+                f.write('\t{ _id:' + str(i))  # Elkezdjük a fileba írást
+                if isinstance(c1.value, datetime.date):  # megnézzük hogy datetime-e
                     d = c1.value
-                    f.write(', datum: "'+d.strftime("%Y-%m-%d")+'"')  # levágjuk az órapercet beírjuk
+                    f.write(', datum: "' + d.strftime("%Y-%m-%d") + '"')  # levágjuk az órapercet beírjuk
                 else:
-                    f.write(', datum: "'+c1.value[0:10].replace('.', '-')+'"')
+                    f.write(', datum: "' + c1.value[0:10].replace('.', '-') + '"')
                     # ha string => pont->- a pontot és marad az első 10 karaktert
                 c2db = c2.value.split('/')
                 log.debug(c2db)
@@ -57,14 +57,14 @@ for lap in book.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     f.write(', musor: "'+c2db[1].strip()+'"')
                 except IndexError:
                     log.debug('IndexError - Nincs megadva műsor.')
-                if(c6.value is not None):
-                    f.write(', kontakt: "'+c6.value+'"')
-                if (c7.value is not None):
-                    f.write(', status: "'+c7.value+'"')
-                if(c8.value is not None):
-                    f.write(', kulsos: "'+c8.value+'"')
-                if(c9.value is not None):
-                    f.write(', megjegyzes: "'+c9.value+'"')
+                if c6.value:
+                    f.write(', kontakt: "' + c6.value + '"')
+                if c7.value:
+                    f.write(', status: "' + c7.value + '"')
+                if c8.value:
+                    f.write(', kulsos: "' + c8.value + '"')
+                if c9.value:
+                    f.write(', megjegyzes: "' + c9.value + '"')
                 f.write(' },\n')
                 i = i+1
             else:
