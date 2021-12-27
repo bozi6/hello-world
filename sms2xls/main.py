@@ -47,7 +47,7 @@ def penzvalto(mit, arfolyam=arfolyamok):
 
 def ujlap_letrehozasa(lap_elnevezese):
     """ Új munkalap létrehozása a munkafüzetben. """
-    logging.debug('ujlap funkció meghívva')
+    logging.debug('új lap funkció meghívva')
     """Alapértékek megadása"""
     szotar = {'A1': 'Dátum', 'A2': 'Nyitó összeg', 'B1': 'Pénzmozgás',
               'C1': 'Valuta', 'D1': 'LU egyenleg', 'E1': 'Üzenet',
