@@ -6,6 +6,10 @@ ACT II
 Any dolt with half a brain
 .
 Ide jön még szöveg.
-meg ez is ide jön
+Meg ez is ide jön.
 Ha akarok valamit/több sorba/kiírni/akkor azt emígy kell
+.
+Az előbbi pont jelenti azt, hogy
+Üres sort kell beszúrni
+Ettől lesz érdekesebb a dolog.
 .

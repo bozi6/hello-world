@@ -1,13 +1,13 @@
 ﻿Kislány, kislány, hol van a te lányságod?
 Hol van a te lánykori boldogságod?
 A templomnak oltárára letetted,
-Onnan többé soha fel nem vehetted.
+Onnan többé soha fel nem veheted.
 Kislány, kislány, hol van a te lányságod?
 Hol van a te lánykori boldogságod?
 A templomnak oltárára letetted,
-Onnan többé soha fel nem vehetted.
+Onnan többé soha fel nem veheted.
 A templomnak oltárára letetted,
-Onnan többé soha fel nem vehetted.
+Onnan többé soha fel nem veheted.
 Nékem olyan asszony kell,
 Ha beteg is, keljen fel,
 Keljen fel és főzze meg a vacsorát,
@@ -27,12 +27,15 @@ Keljen fel és főzze meg a vacsorát,
 Páros csókkal várja haza az urát.
 Keljen fel és főzze meg a vacsorát,
 Páros csókkal várja haza az urát.
+.
+Most a menyasszony búcsúzik az édesanyjától,
+és az édesapjától.
 .
 Sír a kislány az ajtóba', a kapuba'
 Mikor viszi a vőlegény más faluba.
 Sírjál anyám, mert én sírok,
 Tőled búcsúzni akarok, hateha.
-Sírjál anyám, mert én sírok,
+Sírjál anyám, mert én sírok!
 De sok eső, de sok sár, de sok kislány megcsalt már,
 de sok kislány megcsalt már, de megcsalt már.
 Ha még ez az egy is megcsal, ha megcsal.
@@ -52,9 +55,9 @@ egy legénynek selyem zsebkendőt vettél!
 Kit megettél, kit a farod, kit a farodra tettél,
 egy legénynek selyem zsebkendőt vettél!
 De sok eső, de sok sár, de sok kislány megcsalt már,
-de sok kislány megcsalt már,de megcsalt már.
+de sok kislány megcsalt már, de megcsalt már.
 De sok eső, de sok sár, de sok kislány megcsalt már,
-de sok kislány megcsalt már,de megcsalt már.
+de sok kislány megcsalt már, de megcsalt már.
 Ha még ez az egy is megcsal,
 Megátkozom mindjárt meghal, csuhajja.
 Ha még ez az egy is megcsal,
@@ -63,12 +66,12 @@ Ha még ez az egy is megcsal,
 Megátkozom, rögtön meghal, csuhajja.
 Ha még ez az egy is megcsal,
 Megátkozom, rögtön meghal, csuhajja.
-Nádfedeles kis házikom leégett az éjjel
+Nádfedeles kis házikóm leégett az éjjel
 Míg a babám ölelgettem a vadvirágos réten
 A jegykendőm odaégett adjál babám másat
-Csókolom a csókra termett édes pici szádat
+Csókolom a csókra termett édes pici szádat!
 A jegykendőm odaégett adjál babám másat
-Csókolom a csókra termett édes pici szádat
+Csókolom a csókra termett édes pici szádat!
 Kinek van, kinek van karikagyűrűje
 Annak van, annak van barna szeretője
 Lám az enyém szőke, cseréljük el véle
@@ -76,10 +79,10 @@ Amennyivel többet ér, csókot adok érte
 Lám az enyém szőke, cseréljük el véle
 Amennyivel többet ér, csókot adok érte
 .
-(Ragyognak az égen a csillagok immár
+Ragyognak az égen a csillagok immár
 téged is menyasszony nyoszojád készen vár
 Útra kell hát menni, útra kell indulni
-Itt van a te hites urad, ő akar elvinni)
+Itt van a te hites urad, ő akar elvinni
 .
 Csikorog a szekér szép hat ökör húzza,
 Csikorog a szekér szép hat ökör húzza,
@@ -136,7 +139,7 @@ Minden madár társat választ virágom, virágom
 Hát én immár kit válasszak virágom, virágom
 Te engemet én tégedet virágom, virágom
 .
-Titkon nyílik titkon hervad a rózsa
+Titkon nyílik, titkon hervad a rózsa.
 Bárcsak soha se szerettelek volna
 Jobb lett volna az én árva fejemnek
 Hagytál volna békét a szerelemnek
@@ -186,7 +189,7 @@ annyiszor jussak eszedbe,
 annyiszor jussak eszedbe.
 .
 Le van a búza aratva,
-keresztbe is van már rakva
+keresztbe is van már rakva.
 Ahány szem van egy keresztbe,
 annyiszor jussak eszedbe,
 annyiszor jussak eszedbe.
@@ -227,14 +230,14 @@ Nem vagyok, nem vagyok, nem vagyok hibás,
 A szeretőm elhagyott, ez csak kifogás.
 .
 Ma van új esztendő, ti ezt jól tudjátok.
-Akik megértétek, azon vígadjatok.
+Akik megértétek, azon vigadjatok.
 Jó reggelt kívánok az új esztendőbe,
 Mert mindjárt felvirrad az első reggele.
 Boldog reménységgel várjuk a jövendőt,
 Adjon mindnyájunknak boldog új esztendőt!
 .
 Ma van új esztendő, ti ezt jól tudjátok.
-Akik megértétek, azon vígadjatok.
+Akik megértétek, azon vigadjatok.
 Boldog reménységgel várjuk a jövendőt,
 Adjon mindnyájunknak boldog új esztendőt!
 .
@@ -300,3 +303,4 @@ Mostan hadd vigadjon feleségem szíve
 Fújjátok széltibe, húzzátok izibe
 Mostan hadd vigadjon feleségem szíve
 .
+

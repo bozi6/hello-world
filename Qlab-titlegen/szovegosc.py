@@ -5,7 +5,7 @@ cli = client.Interface()
 
 def main():
     try:
-        file = open('example-input.txt')
+        file = open('hutlen_dalszovegek_sima.txt')
         """
         A szövegfájlban ha több sort akarunk akkor /-el kell a sorokat elválasztani
         Ha üres sort akakrunk akkor .-ot kell tenni a sorba
