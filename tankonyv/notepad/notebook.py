@@ -7,6 +7,7 @@ last_id = 0
 class Note:
     """Represent a note in notebook.
     Match against a string in searches and store tags for each note"""
+
     def __init__(self, memo, tags=''):
         """Initialize a note  with memo and optional
         sapce-separated tags. Automatically set the note's
@@ -25,6 +26,7 @@ class Note:
         Search in case sensitives and matches both text
         and tags"""
         return filter in self.memo or filter in self.tags
+
 
 class Notebook:
     """Represent a collection of notes that can be tagged,
