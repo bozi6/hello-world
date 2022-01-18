@@ -129,14 +129,14 @@ for elem in items:  # SMS-ek beolvasása
         # Nem mindegy, hogy a képletbe elválsztónak , vagy ; van itt a ; hibát dob az excelben.
         ws.cell(row=sor, column=7, value="=D{}-F{}".format(sor + 1, sor)).style = still
         logging.debug("Sorszám:{}; Dátum: {} - Érték: {} - Üzi: {}".format(i, rd, x, bd))
-        # ha DEBUG-ra van állítva a loggolás
+        # ha DEBUG-ra van állítva a loggolás akkor kiírjuk a sort
         i += 1  # sorszám növelése
     except AttributeError:
         logging.debug("Sorszám:{}; - Nem átutalásos sms - {}".format(i, bd))
         continue
     sor += 1
     # Az összegeket az oszlop végén öszeadjuk és beírjuk az eredményt. és hozzáadjuk a stílust
-    ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still
+    ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still  # stílus megadása
     ws.cell(row=ws.max_row, column=2).font = Font(bold=True, italic=True)  # A betűtípust vastaggá tesszük az eredményen
     logging.debug('Munkalap max sorszáma: {}'.format(ws.max_row))
 ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)

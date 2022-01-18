@@ -1,18 +1,33 @@
 import pygdtf
+import sys
+from termcolor import colored, cprint
+
+
+def szinesben(mi, rizsa):
+    print(mi, end='')
+    cprint(rizsa, 'green')
+
 
 egy = pygdtf.FixtureType('./par64.gdtf')
-print('Név: ', egy.name)
-print('Geometria: ', egy.geometries)
-print('Wheels:', egy.wheels)
-print('Models:', egy.models)
-print('Filters: ', egy.filters)
-print('Color Space: ', egy.color_space)
-print('Leírás: ', egy.description)
-print('DMX Profil: ', egy.dmx_profiles)
-print('Emitters: ', egy.emitters)
-print('Lámpa tipus Id: ', egy.fixture_type_id)
-print('Hosszú elnevezés: ', egy.long_name)
-print('Gyártó: ', egy.manufacturer)
-print('Rövid név: ', egy.short_name)
-
-
+szinesben('Név: ', egy.name)
+szinesben('Rövid név: ', egy.short_name)
+szinesben('Hosszú név: ', egy.long_name)
+szinesben('Tárcsák:', egy.wheels)
+szinesben('Szűrők: ', egy.filters)
+szinesben('Színtér: ', egy.color_space.mode)
+szinesben('Leírás: ', egy.description)
+szinesben('DMX Profil: ', egy.dmx_profiles)
+szinesben('Lámpatipus Id: ', egy.fixture_type_id)
+szinesben('Gyártó: ', egy.manufacturer)
+szinesben('Fénysugár szög: ', egy.geometries[0].geometries[0].beam_angle)
+szinesben('Lámpatípus: ', egy.geometries[0].geometries[0].beam_type.value)
+szinesben('Színhőmérésklet: ', egy.geometries[0].geometries[0].color_temperature)
+szinesben('Lámpatípus: ', egy.geometries[0].geometries[0].lamp_type.value)
+szinesben('Fényerő: ', egy.geometries[0].geometries[0].luminous_flux)
+szinesben('Fogyasztás: ', egy.geometries[0].geometries[0].power_consumption)
+print('Változások: ')
+for rev in egy.revisions:
+    szinesben('\tDátum: ', rev.date)
+    szinesben('\tSzöveg: ', rev.text)
+    szinesben('\tFelhasználó ID: ', rev.user_id)
+    print('\t', '-' * 60)
