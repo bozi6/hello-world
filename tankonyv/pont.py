@@ -26,5 +26,5 @@ class Point:
        the distance between the two points. The distance is
         returned as a float."""
         return math.sqrt(
-            (self.x - other_point.x) ** 2 +
+            (self.x - other_point.osszeg) ** 2 +
             (self.y - other_point.y) ** 2)
