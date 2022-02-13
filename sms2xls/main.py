@@ -4,18 +4,26 @@ import os  # dátum kinyerése
 import re  # Reguláris kifejezésekhez modul
 from datetime import datetime, timedelta  # timestampból emberi dátum
 from xml.dom import minidom  # xml fájl olvasásához modul
-
+from colorama import Fore
 from forex_python.converter import CurrencyRates  # valutaárfolyam lekérdezőke modul
 from openpyxl import Workbook  # Excel táblázat kezeléshez modul
 from openpyxl.formatting.rule import Rule
 from openpyxl.styles import NamedStyle, Font, PatternFill  # Stílus importálása modul
 from openpyxl.styles.differential import DifferentialStyle
 
-FORMAT = '%(levelname)s: %(asctime)-2s %(message)s'  # Loggolás formátumának beállításra
+# Loggolás alapbeállításai
+FORMAT = '%(levelname)s: %(asctime)-2s prgsor: %(lineno)d %(message)s'  # Loggolás formátumának beállításra
 logging.basicConfig(format=FORMAT, level=logging.INFO)  # loggolás beálltása INFO-ra(csak a lényeg)
 
+# Alapértelmezett változók
 olvasando_fajl = "sms_full.xml"
-kiirando_fajl = "./balance.xlsx"
+logging.info('A beolvasando file: ' + olvasando_fajl)
+kiirando_fajl = "balance.xlsx"
+logging.info('A kiírandó file: ' + kiirando_fajl)
+arfolyam_file = "arfolyamok.csv"
+logging.info('A használt árfolyamok file: ' + arfolyam_file)
+arfolyam = {}
+egyenleg2 = ""
 
 # xml fájl betöltése
 mydoc = minidom.parse(olvasando_fajl)
@@ -27,29 +35,32 @@ diff_style = DifferentialStyle(fill=PatternFill(bgColor='C6EFCE', fgColor='00610
 rule = Rule(type="expression", dxf=diff_style)  # Feltételes kifejezés megadása
 rule.formula = ["$B2>0"]  # Formula a feltételes formázáshoz
 
+# Árfolyam file meglétének ellenőrzése és frissítése ha két óránál régebbi
+fileido = datetime.fromtimestamp(os.stat('./arfolyamok.csv').st_ctime)  # a meglévő file idejének lekérdezése
+now = datetime.now()
+max_delay = timedelta(hours=2)
+try:
+    if now - fileido > max_delay:
+        logging.debug("Régi a fájl ezért lekérdezem az árfolyamokat: {} ".format(fileido))
+        c = CurrencyRates()  # Aktuális árfolyam lekérdezése
+        arfolyam = c.get_rates('HUF')  # átszámítás forint vs. valutákra
+        w = csv.writer(open("arfolyamok.csv", "w"))
+        for key, value in arfolyam.items():
+            w.writerow([key, value])
+    else:
+        logging.debug('Jó a file ideje, ezért a meglévőt használom.')
+        with open('arfolyamok.csv', mode='r') as infile:
+            reader = csv.reader(infile)
+            arfolyam = {str(rows[0]): float(rows[1]) for rows in reader}
+except IOError:
+    print("nincseh meg a file")
+    logging.debug('Nem található a file.')
+
 
 def penz_valto(mit):
     """ Árfolyam váltó függvény
     a bejövő mit hez 123,45 GBP
     kiszámolja, hogy az mennyi forintban """
-    arfolyam = {}
-    fileido = datetime.fromtimestamp(os.stat('./arfolyamok.csv').st_ctime)  # a meglévő file idejének lekérdezése
-    now = datetime.now()
-    max_delay = timedelta(hours=2)
-    try:
-        if now-fileido > max_delay:
-            print("Egyik: {} - Másik: {}".format(fileido, regebbi))
-            c = CurrencyRates()  # Aktuális árfolyam lekérdezése
-            arfolyam = c.get_rates('HUF')  # átszámítás forint vs. valutákra
-            w = csv.writer(open("arfolyamok.csv", "w"))
-            for key, value in arfolyam.items():
-                w.writerow([key, value])
-        with open('arfolyamok.csv', mode='r') as infile:
-            reader = csv.reader(infile)
-            arfolyam = {str(rows[0]): float(rows[1]) for rows in reader}
-    except IOError:
-        print("nincseh file")
-        logging.error('Nem található a file.')
     valuta = mit[-3:]  # A bejövő valuta megnevezésének eltávolítása
     if valuta in arfolyam:
         logging.debug('Váltás 1 HUF = {} - {}-ben/ban'.format(arfolyam[valuta], valuta))
@@ -58,7 +69,7 @@ def penz_valto(mit):
         mit = mit.replace(",", ".")
         return float(mit) / valtoertek
     else:
-        logging.info('Nem találtam ilyen valutát!')
+        logging.info('Nem találtam ilyen valutát a fileban!', mit)
         return False
 
 
@@ -74,6 +85,7 @@ def ujlap_letrehozasa(lap_elnevezese):
         ws[kulcs].font = Font(bold=True)
     ws.title = lap_elnevezese  # Az új lap elnevezése
     ws['B2'].font = Font(italic=True, bold=True)
+    # Az egyes oszlopok szélessége
     szelessegek = {'A': 20, 'B': 15, 'C': 15, 'D': 15, 'E': 160, 'F': 13, 'G': 13}
     for kulcs, ertek in szelessegek.items():
         ws.column_dimensions[kulcs].width = ertek
@@ -106,8 +118,8 @@ sor = 3  # a táblázat írni kívánt első sora
 i = 1  # belső változó
 
 for elem in items:  # SMS-ek beolvasása
-    if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem törődünk vele
-        continue
+    # if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem törődünk vele
+    #     continue
     tel = elem.attributes['address'].value  # telefonszám kinyerése az üzenetből, később lehet szűrni.
     rd = elem.attributes['readable_date'].value  # Dátum hozzáadása az rd változóhoz
     bd = elem.attributes['body'].value  # Az üzenet szövege
@@ -119,6 +131,7 @@ for elem in items:  # SMS-ek beolvasása
     # x = re.findall(pattern, bd)
     aktev = rd[:4]  # Az aktulis évszám kinyerése a dátumból.
     if aktev not in wb.sheetnames:  # Ha ez nem egyezik a lap nevével akkor új lapot nyitunk
+        logging.debug('Új lapot kellett nyitnom.')
         ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
         # összeadjuk a bevételeket. Ezt még az aktuális és nem új lapon tesszük.
         ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
@@ -131,18 +144,16 @@ for elem in items:  # SMS-ek beolvasása
         sor = 3
     try:
         osszeg = re.search(penz_pattern, bd).group()  # megkeressük a pénzeket az üzenetből
-        # egybd = bd.replace("Egy.:", "Egy:")
-        # egybd = egybd.replace("Egy:", "Egyenleg:")
-        egybd = re.sub(r"(;\sEgy:)|(;\sEgy\.:)", "; Egyenleg: ", bd)
-        egybd = " ".join(egybd.split())
-        ketbd = egybd.replace(",-HUF;", " HUF;")
-        if not egyenleg_kerdez(ketbd):
+        egybd = re.sub(r"(;\sEgy:)|(;\sEgy\.:)", "; Egyenleg: ", bd)  # csak az sms végi egyenleg keresése
+        egybd = " ".join(egybd.split())  # A két szóköz eltávolítása
+        ketbd = egybd.replace(",-HUF;", " HUF;")  # A ",-HUF" átíráasa "HUF"-ra
+        if not egyenleg_kerdez(ketbd):  # Hs nincs egyenleg az SMS végén akkor az előzőt használjuk
             egyenleg = egyenleg2
         else:
             egyenleg = egyenleg_kerdez(ketbd)
             egyenleg2 = egyenleg_kerdez(ketbd)
         osszeg = osszeg.replace(".", "")  # kivesszük a pontot (ezres elválasztó) az összegek közül
-        osszeg = osszeg.replace(";","")  # kivesszük a végén a ;-t (kellet az smsek miatt a regexphez)
+        osszeg = osszeg.replace(";", "")  # kivesszük a végén a ;-t (kellet az smsek miatt a regexphez)
         osszeg = osszeg.replace(",-HUF", " HUF")  # Ha az üzenetben ,-HUF van azt átalakítjuk HUf-ra
         if osszeg.find("HUF") > -1:  # Ha benne van az összegben a HUF => forint alapú a dolog
             osszeg = osszeg.replace(" HUF", "")  # Kivesszük a HUF szöveget az excel pénznem felismerése miatt.
@@ -152,11 +163,10 @@ for elem in items:  # SMS-ek beolvasása
             ws.cell(row=sor, column=3, value=osszeg)  # Beírjuk a harmadik oszlopba az összeget
             forintban = penz_valto(osszeg)  # Átváltjuk az összeget forintra
             ws.cell(row=sor, column=2, value=forintban).style = still  # Ezt beírjuk a második oszlopba
-            logging.debug('Valuta értéke:', ws.cell(row=sor, column=2).value)
+            logging.debug('Valuta értéke: {} külföldi, {} HUF'.format(osszeg, forintban))
         egyenleg = egyenleg.replace(".", "")
         ws.cell(row=sor, column=1, value=rd)  # A dátumot beírjuk az első oszlopba
         bd = bd.replace("...", "")  # Az üzenet elejéről a pontokat kivesszük még.
-        # logging.debug(bd)
         ws.cell(row=sor, column=4, value=float(egyenleg)).style = still  # Az egyenleget beírjuk a negyedik oszlopba
         ws.cell(row=sor, column=5, value=bd)  # Az üzenetet beírjuk az ötödik oszlopba, ellenőrzés czéljából
         ws.cell(row=sor, column=6, value="=SUM(D{},B{})".format(sor, sor + 1)).style = still
@@ -165,7 +175,7 @@ for elem in items:  # SMS-ek beolvasása
         # logging.debug("Sorszám:{}; Dátum: {} - Érték: {} - Üzi: {}".format(i, rd, x, bd))
         i += 1  # sorszám növelése
     except AttributeError:
-        logging.info("Sorszám:{}; - Nem átutalásos sms - {}".format(i, bd))
+        logging.debug("Sorszám:{}; - Nem átutalásos sms - {}".format(i, bd))
         continue
     sor += 1
     # Az összegeket az oszlop végén öszeadjuk és beírjuk az eredményt. és hozzáadjuk a stílust
@@ -180,4 +190,4 @@ ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},"<0")'.format(ws.max_
 wb.save(kiirando_fajl)  # táblázat elmentése
 print('Elkészült munkalapok:')
 for sheet in wb:
-    print(sheet.title)
+    print(Fore.GREEN + sheet.title + Fore.WHITE + ' kész!')
