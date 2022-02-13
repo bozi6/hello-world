@@ -2,6 +2,7 @@ import csv  # árfolyamok csv file kezeléséhez
 import logging  # Loggoláshoz modul
 import os  # dátum kinyerése
 import re  # Reguláris kifejezésekhez modul
+import shutil  # Fájl másoláshoz
 from datetime import datetime, timedelta  # timestampból emberi dátum
 from xml.dom import minidom  # xml fájl olvasásához modul
 from colorama import Fore
@@ -41,6 +42,7 @@ now = datetime.now()
 max_delay = timedelta(hours=2)
 try:
     if now - fileido > max_delay:
+        shutil.copyfile('arfolyamok.csv', 'arfolyamok.old')
         logging.debug("Régi a fájl ezért lekérdezem az árfolyamokat: {} ".format(fileido))
         c = CurrencyRates()  # Aktuális árfolyam lekérdezése
         arfolyam = c.get_rates('HUF')  # átszámítás forint vs. valutákra
