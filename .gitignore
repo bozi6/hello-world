@@ -2,3 +2,4 @@
 /sms2xls/balance.xlsx
 ./venv/*
 /venv/*
+/sms2xls/env/*

@@ -48,6 +48,7 @@ class Interface:
         self.server = Listener('127.0.0.1', 53001)
         self.wpid = self.get_wpid()
         self.encoding = 'utf8'
+        print("WPID: {}".format(self.wpid))
 
     def get_wpid(self):
         """
@@ -58,6 +59,8 @@ class Interface:
         response = self.server.get_message()
         if response:
             return response.get('data')[0]['uniqueID']
+        else:
+            print("Nem sikerült WPID-et szerezni. {}".format(type(response)))
 
     def bundi(self, messages):
         self.client.send_bundle(messages)
@@ -98,7 +101,7 @@ class Interface:
         :return:
         """
         wpid = self.wpid
-        self.client.send_message('/workspace/{}/select/[*]'.format(wpid), [])
+        self.client.send_message('/workspace/{}/select/*'.format(wpid), [])
 
     def renumber(self, start, step):
         """

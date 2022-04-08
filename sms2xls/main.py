@@ -1,6 +1,7 @@
 import csv  # árfolyamok csv file kezeléséhez
 import logging  # Loggoláshoz modul
 import os  # dátum kinyerése
+import os.path  # fájlétezés vizsgálatra
 import re  # Reguláris kifejezésekhez modul
 import shutil  # Fájl másoláshoz
 from datetime import datetime, timedelta  # timestampból emberi dátum
@@ -36,24 +37,38 @@ diff_style = DifferentialStyle(fill=PatternFill(bgColor='C6EFCE', fgColor='00610
 rule = Rule(type="expression", dxf=diff_style)  # Feltételes kifejezés megadása
 rule.formula = ["$B2>0"]  # Formula a feltételes formázáshoz
 
-# Árfolyam file meglétének ellenőrzése és frissítése ha két óránál régebbi
-fileido = datetime.fromtimestamp(os.stat('./arfolyamok.csv').st_ctime)  # a meglévő file idejének lekérdezése
-now = datetime.now()
-max_delay = timedelta(hours=2)
-try:
-    if now - fileido > max_delay:
-        shutil.copyfile('arfolyamok.csv', 'arfolyamok.old')
-        logging.debug("Régi a fájl ezért lekérdezem az árfolyamokat: {} ".format(fileido))
-        c = CurrencyRates()  # Aktuális árfolyam lekérdezése
-        arfolyam = c.get_rates('HUF')  # átszámítás forint vs. valutákra
-        w = csv.writer(open("arfolyamok.csv", "w"))
-        for key, value in arfolyam.items():
-            w.writerow([key, value])
+
+def file_checker(filename):
+    if os.path.exists(filename):
+        fileido = datetime.fromtimestamp(os.path.getmtime(filename))  # a meglévő file idejének lekérdezése
+        now = datetime.now()
+        max_delay = timedelta(hours=2)
+        if now - fileido > max_delay:
+            shutil.copyfile(filename, '{}_{}.csv'.format(filename, fileido))
+            return False
+        else:
+            return True
     else:
-        logging.debug('Jó a file ideje, ezért a meglévőt használom.')
+        return False
+
+
+def arfolyam_feltoltes():
+    if file_checker('arfolyamok.csv'):
         with open('arfolyamok.csv', mode='r') as infile:
             reader = csv.reader(infile)
-            arfolyam = {str(rows[0]): float(rows[1]) for rows in reader}
+            arfolyam_dict_file = {str(rows[0]): float(rows[1]) for rows in reader}
+    else:
+        c = CurrencyRates()
+        arfolyam_dict_file = c.get_rates('HUF')
+        w = csv.writer((open('arfolyamok.csv', "w")))
+        for key, value in arfolyam_dict_file.items():
+            w.writerow([key, value])
+    return arfolyam_dict_file
+# Árfolyam file meglétének ellenőrzése és frissítése ha két óránál régebbi
+
+
+try:
+    arfolyam = arfolyam_feltoltes()
 except IOError:
     print("nincseh meg a file")
     logging.debug('Nem található a file.')
@@ -65,13 +80,12 @@ def penz_valto(mit):
     kiszámolja, hogy az mennyi forintban """
     valuta = mit[-3:]  # A bejövő valuta megnevezésének eltávolítása
     if valuta in arfolyam:
-        logging.debug('Váltás 1 HUF = {} - {}-ben/ban'.format(arfolyam[valuta], valuta))
         valtoertek = arfolyam[valuta]
         mit = mit[:-4]
         mit = mit.replace(",", ".")
         return float(mit) / valtoertek
     else:
-        logging.info('Nem találtam ilyen valutát a fileban!', mit)
+        print('Nem találtam ilyen valutát a fileban! ', mit)
         return False
 
 
@@ -156,7 +170,7 @@ for elem in items:  # SMS-ek beolvasása
             egyenleg2 = egyenleg_kerdez(ketbd)
         osszeg = osszeg.replace(".", "")  # kivesszük a pontot (ezres elválasztó) az összegek közül
         osszeg = osszeg.replace(";", "")  # kivesszük a végén a ;-t (kellet az smsek miatt a regexphez)
-        osszeg = osszeg.replace(",-HUF", " HUF")  # Ha az üzenetben ,-HUF van azt átalakítjuk HUf-ra
+        osszeg = osszeg.replace(",-HUF", " HUF")  # Ha az üzenetben ,-HUF van azt átalakítjuk HUF-ra
         if osszeg.find("HUF") > -1:  # Ha benne van az összegben a HUF => forint alapú a dolog
             osszeg = osszeg.replace(" HUF", "")  # Kivesszük a HUF szöveget az excel pénznem felismerése miatt.
             ws.cell(row=sor, column=2, value=float(osszeg)).style = still  # beírjuk az aktuális sorba a második
@@ -165,7 +179,7 @@ for elem in items:  # SMS-ek beolvasása
             ws.cell(row=sor, column=3, value=osszeg)  # Beírjuk a harmadik oszlopba az összeget
             forintban = penz_valto(osszeg)  # Átváltjuk az összeget forintra
             ws.cell(row=sor, column=2, value=forintban).style = still  # Ezt beírjuk a második oszlopba
-            logging.debug('Valuta értéke: {} külföldi, {} HUF'.format(osszeg, forintban))
+            #  logging.debug('Valuta értéke: {} külföldi, {} HUF'.format(osszeg, forintban))
         egyenleg = egyenleg.replace(".", "")
         ws.cell(row=sor, column=1, value=rd)  # A dátumot beírjuk az első oszlopba
         bd = bd.replace("...", "")  # Az üzenet elejéről a pontokat kivesszük még.
