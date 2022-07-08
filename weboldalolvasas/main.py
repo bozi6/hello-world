@@ -23,9 +23,9 @@ blacklist = [
 for t in text:
     if t.parent.name not in blacklist:
         output.append(t)
-if output[113][-10:] == "2021-12-09":
+if output[112][-10:] == "2022-05-16":
     print("faszom régi\n Azért itt van amit találtam: ")
-    print(output[113], output[111])
+    print(output[112], output[106])
 else:
     print("Valami újabb dolog történt\nEz van most: ")
-    print(output[113], output[111])
+    print(output[112], output[106])

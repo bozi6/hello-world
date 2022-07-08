@@ -1,11 +1,13 @@
 import matplotlib.pyplot as plt
 import random
 # szam = int(input("szám"))
+import pylab as pl
+
 vonalszin = ['blue', 'red', 'yellow', 'green', 'black', 'gray', 'autumn', 'bone', 'cool', 'copper', 'flag',
              'hot', 'hsv', 'jet', 'pink', 'prism', 'spring', 'summer', 'winter']
 plt.title('Ha x páratlan akkor * 3+1 ha páros akkor / 2')
 rajz = []
-for i in range(100):
+for i in range(10):
     szam = random.randint(1, 20)
     rajz.append(szam)
     print(i, szam)
