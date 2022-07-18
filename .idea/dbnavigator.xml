@@ -18,13 +18,18 @@
       <destination value="FILE" />
       <format value="EXCEL" />
       <charset value="UTF-8" />
+      <charset value="UTF-8" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="a6f356cc-d435-4942-999f-adb3aab70ae7">
+        <schema name="honved2" object-types="table, view, function, column" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="a6f356cc-d435-4942-999f-adb3aab70ae7">
@@ -45,6 +50,7 @@
   </component>
   <component name="DBNavigator.Project.FileConnectionMappingManager">
     <mapping file-url="file://$PROJECT_DIR$/sms2xls/bevetel.sql" connection-id="" session-id="MAIN" current-schema="" />
+    <mapping file-url="file://$PROJECT_DIR$/aut/sql/2022_Autentikus.sql" connection-id="a6f356cc-d435-4942-999f-adb3aab70ae7" session-id="MAIN" current-schema="honved2" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -65,11 +71,13 @@
     <diagnostics-history />
   </component>
   <component name="DBNavigator.Project.ScriptExecutionManager" clear-outputs="true">
-    <recently-used-interfaces />
+    <recently-used-interfaces>
+      <mapping database-type="MYSQL" interface-id="DEFAULT" />
+    </recently-used-interfaces>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="a6f356cc-d435-4942-999f-adb3aab70ae7" active="false" signed="true">
+      <connection id="a6f356cc-d435-4942-999f-adb3aab70ae7" active="true" signed="true">
         <database>
           <name value="ds718" />
           <description value="ds718 lan mySQL server" />
@@ -82,7 +90,7 @@
           <url-type value="DATABASE" />
           <host value="ds718.lan" />
           <port value="3307" />
-          <database value="szamlatortenet" />
+          <database value="honved2" />
           <type value="USER_PASSWORD" />
           <user value="root" />
           <deprecated-pwd value="cXdl" />
@@ -123,7 +131,7 @@
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
-          <object-type-filter use-master-settings="true">
+          <object-type-filter>
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
@@ -240,11 +248,11 @@
         <nulls-first value="true" />
         <max-sorting-columns value="4" />
       </sorting>
-      <tracking-columns>
-        <columnNames value="" />
+      <audit-columns>
+        <column-names value="" />
         <visible value="true" />
         <editable value="false" />
-      </tracking-columns>
+      </audit-columns>
     </dataset-grid-settings>
     <dataset-editor-settings>
       <text-editor-popup>
@@ -525,8 +533,8 @@
     </ddl-file-settings>
     <general-settings>
       <regional-settings>
-        <date-format value="MEDIUM" />
-        <number-format value="UNGROUPED" />
+        <date-format value="SHORT" />
+        <number-format value="GROUPED" />
         <locale value="SYSTEM_DEFAULT" />
         <use-custom-formats value="false" />
       </regional-settings>
