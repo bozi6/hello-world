@@ -1,7 +1,7 @@
 import turtle
 t = turtle.Turtle()
 s = turtle.Screen()
-s.bgcolor('black')
+s.bgcolor('white')
 t.speed(0)
 col = ("yellow", "red", "green", "lime", "light green", "blue")
 
