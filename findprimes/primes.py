@@ -31,9 +31,9 @@ def findprime(startnumber, endnumber):
     return primes
 
 
-def insert_newlines(string, every=64):
+def insert_newlines(string, every=128):
     """
-    Minden 32-ik karakterhez beszúr egy újsor karaktert
+    Minden 128-ik karakterhez beszúr egy újsor karaktert
     :param string: a bejövő karakterlánc
     :param every: hova szúrja be az újsor karaktert
     :return: a feldarabolt string
@@ -42,9 +42,9 @@ def insert_newlines(string, every=64):
 
 
 def main():
-    pr = findprime(1, 1000)
+    pr = findprime(1, 10000)
     soros = insert_newlines('Helló ez egy hosszú string akar lenni, amibe a python beletesz,'
-                            'elvileg minden 32-ik karakternél'
+                            'elvileg minden 128-ik karakternél'
                             ' egy jó kis újsor karaktert, amivel aztán lehet'
                             ' hogy hosszabb lófaszok is bekerülhetnek, mert az'
                             ' nagyon jó nekünk.')
