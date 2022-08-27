@@ -4,10 +4,12 @@ import random
 import string
 import unidecode
 
+__author__ = 'kontab6@gmail.com'
+__copyright__ = 'Konta Boáz@2020'
+
 
 def uidgen():
-    szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(28)])
-    szoveg = "00000000" + szoveg
+    szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
     uid = ' '.join(szoveg[i:i + 2] for i in range(0, len(szoveg), 2))
     return uid.upper()
 
@@ -90,32 +92,18 @@ def create_timecode_xml(xml_timecode_file_name, project_neve, csv_file, sekvenci
         cmdevent.set("Time", csvfile[ertekek][2])
         cueneve = unidecode.unidecode(csvfile[ertekek][1])
         cueneve = cueneve.replace(" ", "")
-        realtime_attribs = {"Type": "Key",
-                            "Source": "Original",
-                            "UserProfile": "0",
-                            "User": "1",
-                            "Status": "On",
-                            "IsRealtime": "0",
-                            "IsXFade": "0",
-                            "IgnoreFollow": "0",
-                            "IgnoreCommand": "0",
-                            "Assert": "0",
-                            "IgnoreNetwork": "0",
-                            "FromTriggerNode": "0",
-                            "IgnoreExecTime": "0",
-                            "IssuedByTimecode": "0",
-                            "FromLocalHardwareFader": "1",
-                            "IgnoreExecXFade": "0",
-                            "IsExecXFade": "0",
-                            "Object": "12.12.0.4.99",
+        realtime_attribs = {"Type": "Key", "Source": "Original", "UserProfile": "0",
+                            "User": "1",  "Status": "On", "IsRealtime": "0",
+                            "IsXFade": "0",  "IgnoreFollow": "0", "IgnoreCommand": "0",
+                            "Assert": "0", "IgnoreNetwork": "0", "FromTriggerNode": "0",
+                            "IgnoreExecTime": "0", "IssuedByTimecode": "0",
+                            "FromLocalHardwareFader": "1",  "IgnoreExecXFade": "0",
+                            "IsExecXFade": "0",  "Object": "12.12.0.4.99",
                             "ExecToken": "Go+",
-                            "ValCueDestination": "ShowData.DataPools.Default.Sequences.Sequence {}.{}".format(sekvencia_szam, cueneve)
+                            "ValCueDestination":
+                                "12.12.0.4.49.{}000".format(ertekek+1)
                             }
         realtimecmd = ett.SubElement(cmdevent, "RealtimeCmd", realtime_attribs)
-        """if ertekek == 0:
-            realtimecmd.set("Object", "ShowData.DataPools.Default.Sequences.Sequence {}".format(sekvencia_szam))
-            realtimecmd.set("Caller", "ShowData.DataPools.Default.Pages.Page 5.Exec 101 : Sequence {}".format(sekvencia_szam))
-        """
     tree = ett.ElementTree(root)
     ett.indent(tree)
     with open(xml_timecode_file_name, "wb") as files:
@@ -131,7 +119,7 @@ if __name__ == "__main__":
     This contain the importable macro file that creates 
     cues from the exported marker files in the given Sequence number.
     The second creates the timecode view of inserted go commands at the 
-    propiatry marker points in seconds.
+    propieatry marker points in seconds.
     
     To create this you need:
     -In reaper set markers with shift+m to give a name of a marker
@@ -158,22 +146,23 @@ if __name__ == "__main__":
     But this is offline version of it. 
     
     """
-    print("Ma3 converter 1.8.1.0 verzióhoz.")
-    print("A REAPERből kiexportált markerek átalakításához timecode buliba.")
+    print("Ma3 converter 1.8.1.0.")
+    print("REAPER exported markers convert to Timecodew for Ma3.")
+
+    kimenet_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
     # projnev = input("Projekt neve:")
     projnev = "vadi"
     seqnum = input("Szekvencia száma:")
-    c = open('vivaldi_markers.csv', 'r')
-    print("A csv file megnyitva olvaasásra.")
+    c = open('vivaldi_regions_markers.csv', 'r')
+    print("csv file ready to read.")
     o = csv.reader(c)
     csvfile = []
     for r in o:
         csvfile.append(r)
     c.close()
     csvfile.pop(0)
-    print(csvfile)
+    # print(csvfile)
     for i in range(0, len(csvfile)):
         csvfile[i][1] = "".join(csvfile[i][1])
-    print(csvfile[0][1])
-    create_macro_xml("./genxmls/{}_macro.xml".format(projnev), csvfile, seqnum, projnev)
-    create_timecode_xml("./genxmls/{}_timecode.xml".format(projnev), projnev, csvfile, seqnum)
+    create_macro_xml(kimenet_mappa + "macros/{}_macro.xml".format(projnev), csvfile, seqnum, projnev)
+    create_timecode_xml(kimenet_mappa + "timecodes/{}_timecode.xml".format(projnev), projnev, csvfile, seqnum)
