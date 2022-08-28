@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GMA3 DataVersion="1.8.1.0">
+  <Macro Name="tesztlofasz" Guid="A8 63 65 20 7C F9 4B 73 DF 7C 03 E4 1F 3A 18 7D">
+    <MacroLine Command="Store Sequence 100 Cue 1 thru 20" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 1 &quot;elsobumm&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 2 &quot;masodikbumm&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 3 &quot;harmadikbumm&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 4 &quot;negyedikbumm&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 5 &quot;buliindul&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 6 &quot;bummsok&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 7 &quot;szeteses&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 8 &quot;sz2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 9 &quot;sz3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 10 &quot;sz4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 11 &quot;kienged&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 12 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 13 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 14 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 15 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 16 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 17 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 18 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 19 &quot;turu&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 100 Cue 20 &quot;kienged&quot;" Wait="0.10" />
+    <MacroLine Command="Drive 1" />
+    <MacroLine Command="import timecode &quot;tesztlofasz_timecode&quot;" />
+  </Macro>
+</GMA3>

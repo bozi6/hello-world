@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GMA3 DataVersion="1.4.0.2">
-     <Timecode Name="vivaldi" Guid="00 00 00 00 3F 76 B7 04 32 0B 00 00 68 A1 4F AA" Cursor=„00.00“ Duration="292.717" LoopCount="0" TCSlot="-1" SwitchOff="Keep Playbacks" Goto="as Go" Timedisplayformat="&lt;10d11h23m45&gt;" FrameReadout="&lt;Seconds&gt;">
+     <Timecode Name="vivaldi" Guid="00 00 00 00 3F 76 B7 04 32 0B 00 00 68 A1 4F AA" Cursor="00.00" Duration="292.717" LoopCount="0" TCSlot="-1" SwitchOff="Keep Playbacks" Goto="as Go" Timedisplayformat="&lt;10d11h23m45&gt;" FrameReadout="&lt;Seconds&gt;">
         <TrackGroup Play="" Rec="">
             <MarkerTrack Name="Marker" Guid="00 00 00 00 B1 F5 25 5F 70 04 00 00 28 74 D0 4B" />
             <Track Guid="00 00 00 00 B7 10 04 13 3B 0B 00 00 38 E1 4F AA" Target="ShowData.DataPools.Default.Sequences.Sequence 100" Play="" Rec="">
                 <TimeRange Guid="00 00 00 00 21 68 E5 6F 3C 0B 00 00 38 E1 4F AA" Play="" Rec="">
                     <CmdSubTrack>
                         <CmdEvent Name="Go+" Time="15.000">
-                            <RealtimeCmd Type="Key"
-                                         Source="Original"
-                                         UserProfile="0"
-                                         Status="On"
-                                         IsRealtime="1"
-                                         IsXFade="0"
-                                         IgnoreFollow="0"
-                                         IgnoreCommand="0"
-                                         Assert="0"
-                                         IgnoreNetwork="0"
-                                         FromTriggerNode="0"
-                                         IgnoreExecTime="0"
-                                         IssuedByTimecode="0"
-                                         FromLocalHardwareFader="1"
-                                         Object="ShowData.DataPools.Default.Sequences.Sequence 100"
-                                         Caller="ShowData.DataPools.Default.Pages.Page 5.Exec 101 : Sequence 100"
-                                         ExecToken="Go+"
-                                         ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.elsobumm" />
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0"  FromLocalHardwareFader="1" Object="ShowData.DataPools.Default.Sequences.Sequence 100" Caller="ShowData.DataPools.Default.Pages.Page 5.Exec 101 : Sequence 100" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.elsobumm" />
                         </CmdEvent>
                         <CmdEvent Name="Go+" Time="41.271">
                             <RealtimeCmd Type="Key"
