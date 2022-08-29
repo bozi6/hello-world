@@ -8,7 +8,8 @@ class Employee:
         self.salary = salary
         Employee.empCount += 1
 
-    def displayCount(self):
+    @staticmethod
+    def displayCount():
         print("Total Employee %d" % Employee.empCount)
 
     def displayEmployee(self):
