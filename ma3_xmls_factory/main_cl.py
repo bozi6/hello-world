@@ -18,7 +18,7 @@ __uri__ = __url__
 __doc__ = __description__ + " <" + __uri__ + ">"
 
 # For debugging remove # from next line.
-#logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class CreateMacroFromCsv(object):
@@ -40,10 +40,7 @@ class CreateMacroFromCsv(object):
         self.csv_dict = []
         self.tree = ett.ElementTree
         self.read_xml()
-        logging.debug("Init called")
-        logging.debug(f"Input file: {self.bemenet_file}")
-        logging.debug(f"Sequence number: {self.seq_szam}")
-        logging.debug(f"Project name: {self.projekt_nev}")
+        logging.debug("Init called.")
         self.create_xml_macro()
         self.create_xml_time()
 
@@ -64,9 +61,7 @@ class CreateMacroFromCsv(object):
         """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
         uid = ' '.join(szoveg[i:i + 2] for i in range(0, len(szoveg), 2))
-        logging.debug("Uidgen Call")
-        logging.debug("Generated uid: ")
-        logging.debug(uid)
+        logging.debug(f"Generated UUID: {uid.upper()}")
         return uid.upper()
 
     def read_xml(self):
@@ -74,18 +69,24 @@ class CreateMacroFromCsv(object):
         Read given csv file and convert it to dictionary
         :return: Readad csv file into dictionary
         """
-        csv_file = open(self.bemenet_file)
-        ofile = csv.reader(csv_file)
-        logging.debug("Read XML called")
-        logging.debug(f"Input file name: {csv_file}")
-        logging.debug(f"Output dictionary name: {ofile}")
-        for readline in ofile:
-            self.csv_dict.append(readline)
-        csv_file.close()
-        self.csv_dict.pop(0)
-        for i in range(0, len(self.csv_dict)):
-            self.csv_dict[i][1] = "".join(self.csv_dict[i][1])
-        return self.csv_dict
+        try:
+            csv_file = open(self.bemenet_file)
+            ofile = csv.reader(csv_file)
+            logging.debug("Read XML called")
+            for readline in ofile:
+                self.csv_dict.append(readline)
+            csv_file.close()
+            self.csv_dict.pop(0)
+            for i in range(0, len(self.csv_dict)):
+                self.csv_dict[i][1] = "".join(self.csv_dict[i][1])
+            logging.debug(f"Output dictionary first element: {self.csv_dict[0]}")
+            return self.csv_dict
+        except FileNotFoundError:
+            print('File not found...')
+            exit(1)
+        except IndexError:
+            print('File format mismatch...')
+            exit(1)
 
     def create_xml_macro(self):
         """
@@ -116,6 +117,9 @@ class CreateMacroFromCsv(object):
             macroline.set("Wait", "0.10")
 
         macroline = ett.SubElement(macro, "MacroLine")
+        macroline.set("Command", "Label Sequence {} \"{}\"".format(self.seq_szam, self.projekt_nev))
+        macroline.set("Wait", "0.10")
+        macroline = ett.SubElement(macro, "MacroLine")
         macroline.set("Command", "Drive 1")
         macroline = ett.SubElement(macro, "MacroLine")
         macroline.set("Command", "import timecode \"{}_timecode\"".format(self.projekt_nev))
@@ -132,10 +136,8 @@ class CreateMacroFromCsv(object):
         cuek_szama = len(self.csv_dict) - 1
         utolso_marker = float(self.csv_dict[cuek_szama][2]) + 1
         logging.debug("Create timceode called")
-        logging.debug("Cues numbers: ")
-        logging.debug(cuek_szama)
-        logging.debug("Last marker: ")
-        logging.debug(utolso_marker)
+        logging.debug(f"Cues numbers: {cuek_szama}")
+        logging.debug(f"Last marker: {utolso_marker}")
         root = ett.Element("GMA3")
         root.set("DataVersion", "1.8.1.0")
 
@@ -161,8 +163,9 @@ class CreateMacroFromCsv(object):
         markertrack.set("Guid", self.uidgen())
 
         track = ett.SubElement(trackgroup, "Track")
+        track.set("Name", self.projekt_nev)
         track.set("Guid", self.uidgen())
-        track.set("Target", "ShowData.DataPools.Default.Sequences.Sequence {}".format(self.seq_szam))
+        track.set("Target", "ShowData.DataPools.Default.Sequences.{}".format(self.projekt_nev))
         track.set("Play", "")
         track.set("Rec", "")
 
@@ -210,6 +213,9 @@ if __name__ == "__main__":
     pnev = input("Project name:")
     """
     bem = "vrm.csv"
-    seq = 5
-    pnev = "tesztlofasz"
+    seq = 10
+    pnev = "vivaldi7"
+    logging.debug(f"input file:{bem}")
+    logging.debug(f"Sequence number:{seq}")
+    logging.debug(f"Project name:{pnev}")
     new_test = CreateMacroFromCsv(bem, seq, pnev)

@@ -48,5 +48,14 @@ class CreatePresets(object):
 
 
 if __name__ == "__main__":
+    """
+    Ennek semmi köze csak ide írtam:
+    Set Fixture 1 "PanOffset" 0-127"
+    Átállítja a lámpa pan offsetjét a 0 90-es tiltnél néz előre,
+    a 127 pedig counterclockwise irányban zár be 270 fokos szöget
+    a negatív pedig -130-nál lesz clockwise 270 fok.
+    A Tiltoffset pedig 129 => lenthez képest előre fel
+    a - hátra fel.
+    """
     newdim = CreatePresets()
     print("Dimmer preset xml file created.")

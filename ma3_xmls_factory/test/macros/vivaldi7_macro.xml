@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GMA3 DataVersion="1.8.1.0">
+  <Macro Name="vivaldi7" Guid="4D 1D 68 2A AA D7 5F 9C F8 7F 6F EB E0 DC 8E A8">
+    <MacroLine Command="Store Sequence 10 Cue 1 thru 97" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 1 &quot;kezdes&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 2 &quot;b1&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 3 &quot;b1v&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 4 &quot;k2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 5 &quot;b2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 6 &quot;b2v&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 7 &quot;k3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 8 &quot;b3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 9 &quot;b3v&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 10 &quot;fo&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 11 &quot;b4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 12 &quot;b4v&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 13 &quot;alapvissza&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 14 &quot;indul&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 15 &quot;i2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 16 &quot;i3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 17 &quot;i4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 18 &quot;i5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 19 &quot;i6&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 20 &quot;i7&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 21 &quot;i8&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 22 &quot;szepem&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 23 &quot;sz2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 24 &quot;sz3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 25 &quot;sz4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 26 &quot;sz5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 27 &quot;sz6&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 28 &quot;sz7&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 29 &quot;sz8&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 30 &quot;sz9&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 31 &quot;levalik&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 32 &quot;1tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 33 &quot;2tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 34 &quot;3tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 35 &quot;4tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 36 &quot;5tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 37 &quot;6tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 38 &quot;7tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 39 &quot;8tr&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 40 &quot;kiold&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 41 &quot;valt&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 42 &quot;kis&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 43 &quot;2d10&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 44 &quot;3d10&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 45 &quot;f1&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 46 &quot;f2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 47 &quot;f3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 48 &quot;f4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 49 &quot;f5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 50 &quot;f6&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 51 &quot;f7&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 52 &quot;f8&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 53 &quot;f9&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 54 &quot;f10&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 55 &quot;trutan&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 56 &quot;tur&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 57 &quot;leb&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 58 &quot;valt&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 59 &quot;v2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 60 &quot;v3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 61 &quot;v4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 62 &quot;tetelend&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 63 &quot;t2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 64 &quot;t3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 65 &quot;t4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 66 &quot;t5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 67 &quot;t6&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 68 &quot;t7&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 69 &quot;t8&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 70 &quot;t9&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 71 &quot;brang&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 72 &quot;b2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 73 &quot;b3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 74 &quot;b4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 75 &quot;b5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 76 &quot;b6&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 77 &quot;huz&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 78 &quot;h2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 79 &quot;h4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 80 &quot;h5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 81 &quot;11indul&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 82 &quot;zuhan&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 83 &quot;z2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 84 &quot;z3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 85 &quot;z4&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 86 &quot;z5&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 87 &quot;z7&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 88 &quot;z8&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 89 &quot;12kiall&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 90 &quot;felomlik&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 91 &quot;darazsak&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 92 &quot;bing&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 93 &quot;nt&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 94 &quot;nt2&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 95 &quot;nt3&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 96 &quot;vege&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 97 &quot;sotet&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 &quot;vivaldi7&quot;" Wait="0.10" />
+    <MacroLine Command="Drive 1" />
+    <MacroLine Command="import timecode &quot;vivaldi7_timecode&quot;" />
+  </Macro>
+</GMA3>
