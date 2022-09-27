@@ -1,6 +1,6 @@
 # Honvédelmi adatok 2022-re az autentikusból
 # Készítette: Konta Boáz (kontab6@gmail.com).
-USE honved2;
+#USE honved2;
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-04","24","Nincs megadva kezdés.","BEÉPÍTÉS","A hűtlen feleség","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-05","24","19:00","Bp., Müpa","A hűtlen feleség","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-08","24","19:00","Bp., Müpa","A Tenkes kapitánya (Covid megbetegedések miatt lemondtuk)","","","0");

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GMA3 DataVersion="1.4.0.2">
+     <Timecode Name="vivaldi" Guid="00 00 00 00 3F 76 B7 04 32 0B 00 00 68 A1 4F AA" Cursor="00.00" Duration="292.717" LoopCount="0" TCSlot="-1" SwitchOff="Keep Playbacks" Goto="as Go" Timedisplayformat="&lt;10d11h23m45&gt;" FrameReadout="&lt;Seconds&gt;">
+        <TrackGroup Play="" Rec="">
+            <MarkerTrack Name="Marker" Guid="00 00 00 00 B1 F5 25 5F 70 04 00 00 28 74 D0 4B" />
+            <Track Guid="00 00 00 00 B7 10 04 13 3B 0B 00 00 38 E1 4F AA" Target="ShowData.DataPools.Default.Sequences.Sequence 100" Play="" Rec="">
+                <TimeRange Guid="00 00 00 00 21 68 E5 6F 3C 0B 00 00 38 E1 4F AA" Play="" Rec="">
+                    <CmdSubTrack>
+                        <CmdEvent Name="Go+" Time="15.000">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0"  FromLocalHardwareFader="1" Object="ShowData.DataPools.Default.Sequences.Sequence 100" Caller="ShowData.DataPools.Default.Pages.Page 5.Exec 101 : Sequence 100" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.elsobumm" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="41.271">
+                            <RealtimeCmd Type="Key"
+                                         Source="Original"
+                                         UserProfile="0"
+                                         Status="On"
+                                         IsRealtime="1"
+                                         IsXFade="0"
+                                         IgnoreFollow="0"
+                                         IgnoreCommand="0"
+                                         Assert="0"
+                                         IgnoreNetwork="0"
+                                         FromTriggerNode="0"
+                                         IgnoreExecTime="0"
+                                         IssuedByTimecode="0"
+                                         FromLocalHardwareFader="1"
+                                         ExecToken="Go+"
+                                         ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.masodikbumm" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="84.222">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.harmadikbumm" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="106.012">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.negyedikbumm" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="123.904">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.buliindul" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="130.231">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.bummsok" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="135.358">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.szeteses" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="159.090">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.kienged" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="163.350">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.feszul" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="175.310">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.kisszolo" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="188.438">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.lebeges" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="194.158">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.trumm" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="219.343">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.masodiksolo" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="234.175">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.vissza" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="255.748">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.megintzuz" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="264.967">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.trimtrimtrim" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="269.785">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.szedelges" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="274.014">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.szedeleg2" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="278.618">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.vissza_1" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="288.418">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.finale" />
+                        </CmdEvent>
+                        <CmdEvent Name="Go+" Time="291.717">
+                            <RealtimeCmd Type="Key" Source="Original" UserProfile="0" Status="On" IsRealtime="1" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" ExecToken="Go+" ValCueDestination="ShowData.DataPools.Default.Sequences.Sequence 100.stet" />
+                        </CmdEvent>
+                    </CmdSubTrack>
+                </TimeRange>
+            </Track>
+        </TrackGroup>
+    </Timecode>
+</GMA3>
