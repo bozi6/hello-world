@@ -18,7 +18,7 @@ __uri__ = __url__
 __doc__ = __description__ + " <" + __uri__ + ">"
 
 # For debugging remove # from next line.
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class CreateMacroFromCsv(object):
@@ -30,7 +30,7 @@ class CreateMacroFromCsv(object):
         :param projekt_nev: The name of generated macro and sequence and timecode pool objects.
         """
         self.bemenet_file = bemenet_file
-        self.seq_szam = seq_szam
+        self.seq_szam = int(seq_szam)
         self.projekt_nev = projekt_nev
         if logging.getLogger().getEffectiveLevel() == 30:  # ha nem debuggolunk akkor mehet élesben
             self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
@@ -113,7 +113,8 @@ class CreateMacroFromCsv(object):
             macroline = ett.SubElement(macro, "MacroLine")
             cueneve = unidecode.unidecode(self.csv_dict[sorsz - 1][1])
             cueneve = cueneve.replace(" ", "")
-            macroline.set("Command", "Label Sequence {} Cue {} \"{}\"".format(self.seq_szam, sorsz, cueneve))
+            cueneve = cueneve.capitalize()
+            macroline.set("Command", 'Label Sequence {} Cue {} "{}"'.format(self.seq_szam, sorsz, cueneve))
             macroline.set("Wait", "0.10")
 
         macroline = ett.SubElement(macro, "MacroLine")
@@ -213,8 +214,8 @@ if __name__ == "__main__":
     pnev = input("Project name:")
     """
     bem = "vrm.csv"
-    seq = 10
-    pnev = "vivaldi7"
+    seq = 3
+    pnev = "vivaldi_neo"
     logging.debug(f"input file:{bem}")
     logging.debug(f"Sequence number:{seq}")
     logging.debug(f"Project name:{pnev}")

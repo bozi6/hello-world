@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <GMA3 DataVersion="1.8.1.0">
-  <Timecode Name="vivaldi7" Guid="9B C5 FF 2B 23 60 3A F9 FB 5B E7 B5 6A E0 6A 1C" Cursor="00.00" Duration="292.579" LoopCount="0" TCSlot="-1" AutoStop="No" SwitchOff="Keep Playbacks" Goto="as Go" TimeDisplayFormat="&lt;Default&gt;" FrameReadout="Default">
+  <Timecode Name="vivaldi7" Guid="F7 6E 1F 7C 35 68 80 AE 29 8D 52 AF 41 73 8C 8F" Cursor="00.00" Duration="292.579" LoopCount="0" TCSlot="-1" AutoStop="No" SwitchOff="Keep Playbacks" Goto="as Go" TimeDisplayFormat="&lt;Default&gt;" FrameReadout="Default">
     <TrackGroup Play="" Rec="">
-      <MarkerTrack Name="Marker" Guid="27 F6 83 57 4E 64 CA D9 70 AD 44 F7 19 0A 17 04" />
-      <Track Name="vivaldi7" Guid="6F 76 92 85 95 35 29 80 41 A1 A3 22 27 F7 10 15" Target="ShowData.DataPools.Default.Sequences.vivaldi7" Play="" Rec="">
-        <TimeRange Guid="1F 25 5A 02 41 CE 3C 4D 11 A3 74 CD 5E DD 3B 39" Duration="To End" Play="" Rec="">
+      <MarkerTrack Name="Marker" Guid="6D DB 88 BA 6F 54 32 6B 19 90 99 3E 36 A4 7F 66" />
+      <Track Name="vivaldi7" Guid="F8 76 ED 6B 24 9E FC 8D F2 C5 29 EC E1 E5 E0 79" Target="ShowData.DataPools.Default.Sequences.vivaldi7" Play="" Rec="">
+        <TimeRange Guid="74 E9 EE 56 44 11 0D 2A 3F EC A7 62 C9 56 15 47" Duration="To End" Play="" Rec="">
           <CmdSubTrack>
             <CmdEvent Name="Go+" Time="0.500">
               <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.1000" />

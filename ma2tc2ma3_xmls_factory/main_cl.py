@@ -6,6 +6,7 @@ import string
 import unidecode
 import logging
 import platform
+import math
 
 __author__ = 'Konta Boáz'
 __email__ = 'kontab6@gmail.com'
@@ -19,7 +20,7 @@ __uri__ = __url__
 __doc__ = __description__ + " <" + __uri__ + ">"
 
 # For debugging remove # from next line.
-# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class CreateMacroFromXml(object):
@@ -34,7 +35,7 @@ class CreateMacroFromXml(object):
         self.seq_szam = seq_szam
         self.projekt_nev = projekt_nev
         if logging.getLogger().getEffectiveLevel() == 30:  # ha nem debuggolunk akkor mehet élesben
-            if platform.system() == 'Mac':
+            if platform.system() == 'Darwin':
                 self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
             elif platform.system() == 'Windows':
                 self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/"
@@ -129,7 +130,7 @@ class CreateMacroFromXml(object):
         for sorsz in range(1, cuek_szama):
             macroline = ett.SubElement(macro, "MacroLine")
             cueneve = unidecode.unidecode(self.csv_dict[sorsz - 1][1])
-            cueneve = cueneve.replace(" ", "")
+            cueneve = cueneve.replace(" ", "_")
             macroline.set("Command", "Label Sequence {} Cue {} \"{}\"".format(self.seq_szam, sorsz, cueneve))
             macroline.set("Wait", "0.10")
 
@@ -222,7 +223,7 @@ class CreateMacroFromXml(object):
 
     @staticmethod
     def sectotime(secs):
-        return str(secs / 30)
+        return str(math.floor(secs / 30))
 
 
 if __name__ == "__main__":

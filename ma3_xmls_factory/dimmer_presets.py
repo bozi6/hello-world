@@ -35,7 +35,11 @@ class CreatePresets(object):
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Fixture 1 At {}".format(self.ertekek[i - 1]))
             macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Store Preset 1.{}".format(i))
+            macroline.set("Command", "Store Preset 1.{} /Merge".format(i))
+            macroline = ett.SubElement(macro, "MacroLine")
+            macroline.set("Command", "Channel 1 At {}".format(self.ertekek[i - 1]))
+            macroline = ett.SubElement(macro, "MacroLine")
+            macroline.set("Command", "Store Preset 1.{} /Merge".format(i))
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Label Preset 1.{} \"{}%\"".format(i, self.ertekek[i - 1]))
 
@@ -44,8 +48,12 @@ class CreatePresets(object):
         self.write_xml_file(self.kimeneti_mappa + kimeneti_file)
 
     def write_xml_file(self, output_file):
-        with open(output_file, "wb") as files:
-            self.tree.write(files, xml_declaration=True, encoding="UTF-8", method="xml")
+        try:
+            with open(output_file, "wb") as files:
+                self.tree.write(files, xml_declaration=True, encoding="UTF-8", method="xml")
+        except IOError:
+            print("gebasz")
+            exit(1)
 
 
 if __name__ == "__main__":
