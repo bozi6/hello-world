@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GMA3 DataVersion="1.8.1.0">
+  <Timecode Name="halali" Guid="16 F5 A3 09 A9 C2 5A F5 6C 98 5E 58 42 61 46 BC" Cursor="00.00" Duration="2852.0" LoopCount="0" TCSlot="-1" AutoStop="No" SwitchOff="Keep Playbacks" Goto="as Go" TimeDisplayFormat="&lt;Default&gt;" FrameReadout="Default">
+    <TrackGroup Play="" Rec="">
+      <MarkerTrack Name="Marker" Guid="CE AD 65 5A 7E 04 A7 42 03 7F EC E4 93 AE CD B7" />
+      <Track Name="halali" Guid="A6 B2 9F 33 1D F0 C3 B9 0E D4 2E 88 F2 51 53 21" Target="ShowData.DataPools.Default.Sequences.halali" Play="" Rec="">
+        <TimeRange Guid="1B 84 28 4E BA 6E 7A 5F 0D 3B B6 98 5B 87 35 84" Duration="To End" Play="" Rec="">
+          <CmdSubTrack>
+            <CmdEvent Name="Go+" Time="0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.1000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="15.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.2000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="45.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.3000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="118.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.4000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="160.86666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.5000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="206.1">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.6000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="208.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.7000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="389.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.8000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="430.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.9000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="615.7666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.10000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="630.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.11000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="646.0666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.12000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="790.9">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.13000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="799.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.14000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="812.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.15000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="834.6666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.16000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="936.4333333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.17000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="982.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.18000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="998.6666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.19000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1052.3333333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.20000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1064.5">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.21000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1091.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.22000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1114.3666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.23000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1244.1666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.24000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1336.5333333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.25000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1372.3666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.26000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1410.5">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.27000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1531.1666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.28000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1545.0666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.29000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1605.4333333333334">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.30000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1733.2">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.31000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1763.0666666666666">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.32000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1774.9333333333334">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.33000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1800.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.34000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1852.6666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.35000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1982.6666666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.36000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="1996.5">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.37000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2002.3333333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.38000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2005.4">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.39000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2089.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.40000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2147.9">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.41000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2297.866666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.42000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2502.8">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.43000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2512.266666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.44000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2540.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.45000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2604.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.46000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2681.5333333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.47000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2742.866666666667">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.48000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2747.5">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.49000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2815.733333333333">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.50000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2841.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.51000" />
+            </CmdEvent>
+            <CmdEvent Name="Go+" Time="2851.0">
+              <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.52000" />
+            </CmdEvent>
+          </CmdSubTrack>
+        </TimeRange>
+      </Track>
+    </TrackGroup>
+  </Timecode>
+</GMA3>

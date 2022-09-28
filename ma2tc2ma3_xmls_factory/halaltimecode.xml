@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="styles/timecode@sheet.xsl"?>
+<MA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.malighting.de/grandma2/xml/MA" xsi:schemaLocation="http://schemas.malighting.de/grandma2/xml/MA http://schemas.malighting.de/grandma2/xml/3.9.60/MA.xsd" major_vers="3" minor_vers="9" stream_vers="60">
+	<Info datetime="2022-09-27T12:47:16" showfile="ballare honved" />
+	<Timecode index="0" name="Halalba" lenght="89171" play_mode="Play" slot="TC Slot 2" frame_format="30 FPS">
+		<Track index="0" active="true" expanded="true">
+			<Object name="Halalba tancoltatott lany 2.3">
+				<No>30</No>
+				<No>1</No>
+				<No>2</No>
+				<No>3</No>
+			</Object>
+			<SubTrack index="0">
+				<Event index="0" command="Goto" pressed="true" step="1">
+					<Cue name="Sotet 100">
+						<No>1</No>
+						<No>18</No>
+						<No>1</No>
+					</Cue>
+				</Event>
+				<Event index="1" time="450" command="Goto" pressed="true" step="2">
+					<Cue name="Nyito kep 101">
+						<No>1</No>
+						<No>18</No>
+						<No>2</No>
+					</Cue>
+				</Event>
+				<Event index="2" time="1350" command="Goto" pressed="true" step="3">
+					<Cue name="Bevonulas 102">
+						<No>1</No>
+						<No>18</No>
+						<No>3</No>
+					</Cue>
+				</Event>
+				<Event index="3" time="3540" command="Goto" pressed="true" step="4">
+					<Cue name="Valtozas 103">
+						<No>1</No>
+						<No>18</No>
+						<No>4</No>
+					</Cue>
+				</Event>
+				<Event index="4" time="4826" command="Goto" pressed="true" step="5">
+					<Cue name="Ima 104">
+						<No>1</No>
+						<No>18</No>
+						<No>5</No>
+					</Cue>
+				</Event>
+				<Event index="5" time="6183" command="Goto" pressed="true" step="6">
+					<Cue name="Ebredes 105">
+						<No>1</No>
+						<No>18</No>
+						<No>6</No>
+					</Cue>
+				</Event>
+				<Event index="6" time="6240" command="Goto" pressed="true" step="7">
+					<Cue name="Oltozkodes 106">
+						<No>1</No>
+						<No>18</No>
+						<No>7</No>
+					</Cue>
+				</Event>
+				<Event index="7" time="11670" command="Goto" pressed="true" step="8">
+					<Cue name="Fiuk be 107">
+						<No>1</No>
+						<No>18</No>
+						<No>8</No>
+					</Cue>
+				</Event>
+				<Event index="8" time="12900" command="Goto" pressed="true" step="9">
+					<Cue name="Kozepe 108">
+						<No>1</No>
+						<No>18</No>
+						<No>9</No>
+					</Cue>
+				</Event>
+				<Event index="9" time="18473" command="Goto" pressed="true" step="10">
+					<Cue name="Vege 109">
+						<No>1</No>
+						<No>18</No>
+						<No>10</No>
+					</Cue>
+				</Event>
+				<Event index="10" time="18900" command="Goto" pressed="true" step="11">
+					<Cue name="Valtozas 110">
+						<No>1</No>
+						<No>18</No>
+						<No>11</No>
+					</Cue>
+				</Event>
+				<Event index="11" time="19382" command="Goto" pressed="true" step="12">
+					<Cue name="Szerelem tanc 111">
+						<No>1</No>
+						<No>18</No>
+						<No>12</No>
+					</Cue>
+				</Event>
+				<Event index="12" time="23727" command="Goto" pressed="true" step="13">
+					<Cue name="Valtozas 112">
+						<No>1</No>
+						<No>18</No>
+						<No>13</No>
+					</Cue>
+				</Event>
+				<Event index="13" time="23970" command="Goto" pressed="true" step="14">
+					<Cue name="Ordog 113">
+						<No>1</No>
+						<No>18</No>
+						<No>14</No>
+					</Cue>
+				</Event>
+				<Event index="14" time="24360" command="Goto" pressed="true" step="15">
+					<Cue name="Ordog be jon 114">
+						<No>1</No>
+						<No>18</No>
+						<No>15</No>
+					</Cue>
+				</Event>
+				<Event index="15" time="25040" command="Goto" pressed="true" step="16">
+					<Cue name="Ordog tanc Busot leveszi 115">
+						<No>1</No>
+						<No>18</No>
+						<No>16</No>
+					</Cue>
+				</Event>
+				<Event index="16" time="28093" command="Goto" pressed="true" step="17">
+					<Cue name="Subak forognak 116">
+						<No>1</No>
+						<No>18</No>
+						<No>17</No>
+					</Cue>
+				</Event>
+				<Event index="17" time="29460" command="Goto" pressed="true" step="18">
+					<Cue name="Osszeallnak 117">
+						<No>1</No>
+						<No>18</No>
+						<No>18</No>
+					</Cue>
+				</Event>
+				<Event index="18" time="29960" command="Goto" pressed="true" step="19">
+					<Cue name="Subak le 118">
+						<No>1</No>
+						<No>18</No>
+						<No>19</No>
+					</Cue>
+				</Event>
+				<Event index="19" time="31570" command="Goto" pressed="true" step="20">
+					<Cue name="Ordog egyedul 119">
+						<No>1</No>
+						<No>18</No>
+						<No>20</No>
+					</Cue>
+				</Event>
+				<Event index="20" time="31935" command="Goto" pressed="true" step="21">
+					<Cue name="Valtozas 120">
+						<No>1</No>
+						<No>18</No>
+						<No>21</No>
+					</Cue>
+				</Event>
+				<Event index="21" time="32730" command="Goto" pressed="true" step="22">
+					<Cue name="Lanyok a padon 121">
+						<No>1</No>
+						<No>18</No>
+						<No>22</No>
+					</Cue>
+				</Event>
+				<Event index="22" time="33431" command="Goto" pressed="true" step="23">
+					<Cue name="Harom a tanc 122">
+						<No>1</No>
+						<No>18</No>
+						<No>23</No>
+					</Cue>
+				</Event>
+				<Event index="23" time="37325" command="Goto" pressed="true" step="24">
+					<Cue name="Zenere total emeles 123">
+						<No>1</No>
+						<No>18</No>
+						<No>24</No>
+					</Cue>
+				</Event>
+				<Event index="24" time="40096" command="Goto" pressed="true" step="25">
+					<Cue name="Valtozas 124">
+						<No>1</No>
+						<No>18</No>
+						<No>25</No>
+					</Cue>
+				</Event>
+				<Event index="25" time="41171" command="Goto" pressed="true" step="26">
+					<Cue name="Busongas 125">
+						<No>1</No>
+						<No>18</No>
+						<No>26</No>
+					</Cue>
+				</Event>
+				<Event index="26" time="42315" command="Goto" pressed="true" step="27">
+					<Cue name="Fel all tancolni 126">
+						<No>1</No>
+						<No>18</No>
+						<No>27</No>
+					</Cue>
+				</Event>
+				<Event index="27" time="45935" command="Goto" pressed="true" step="28">
+					<Cue name="Valtozas 127">
+						<No>1</No>
+						<No>18</No>
+						<No>28</No>
+					</Cue>
+				</Event>
+				<Event index="28" time="46352" command="Goto" pressed="true" step="29">
+					<Cue name="Verekedes 128">
+						<No>1</No>
+						<No>18</No>
+						<No>29</No>
+					</Cue>
+				</Event>
+				<Event index="29" time="48163" command="Goto" pressed="true" step="30">
+					<Cue name="Botok 129">
+						<No>1</No>
+						<No>18</No>
+						<No>30</No>
+					</Cue>
+				</Event>
+				<Event index="30" time="51996" command="Goto" pressed="true" step="31">
+					<Cue name="Gyozelem 130">
+						<No>1</No>
+						<No>18</No>
+						<No>31</No>
+					</Cue>
+				</Event>
+				<Event index="31" time="52892" command="Goto" pressed="true" step="32">
+					<Cue name="Fel all 131">
+						<No>1</No>
+						<No>18</No>
+						<No>32</No>
+					</Cue>
+				</Event>
+				<Event index="32" time="53248" command="Goto" pressed="true" step="33">
+					<Cue name="Valtozas/kimegy/ 132">
+						<No>1</No>
+						<No>18</No>
+						<No>33</No>
+					</Cue>
+				</Event>
+				<Event index="33" time="54000" command="Goto" pressed="true" step="34">
+					<Cue name="Keszulodes 133">
+						<No>1</No>
+						<No>18</No>
+						<No>34</No>
+					</Cue>
+				</Event>
+				<Event index="34" time="55580" command="Goto" pressed="true" step="35">
+					<Cue name="Fiuk be 134">
+						<No>1</No>
+						<No>18</No>
+						<No>35</No>
+					</Cue>
+				</Event>
+				<Event index="35" time="59480" command="Goto" pressed="true" step="36">
+					<Cue name="Szukul 135">
+						<No>1</No>
+						<No>18</No>
+						<No>36</No>
+					</Cue>
+				</Event>
+				<Event index="36" time="59895" command="Goto" pressed="true" step="37">
+					<Cue name="Valtozas 136">
+						<No>1</No>
+						<No>18</No>
+						<No>37</No>
+					</Cue>
+				</Event>
+				<Event index="37" time="60070" command="Goto" pressed="true" step="38">
+					<Cue name="SOTET 137">
+						<No>1</No>
+						<No>18</No>
+						<No>38</No>
+					</Cue>
+				</Event>
+				<Event index="38" time="60162" command="Goto" pressed="true" step="39">
+					<Cue name="Bal 138">
+						<No>1</No>
+						<No>18</No>
+						<No>39</No>
+					</Cue>
+				</Event>
+				<Event index="39" time="62670" command="Goto" pressed="true" step="40">
+					<Cue name="Elol 139">
+						<No>1</No>
+						<No>18</No>
+						<No>40</No>
+					</Cue>
+				</Event>
+				<Event index="40" time="64437" command="Goto" pressed="true" step="41">
+					<Cue name="Kozepen 140">
+						<No>1</No>
+						<No>18</No>
+						<No>41</No>
+					</Cue>
+				</Event>
+				<Event index="41" time="68936" command="Goto" pressed="true" step="42">
+					<Cue name="Zene le all 141">
+						<No>1</No>
+						<No>18</No>
+						<No>42</No>
+					</Cue>
+				</Event>
+				<Event index="42" time="75084" command="Goto" pressed="true" step="43">
+					<Cue name="Ossze csuklik 142">
+						<No>1</No>
+						<No>18</No>
+						<No>43</No>
+					</Cue>
+				</Event>
+				<Event index="43" time="75368" command="Goto" pressed="true" step="44">
+					<Cue name="Fiu kilep 143">
+						<No>1</No>
+						<No>18</No>
+						<No>44</No>
+					</Cue>
+				</Event>
+				<Event index="44" time="76200" command="Goto" pressed="true" step="45">
+					<Cue name="Ravatal.emelik a lanyt 144">
+						<No>1</No>
+						<No>18</No>
+						<No>45</No>
+					</Cue>
+				</Event>
+				<Event index="45" time="78120" command="Goto" pressed="true" step="46">
+					<Cue name="Lany hatso agyon 145">
+						<No>1</No>
+						<No>18</No>
+						<No>46</No>
+					</Cue>
+				</Event>
+				<Event index="46" time="80446" command="Goto" pressed="true" step="47">
+					<Cue name="Atkozas 146">
+						<No>1</No>
+						<No>18</No>
+						<No>47</No>
+					</Cue>
+				</Event>
+				<Event index="47" time="82286" command="Goto" pressed="true" step="48">
+					<Cue name="Akasztas 147">
+						<No>1</No>
+						<No>18</No>
+						<No>48</No>
+					</Cue>
+				</Event>
+				<Event index="48" time="82425" command="Goto" pressed="true" step="49">
+					<Cue name="Zaro kep 148">
+						<No>1</No>
+						<No>18</No>
+						<No>49</No>
+					</Cue>
+				</Event>
+				<Event index="49" time="84472" command="Goto" pressed="true" step="50">
+					<Cue name="Melania jobb korbe 149">
+						<No>1</No>
+						<No>18</No>
+						<No>50</No>
+					</Cue>
+				</Event>
+				<Event index="50" time="85230" command="Goto" pressed="true" step="51">
+					<Cue name="SOTET 150">
+						<No>1</No>
+						<No>18</No>
+						<No>51</No>
+					</Cue>
+				</Event>
+				<Event index="51" time="85530" command="Goto" pressed="true" step="52">
+					<Cue name="Taps 151">
+						<No>1</No>
+						<No>18</No>
+						<No>52</No>
+					</Cue>
+				</Event>
+			</SubTrack>
+			<SubTrack index="1" fader_command="Master" />
+		</Track>
+		<Track index="1" active="true" expanded="true">
+			<Object name="Effect 2.6">
+				<No>30</No>
+				<No>1</No>
+				<No>2</No>
+				<No>6</No>
+			</Object>
+			<SubTrack index="0">
+				<Event index="0" time="25110" command="Go" pressed="true" step="1" fade_overwrite="0" />
+			</SubTrack>
+			<SubTrack index="1" fader_command="Master">
+				<Event index="0" time="25163" fader_level="1" />
+				<Event index="1" time="28050" fader_level="1" />
+				<Event index="2" time="28092" fader_level="0" />
+			</SubTrack>
+		</Track>
+	</Timecode>
+</MA>

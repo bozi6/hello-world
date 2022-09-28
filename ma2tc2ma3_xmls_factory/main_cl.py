@@ -5,6 +5,7 @@ import random
 import string
 import unidecode
 import logging
+import platform
 
 __author__ = 'Konta Boáz'
 __email__ = 'kontab6@gmail.com'
@@ -18,10 +19,10 @@ __uri__ = __url__
 __doc__ = __description__ + " <" + __uri__ + ">"
 
 # For debugging remove # from next line.
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-class CreateMacroFromCsv(object):
+class CreateMacroFromXml(object):
     def __init__(self, bemenet_file, seq_szam, projekt_nev):
         """
 
@@ -33,7 +34,10 @@ class CreateMacroFromCsv(object):
         self.seq_szam = seq_szam
         self.projekt_nev = projekt_nev
         if logging.getLogger().getEffectiveLevel() == 30:  # ha nem debuggolunk akkor mehet élesben
-            self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
+            if platform.system() == 'Mac':
+                self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
+            elif platform.system() == 'Windows':
+                self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/"
         else:
             self.kimeneti_mappa = "./test/"
             self.pathexist(self.kimeneti_mappa)
@@ -50,8 +54,8 @@ class CreateMacroFromCsv(object):
             return True
         else:
             os.mkdir(path)
-            os.mkdir(path+"/macros")
-            os.mkdir(path+"/timecodes")
+            os.mkdir(path + "/macros")
+            os.mkdir(path + "/timecodes")
 
     @staticmethod
     def uidgen():
@@ -66,21 +70,34 @@ class CreateMacroFromCsv(object):
 
     def read_xml(self):
         """
-        Read given csv file and convert it to dictionary
-        :return: Readad csv file into dictionary
+        Read given xml file and convert it to dictionary
+        :return: Readad xml file into dictionary
         """
         try:
-            csv_file = open(self.bemenet_file)
-            ofile = csv.reader(csv_file)
-            logging.debug("Read XML called")
-            for readline in ofile:
-                self.csv_dict.append(readline)
-            csv_file.close()
-            self.csv_dict.pop(0)
-            for i in range(0, len(self.csv_dict)):
-                self.csv_dict[i][1] = "".join(self.csv_dict[i][1])
-            logging.debug(f"Output dictionary first element: {self.csv_dict[0]}")
-            return self.csv_dict
+            tree = ett.parse(self.bemenet_file)
+            root = tree.getroot()
+            """for child in root.iter():
+                print("Tag: ", child.tag, " Attrib: ", child.attrib)"""
+            for child in root.findall('.//{http://schemas.malighting.de/grandma2/xml/MA}SubTrack'):
+                # print("child attrib: ", child.attrib)
+                logging.debug(f"SubTrack index attrib: {child.get('index')}")
+                for cue in child.findall('.//{http://schemas.malighting.de/grandma2/xml/MA}Event'):
+                    logging.debug(f"child command attrib: {child.get('command')}")
+                    if cue.get('time') is not None:
+                        ido = self.sectotime(int(cue.get('time')))
+                    else:
+                        ido = '0'
+                    logging.debug(f"Cue name:  {cue[0].get('name')}")
+                    cuename = cue[0].get('name')
+                    # logging.debug(f"cue: {cue[0].text}")
+                    logging.debug(f"cue: {cue[0][1].text}")
+                    logging.debug(f"cue: {cue[0][2].text}")
+                    cuenum = cue[0][2].text
+                    egy = [cuenum, cuename, ido]
+                    self.csv_dict.append(egy)
+
+                logging.debug('-' * 32)
+                return self.csv_dict
         except FileNotFoundError:
             print('File not found...')
             exit(1)
@@ -106,7 +123,7 @@ class CreateMacroFromCsv(object):
         macro.set("Guid", self.uidgen())
 
         macroline = ett.SubElement(macro, "MacroLine")
-        macroline.set("Command", "Store Sequence {} Cue 1 thru {}".format(self.seq_szam, cuek_szama -1))
+        macroline.set("Command", "Store Sequence {} Cue 1 thru {}".format(self.seq_szam, cuek_szama - 1))
         macroline.set("Wait", "0.10")
 
         for sorsz in range(1, cuek_szama):
@@ -141,20 +158,20 @@ class CreateMacroFromCsv(object):
         root = ett.Element("GMA3")
         root.set("DataVersion", "1.8.1.0")
 
-        timecode = ett.SubElement(root, "Timecode")
-        timecode.set("Name", self.projekt_nev)
-        timecode.set("Guid", self.uidgen())
-        timecode.set("Cursor", "00.00")
-        timecode.set("Duration", str(utolso_marker))
-        timecode.set("LoopCount", "0")
-        timecode.set("TCSlot", "-1")
-        timecode.set("AutoStop", "No")
-        timecode.set("SwitchOff", "Keep Playbacks")
-        timecode.set("Goto", "as Go")
-        timecode.set("TimeDisplayFormat", "<Default>")
-        timecode.set("FrameReadout", "Default")
+        idocode = ett.SubElement(root, "Timecode")
+        idocode.set("Name", self.projekt_nev)
+        idocode.set("Guid", self.uidgen())
+        idocode.set("Cursor", "00.00")
+        idocode.set("Duration", str(utolso_marker))
+        idocode.set("LoopCount", "0")
+        idocode.set("TCSlot", "-1")
+        idocode.set("AutoStop", "No")
+        idocode.set("SwitchOff", "Keep Playbacks")
+        idocode.set("Goto", "as Go")
+        idocode.set("TimeDisplayFormat", "<Default>")
+        idocode.set("FrameReadout", "Default")
 
-        trackgroup = ett.SubElement(timecode, "TrackGroup")
+        trackgroup = ett.SubElement(idocode, "TrackGroup")
         trackgroup.set("Play", "")
         trackgroup.set("Rec", "")
 
@@ -189,7 +206,7 @@ class CreateMacroFromCsv(object):
                                 "IsExecXFade": "0",
                                 "ExecToken": "Go+",
                                 "ValCueDestination":
-                                    "12.12.0.4.{}.{}000".format(self.seq_szam-1, ertekek + 1)
+                                    "12.12.0.4.{}.{}000".format(self.seq_szam - 1, ertekek + 1)
                                 }
             # old value: "ValCueDestination": "12.12.0.4.49.{}000".format(ertekek + 1)
             # az Object is ugyanaz 12.12.0.4.99
@@ -199,23 +216,26 @@ class CreateMacroFromCsv(object):
         self.write_xml_file(self.kimeneti_mappa + "timecodes/" + kimeneti_file)
 
     def write_xml_file(self, mitirokki):
-        print("Files created in: "+mitirokki)
+        print("Files created in: " + mitirokki)
         with open(mitirokki, "wb") as files:
             self.tree.write(files, xml_declaration=True, encoding="UTF-8", method="xml")
 
+    @staticmethod
+    def sectotime(secs):
+        return str(secs / 30)
+
 
 if __name__ == "__main__":
-    print("REAPER exported csv to Ma3 timecode converter for MA3 version:1.8.1.0.")
-    print("REAPER exported markers convert to Timecodew for Ma3.")
+    print("MA2 exported xml to Ma3 timecode converter for MA3 version:1.8.1.0.")
     """
     bem = input("csv file name:")
     seq = input("Sequence number")
     pnev = input("Project name:")
     """
-    bem = "vrm.csv"
+    bem = "halaltimecode.xml"
     seq = 10
-    pnev = "vivaldi7"
+    pnev = "halali"
     logging.debug(f"input file:{bem}")
     logging.debug(f"Sequence number:{seq}")
     logging.debug(f"Project name:{pnev}")
-    new_test = CreateMacroFromCsv(bem, seq, pnev)
+    new_test = CreateMacroFromXml(bem, seq, pnev)

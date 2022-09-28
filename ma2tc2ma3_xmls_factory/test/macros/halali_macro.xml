@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GMA3 DataVersion="1.8.1.0">
+  <Macro Name="halali" Guid="ED 3D 82 D5 7A 7F F4 92 8D 1C 16 C8 CC 2F 6A 20">
+    <MacroLine Command="Store Sequence 10 Cue 1 thru 52" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 1 &quot;Sotet100&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 2 &quot;Nyitokep101&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 3 &quot;Bevonulas102&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 4 &quot;Valtozas103&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 5 &quot;Ima104&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 6 &quot;Ebredes105&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 7 &quot;Oltozkodes106&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 8 &quot;Fiukbe107&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 9 &quot;Kozepe108&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 10 &quot;Vege109&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 11 &quot;Valtozas110&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 12 &quot;Szerelemtanc111&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 13 &quot;Valtozas112&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 14 &quot;Ordog113&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 15 &quot;Ordogbejon114&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 16 &quot;OrdogtancBusotleveszi115&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 17 &quot;Subakforognak116&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 18 &quot;Osszeallnak117&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 19 &quot;Subakle118&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 20 &quot;Ordogegyedul119&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 21 &quot;Valtozas120&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 22 &quot;Lanyokapadon121&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 23 &quot;Haromatanc122&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 24 &quot;Zeneretotalemeles123&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 25 &quot;Valtozas124&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 26 &quot;Busongas125&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 27 &quot;Felalltancolni126&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 28 &quot;Valtozas127&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 29 &quot;Verekedes128&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 30 &quot;Botok129&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 31 &quot;Gyozelem130&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 32 &quot;Felall131&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 33 &quot;Valtozas/kimegy/132&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 34 &quot;Keszulodes133&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 35 &quot;Fiukbe134&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 36 &quot;Szukul135&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 37 &quot;Valtozas136&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 38 &quot;SOTET137&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 39 &quot;Bal138&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 40 &quot;Elol139&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 41 &quot;Kozepen140&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 42 &quot;Zeneleall141&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 43 &quot;Osszecsuklik142&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 44 &quot;Fiukilep143&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 45 &quot;Ravatal.emelikalanyt144&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 46 &quot;Lanyhatsoagyon145&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 47 &quot;Atkozas146&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 48 &quot;Akasztas147&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 49 &quot;Zarokep148&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 50 &quot;Melaniajobbkorbe149&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 51 &quot;SOTET150&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 Cue 52 &quot;Taps151&quot;" Wait="0.10" />
+    <MacroLine Command="Label Sequence 10 &quot;halali&quot;" Wait="0.10" />
+    <MacroLine Command="Drive 1" />
+    <MacroLine Command="import timecode &quot;halali_timecode&quot;" />
+  </Macro>
+</GMA3>
