@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <GMA3 DataVersion="1.8.1.0">
-  <Macro Name="halali" Guid="C6 FF 74 9F D6 5C 7E 50 62 00 4A 82 9B 01 E8 2B">
+  <Macro Name="halali" Guid="1E E0 49 6F DA 63 8F 4F 6D 40 EB 2A D5 37 EC F5">
     <MacroLine Command="Store Sequence 10 Cue 1 thru 52" Wait="0.10" />
     <MacroLine Command="Label Sequence 10 Cue 1 &quot;Sotet_100&quot;" Wait="0.10" />
     <MacroLine Command="Label Sequence 10 Cue 2 &quot;Nyito_kep_101&quot;" Wait="0.10" />

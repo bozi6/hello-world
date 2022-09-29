@@ -57,6 +57,7 @@ class CreateMacroFromXml(object):
             os.mkdir(path)
             os.mkdir(path + "/macros")
             os.mkdir(path + "/timecodes")
+            return False
 
     @staticmethod
     def uidgen():
@@ -86,8 +87,10 @@ class CreateMacroFromXml(object):
                     logging.debug(f"child command attrib: {child.get('command')}")
                     if cue.get('time') is not None:
                         ido = self.sectotime(int(cue.get('time')))
+                        ido = "{:.2f}".format(ido)
                     else:
                         ido = '0'
+                    logging.debug(f"Ido érték:  {ido}")
                     logging.debug(f"Cue name:  {cue[0].get('name')}")
                     cuename = cue[0].get('name')
                     # logging.debug(f"cue: {cue[0].text}")
@@ -223,7 +226,7 @@ class CreateMacroFromXml(object):
 
     @staticmethod
     def sectotime(secs):
-        return str(math.floor(secs / 30))
+        return secs / 30
 
 
 if __name__ == "__main__":
