@@ -1,16 +1,33 @@
 import random
 import string
+import platform
+import os
 
 import xml.etree.ElementTree as ett
 
 
 class CreatePresets(object):
     def __init__(self):
-        # self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
-        self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
+
+        if platform.system() == 'Darwin':
+            self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
+        elif platform.system() == 'Windows':
+            self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
+        else:
+            self.kimeneti_mappa = "./debugtest/"
+            self.pathexist(self.kimeneti_mappa)
         self.ertekek = (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
         self.tree = ett.ElementTree
         self.create_macro()
+
+    @staticmethod
+    def pathexist(path):
+        if os.path.exists(path):
+            return True
+        else:
+            os.mkdir(path)
+            os.mkdir(path + "/macros")
+            return False
 
     @staticmethod
     def uidgen():

@@ -14,5 +14,4 @@ class TestCreateMacroFromXml(unittest.TestCase):
         self.assertEquals(result, 15)
 
     def test_read_xml(self):
-        te = main_cl.CreateMacroFromXml
-        self.assertNoResult(te)
+        self._passed

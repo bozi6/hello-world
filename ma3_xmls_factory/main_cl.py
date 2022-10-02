@@ -220,3 +220,4 @@ if __name__ == "__main__":
     logging.debug(f"Sequence number:{seq}")
     logging.debug(f"Project name:{pnev}")
     new_test = CreateMacroFromCsv(bem, seq, pnev)
+

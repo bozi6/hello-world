@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <GMA3 DataVersion="1.8.1.0">
-  <Timecode Name="halali" Guid="47 F9 BC 45 48 4B 4F 88 56 6E 30 E7 1F 7D B6 FB" Cursor="00.00" Duration="2852.0" LoopCount="0" TCSlot="-1" AutoStop="No" SwitchOff="Keep Playbacks" Goto="as Go" TimeDisplayFormat="&lt;Default&gt;" FrameReadout="Default">
+  <Timecode Name="halali" Guid="0E 3E F4 50 FD DC 87 DF DD AD C8 FB 18 C6 CC 12" Cursor="00.00" Duration="2852.0" LoopCount="0" TCSlot="-1" AutoStop="No" SwitchOff="Keep Playbacks" Goto="as Go" TimeDisplayFormat="&lt;Default&gt;" FrameReadout="Default">
     <TrackGroup Play="" Rec="">
-      <MarkerTrack Name="Marker" Guid="6E 94 E5 A3 46 ED 79 DC 67 A7 27 40 B7 7A 4D E8" />
-      <Track Name="halali" Guid="92 18 80 78 F3 EC 25 AB D5 AC 82 FD 84 06 51 E4" Target="ShowData.DataPools.Default.Sequences.halali" Play="" Rec="">
-        <TimeRange Guid="D0 C6 2E 22 E3 02 2B 89 D1 5F 55 86 E3 09 B2 C9" Duration="To End" Play="" Rec="">
+      <MarkerTrack Name="Marker" Guid="53 CB F6 CF B3 26 2A 4E 00 19 43 69 65 BA 56 21" />
+      <Track Name="halali" Guid="DB DC 50 8E 44 18 76 3A 91 4C 20 D5 0C 69 DE E5" Target="ShowData.DataPools.Default.Sequences.halali" Play="" Rec="">
+        <TimeRange Guid="F4 89 00 18 34 4F 8D D5 AC DC 62 38 D7 D6 91 51" Duration="To End" Play="" Rec="">
           <CmdSubTrack>
             <CmdEvent Name="Go+" Time="0">
               <RealtimeCmd Type="Key" Source="Original" UserProfile="0" User="1" Status="On" IsRealtime="0" IsXFade="0" IgnoreFollow="0" IgnoreCommand="0" Assert="0" IgnoreNetwork="0" FromTriggerNode="0" IgnoreExecTime="0" IssuedByTimecode="0" FromLocalHardwareFader="1" IgnoreExecXFade="0" IsExecXFade="0" ExecToken="Go+" ValCueDestination="12.12.0.4.9.1000" />

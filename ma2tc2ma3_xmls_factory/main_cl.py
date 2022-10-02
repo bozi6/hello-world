@@ -1,4 +1,3 @@
-import csv
 import os.path
 import xml.etree.ElementTree as ett
 import random
@@ -6,7 +5,7 @@ import string
 import unidecode
 import logging
 import platform
-import math
+
 
 __author__ = 'Konta Boáz'
 __email__ = 'kontab6@gmail.com'
@@ -40,7 +39,7 @@ class CreateMacroFromXml(object):
             elif platform.system() == 'Windows':
                 self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/"
         else:
-            self.kimeneti_mappa = "./test/"
+            self.kimeneti_mappa = "./debugtest/"
             self.pathexist(self.kimeneti_mappa)
         self.csv_dict = []
         self.tree = ett.ElementTree
