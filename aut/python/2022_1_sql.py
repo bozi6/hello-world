@@ -11,20 +11,23 @@ kezd = time.time()
 logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s  - %(message)s')
 # logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 # logging.disable(logging.INFO)
-logging.info('Program elkezdődött.')
+# logging.info('Program elkezdődött.')
 
-bem = "../xlsxs/_2022_Autentikus (2).xlsx"
+bem = "../xlsxs/2022_Autentikus.xlsx"
 kim = "../sql/2022_Autentikus.sql"
 sql = ''
 honapok = ['JANUÁR', 'FEBRUÁR', 'MÁRCIUS', 'ÁPRILIS', 'MÁJUS',
            'JÚNIUS', 'JÚLIUS', 'AUGUSZTUS', 'SZEPTEMBER', 'OKTÓBER',
            'NOVEMBER', 'DECEMBER']
+
 f = open(kim, 'w', encoding='utf8')
 f.write('# Honvédelmi adatok 2022-re az autentikusból\n')
 f.write('# Készítette: Konta Boáz (kontab6@gmail.com).\n')
 f.write('USE honved2;\n')
+
 print('Bemeneti fájl: ' + bem)
 print('Kimenetei fájl: ' + kim)
+
 wb = openpyxl.load_workbook(filename=bem, read_only=True)
 # read_only elvileg gyorsabb és amúgy sem akarunk írni bele.
 for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
@@ -97,6 +100,7 @@ for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
                 # kezdes = c1.value.replace(hour=00, minute=00)
             if c7.value:
                 kontakt = c7.value
+                kontakt.replace('\n', ' ')
             else:
                 kontakt = ''
             if c10.value:

@@ -1,6 +1,6 @@
 # Honvédelmi adatok 2022-re az autentikusból
 # Készítette: Konta Boáz (kontab6@gmail.com).
-#USE honved2;
+USE honved2;
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-04","24","Nincs megadva kezdés.","BEÉPÍTÉS","A hűtlen feleség","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-05","24","19:00","Bp., Müpa","A hűtlen feleség","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-01-08","24","19:00","Bp., Müpa","A Tenkes kapitánya (Covid megbetegedések miatt lemondtuk)","","","0");
@@ -111,76 +111,74 @@ INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VAL
 06 30 828 0635
 ebele.akos@mil.hu/Karajz Máté","MH Rekreációs, Kiképzési és Konferenci Központ, beutalt vendégek részére esti program (350 fő), zenés műsor","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-22","24","Nincs megadva kezdés.","Tusványos utazónap","Nincs megadva műsor.","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-23","24","12:30","Bp., Sándor-palota","Toborzás (Zenés őrségváltással együtt)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-24","24","20:30","Bp. Nemzeti Táncszínház,Táncpark","Kárpátok visszhangja 50 perc","Cím egyeztetve művészeti stábon 22.03.16., mail ugyanekkor Kovács Erikának","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-26","24","19:00","Bp. Várkert Bazár Öntőház udvar","A Tenkes kapitánya","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-28","24","20:00","Balatonakali, szabadtéri színpad","Kárpátok visszhangja (Déryné)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-30","24","12:30","Bp., Sándor-palota","Toborzás (Zenés őrségváltással együtt)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-31","24","19:00","Mezőkövesd, szabadtéri színpad","Kárpátok visszhangja","","12x8 színpad, gyorsöltözéshez sátor","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-23","24","12:00","Bp., Sándor-palota","Toborzás (Zenés őrségváltással együtt)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-24","24","20:30","Bp. Nemzeti Táncszínház,Táncpark","Kárpátok visszhangja 50 perc_külsős:Szabó D.","Cím egyeztetve művészeti stábon 22.03.16., mail ugyanekkor Kovács Erikának","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-26","24","19:00","Bp. Várkert Bazár Öntőház udvar","A Tenkes kapitánya_külsős: Bozár L.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-28","24","20:00","Balatonakali, szabadtéri színpad","Kárpátok visszhangja (Déryné) Külsős: Balogh Kálmán cimbalom","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-30","24","12:00","Bp., Sándor-palota","Toborzás (Zenés őrségváltással együtt)> az időjárás előrejelzés miatt lemondva, új időpont: szeptember 17.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-31","24","19:00","Mezőkövesd, szabadtéri színpad","Kárpátok visszhangja Külsős: Balogh Kálmán cimbalom","","12x8 színpad, gyorsöltözéshez sátor","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-07-31","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-02","24","Nincs megadva kezdés.","ESŐNAP_Bp. Várkert Bazár Öntőház udvar","A Tenkes kapitánya","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-06","24","12:30","Bp., Sándor-palota","Toborzás","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-10","24","Nincs megadva kezdés.","Csángó Fesztivál, Jászberény","Kárpátok visszhangja, nyitóelőadás","","Lackó egyeztette 2021.11.29","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-11","24","Nincs megadva kezdés.","HM Balatonakarattya Tompa M. u. 1. (60 perc) (VAN SZÍNPAD!)","Nincs megadva műsor.","Ebele Ákos 
-06 30 828 0635
-ebele.akos@mil.hu
-Debrecen: Lovász Julianna 
-lovasz.julianna@mil.hu","MH Rekreációs, Kiképzési és Konferenci Központ, beutalt vendégek részére esti program (450 fő), zenés műsor
-Debrecen: Nemzetközi Katonazenekari Fesztivál","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-06","24","12:00","Bp., Sándor-palota","Toborzás","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-09","24","Nincs megadva kezdés.","VILÁGÍTÁS","Jászberény","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-10","24","20:00","Csángó Fesztivál, Jászberény, Székely Mihály szabadtéri színnpad","Kárpátok visszhangja, Külsős: Balogh Kálmán cimbalom","","Lackó egyeztette 2021.11.29","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-12","24","Nincs megadva kezdés.","Keszthely_éjszaka világítás lehetséges","Nincs megadva műsor.","Gubacsi Lukács alezredes 
 gubacsi.lukacs@mil.hu","MH Geoinformációs Szolgálat, Fegyvernem nap (100 fő), vers/próza/ének","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-13","24","20:00","Keszthely, Festetics Fesztivál","Drakula (építés aznap)***","","*** Lackó nincs!","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-15","24","20:30","Nyíregyháza, Sóstói Falumúzeum, szabadtéri színpad","A Tenkes kapitánya_BEÉPÍTÉS","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-16","24","20:30","Nyíregyháza, Sóstói Falumúzeum, szabadtéri színpad","A Tenkes kapitánya (OTT ALVÁSSALl!)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-13","24","20:30","Keszthely, Festetics Fesztivál","Drakula (építés aznap) Külsős: Balogh Kálmán cimbalom","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-15","24","20:30","Nyíregyháza, Sóstói Falumúzeum, szabadtéri színpad","A Tenkes kapitánya_BEÉPÍTÉS*","","* NWK, HLC, NUW, RRJ (Kórus), RRR","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-16","24","20:30","Nyíregyháza, Sóstói Falumúzeum, szabadtéri színpad","A Tenkes kapitánya","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-17","24","20:30","Nyíregyháza, Sóstói Falumúzeum, szabadtéri színpad","A Tenkes kapitánya_ESŐNAP","","Nyíregyháza színpadméret: 12x10","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-18","24","Nincs megadva kezdés.","Utazónap Kolozsvárra","Nincs megadva műsor.","Varga Zsolt alezredes
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-18","24","Nincs megadva kezdés.","Utazónap Kolozsvárra","Nincs megadva műsor.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-19","24","Nincs megadva kezdés.","Kolozsvár","Csíksomlyói passió_próba","Varga Zsolt alezredes
 06 30 311 6647
 varga.zsolt@hm.gov.hu","HM Katonai Irányítási és Válságkezelési Főosztály, HM központi ünnepség (120 fő), alkalomhoz illő műsor/katonazenekar","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-19","24","Nincs megadva kezdés.","Kolozsvár","Csíksomlyói passió_próba","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-20","24","19:00","Kolozsvár Állami Magyar Színház","Csíksomlyói passió","","**** Zselíz fesztivál (Drakula) > Esztertől 22.01.20.","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-20","24","19:00","Kolozsvár Állami Magyar Színház","Csíksomlyói passió Külsős: Réman Gergő","","**** Zselíz fesztivál (Drakula) > Esztertől 22.01.20.","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-21","24","Nincs megadva kezdés.","Utazónap Budapestre","Nincs megadva műsor.","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-22","24","Nincs megadva kezdés.","SZABADSÁG","Nincs megadva műsor.","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-27","24","Nincs megadva kezdés.","ILDIKÓ ÉS SÁNDOR EKÜVŐJE","Nincs megadva műsor.","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-08-27","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-02","24","Nincs megadva kezdés.","HM HKK Színházterme (40 perc)","Nincs megadva műsor.","Tóka Henrietta százados 
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-02","24","10:00","Készenlét, 10:30 Rendezvény kezdete, 11:50 Műsor várható kezdete HM HKK Színházterme Folklór (40 perc)","Nincs megadva műsor.","Tóka Henrietta százados 
 06 30 640 4925
 toka.henrietta@mil.hu
-Budapest: Radványi Imréné 06205400051
+Budapest: Radványi Imréné  Kati 06205400051
 radvanyi.csalad@gmail.com
 Kolossváry Miklós 06305652669
 miklos@kolossvary.hu","MH 12. Arabora Légvédelmi Rakétaezred, Légvédelmi tisztek és altisztek nyugállományú találkozója (150 fő)
 Budapest: BPNYKLUB Kerbarát tagozat, 50. évforduló (350 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-03","24","12:30","Bp., Sándor-palota","Toborzás","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-09","24","19:00","","20:00 Szolnok","","* színpad 6x8, Lackó egyeztette Bajkóval 22.06.09., előttünk a Tisza Táncegyüttes lép fel, bejárás és próba lehetősége nem valószínű","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-10","24","12:30","Bp., Sándor-palota","Toborzás","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-16","24","19:00","Csorna","Kalotaszeg ( fedett szabadtér) (7,5 t tgk bérlése szükséges!)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-17","24","Nincs megadva kezdés.","Világítás+ Műszak ott alszik","Nincs megadva műsor.","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-18","24","19:00","Pécs, Nemzeti Színház","Toborzó (Táncpanoráma) (aznapi építéssel)","","HLC, NUW, IVV > ha biztonságosan ott maradhatnak, 17-én mennek/ 3 óra kipakolás ruha+falak, világítás 18-án reggeltől/Szállás: 4 sofőr, 11 műszak, 2 öltöztető","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-03","24","12:00","Bp., Sándor-palota","Toborzás","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-06","24","14:00","ÉVADNYITÓ TÁRSULATI ÜLÉS","Nincs megadva műsor.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-09","24","20:30","Szolnok, Tiszaliget","Kalotaszeg (Gulyás fesztivál)*","","* színpad 6x8, Lackó egyeztette Bajkóval 22.06.09., előttünk a Tisza Táncegyüttes lép fel, bejárás és próba lehetősége nem valószínű","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-10","24","12:00","Bp., Sándor-palota","Toborzás","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-13","24","Nincs megadva kezdés.","szabadnap","Nincs megadva műsor.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-17","24","12:00","Bp., Sándor-palota","Toborzás (a július 30-i előadás pótlása)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-18","24","19:00","Pécs, Nemzeti Színház","Toborzó (Táncpanoráma) (8 órakor kezdődő építéssel)_Cimbalom: Balogh Kálmán","Háber László műszaki vezető +36 20 4952606","Farkas Gyula fővilágosító +36 20 930 8210","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-19","24","Nincs megadva kezdés.","szabadnap","Nincs megadva műsor.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-21","24","15:00","Felújító próba, 19:00 Körhinta","Bp. Nemzeti Színház","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-23","24","19:00","Bp. NTSZ","Drakula (építés 08:00)","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-25","24","17:00","Bp. Várkert Bazár","Sárkánymese  (építés: 08:00)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-30","24","Nincs megadva kezdés.","HM HKK Színházterme","Nincs megadva műsor.","Szabó Béla nyá.alezredes
-06 20 433 0150
-szabobela@bpnyklub.hu","MH Budapesti Nyugállományúak Klubja, Idősek napi ünnepség (kb.450 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-30","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-01","24","19:00","Zselíz, Sportcsarnok","Toborzó (Huszártalálkozó)","Domine János nyá.ddtbk., 
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-27","24","Nincs megadva kezdés.","20:00 HM Bp. Stefánia Palota","Palotás és keringő (Delegációs program)","Illyésházi Enikő, mail tőle 22.08.31./ Pótigény","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-09-27","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-01","24","17:00","Zselíz, Kultúrház","Táncra magyar! (szerkesztett műsor) (Külsős: Szabó Dániel)","Domine János nyá.ddtbk., 
 06 30 927 8440
 domivancsa@invitel.hu","Honvéd Nyugállományúak Klubja, Ercsi, 45. évforduló (150 fő)","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-03","24","15:00","-24:00 BEÉPÍTÉS_A hűtlen feleség","Nincs megadva műsor.","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-04","24","19:00","Bp. Müpa","A hűtlen feleség","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-07","24","15:00","Felújító próba, 19:00 Csíksomlyói passió","Bp. Nemzeti Színház (Külsős: Szabó Dániel)","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-11","24","10:00","Bp. NTSZ","Sárkánymese BEÉPÍTÉS","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-12","24","10:30","és 15:00 Bp., NTSZ","Sárkánymese (élesztés: 08:00)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-16","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-17","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba","Kresz Fruzsina ha.
-06 30 835 7414
-kresz.fruzsina@hm.gov.hu","MH vitéz Szurmay Sándor Budapest Helyőrség Dandár, Ünnepi állománygyűlés (250 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-18","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-19","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_főróba (Lázár Ervin","Varga Zsolt alezredes 
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-14","24","19:00","Magyarpolány, Művelődési Ház","Táncalávaló zenekari koncert (táncosokkal kiegészülve)_cimbalom: Balogh Kálmán","Várszegi Tibor 30 908 1656","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-16","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba (Külsős: Szabó Dániel)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-17","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba (Külsős: Szabó Dániel)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-18","24","Nincs megadva kezdés.","Bp. MVM Dome","Egri csillagok_próba (Külsős: Szabó Dániel)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-19","24","18:00","Bp. MVM Dome","Egri csillagok_főróba (Külsős: Szabó Dániel)","Illyésházi Enikő Protokoll Igazgatóság 30 690 27 37","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-20","24","19:00","Bp. MVM Dome","Egri csillagok (Külsős: Szabó Dániel)","Varga Zsolt alezredes 
 06 30 311 6647
 varga.zsolt@hm.gov.hu","HM Katonai Iránítási és Válságkezelési Főosztály, HM központi ünnepség (120 fő), alkalomhoz illő műsor, katonazenekar","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-20","24","19:00","Bp. MVM Dome","Egri csillagok","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-22","24","Nincs megadva kezdés.","Méhkerék, Dúró György Művelődési Ház_egyeztetés alatt (Néptánc gála)","Nincs megadva műsor.","Tát Margit 70 379 2156","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-28","24","19:00","Bp., NTSZ","Toborzó (építés: 08:00)","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-28","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-24","24","Nincs megadva kezdés.","BEÉPÍTÉS","Keszthely, Balaton Színház (Téli tánc)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-25","24","11:00","ÉS 14:00 Keszthely, Balaton Színház","Téli tánc (külsős: Szabó Dániel)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-28","24","19:00","Bp., NTSZ","Toborzó (építés: 08:00)cimbalom Balogh Kálmán","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-31","24","15:00","Felújító, 19:00 Körhinta","Bp., Nemzeti Színház (Külsős: Szabó Dániel)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-10-31","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-Novem","24","Nincs megadva kezdés.","HM Debrecen, Kölcsey Központ, Hugyani u. 1-3. (20 perc)","Nincs megadva műsor.","Tóth Adrienn ha
 06 30 336 4113
 toth.adrienn@mil.hu","KK HKK, Szalagűző ünnepség (700 fő)","0");
@@ -189,16 +187,17 @@ INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VAL
 hegedus.anita@hm.gov.hu","MH Tartalékképző és Támogató Parancsnokság, Csapatünnep (300-350 fő)","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-06","24","Nincs megadva kezdés.","Kecskemét, Hirös Agóra","BEÉPÍTÉS","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-07","24","19:00","Kecskemét, Hirös Agóra","","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-11","24","Nincs megadva kezdés.","HM Székesfehérvár, Alba Regia laktanya","Nincs megadva műsor.","Kovács Péter alezredes
-kovacs.peter@hm.gov.hu","Katonai Nemzetbiztonsági Szolgálat Felderítő Csoportfőnökség, Fegyvernemi nap (70 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-12","24","Nincs megadva kezdés.","HM Balatonakarattya, Tompa M. u. 1.","Nincs megadva műsor.","Schuh Gábor tzls. 
-06 30 640 5645
-schuh.gaborferenc@hm.gov.hu","MH Vezénylő zászlós, Honvéd Altiszti Gála Est","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-15","24","10:30","és 15:00 Bp., Nemzeti Táncszínház","Sárkánymese","Antal Renáta őrmester
-06 20953 3996","MH Altiszti Akadémia, Alakulat Napja (100 fő) / Sárkánymese építés este","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-11","24","11:00","HM Debrecen","Nincs megadva műsor.","Kovács Péter alezredes/ Fiáth Noémi 30 571 9646
+kovacs.peter@hm.gov.hu","Katonai Nemzetbiztonsági Szolgálat Felderítő Csoportfőnökség, Fegyvernemi nap (70 fő) /****Gázsa p-szo-v","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-14","24","Nincs megadva kezdés.","BEÉPÍTÉS ÉS VILÁGÍTÁS","Nemzeti Táncszínház","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-15","24","10:30","és 15:00 Bp., Nemzeti Táncszínház","Sárkánymese","Kapás Viktor 30 626 4997","MH Altiszti Akadémia, Alakulat Napja (100 fő) / Sárkánymese építés este","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-17","24","19:00","Szombathely MMK","Kárpátok visszhangja (Déryné)","Kiss Gábor Boldizsár cégvezető 70/650-0324","Technikai kontak: Poór Márton poormarton48@gmail.com, +36 30 957 5250","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-21","24","19:00","Bp., NTSZ","Téli tánc (építés: 09:00)","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-22","24","11:00","Bp., NTSZ","Téli tánc","","","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-22","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-24","24","18:00","Egri csillagok","Bp. Nemzeti Színház","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-25","24","15:00","Bp., Nemzeti Színház","Egri csillagok","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-27","24","Nincs megadva kezdés.","Fókuszban a koreográfus","Sánta","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-11-27","24","Nincs megadva kezdés.","TÁNCKAR (és Zenekar)","Nincs megadva műsor.","KONTAKT","MEGJEGYZÉS","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-01","24","Nincs megadva kezdés.","HM MH ARB Budapest, Újszász u. 37-39., III. telephely","Nincs megadva műsor.","Gál Lajos alezredes 
 06 30 257 3296
 MNTE: Prodán András ha.
@@ -208,17 +207,19 @@ Csinga Mihályné ha.
 06 30 219 1138
 csinga.mihalyne@mil.hu","MHP Haderőnemi Szemlélőség (logisztika), Logisztikusok Napja (400 fő)
 MNTE: MH Anyagellátó Raktárbázis Logisztikusok Napja (200-250 fő)","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-04","24","18:00","Bp., Várkert Bazár","Téli tánc","Fábián Laura  30 294 5004","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-05","24","17:00","HM Veszprém, AGÓRA (Táborállás tér 1.)","Csipkerózsika","Kádárné Hegedűs Veronika zászlós
 06 30 204 9486
 veronika.hegedus@mil.hu/ Borcsa Zsuzsa borcsa.zsuzsa@mil.hu, technikai kontakt: Steixner István 06 20 475 5157, steixner.i@agoraveszprem.hu","MH Légi Műveleti és Irányítási Központ, Mikulás ünnepség (300 fő), mesedarab/ Bajkó Tomi kérése, Borcsa Zsuzsának 22.06.01. megküldve: reggel 9 órától építés, levonulás az előadás után max.2. óra,  öltöző: 15 lány, 15 fiú, 10 műszak","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-07","24","15:00","-24:00 BEÉPÍTÉS_A hűtlen feleség","Nincs megadva műsor.","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-08","24","19:00","Bp. Müpa","A hűtlen feleség","Simsikné Bencsik Mónika ha.
 bencsik.monika@mil.hu","MH Tartalékképző és Támogató Parancsnokság, Adventi Ünnepség (250 fő) Karácsonyt váró zenés-énekes műsor(30 perc)","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-10","24","Nincs megadva kezdés.","Körhinta","Nincs megadva műsor.","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-12","24","Nincs megadva kezdés.","Nagykanizsa","Kárpátok visszhangja (Déryné)","","","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-13","24","Nincs megadva kezdés.","****","Nincs megadva műsor.","","**** Gegő Bartók évzáró","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-15","24","Nincs megadva kezdés.","BEÉPÍTÉS","Budapest, Nemzeti Táncszínház","Bertókné Gyarmati Zsuzsanna ha.
 bertokne.beata@mil.hu","MH 37. II. Rákóczi Ferenc Műszaki Ezred, Adventi koncert (400-500 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-16","24","19:00","Budapest, Nemzeti Tánczínház","Szabadság, szerelem! - Petőfi, a vitéz","Patkó Andrea főtörzsmester
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-16","24","19:00","Budapest, Nemzeti Tánczínház","Betyárvilág (Külsős: Schnell Ádám)","Patkó Andrea főtörzsmester
 06 70 77 39 144
-patko.andrea@mil.hu","MH Pápai Bázisrepülőtér, Évzáró állománygyűlés (600 fő), ünnepi műsor","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-21","24","Nincs megadva kezdés.","HM Budapest, Stefánia Palota, betlehemes játék (10 perc)","Nincs megadva műsor.","Soós Mihály őrnagy
-06 20 370 2448
-soos.mihaly@hm.gov.hu","HM Társadalmi Kapcsolatok és Életpálya Menedzsment Főosztály, Árvák karácsonya","0");
+patko.andrea@mil.hu","MH Pápai Bázisrepülőtér, Évzáró állománygyűlés (600 fő), ünnepi műsor/ Schnell Ádám visszaigazolva Szabó Szilvitől mail 22.10.06.","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2022-12-17","24","Nincs megadva kezdés.","HM Bp. Kongresszusi Központ","Adventi koncert min.6 pár táncos","Csizmadia Zsolttól 22.09.01.","Erkel: Bánk bán "csárdás" / Strauss: Éljen a magyar!","0");
