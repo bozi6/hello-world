@@ -122,4 +122,3 @@ class ma3attribs(object):
             "FontSize": "Default",
             "BorderColor": "808080FF",
         }
-
