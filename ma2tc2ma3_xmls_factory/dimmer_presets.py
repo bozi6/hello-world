@@ -52,7 +52,7 @@ class CreatePresets(object):
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Fixture 1 At {}".format(self.ertekek[i - 1]))
             macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Store Preset 1.{}".format(i))
+            macroline.set("Command", "Store Preset 1.{} /universal".format(i))
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Label Preset 1.{} \"{}%\"".format(i, self.ertekek[i - 1]))
 
