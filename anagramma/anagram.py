@@ -13,6 +13,8 @@ Hasznos szavak pl. állat, csákós, alszik, drága, eresz stb...
 """
 
 szo = 'eltesz'
+
+
 x = []
 for perm in itertools.permutations(szo):
     x.append("".join(perm))

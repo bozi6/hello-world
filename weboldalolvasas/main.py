@@ -5,8 +5,12 @@ from bs4 import BeautifulSoup
 url = 'https://www.malighting.com/downloads/products/grandma3/'
 res = requests.get(url)
 html_page = res.content
+print(res)
+soup = BeautifulSoup(html_page, 'html5lib')
 
-soup = BeautifulSoup(html_page, 'html.parser')
+
+
+#soup = BeautifulSoup(html_page, 'html.parser')
 text = soup.find_all(text=True)
 output = []
 blacklist = [
@@ -20,12 +24,13 @@ blacklist = [
 
 ]
 
+datum = "2022-11-09"
 for t in text:
     if t.parent.name not in blacklist:
         output.append(t)
-if output[119][-10:] == "2022-08-16":
+if output[115][-10:] == datum:
     print("faszom régi\n Azért itt van amit találtam: ")
-    print(output[112], output[106])
+    print(output[115], output[106])
 else:
     print("Valami újabb dolog történt\nEz van most: ")
-    print(output[112], output[106])
+    print(output[115], output[107])
