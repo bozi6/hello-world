@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Making get request
-r = requests.get('https://www.geeksforgeeks.org/python-programming-language/')
+r = requests.get('https://www.google.com/search?q=imse+vimse&sxsrf=ALiCzsZ1a395vz7srBcjbJNDgiHaqW2vwQ:1669560820383&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiCvYTdzs77AhVf_rsIHbgbC_sQ_AUoAnoECAEQBA&biw=1596&bih=905&dpr=2/')
 
 # show connection info
 print(r)

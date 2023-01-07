@@ -1,13 +1,18 @@
 import random
 import string
-
+from sys import platform
+from os import getcwd
 import xml.etree.ElementTree as ett
 
 
 class CreatePresets(object):
     def __init__(self):
-        # self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
-        self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
+        if platform == "Linux" or platform == "linux2":
+            print(getcwd())
+        elif platform == "darwin":
+            self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
+        elif platform == "win32":
+            self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
         self.ertekek = (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
         self.tree = ett.ElementTree
         self.create_macro()
@@ -35,11 +40,7 @@ class CreatePresets(object):
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Fixture 1 At {}".format(self.ertekek[i - 1]))
             macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Store Preset 1.{} /Merge".format(i))
-            macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Channel 1 At {}".format(self.ertekek[i - 1]))
-            macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Store Preset 1.{} /Merge".format(i))
+            macroline.set("Command", "Store Preset 1.{} /Merge /Universal".format(i))
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Label Preset 1.{} \"{}%\"".format(i, self.ertekek[i - 1]))
 
@@ -52,7 +53,7 @@ class CreatePresets(object):
             with open(output_file, "wb") as files:
                 self.tree.write(files, xml_declaration=True, encoding="UTF-8", method="xml")
         except IOError:
-            print("gebasz")
+            print("IO Error :", output_file)
             exit(1)
 
 

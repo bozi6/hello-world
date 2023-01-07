@@ -6,9 +6,13 @@ from bs4 import BeautifulSoup
 kimeneti_file = open('teszt_szotar.txt', 'w')
 
 """
+# Ez az összes oldalt megpróbálja lezedni, de a 'ly', 'm' után
+# már hisztizett az oldal, hogy túl sok próbálkozás :-)
+
 abc = ('a', 'aa', 'b', 'c', 'cs', 'd', 'dz', 'e', 'ee', 'f', 'g', 'gy', 'h', 'i',
        'ii', 'j', 'k', 'l', 'ly', 'm', 'n', 'o', 'oo', 'oe', 'ooe', 'p', 'q', 'r',
        's', 'sz', 't', 'ty', 'u', 'uu', 'ue', 'uue', 'v', 'W', 'x', 'y', 'z', 'zs')
+# Ezért itt a rövidebb változat, amivel apránként lehet leszedni a dolgokat.ű
 """
 abc = ('h', 'uu', 'w', 'x', 'y')
 headers = {

@@ -12,14 +12,14 @@ szavak között valamelyik variációja.
 Hasznos szavak pl. állat, csákós, alszik, drága, eresz stb...
 """
 
-szo = 'eltesz'
+szo = 'mtsdááa'
 
 
 x = []
 for perm in itertools.permutations(szo):
     x.append("".join(perm))
 print('Variációk száma: {}'.format(len(x)))
-# print(x)
+print(x)
 # print(*x, sep="\n ")
 szolista = []
 

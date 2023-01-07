@@ -31,7 +31,7 @@ b2tf = root.find("./genre/decade/movie/[@title='Back 2 the Future']")
 print(b2tf)
 b2tf.attrib['title'] = "Back to the Future"
 print(b2tf.attrib)
-input("Back2thefuture javítása")
+input("Back 2 the future javítása")
 """
 # Fájl kiírása vissza és a javított dolog elhelyezése
 tree.write("movies.xml")
@@ -74,11 +74,11 @@ for decade in root.findall("./genre/decade"):
     print(decade.attrib)
     for year in decade.findall("./movie/year"):
         print(year.text, '\n')
-input("Évtizedek és évek kiirása")
+input("Évtizedek és évek kiírása")
 # milyen filmek vannak 2000 ből
 for movie in root.findall("./genre/decade/movie/[year='2000']"):
     print(movie.attrib)
-input("Flimek listázása 2000ből")
+input("Filmek listázása 2000-ből")
 # Új évtized hozzáadása az akciófilmek kategóriához
 action = root.find("./genre[@category='Action']")
 new_dec = Et.SubElement(action, 'decade')

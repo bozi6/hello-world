@@ -62,7 +62,7 @@ def ujlap_letrehozasa(lap_elnevezese):
         ws.column_dimensions[kulcs].width = ertek
     ws.cell(row=2, column=2, value='=D3-B3').style = still
     # A B2 cellába beírjuk a kezdőértéket első sms egyenlegéből kivonva az első levonást = nyitó egyenleg
-    ws.sheet_view.zoomScale = 100  # A nézet kinagyítása az aktuális oldalon
+    ws.sheet_view.zoomScale = 170  # A nézet kinagyítása az aktuális oldalon
 
 
 # Munkalap létrehozása a memóriában
@@ -136,10 +136,10 @@ for elem in items:  # SMS-ek beolvasása
         continue
     sor += 1
     # Az összegeket az oszlop végén öszeadjuk és beírjuk az eredményt. és hozzáadjuk a stílust
-    ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still
+    ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still # B oszlop összegzése
     ws.cell(row=ws.max_row, column=2).font = Font(bold=True, italic=True)  # A betűtípust vastaggá tesszük az eredményen
     logging.debug('Munkalap max sorszáma: {}'.format(ws.max_row))
-ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule)
+ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule) # feltételes formázás hozzáadása
 # összeadjuk a bevételeket.
 ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
 ws.cell(row=ws.max_row + 1, column=1, value='=SUMIF(B2:B{},">0")'.format(ws.max_row - 2)).style = still
