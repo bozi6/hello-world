@@ -8,9 +8,7 @@ html_page = res.content
 print(res)
 soup = BeautifulSoup(html_page, 'html5lib')
 
-
-
-#soup = BeautifulSoup(html_page, 'html.parser')
+# soup = BeautifulSoup(html_page, 'html.parser')
 text = soup.find_all(text=True)
 output = []
 blacklist = [
