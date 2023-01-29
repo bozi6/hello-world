@@ -10,7 +10,7 @@ def main():
         A szövegfájlban ha több sort akarunk akkor /-el kell a sorokat elválasztani
         Ha üres sort akakrunk akkor .-ot kell tenni a sorba
         """
-        start_number = 1000
+        start_number = 1000  # A cue kezdőszáma
         last_blank = True
         last_titles_was_decimal = False
         for line in file.readlines():
@@ -41,10 +41,11 @@ def main():
                     (b'/cue/selected/number', [bytes(tsn, 'utf-8')]),
                     (b'/cue/selected/text/format/fontSize', [72]),
                     (b'/cue/selected/colorName', [b'green']),
-                    (b'/cue/selected/translationY', [-440]),
+                    (b'/cue/selected/translation/y', [-440]),
                     (b'/cue/selected/text/format/color', [1, 1, 0, 1]),
                     (b'/cue/selected/text', [bytes(broken_line, 'utf-8')]),
                     (b'/cue/selected/name', [bytes(line, 'utf-8')]),
+                    (b'/cue/selected/fillStage', [0]),
                 )
                 cli.bundi(cucc)
             start_number = this_cue

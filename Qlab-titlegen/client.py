@@ -62,6 +62,18 @@ class Interface:
         else:
             print("Nem sikerült WPID-et szerezni. {}".format(type(response)))
 
+    def get_uniqid(self):
+        """
+        Try to get an unique id of main que list
+        :return:  Unique id of first cuelist
+        """
+        self.client.send_message(b'/cueLists/uniqueID', [])
+        response = self.server.get_message()
+        if response:
+            return response.get('data')[0]['uniqueID']
+        else:
+            print("Nem sikerült WPID-et szerezni. {}".format(type(response)))
+
     def bundi(self, messages):
         self.client.send_bundle(messages)
 
@@ -101,6 +113,7 @@ class Interface:
         :return:
         """
         wpid = self.wpid
+        uniqid = self.get_uniqid()
         self.client.send_message('/workspace/{}/select/*'.format(wpid), [])
 
     def renumber(self, start, step):
