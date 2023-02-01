@@ -23,50 +23,48 @@ def gdtfinfo(egy):
     szinesben('Név: ', egy.name)
     szinesben('Rövid név: ', egy.short_name)
     szinesben('Hosszú név: ', egy.long_name)
-    print('Tárcsák:')
-    for item in egy.wheels:
-        szinesben('\tNév:', item.name)
-    print('Színek tárcsán:')
-    for item in egy.filters:
-        szinesben('\tNév: ', item.name)
-    szinesben('Színtér: ', egy.color_space.mode)
     szinesben('Leírás: ', egy.description)
-    szinesben('DMX Profil: ', egy.dmx_profiles)
+    print('Tárcsák:')
+
+    tar = egy.wheels
+    i = 0
+    for slot in tar:
+        for egyslot in slot.wheel_slots:
+            szinesben('\t', '{} - {} '.format(i, egyslot.name))
+
+            # szinesben('\t\tSzín IEC: ', 'x: {}, Y: {}, y: {}, z: {}'.format(egyslot.color.x, egyslot.color.Y,
+            # egyslot.color.y, egyslot.color.z))
+            i += 1
+    szinesben('Színtér: ', egy.color_space.mode)
+    print('DMX módok:')
+    for mod in egy.dmx_modes:
+        szinesben('\tMód: ', '{}, csatornaszám: {}'.format(mod.name, len(mod.dmx_channels)))
+
     szinesben('Lámpatípus Id: ', egy.fixture_type_id)
     szinesben('Gyártó: ', egy.manufacturer)
-    for geom in egy.geometries:
-        print("Ezmiafasz!: ", geom.power_consumption)
-
-    try:
-        szinesben('Fényvető típusa: ', egy.geometries[0].geometries[0].beam_type.value)
-    except AttributeError:
-        szinesben('Fényvető típusa:', ' -')
-    try:
-        szinesben('Színhőmérésklet: ', egy.geometries[0].geometries[0].color_temperature)
-    except AttributeError:
-        szinesben('Színhőmérséklet', ' -')
-    try:
-        szinesben('Lámpatípus: ', egy.geometries[0].geometries[0].lamp_type.value)
-    except AttributeError:
-        szinesben('Lámpatípus', ' -')
-    try:
-        szinesben('Fényerő: ', egy.geometries[0].geometries[0].luminous_flux)
-    except AttributeError:
-        szinesben('Fényerő', ' -')
-    try:
-        szinesben('Fogyasztás: ', egy.geometries[0].geometries[0].power_consumption)
-    except AttributeError:
-        szinesben('Fogyasztás', ' -')
-    """print('Változások: ')
+    feny = pygdtf.GeometryBeam()
+    szinesben('Fénysugár szög: ', feny.beam_angle)
+    szinesben('Fényforrás típusa: ', feny.beam_type)
+    szinesben('Fogyasztás (W): ', feny.power_consumption)
+    szinesben('Színhőmérséklet (K): ', feny.color_temperature)
+    szinesben('Fényerő (Lux): ', feny.luminous_flux)
+    print('Változások: ')
     for rev in egy.revisions:
         szinesben('\tDátum: ', rev.date)
         szinesben('\tSzöveg: ', rev.text)
         szinesben('\tFelhasználó ID: ', rev.user_id)
         print('\t', '-' * 60)
-    """
 
 
-for root, dirs, files in os.walk("C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"):
+mappa = os.path.expanduser('~')
+if os.name == 'nt':
+    mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
+elif os.name == 'posix':
+    mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
+    print(os.name)
+    print(mappa)
+
+for root, dirs, files in os.walk(mappa):
     for file in files:
         if file.endswith('.gdtf'):
             print(root, file)
