@@ -3,6 +3,7 @@ import pygdtf
 import os
 from termcolor import cprint
 from colorama import init
+
 init(autoreset=True)
 
 
@@ -24,13 +25,14 @@ def gdtfinfo(egy):
     szinesben('Rövid név: ', egy.short_name)
     szinesben('Hosszú név: ', egy.long_name)
     szinesben('Leírás: ', egy.description)
+    szinesben('Gyártó: ', egy.manufacturer)
     print('Tárcsák:')
 
     tar = egy.wheels
     i = 0
     for slot in tar:
         for egyslot in slot.wheel_slots:
-            szinesben('\t', '{} - {} '.format(i, egyslot.name))
+            szinesben('\t{}'.format(i), '- {} '.format(egyslot.name))
 
             # szinesben('\t\tSzín IEC: ', 'x: {}, Y: {}, y: {}, z: {}'.format(egyslot.color.x, egyslot.color.Y,
             # egyslot.color.y, egyslot.color.z))
@@ -39,21 +41,23 @@ def gdtfinfo(egy):
     print('DMX módok:')
     for mod in egy.dmx_modes:
         szinesben('\tMód: ', '{}, csatornaszám: {}'.format(mod.name, len(mod.dmx_channels)))
-
+        for i in range(0, len(mod.dmx_channels)):
+            dmxchs = mod.dmx_channels[i].logical_channels[0].attribute
+            szinesben('\t\t{}. Channel: '.format(i), dmxchs)
     szinesben('Lámpatípus Id: ', egy.fixture_type_id)
-    szinesben('Gyártó: ', egy.manufacturer)
     feny = pygdtf.GeometryBeam()
     szinesben('Fénysugár szög: ', feny.beam_angle)
     szinesben('Fényforrás típusa: ', feny.beam_type)
     szinesben('Fogyasztás (W): ', feny.power_consumption)
     szinesben('Színhőmérséklet (K): ', feny.color_temperature)
     szinesben('Fényerő (Lux): ', feny.luminous_flux)
-    print('Változások: ')
+    """print('Változások: ')
     for rev in egy.revisions:
         szinesben('\tDátum: ', rev.date)
         szinesben('\tSzöveg: ', rev.text)
         szinesben('\tFelhasználó ID: ', rev.user_id)
         print('\t', '-' * 60)
+    """
 
 
 mappa = os.path.expanduser('~')
@@ -61,14 +65,19 @@ if os.name == 'nt':
     mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
 elif os.name == 'posix':
     mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
-    print(os.name)
-    print(mappa)
-
-for root, dirs, files in os.walk(mappa):
-    for file in files:
-        if file.endswith('.gdtf'):
-            print(root, file)
-            gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
 
 
-
+fileok = []
+try:
+    for root, dirs, files in os.walk(mappa):
+        for file in files:
+            if file.endswith('.gdtf'):
+                print('-' * 80)
+                print(root, file)
+                print('-' * 80)
+                gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
+                fileok.append(file)
+except AttributeError:
+    print('Valami fos van...')
+    for file in fileok:
+        print('- {}'.format(file))
