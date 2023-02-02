@@ -13,7 +13,7 @@ __license__ = "MIT"
 __copyright__ = "Copyright (c) 2022 Konta Boáz"
 __title__ = 'from csv to MA3 xmls'
 __description__ = "Ma3 classes to create xml to timecode and sequence"
-__url__ = "https://www.git.org/bozi6/"
+__url__ = "https://www.gituhb.org/bozi6/"
 __uri__ = __url__
 __doc__ = __description__ + " <" + __uri__ + ">"
 

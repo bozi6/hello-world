@@ -27,12 +27,11 @@ def gdtfinfo(egy):
     szinesben('Leírás: ', egy.description)
     szinesben('Gyártó: ', egy.manufacturer)
     print('Tárcsák:')
-
     tar = egy.wheels
     i = 0
     for slot in tar:
         for egyslot in slot.wheel_slots:
-            szinesben('\t{}'.format(i), '- {} '.format(egyslot.name))
+            szinesben('\t{}'.format(i), ' - {} '.format(egyslot.name))
 
             # szinesben('\t\tSzín IEC: ', 'x: {}, Y: {}, y: {}, z: {}'.format(egyslot.color.x, egyslot.color.Y,
             # egyslot.color.y, egyslot.color.z))
@@ -40,17 +39,17 @@ def gdtfinfo(egy):
     szinesben('Színtér: ', egy.color_space.mode)
     print('DMX módok:')
     for mod in egy.dmx_modes:
-        szinesben('\tMód: ', '{}, csatornaszám: {}'.format(mod.name, len(mod.dmx_channels)))
+        szinesben('\tMód: ', '{}, attribútumok szám: {}'.format(mod.name, len(mod.dmx_channels)))
         for i in range(0, len(mod.dmx_channels)):
             dmxchs = mod.dmx_channels[i].logical_channels[0].attribute
-            szinesben('\t\t{}. Channel: '.format(i), dmxchs)
+            szinesben('\t\t{}. Channel: '.format(i+1), dmxchs)
     szinesben('Lámpatípus Id: ', egy.fixture_type_id)
     feny = pygdtf.GeometryBeam()
-    szinesben('Fénysugár szög: ', feny.beam_angle)
     szinesben('Fényforrás típusa: ', feny.beam_type)
-    szinesben('Fogyasztás (W): ', feny.power_consumption)
-    szinesben('Színhőmérséklet (K): ', feny.color_temperature)
-    szinesben('Fényerő (Lux): ', feny.luminous_flux)
+    szinesben('Fénysugár szög: ', '{}°'.format(feny.beam_angle))
+    szinesben('Fogyasztás: ', '{}W'.format(feny.power_consumption))
+    szinesben('Színhőmérséklet: ', '{}K'.format(feny.color_temperature))
+    szinesben('Fényerő: ','{}LUX'.format(feny.luminous_flux))
     """print('Változások: ')
     for rev in egy.revisions:
         szinesben('\tDátum: ', rev.date)
@@ -65,8 +64,6 @@ if os.name == 'nt':
     mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
 elif os.name == 'posix':
     mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
-
-
 fileok = []
 try:
     for root, dirs, files in os.walk(mappa):
