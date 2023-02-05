@@ -5,6 +5,7 @@ a lámpa optikája, teljesítménye, tömege, egységneve kinyerésre kerül.
 A # kezdődő sorokkal lehet újabb lámpát hozzáadni, de lehet, hogy a
 ./lampak/lampakdb-t át kell írni arra ahonna meghívódik, mert ide teszi alapból
 és ha meghívjuk akkor meg máshol keresi.
+a package neev: loldb /szívesen!
 """
 from lol.database import database, serializer
 
