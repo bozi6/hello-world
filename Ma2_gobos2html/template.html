@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang=hu>
+<html lang="hu">
 <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -10,8 +10,8 @@
 </head>
 <body class="container bg-dark">
 <div class="text-white">
-    <div class="row">
-        <h2>GrandMA2 gobó képek</h2>
+    <div class="row border">
+        <h2>GrandMA3 gobó képek</h2>
         <h5>Ebből a mappából: ${mappa}</h5>
     </div>
     % for row in rows:
@@ -19,12 +19,12 @@
         <div class="col-1 border">
             Nr: ${loop.index+1};
         </div>
-        <div class="media col-2 border">
+        <div class="col-1 border">
             <a href="file:///${rows[row]['filename']}">
-            <img src="file:///${rows[row]['filename']}" width="128" height="128" class="align-self-center">
+            <img src="file:///${rows[row]['filename']}" width="64" height="64" class="align-self-center">
             </a>
         </div>
-        <div class="col-9 pt-5 border">
+        <div class="col-10 pt-1 border">
             Fájl elérési helye: <br>
             <a href="file:///${rows[row]['filename']}">${rows[row]['filename']}</a>
         </div>
