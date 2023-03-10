@@ -26,5 +26,6 @@ with open('test.txt', 'r') as file:
 lepesek = 25
 
 cezar = caesar(szoveg, step=lepesek, alphabets=alphabets)
+
 print("Kiinduló szöveg: {}\nEltolt szöveg: {}\nEltolva {} lépéssel.".format(szoveg, cezar, lepesek))
 file.close()
