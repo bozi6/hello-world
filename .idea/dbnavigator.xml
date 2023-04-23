@@ -26,18 +26,27 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="25278967-20d3-453a-8b89-1923e07735c2">
-        <schema name="honved2" object-types="table, view, column" />
+      <connection connection-id="a6f356cc-d435-4942-999f-adb3aab70ae7">
+        <schema name="honved2" object-types="table, view, procedure, function, constraint, column, dataset trigger" />
+        <schema name="legenyes" object-types="table, view, procedure, function" />
+        <schema name="nation" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
+        <schema name="phpbb" object-types="table, view, procedure, function" />
+        <schema name="phpmyadmin" object-types="table, view, procedure, function" />
+        <schema name="tanchaz19" object-types="table, view, procedure, function" />
+        <schema name="zfoto" object-types="table, view, procedure, function" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="a6f356cc-d435-4942-999f-adb3aab70ae7">
-      <console name="ds718" type="STANDARD" schema="" session="Main" />
+      <console name="ds718" type="STANDARD" schema="honved2" session="Main"><![CDATA[select * from aut where  tev = 'Izraeli turné 18. - 26.']]></console>
     </connection>
     <connection id="25278967-20d3-453a-8b89-1923e07735c2">
       <console name="debian" type="STANDARD" schema="" session="Main" />
     </connection>
+  </component>
+  <component name="DBNavigator.Project.DatabaseEditorStateManager">
+    <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
@@ -46,15 +55,18 @@
     <connection id="a6f356cc-d435-4942-999f-adb3aab70ae7" />
     <connection id="25278967-20d3-453a-8b89-1923e07735c2" />
   </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="a6f356cc-d435-4942-999f-adb3aab70ae7" dataset="nation.continents" active-filter-id="063e9eec-b120-4669-aa80-5378db3e7657">
+      <filter id="063e9eec-b120-4669-aa80-5378db3e7657" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="continent_id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+  </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.ExecutionManager">
     <retain-sticky-names value="false" />
-  </component>
-  <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/aut/sql/2022_Autentikus.sql" connection-id="25278967-20d3-453a-8b89-1923e07735c2" session-id="MAIN" current-schema="honved2" />
-    <mapping file-url="file://$PROJECT_DIR$/sms2xls/bevetel.sql" connection-id="" session-id="MAIN" current-schema="" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />
@@ -290,6 +302,7 @@
         <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VIEW" editor-type="SELECTION" />
