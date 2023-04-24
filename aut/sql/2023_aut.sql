@@ -1,113 +1,116 @@
 # Honvédelmi adatok 2023-ra az autentikusból
 # Készítette: Konta Boáz (kontab6@gmail.com).
 USE honved2;
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-05","24","Nincs megadva kezdés.","Bp., Müpa Fesztivál Színház","BEÉPÍTÉS","Hajós Nikolett","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-06","24","19:00","Bp., Müpa Fesztivál Színház","A hűtlen feleség","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-07","24","19:00","Bp., Müpa Fesztivál Színház","A hűtlen feleség","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-12","24","18:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-13","24","15:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-20","24","10:30","HM Pápa, ünnepi állománygyűlés (folklór műsor 20 perc) Vaszari út 101.","Nincs megadva műsor.","Horváth Ildikó 06304453228 horvath.ildiko@hm.gov.hu Pápa: Patkó Andrea 06707739144 patko.andrea@mil.hu","MH vitéz Szurmay Sándor Budapest Helyőség Dandár MH Pápa Bázisrepülő","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-24","24","Nincs megadva kezdés.","Forgatás_Zenekari forgatás Galgahévíz","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-26","24","Nincs megadva kezdés.","Forgatás_Jula és ZsombiTelgárt (SK)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-01-30","24","Nincs megadva kezdés.","FORGATÁS_Etyek (Oltárczy, Péter)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-01","24","Nincs megadva kezdés.","FORGATÁS_Vajdahunyad Vára (Szeverényi, Oltárczy)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-05","24","Nincs megadva kezdés.","BEÉPÍTÉS_ Fotózás","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-06","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-07","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-08","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-09","24","19:00","Bp., Nemzeti Színház","Körhinta","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-11","24","21:30","BEÉPÍTÉS","Sárkánymese","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-12","24","11:00","Bp., Nemzeti Táncszínház","Sárkánymese","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-13","24","19:00","Bp., Nemzeti Táncszínház","Téli tánc (Kulisszajárás 18:10-18:20 színpad*)","-","* mail Varga Nikolettől 23.01.17.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-15","24","19:30","Bp. Pesti Vigadó","Álarcok tánckari közreműködéssel","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-21","24","15:30","-17:00 LEJÁRÓ PRÓBA 18:00 Bp., Nemzeti Színház","Egri csillagok","-","A lejáró próbát Kernács Péter jelezte, mind Vicuska mind a kis Gergő kettős szereposztása miatt, minden a négyen új beállók, nem szükséges a teljes tánckar","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-02-22","24","15:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-01","24","19:00","Bp. Nemzeti Táncszínház","Kalotaszeg","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-08","24","19:00","Bp. Nemzeti Táncszínház","Szatmár","Török Andrea/ Katonai Nemzetbiztonsági Szolgálat_soron kívüli kérés","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály, vidám/zenés összeállítás (operettrészletekkel)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-11","24","20:30","HM Pápa, Eszterházy Kastély","Folklór 20 perc (4 pár)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-14","24","10:00","próba Kiskőrös, Petőfi tér","Állami ünnep (miniszterelnöki program)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-15","24","10:30","Főpróba, 14:15 Kiskőrös, Petőfi tér","Állami ünnep (miniszterelnöki program)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-20","24","Nincs megadva kezdés.","BEÉPÍTÉS","HKK színházterem","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-21","24","10:30","HM Budapest Kulturális Központ Színházterem Toborzó szerkesztett 60 perc","Nincs megadva műsor.","Csuka Viktória","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-23","24","Nincs megadva kezdés.","BEÉPÍTÉS","NTSZ és 19:00 Fotóspróba is","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-24","24","19:00","Bp., NTSZ","Régi tánc, új nemzedék_PREMIER","Aszód: Gál Gyula nyá.alezredes 06209207094 gyuszko1101@gmail.com","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-03-31","24","18:00","HM Szolnok, Kilián út 1. Fegyvernemi nap (300 fő) 20-25 perc","Nincs megadva műsor.","Csajbók József százados 30 229 7810 Vizsnyai Vanda őrmester HM: 02434561","MHP HSZ (KM) átszervezést követően MH ÖKMP, ének/tánc/zene Aszód: Galgamenti Nyugállományú Honvédők Egyesülete nosztalgia koncert/operett","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-03","24","Nincs megadva kezdés.","Beépítés NTSZ","Mátyás, a világ királya","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-04","24","10:30","és 15:00 Bp., NTSZ","Mátyás, a világ királya ++++ 18:00 KULISSZAJÁRÁS","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-05","24","19:00","Bp. Nemzeti Táncszínház","A Tenkes kapitánya","-","Schenell Ádám kikérőjét Szabó Szilvi visszaigazolta 23.01.20. mail","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-12","24","19:00","Győr, Nemzeti Színház","Toborzó (külsős: Molnár Levente)","-","Indulás: 06:00, építés 08:00, Pavelka Sacinak mail 23.02.28., Bajkó kérései alapján/ Nády Ádám nady@gyoriszinhaz.hu","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-13","24","Nincs megadva kezdés.","Autóbusz matricázás_Keszthely","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-14","24","Nincs megadva kezdés.","Jelmezes főpróba","Tánc-költészet","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-15","24","Nincs megadva kezdés.","Flashmob","Nemzeti Színház","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-16","24","19:00","Bp. Várkert Bazár","Táncköltészet (építés aznap)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-18","24","11:00","Fesztivál Színház","Müpa sajtótájékoztató","-","**** Balassi Bálint Egy katonaének c. versére készült táncprodukció, zene Sebő Ferenc, koreográfia Zsuráfszky Zoltán > Zsurától","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-19","24","19:00","Bp., Lovarda","Folklór 8 pár és zenekar (Köztársasági elnöki program a szlovén köztársasági elnökkel közös vacsora)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-26","24","Nincs megadva kezdés.","HM 19:00 Bp., ARÉNA Hotel","Nyitótáncok (Örkös Tibor és zenekara is)","Illyésházi Enikő","Doktrinális Konferencia/ Pótigény 22.12.16.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-04-30","24","18:00","Eger, Gárdonyi Géza Színház","Bonchida háromszor","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-06","24","Nincs megadva kezdés.","MOLYÍRTÁS A JELMEZTÁRBAN","Nincs megadva műsor.","Nacsa Ferenc 06303768988 tapolca.hbe@gmail.com","Tapolca és környéke Honvéd Bajtársi Egyesület, 50. évforduló 60 fő, operett, MH 1. KORK, Katonanemzedéki Találkozó","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-07","24","11:00","Budapest, Nemzeti Táncszínház","Sárkánymese","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-09","24","11:00","Bp., Koreai Kulturális Központ","SAJTÓTÁJÉKOZTATÓ","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-17","24","19:00","RAM","Betyárvilág (külsős: Schnell Ádám)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-18","24","Nincs megadva kezdés.","Nyíregyházi művészeti","pályaorientációs nap","Tatár Mária ha. HM: 22518 tatar.maria@hm.gov.hu","HM Társadalmi Kapcsoltok és Humántámogatási Főosztály","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-20","24","Nincs megadva kezdés.","HM Budapest","Táncra magyar!_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-23","24","14:00","(a kezdés egyeztetés alatt) Margitsziget","Sajtótájékoztató","-","*** Herczegh Pétert Szabó Szilvi visszaigazolta 23.04.04., Herczegh Pétertől megerősítő mail 23.04.05.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-24","24","Nincs megadva kezdés.","Próba","Budapest, Szent István-bazilika előtt","-","Külsősök Rékától 23.03.23. Sziku/15-16 pár, Inci/ 10 pár, Bem, Kiss Pisti/ 10 pár","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-25","24","Nincs megadva kezdés.","Nyilvános főpróba","20:00 Budapest., Szent István-bazilika","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-26","24","20:00","Budapest, Szent István-bazilika előtt","Csíksomlyói passió (Színház Olimpia keretében)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-30","24","Nincs megadva kezdés.","Beépítés","Régi tánc, új nemzedék","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-05-31","24","19:00","Bp., Nemzeti Táncszínház","Régi tánc, új nemzedék","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-02","24","Nincs megadva kezdés.","HM Pécs","Táncra magyar!_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-03","24","Nincs megadva kezdés.","Bp., Margitsziget_Petőfi_beépítés éjszaka","Nincs megadva műsor.","-","Megvalósuló esőnap esetén hajnapi 1 órától lehet építeni, ha a jún.2-i előadás megvalósul, építési lehetőség egész nap","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-04","24","20:00","Bp., Margitsziget","Petőfi (külsős: Herczegh Péter)***","-","*** Herczegh Péter kikérő visszaigazolása jún.3-ra és 4-re Szabó Szilvitől mail 23.01.24./ Herczegh Péter visszajelezte 23.02.10. mail / 100 protokoll jegy foglalva Soós Anitánál 23.04.05.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-05","24","20:00","ESŐNAP_Bp., Margitsziget","Petőfi (külsős: Herczegh Péter)***","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-11","24","Nincs megadva kezdés.","Koreaiak érkezése","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-14","24","Nincs megadva kezdés.","Győr, Nemzeti Színház","_BEÉPÍTÉS","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-15","24","Nincs megadva kezdés.","Győr, Nemzeti Színház_ELŐADÁS","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-16","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ÉPÍTÉS","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-17","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ELŐADÁS","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-18","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ELŐADÁS","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-19","24","Nincs megadva kezdés.","Koreaiak távozása","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-24","24","Nincs megadva kezdés.","Galgahévíz","Csipkerózsika_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-29","24","19:00","Bp. RAM","Drakula","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-06-30","24","10:00","HM Kecskemét, 45 perc, Nyugdíjas találkozó (150 fő)","Nincs megadva műsor.","Szentendre: Rózsa Edit 06305454413 rozsa.edit@mil.hu Kecskemét: Szabó János főtörzszászlós 06306903002 sj0smksb@hunmail.local","Szentendre: MH Kiber és Információs Műveleti Központ Kecskemét: MH Légijármű Javítóüzem, zenés táncos előadás","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-07-03","24","Nincs megadva kezdés.","TERVEZETT(!!!) szabadság","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-07-22","24","Nincs megadva kezdés.","Keró esküvő","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-07-26","24","Nincs megadva kezdés.","Harangod, szabadtéri színpad","Szatmár és Bonchida (Téka tábor)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-05","24","Nincs megadva kezdés.","Magyarpolány","Kárpátok visszhangja_egyeztetés alatt ***","-","*** 12x10 színpad, fedés nincs, öltöző színpad mögötti pajta, Szacsuri kért 3 lépcsőt, balettszőnyeget vinni kell","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-09","24","Nincs megadva kezdés.","Pécsvárad","Kárpátok visszhangja_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-12","24","Nincs megadva kezdés.","HM Eger","Táncra magyar!_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-14","24","Nincs megadva kezdés.","Székesfehérvár, Királyi Napok","Kárpátok visszhangja","-","*** Árajánlatot adtam szóban, Tiborral egyeztetve 23.01.30.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-17","24","Nincs megadva kezdés.","Szatmárnémeti, Északi Színház","Szatmár és Bonchida_egyeztetés alatt","Tatár Márta ha. HM 22 518 tatar.maria@hm.gov.hu","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály, alkalomhoz illő összeállítás, 200 fő","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-19","24","Nincs megadva kezdés.","Zselíz","Régi tánc, új nemzedék_egyeztetés alatt","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-27","24","Nincs megadva kezdés.","Marosvásárhely","utazónap","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-28","24","Nincs megadva kezdés.","Marosvásárhely","Körhinta","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-08-29","24","Nincs megadva kezdés.","Marosvásárhely","utazónap","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-02","24","Nincs megadva kezdés.","HM Békéscsaba_Táncra magyar!_egyeztetés alatt","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-08","24","19:00","Keszthely, Balaton Színház","Szatmár","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-09","24","Nincs megadva kezdés.","Saci és Bence esküvő","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-15","24","17:00","HM Zalaegerszeg (Kiskondás Étterem, Hock J. út 53.) 3 pár, 30 perc","Nincs megadva műsor.","Németh István 06703307322","Zalaegerszegi Honvédklub, 55. évforduló (80 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-19","24","Nincs megadva kezdés.","BEÉPÍTÉS","A hűtlen feleség","Gaál Juditnak visszaigazolva 23.02.21., 02.22. megerősítette","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-20","24","19:00","Bp. Müpa","A hűtlen feleség","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-21","24","19:00","Bp. Müpa","A hűtlen feleség","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-09-28","24","18:00","HM Szentendre (Dózsa Gy. Út 12-14.) Alakulatnap 50 perc","Nincs megadva műsor.","Tatár Márta ha. HM 22 518 tatar.maria@hm.gov.hu MNTE: Pethőné Nagy Andrea 06303049400 nagy.andrea2@mil.hu H.Férfikar: Dr. Görög István 06304747905 kempp@kempp.hu","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály vidám, zenés összeállítás, operett részletekkel MNTE: MH Szentendrei Helyőrségtámogató Parancsnokság, 300 fő Férfikar: KEMPP, Honvédfesztivál-Haditanács","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-10-01","24","19:30","Bp., Pesti Vigadó","Álarcok","Horváth Ildikó 06304453228/ horvath.ildiko@hm.gov.hu","MH vitéz Szurmay Sándor Budapest Heylőrség Dandár, Logisztikusok napja (120 fő) ünnepi műsor","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-10-12","24","Nincs megadva kezdés.","Müpa Fesztivál Színház","Végvárak vitézek_BEÉPÍTÉS","Ács Gábor alezredes 06302307105 acs.gabor@hm.gov.hu ugyanaz a két kontakt","MHP Hadműveleti Csoportfőnökség, Fegyverzet-ellenőrzési Főnökség, EBESZ rendezvény (80 fő) második: MHP Hadműveleti Csoportfőnökség, Fegyverzet-ellenőrzési Főnökség, koncert+ szalonzene, EBESZ vacsora (80 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-10-13","24","Nincs megadva kezdés.","Müpa Fesztivál Színház","Végvárak vitézek_PRÓBA","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-10-14","24","19:00","Müpa Fesztivál Színház","Végvárak vitézek_PREMIER","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-10-18","24","Nincs megadva kezdés.","HM 19:00 Bp., ARÉNA Hotel","Örkös Tibor és zenekara","Illyésházi Enikő","Doktrinális Konferencia/ Pótigény 22.12.16.","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-03","24","Nincs megadva kezdés.","HM Szentendre(Dózsa György út 12-14.) 30 perc","Nincs megadva műsor.","Bódi Róbert őrnagy 06301537589 bodi.robert@mil.hu Debrecen: Géczi Marianna 06202524343 geczi.marianna@mil.hu","MH Tartalékképző és Támogató Parancsnokság, MH TTP csapatünnep (300-350 fő) Debrecen: Lovarda Hallgatói Kulturális és Konferencia Központ (Kassai út 26.), Kratochvil Károly Honvéd Középiskola és Kollégium, szalagtűző ünnepség (500 fő)","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-04","24","Nincs megadva kezdés.","Beépítés","Végvárak, vitézek","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-05","24","11:00","ÉS 15:00 Müpa Fesztivál Színház","Végvárak vitézek","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-06","24","10:00","ÉS 13:00 Müpa Fesztivál Színház","Végvárak vitézek","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-13","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi beépítés","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-14","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi főpróba","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-15","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi_PREMIER","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-16","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi 2.előadás","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-25","24","Nincs megadva kezdés.","Utazónap","Károlyváros (Horvátország)","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-26","24","Nincs megadva kezdés.","Károlyváros","Kárpátok visszhangja","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-27","24","Nincs megadva kezdés.","Károlyváros","Kárpátok visszhangja","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-28","24","Nincs megadva kezdés.","Zágráb","Kárpátok visszhangja","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-11-29","24","Nincs megadva kezdés.","Zágrábról Budapestre utazónap","Nincs megadva műsor.","-","-","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-12-01","24","Nincs megadva kezdés.","HM Szentendre (Dózsa Gy. 12-14.) 30 perc","Nincs megadva műsor.","Imre Anita főhadnagy HM: 02344196 KA2ACJ6J@hunmil.local Várpalota: Császár Tímea HM:0234/3257 csaszar.timea@mil.hu MNTE: Bódi Róbert őrnagy 06301537589 bodi.robert@mil.hu","MHP LGCSF társrendező: MHP TTP, Logisztikusok Napja 250 fő Várpalota: MH Bakony Harckiképző Központ, Adventi Koncert (300 fő) MNTE: MH Tartaléépző és Támogató Parancsnokság, Logisztikusok Napja 400 fő","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-12-05","24","17:00","HM AGÓRA Veszprém Kulturális Központ, 30 perc","Nincs megadva műsor.","Borcsa Zsuzsa 06304943897 borcsa.zsuzsa@mil.hu","MH Légi Műveleti Vezetési és Irányítási Központ Veszprém, Mikulás műsor 300 fő, repertoáron lévő mesedarabból","0");
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2023-12-09","24","19:00","HM Budapest Konferencia Központ (Jagelló út 1-3.) 20 perc","Nincs megadva műsor.","Kulcsár Csaba alezredes 06308150693 kulcsar.csaba@mil.hu","MHP Adventi Gálaest (1500 fő)","0");
+SET GLOBAL max_allowed_packet=524288000;
+DELETE FROM aut WHERE datum >= '2023-01-01';
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES 
+( NULL,"2023-01-05","24","Nincs megadva kezdés.","Bp., Müpa Fesztivál Színház","BEÉPÍTÉS","Hajós Nikolett","-","0","-","előadás"),
+( NULL,"2023-01-06","24","19:00","Bp., Müpa Fesztivál Színház","A hűtlen feleség","-","-","0","-","előadás"),
+( NULL,"2023-01-07","24","19:00","Bp., Müpa Fesztivál Színház","A hűtlen feleség","-","-","0","-","előadás"),
+( NULL,"2023-01-12","24","18:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0","-","előadás"),
+( NULL,"2023-01-13","24","15:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0","-","előadás"),
+( NULL,"2023-01-20","24","10:30","HM Pápa, ünnepi állománygyűlés (folklór műsor 20 perc) Vaszari út 101.","Nincs megadva műsor.","Horváth Ildikó 06304453228 horvath.ildiko@hm.gov.hu Pápa: Patkó Andrea 06707739144 patko.andrea@mil.hu","MH vitéz Szurmay Sándor Budapest Helyőség Dandár MH Pápa Bázisrepülő","0","-","előadás"),
+( NULL,"2023-01-24","24","Nincs megadva kezdés.","Forgatás_Zenekari forgatás Galgahévíz","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-01-26","24","Nincs megadva kezdés.","Forgatás_Jula és ZsombiTelgárt (SK)","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-01-30","24","Nincs megadva kezdés.","FORGATÁS_Etyek (Oltárczy, Péter)","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-02-01","24","Nincs megadva kezdés.","FORGATÁS_Vajdahunyad Vára (Szeverényi, Oltárczy)","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-02-05","24","Nincs megadva kezdés.","BEÉPÍTÉS_ Fotózás","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-02-06","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-02-07","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-02-08","24","Nincs megadva kezdés.","Fotózás (arculatváltáshoz)","Nincs megadva műsor.","-","-","0","Táncművészeti Egyetem/ Bécs NWK 348","előadás"),
+( NULL,"2023-02-09","24","19:00","Bp., Nemzeti Színház","Körhinta","-","-","0","Táncművészeti Egyetem/ helyben","előadás"),
+( NULL,"2023-02-11","24","21:30","BEÉPÍTÉS","Sárkánymese","-","-","0","Táncművészeti Egyetem/ Bécsből Budapestre","előadás"),
+( NULL,"2023-02-12","24","11:00","Bp., Nemzeti Táncszínház","Sárkánymese","-","-","0","-","előadás"),
+( NULL,"2023-02-13","24","19:00","Bp., Nemzeti Táncszínház","Téli tánc (Kulisszajárás 18:10-18:20 színpad*)","-","* mail Varga Nikolettől 23.01.17.","0","-","előadás"),
+( NULL,"2023-02-15","24","19:30","Bp. Pesti Vigadó","Álarcok tánckari közreműködéssel","-","-","0","-","előadás"),
+( NULL,"2023-02-21","24","15:30","-17:00 LEJÁRÓ PRÓBA 18:00 Bp., Nemzeti Színház","Egri csillagok","-","A lejáró próbát Kernács Péter jelezte, mind Vicuska mind a kis Gergő kettős szereposztása miatt, minden a négyen új beállók, nem szükséges a teljes tánckar","0","-","előadás"),
+( NULL,"2023-02-22","24","15:00","Bp., Nemzeti Színház","Egri csillagok","-","-","0","-","előadás"),
+( NULL,"2023-03-01","24","19:00","Bp. Nemzeti Táncszínház","Kalotaszeg","-","-","0","-","előadás"),
+( NULL,"2023-03-08","24","19:00","Bp. Nemzeti Táncszínház","Szatmár","Török Andrea/ Katonai Nemzetbiztonsági Szolgálat_soron kívüli kérés","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály, vidám/zenés összeállítás (operettrészletekkel)","0","-","előadás"),
+( NULL,"2023-03-11","24","20:30","HM Pápa, Eszterházy Kastély","Folklór 20 perc (4 pár)","-","-","0","-","előadás"),
+( NULL,"2023-03-14","24","10:00","próba Kiskőrös, Petőfi tér","Állami ünnep (miniszterelnöki program)","-","-","0","-","előadás"),
+( NULL,"2023-03-15","24","10:30","Főpróba, 14:15 Kiskőrös, Petőfi tér","Állami ünnep (miniszterelnöki program)","-","-","0","-","előadás"),
+( NULL,"2023-03-20","24","Nincs megadva kezdés.","BEÉPÍTÉS","HKK színházterem","-","-","0","-","előadás"),
+( NULL,"2023-03-21","24","10:30","HM Budapest Kulturális Központ Színházterem Toborzó szerkesztett 60 perc","Nincs megadva műsor.","Csuka Viktória","-","0","-","előadás"),
+( NULL,"2023-03-23","24","Nincs megadva kezdés.","BEÉPÍTÉS","NTSZ és 19:00 Fotóspróba is","-","-","0","-","előadás"),
+( NULL,"2023-03-24","24","19:00","Bp., NTSZ","Régi tánc, új nemzedék_PREMIER","Aszód: Gál Gyula nyá.alezredes 06209207094 gyuszko1101@gmail.com","-","0","-","előadás"),
+( NULL,"2023-03-31","24","18:00","HM Szolnok, Kilián út 1. Fegyvernemi nap (300 fő) 20-25 perc","Nincs megadva műsor.","Csajbók József százados 30 229 7810 Vizsnyai Vanda őrmester HM: 02434561","MHP HSZ (KM) átszervezést követően MH ÖKMP, ének/tánc/zene Aszód: Galgamenti Nyugállományú Honvédők Egyesülete nosztalgia koncert/operett","0","-","előadás"),
+( NULL,"2023-04-03","24","Nincs megadva kezdés.","Beépítés NTSZ","Mátyás, a világ királya","-","-","0","-","előadás"),
+( NULL,"2023-04-04","24","10:30","és 15:00 Bp., NTSZ","Mátyás, a világ királya ++++ 18:00 KULISSZAJÁRÁS","-","-","0","-","előadás"),
+( NULL,"2023-04-05","24","19:00","Bp. Nemzeti Táncszínház","A Tenkes kapitánya","-","Schenell Ádám kikérőjét Szabó Szilvi visszaigazolta 23.01.20. mail","0","-","előadás"),
+( NULL,"2023-04-12","24","19:00","Győr, Nemzeti Színház","Toborzó (külsős: Molnár Levente)","-","Indulás: 06:00, építés 08:00, Pavelka Sacinak mail 23.02.28., Bajkó kérései alapján/ Nády Ádám nady@gyoriszinhaz.hu","0","-","előadás"),
+( NULL,"2023-04-13","24","Nincs megadva kezdés.","Autóbusz matricázás_Keszthely","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-04-14","24","Nincs megadva kezdés.","Jelmezes főpróba","Tánc-költészet","-","-","0","-","előadás"),
+( NULL,"2023-04-15","24","Nincs megadva kezdés.","Flashmob","Nemzeti Színház","-","-","0","-","előadás"),
+( NULL,"2023-04-16","24","19:00","Bp. Várkert Bazár","Táncköltészet (építés aznap)","-","-","0","-","előadás"),
+( NULL,"2023-04-18","24","11:00","Fesztivál Színház","Müpa sajtótájékoztató","-","**** Balassi Bálint Egy katonaének c. versére készült táncprodukció, zene Sebő Ferenc, koreográfia Zsuráfszky Zoltán > Zsurától","0","-","előadás"),
+( NULL,"2023-04-19","24","19:00","Bp., Lovarda","Folklór 8 pár és zenekar (Köztársasági elnöki program a szlovén köztársasági elnökkel közös vacsora)","-","-","0","-","előadás"),
+( NULL,"2023-04-26","24","Nincs megadva kezdés.","HM 19:00 Bp., ARÉNA Hotel","Nyitótáncok (Örkös Tibor és zenekara is)","Illyésházi Enikő","Doktrinális Konferencia/ Pótigény 22.12.16.","0","-","előadás"),
+( NULL,"2023-04-30","24","18:00","Eger, Gárdonyi Géza Színház","Bonchida háromszor","-","-","0","-","előadás"),
+( NULL,"2023-05-06","24","Nincs megadva kezdés.","MOLYÍRTÁS A JELMEZTÁRBAN","Nincs megadva műsor.","Nacsa Ferenc 06303768988 tapolca.hbe@gmail.com","Tapolca és környéke Honvéd Bajtársi Egyesület, 50. évforduló 60 fő, operett, MH 1. KORK, Katonanemzedéki Találkozó","0","-","előadás"),
+( NULL,"2023-05-07","24","11:00","Budapest, Nemzeti Táncszínház","Sárkánymese","-","-","0","-","előadás"),
+( NULL,"2023-05-09","24","11:00","Bp., Koreai Kulturális Központ","SAJTÓTÁJÉKOZTATÓ","-","-","0","-","előadás"),
+( NULL,"2023-05-17","24","19:00","RAM","Betyárvilág (külsős: Schnell Ádám)","-","-","0","-","előadás"),
+( NULL,"2023-05-18","24","Nincs megadva kezdés.","Nyíregyházi művészeti","pályaorientációs nap","Tatár Mária ha. HM: 22518 tatar.maria@hm.gov.hu","HM Társadalmi Kapcsoltok és Humántámogatási Főosztály","0","-","előadás"),
+( NULL,"2023-05-20","24","Nincs megadva kezdés.","HM Budapest","Táncra magyar!_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-05-23","24","14:00","(a kezdés egyeztetés alatt) Margitsziget","Sajtótájékoztató","-","*** Herczegh Pétert Szabó Szilvi visszaigazolta 23.04.04., Herczegh Pétertől megerősítő mail 23.04.05.","0","-","előadás"),
+( NULL,"2023-05-24","24","Nincs megadva kezdés.","Próba","Budapest, Szent István-bazilika előtt","-","Külsősök Rékától 23.03.23. Sziku/15-16 pár, Inci/ 10 pár, Bem, Kiss Pisti/ 10 pár","0","-","előadás"),
+( NULL,"2023-05-25","24","Nincs megadva kezdés.","Nyilvános főpróba","20:00 Budapest., Szent István-bazilika","-","-","0","-","előadás"),
+( NULL,"2023-05-26","24","20:00","Budapest, Szent István-bazilika előtt","Csíksomlyói passió (Színház Olimpia keretében)","-","-","0","-","előadás"),
+( NULL,"2023-05-30","24","Nincs megadva kezdés.","Beépítés","Régi tánc, új nemzedék","-","-","0","-","előadás"),
+( NULL,"2023-05-31","24","19:00","Bp., Nemzeti Táncszínház","Régi tánc, új nemzedék","-","-","0","-","előadás"),
+( NULL,"2023-06-02","24","Nincs megadva kezdés.","HM Pécs","Táncra magyar!_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-06-03","24","Nincs megadva kezdés.","Bp., Margitsziget_Petőfi_beépítés éjszaka","Nincs megadva műsor.","-","Megvalósuló esőnap esetén hajnapi 1 órától lehet építeni, ha a jún.2-i előadás megvalósul, építési lehetőség egész nap","0","-","előadás"),
+( NULL,"2023-06-04","24","20:00","Bp., Margitsziget","Petőfi (külsős: Herczegh Péter)***","-","*** Herczegh Péter kikérő visszaigazolása jún.3-ra és 4-re Szabó Szilvitől mail 23.01.24./ Herczegh Péter visszajelezte 23.02.10. mail / 100 protokoll jegy foglalva Soós Anitánál 23.04.05.","0","-","előadás"),
+( NULL,"2023-06-05","24","20:00","ESŐNAP_Bp., Margitsziget","Petőfi (külsős: Herczegh Péter)***","-","-","0","-","előadás"),
+( NULL,"2023-06-11","24","Nincs megadva kezdés.","Koreaiak érkezése","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-06-14","24","Nincs megadva kezdés.","Győr, Nemzeti Színház","_BEÉPÍTÉS","-","-","0","-","előadás"),
+( NULL,"2023-06-15","24","Nincs megadva kezdés.","Győr, Nemzeti Színház_ELŐADÁS","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-06-16","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ÉPÍTÉS","-","-","0","-","előadás"),
+( NULL,"2023-06-17","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ELŐADÁS","-","-","0","-","előadás"),
+( NULL,"2023-06-18","24","Nincs megadva kezdés.","NTSZ","Koreai társulat_ELŐADÁS","-","-","0","-","előadás"),
+( NULL,"2023-06-19","24","Nincs megadva kezdés.","Koreaiak távozása","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-06-24","24","Nincs megadva kezdés.","Galgahévíz","Csipkerózsika_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-06-29","24","19:00","Bp. RAM","Drakula","-","-","0","-","előadás"),
+( NULL,"2023-06-30","24","10:00","HM Kecskemét, 45 perc, Nyugdíjas találkozó (150 fő)","Nincs megadva műsor.","Szentendre: Rózsa Edit 06305454413 rozsa.edit@mil.hu Kecskemét: Szabó János főtörzszászlós 06306903002 sj0smksb@hunmail.local","Szentendre: MH Kiber és Információs Műveleti Központ Kecskemét: MH Légijármű Javítóüzem, zenés táncos előadás","0","-","előadás"),
+( NULL,"2023-07-03","24","Nincs megadva kezdés.","TERVEZETT(!!!) szabadság","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-07-22","24","Nincs megadva kezdés.","Keró esküvő","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-07-26","24","Nincs megadva kezdés.","Harangod, szabadtéri színpad","Szatmár és Bonchida (Téka tábor)","-","-","0","-","előadás"),
+( NULL,"2023-08-05","24","Nincs megadva kezdés.","Magyarpolány","Kárpátok visszhangja_egyeztetés alatt ***","-","*** 12x10 színpad, fedés nincs, öltöző színpad mögötti pajta, Szacsuri kért 3 lépcsőt, balettszőnyeget vinni kell","0","-","előadás"),
+( NULL,"2023-08-09","24","Nincs megadva kezdés.","Pécsvárad","Kárpátok visszhangja_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-08-12","24","Nincs megadva kezdés.","HM Eger","Táncra magyar!_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-08-14","24","Nincs megadva kezdés.","Székesfehérvár, Királyi Napok","Kárpátok visszhangja","-","*** Árajánlatot adtam szóban, Tiborral egyeztetve 23.01.30.","0","-","előadás"),
+( NULL,"2023-08-17","24","Nincs megadva kezdés.","Szatmárnémeti, Északi Színház","Szatmár és Bonchida_egyeztetés alatt","Tatár Márta ha. HM 22 518 tatar.maria@hm.gov.hu","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály, alkalomhoz illő összeállítás, 200 fő","0","-","előadás"),
+( NULL,"2023-08-19","24","Nincs megadva kezdés.","Zselíz","Régi tánc, új nemzedék_egyeztetés alatt","-","-","0","-","előadás"),
+( NULL,"2023-08-22","24","Nincs megadva kezdés.","Marosvásárhely","utazónap","-","-","0","-","előadás"),
+( NULL,"2023-08-23","24","Nincs megadva kezdés.","Marosvásárhely","Körhinta","-","-","0","-","előadás"),
+( NULL,"2023-08-24","24","Nincs megadva kezdés.","Marosvásárhely","utazónap","-","-","0","-","előadás"),
+( NULL,"2023-09-02","24","Nincs megadva kezdés.","HM Békéscsaba_Táncra magyar!_egyeztetés alatt","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-09-08","24","19:00","Keszthely, Balaton Színház","Szatmár","-","-","0","-","előadás"),
+( NULL,"2023-09-09","24","Nincs megadva kezdés.","Saci és Bence esküvő","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-09-15","24","17:00","HM Zalaegerszeg (Kiskondás Étterem, Hock J. út 53.) 3 pár, 30 perc","Nincs megadva műsor.","Németh István 06703307322","Zalaegerszegi Honvédklub, 55. évforduló (80 fő)","0","-","előadás"),
+( NULL,"2023-09-19","24","Nincs megadva kezdés.","BEÉPÍTÉS","A hűtlen feleség","Gaál Juditnak visszaigazolva 23.02.21., 02.22. megerősítette","-","0","-","előadás"),
+( NULL,"2023-09-20","24","19:00","Bp. Müpa","A hűtlen feleség","-","-","0","-","előadás"),
+( NULL,"2023-09-21","24","19:00","Bp. Müpa","A hűtlen feleség","-","-","0","-","előadás"),
+( NULL,"2023-09-28","24","18:00","HM Szentendre (Dózsa Gy. Út 12-14.) Alakulatnap 50 perc","Nincs megadva műsor.","Tatár Márta ha. HM 22 518 tatar.maria@hm.gov.hu MNTE: Pethőné Nagy Andrea 06303049400 nagy.andrea2@mil.hu H.Férfikar: Dr. Görög István 06304747905 kempp@kempp.hu","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály vidám, zenés összeállítás, operett részletekkel MNTE: MH Szentendrei Helyőrségtámogató Parancsnokság, 300 fő Férfikar: KEMPP, Honvédfesztivál-Haditanács","0","-","előadás"),
+( NULL,"2023-10-01","24","19:30","Bp., Pesti Vigadó","Álarcok","Horváth Ildikó 06304453228/ horvath.ildiko@hm.gov.hu","MH vitéz Szurmay Sándor Budapest Heylőrség Dandár, Logisztikusok napja (120 fő) ünnepi műsor","0","-","előadás"),
+( NULL,"2023-10-12","24","Nincs megadva kezdés.","Müpa Fesztivál Színház","Végvárak vitézek_BEÉPÍTÉS","Ács Gábor alezredes 06302307105 acs.gabor@hm.gov.hu ugyanaz a két kontakt","MHP Hadműveleti Csoportfőnökség, Fegyverzet-ellenőrzési Főnökség, EBESZ rendezvény (80 fő) második: MHP Hadműveleti Csoportfőnökség, Fegyverzet-ellenőrzési Főnökség, koncert+ szalonzene, EBESZ vacsora (80 fő)","0","-","előadás"),
+( NULL,"2023-10-13","24","Nincs megadva kezdés.","Müpa Fesztivál Színház","Végvárak vitézek_PRÓBA","-","-","0","-","előadás"),
+( NULL,"2023-10-14","24","19:00","Müpa Fesztivál Színház","Végvárak vitézek_PREMIER","-","-","0","-","előadás"),
+( NULL,"2023-10-18","24","Nincs megadva kezdés.","HM 19:00 Bp., ARÉNA Hotel","Örkös Tibor és zenekara","Illyésházi Enikő","Doktrinális Konferencia/ Pótigény 22.12.16.","0","-","előadás"),
+( NULL,"2023-11-03","24","Nincs megadva kezdés.","HM Szentendre(Dózsa György út 12-14.) 30 perc","Nincs megadva műsor.","Bódi Róbert őrnagy 06301537589 bodi.robert@mil.hu Debrecen: Géczi Marianna 06202524343 geczi.marianna@mil.hu","MH Tartalékképző és Támogató Parancsnokság, MH TTP csapatünnep (300-350 fő) Debrecen: Lovarda Hallgatói Kulturális és Konferencia Központ (Kassai út 26.), Kratochvil Károly Honvéd Középiskola és Kollégium, szalagtűző ünnepség (500 fő)","0","-","előadás"),
+( NULL,"2023-11-04","24","Nincs megadva kezdés.","Beépítés","Végvárak, vitézek","-","-","0","-","előadás"),
+( NULL,"2023-11-05","24","11:00","ÉS 15:00 Müpa Fesztivál Színház","Végvárak vitézek","-","-","0","-","előadás"),
+( NULL,"2023-11-06","24","10:00","ÉS 13:00 Müpa Fesztivál Színház","Végvárak vitézek","-","-","0","-","előadás"),
+( NULL,"2023-11-13","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi beépítés","-","-","0","-","előadás"),
+( NULL,"2023-11-14","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi főpróba","-","-","0","-","előadás"),
+( NULL,"2023-11-15","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi_PREMIER","-","-","0","-","előadás"),
+( NULL,"2023-11-16","24","Nincs megadva kezdés.","Bp., Müpa, Fesztivál Színház","Petőfi 2.előadás","-","-","0","-","előadás"),
+( NULL,"2023-11-25","24","Nincs megadva kezdés.","Utazónap","Károlyváros (Horvátország)","-","-","0","-","előadás"),
+( NULL,"2023-11-26","24","Nincs megadva kezdés.","Károlyváros","Kárpátok visszhangja","-","-","0","-","előadás"),
+( NULL,"2023-11-27","24","Nincs megadva kezdés.","Károlyváros","Kárpátok visszhangja","-","-","0","-","előadás"),
+( NULL,"2023-11-28","24","Nincs megadva kezdés.","Zágráb","Kárpátok visszhangja","-","-","0","-","előadás"),
+( NULL,"2023-11-29","24","Nincs megadva kezdés.","Zágrábról Budapestre utazónap","Nincs megadva műsor.","-","-","0","-","előadás"),
+( NULL,"2023-12-01","24","Nincs megadva kezdés.","HM Szentendre (Dózsa Gy. 12-14.) 30 perc","Nincs megadva műsor.","Imre Anita főhadnagy HM: 02344196 KA2ACJ6J@hunmil.local Várpalota: Császár Tímea HM:0234/3257 csaszar.timea@mil.hu MNTE: Bódi Róbert őrnagy 06301537589 bodi.robert@mil.hu","MHP LGCSF társrendező: MHP TTP, Logisztikusok Napja 250 fő Várpalota: MH Bakony Harckiképző Központ, Adventi Koncert (300 fő) MNTE: MH Tartaléépző és Támogató Parancsnokság, Logisztikusok Napja 400 fő","0","-","előadás"),
+( NULL,"2023-12-05","24","17:00","HM AGÓRA Veszprém Kulturális Központ, 30 perc","Nincs megadva műsor.","Borcsa Zsuzsa 06304943897 borcsa.zsuzsa@mil.hu","MH Légi Műveleti Vezetési és Irányítási Központ Veszprém, Mikulás műsor 300 fő, repertoáron lévő mesedarabból","0","-","előadás"),
+( NULL,"2023-12-09","24","19:00","HM Budapest Konferencia Központ (Jagelló út 1-3.) 20 perc","Nincs megadva műsor.","Kulcsár Csaba alezredes 06308150693 kulcsar.csaba@mil.hu","MHP Adventi Gálaest (1500 fő)","0","-","előadás");

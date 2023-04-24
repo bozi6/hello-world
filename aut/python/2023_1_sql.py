@@ -17,17 +17,19 @@ logging.basicConfig(level=logging.INFO, format=' %(asctime)s  - %(message)s')
 
 BemenetFile = "../xlsxs/2023_Autentikus.xlsx"
 KimenetFile = "../sql/2023_aut.sql"
-SqlSor = ''
-
+SqlSor = '\nINSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES \n'
+ujSqlSor = SqlSor
 
 kiiroFajl = open(KimenetFile, 'w', encoding='utf8')
 kiiroFajl.write('# Honvédelmi adatok 2023-ra az autentikusból\n')
 kiiroFajl.write('# Készítette: Konta Boáz (kontab6@gmail.com).\n')
-kiiroFajl.write('USE honved2;\n')
-
+kiiroFajl.write('USE honved2;\n')  # select current database
+kiiroFajl.write("SET GLOBAL max_allowed_packet=524288000;\n")  # increase max allowed packets to 500MB from 1MB
+kiiroFajl.write("DELETE FROM aut WHERE datum >= '2023-01-01';")  # delete previos records from actual date.
+kiiroFajl.write(SqlSor)
 print('Bemeneti fájl: ' + BemenetFile)
 print('Kimenetei fájl: ' + KimenetFile)
-
+sqlValues = []
 WorkBook = openpyxl.load_workbook(filename=BemenetFile, read_only=True)
 # read_only elvileg gyorsabb és amúgy sem akarunk írni bele.
 for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
@@ -36,7 +38,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
     ''' Az értékek a következők:
     c1  - Dátum ( óraperc nélkül )
     c2  - Napok???
-    c3  - Tánckar és Zenekar
+    c3  - Tánckar
     c4  - Zenekar önálló
     c5  - Férfikar
     c6  - Közreműködők egyeztetés alatt
@@ -50,7 +52,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
     '''
     print("Munkalap neve: ", sh.title)
     for c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 in cells:
-        egyadat = adatok.Bemeno(c1, c2, c3 ,c4 ,c5, c6, c7, c8, c9, c10, None)
+        egyadat = adatok.Bemeno(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, '')
         if (c1.value and c3.value) and (c3.value != 'Tánckar'):  # dátum tánckar kitöltve
             result = re.match(r'^\d+.\d+.\d+', str(c1.value))
             if result:
@@ -78,7 +80,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                                             Megjegy: {}'''
                                  .format(c1.value, c2.value, c3.value, c4.value, c5.value,
                                          c6.value, c7.value, c8.value, c9.value, c10.value))
-                SqlSor = "INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"
+                SqlSor = "( NULL,"
                 c2db = c3.value.split('/')  # A 0 az időpont/helyszín, az 1 pedig a műsor.
                 idopont = re.match("[0-9][0-9].?[0-9][0-9]", c2db[0])
                 try:
@@ -96,7 +98,6 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     hely = c2db[0].replace(kezdes, '', 1)
                     hely = " ".join(hely.split())
                     # hely elejéről levesszük a spacet
-
                     logging.debug('Helyszín eredménye: ' + hely)
                 else:
                     kezdes = 'Nincs megadva kezdés.'
@@ -107,6 +108,11 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                 kontakt = egyadat.kont
                 egyadat.megjegy = c10.value
                 megjegyzes = egyadat.megjegy
+                egyadat.kulsz = c9.value
+                kulsoszallitas = egyadat.kulsz
+                egyadat.tev = 'előadás'
+                tevekenyseg = egyadat.tev
+
                 datum = d
                 logging.debug('Kezdési időpont kialakult: ' + str(kezdes))
                 SqlSor += '"'
@@ -124,11 +130,22 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                 SqlSor += megjegyzes  # Megjegyzés
                 SqlSor += '","'
                 SqlSor += str(0)  # helykod
-                SqlSor += '");\n'
+                SqlSor += '","'
+                SqlSor += kulsoszallitas  # Külső szállítás
+                SqlSor += '","'
+                SqlSor += tevekenyseg
+                SqlSor += '"),\n'
+                sqlValues.append(SqlSor)
                 logging.debug(SqlSor)
-                kiiroFajl.write(SqlSor)
                 i = i + 1  # feldolgozott sorok száma.
+
     print('{} sor feldolgozva.'.format(i))
+utolsoElem = sqlValues[-1]
+sqlValues.pop()
+utolsoElem = utolsoElem[:-2]
+utolsoElem += ";"
+sqlValues.append(utolsoElem)
+kiiroFajl.writelines([str(i) for i in sqlValues])
 kiiroFajl.close()
 print('Fájl kiírása befejezve.')
 VegeIdo = time.time() - KezdesiIdo
