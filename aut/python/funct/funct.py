@@ -1,7 +1,7 @@
 import datetime
 import pprint
 from datetime import date
-import mysqlcrud
+import funct.mysqlcrud
 
 
 class Bemeno:
@@ -20,7 +20,7 @@ class Bemeno:
         :type megjegy: str
         :type tev: str
         """
-        self.helykod = 0
+        helykod = 0
         self.honapok = ['JANUÁR', 'FEBRUÁR', 'MÁRCIUS',
                         'ÁPRILIS', 'MÁJUS', 'JÚNIUS',
                         'JÚLIUS', 'AUGUSZTUS', 'SZEPTEMBER',
@@ -37,7 +37,7 @@ class Bemeno:
                          'kulsz': kulsz,
                          'megjegy': megjegy,
                          'tev': tev,
-                         'helykod': self.helykod
+                         'helykod': helykod
                          }
 
     @property
@@ -175,13 +175,19 @@ class Bemeno:
 
     @helykod.setter
     def helykod(self, value):
-        mysqlcrud
+        result = funct.mysqlcrud.helykerd(value)
+        return result
 
 
 if __name__ == "__main__":
-    bem = Bemeno("2022.09.01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
+    bem = Bemeno("2022-09-01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
                  'Rudi Pötsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
                  'Egér haknizik, a többiek dolgoznak', "Ide írok\n sok \t\t\n szép      megjegyzést", "előadás")
     pprint.pprint(bem.__dict__)
     bem.tev = 'próba'
     print(bem.tev)
+    result = funct.mysqlcrud.helykerd('pécs')
+    print("Keresés: ", result[0])
+    print("találat(ok):")
+    for x in result:
+        print(x)

@@ -7,6 +7,7 @@ import logging
 import time
 import funct.funct as adatok
 
+
 KezdesiIdo = time.time()
 
 
@@ -97,7 +98,9 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     kezdes = idopont.group()
                     hely = c2db[0].replace(kezdes, '', 1)
                     hely = " ".join(hely.split())
+                    egyadat.helykod = hely
                     # hely elejéről levesszük a spacet
+                    print(hely)
                     logging.debug('Helyszín eredménye: ' + hely)
                 else:
                     kezdes = 'Nincs megadva kezdés.'

@@ -10,7 +10,7 @@ mydb = mysql.connector.connect(
 
 
 def helykerd(hely):
-    retval = []
+    retval = [hely]
     mycursor = mydb.cursor()
     mycursor.execute("select * from helyszinek where hely like '%{}%'".format(hely))
     myresult = mycursor.fetchall()
@@ -23,8 +23,8 @@ def helykerd(hely):
 
 
 if __name__ == '__main__':
-    x = helykerd('Budapest')
+    x = helykerd('pécs')
     print(len(x))
     if x:
-        print(x[0])
-    print(x)
+        for egy in x:
+            print(egy)
