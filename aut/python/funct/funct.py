@@ -1,10 +1,26 @@
 import datetime
 import pprint
 from datetime import date
+import funct.mysqlcrud
+
 
 class Bemeno:
-    def __init__(self, datum, napok: None, tkzkr: None, zkr: None, ffk: None,
-                 kuls: None, kont: None, stat: None, kulsz: None, megjegy: None, tev: None):
+    def __init__(self, datum: date, napok, tkzkr, zkr, ffk, kuls, kont,
+                 stat, kulsz, megjegy, tev):
+        """
+        :type datum: date
+        :type napok: str
+        :type tkzkr: str
+        :type zkr: str
+        :type ffk: str
+        :type kuls: str
+        :type kont: str
+        :type stat: str
+        :type kulsz: str
+        :type megjegy: str
+        :type tev: str
+        """
+        helykod = 0
         self.honapok = ['JANUÁR', 'FEBRUÁR', 'MÁRCIUS',
                         'ÁPRILIS', 'MÁJUS', 'JÚNIUS',
                         'JÚLIUS', 'AUGUSZTUS', 'SZEPTEMBER',
@@ -21,54 +37,72 @@ class Bemeno:
                          'kulsz': kulsz,
                          'megjegy': megjegy,
                          'tev': tev,
+                         'helykod': helykod
                          }
 
     @property
     def datum(self):
+        """dátum bevitele"""
         return self._erdekes['datum']
 
     @property
     def napok(self):
+        """napok bevitele / nincs használva semmire"""
         return self._erdekes['napok']
 
     @property
     def tkzkr(self):
+        """tánckar zenekar mező"""
         return self._erdekes['tkzkr']
 
     @property
     def zkr(self):
+        """zenekar önálló mező"""
         return self._erdekes['zkr']
 
     @property
     def ffk(self):
+        """Férfikari mező"""
         return self._erdekes['ffk']
 
     @property
     def kuls(self):
+        """külsős mező"""
         return self._erdekes['kuls']
 
     @property
     def kont(self):
+        """kontakt mező"""
         return self._erdekes['kont']
 
     @property
     def stat(self):
+        """státusz mező"""
         return self._erdekes['stat']
 
     @property
     def kulsz(self):
+        """külső szállítás mező"""
         return self._erdekes['kulsz']
 
     @property
     def megjegy(self):
+        """megjegyzés mező"""
         return self._erdekes['megjegy']
 
     @property
     def tev(self):
+        """tevékenység mező /kitalált"""
         return self._erdekes['tev']
+
+    @property
+    def helykod(self):
+        """helykód visszaadása"""
+        return self._erdekes['helykod']
 
     @datum.setter
     def datum(self, value):
+        """dátum beállítása"""
         if type(value) is not datetime.datetime:
             self._erdekes['datum'] = date.fromisoformat(value)
         else:
@@ -76,15 +110,17 @@ class Bemeno:
             self._erdekes['datum'] = datumszo
 
     @napok.setter
-    def napok(self, napok):
-        self._erdekes['napok'] = napok
+    def napok(self, _value):
+        self._erdekes['napok'] = _value
 
     @tkzkr.setter
     def tkzkr(self, tkzkr):
+        """tánckar beállítása"""
         self._erdekes['tkzkr'] = tkzkr
 
     @zkr.setter
     def zkr(self, zkr):
+        """"zenekar beállítása"""
         self._erdekes['zkr'] = zkr
 
     @ffk.setter
@@ -97,6 +133,7 @@ class Bemeno:
 
     @kont.setter
     def kont(self, kont):
+        """kontakt mező beállítása"""
         if kont is not None:
             szkont = " ".join(kont.split())
             self._erdekes['kont'] = szkont
@@ -109,7 +146,10 @@ class Bemeno:
 
     @kulsz.setter
     def kulsz(self, kulsz):
-        self._erdekes['kulsz'] = kulsz
+        if kulsz is not None:
+            self._erdekes['kulsz'] = kulsz
+        else:
+            self._erdekes['kulsz'] = '-'
 
     @megjegy.setter
     def megjegy(self, megjegy):
@@ -131,13 +171,23 @@ class Bemeno:
             self._erdekes['tev'] = tev
         else:
             self._erdekes['tev'] = '-'
-            raise ValueError('Nem ismert tevékenység:', tev)
+            print('Nem ismert tevékenység:', tev)
+
+    @helykod.setter
+    def helykod(self, value):
+        result = funct.mysqlcrud.helykerd(value)
+        return result
 
 
 if __name__ == "__main__":
-    bem = Bemeno("2022.09.01", 'hétfő', 'Mindenki', 'Hegedős', 'férfikar',
+    bem = Bemeno("2022-09-01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
                  'Rudi Pötsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
-                 'Egér haknizik, a többiek dolgoznak', 'Ide írok\n sok \t\t\n szép      megjegyzést', 'előadás')
+                 'Egér haknizik, a többiek dolgoznak', "Ide írok\n sok \t\t\n szép      megjegyzést", "előadás")
     pprint.pprint(bem.__dict__)
     bem.tev = 'próba'
     print(bem.tev)
+    result = funct.mysqlcrud.helykerd('pécs')
+    print("Keresés: ", result[0])
+    print("találat(ok):")
+    for x in result:
+        print(x)

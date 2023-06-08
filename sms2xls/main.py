@@ -3,7 +3,7 @@ from termcolor import colored
 import re  # Reguláris kifejezésekhez modul
 from xml.dom import minidom  # xml fájl olvasásához modul
 
-from forex_python.converter import CurrencyRates  # valutaárfolyam lekérdezőke modul
+from currency_converter import CurrencyConverter # Valutaváltó
 from openpyxl import Workbook  # Excel táblázat kezeléshez modul
 from openpyxl.formatting.rule import Rule
 from openpyxl.styles import NamedStyle, Font, PatternFill  # Stílus importálása modul
@@ -18,8 +18,7 @@ kiirando_fajl = "./balance.xlsx"
 # xml fájl betöltése
 mydoc = minidom.parse(olvasando_fajl)
 
-c = CurrencyRates()  # Aktuális árfolyam lekérdezése
-arfolyamok = c.get_rates('HUF')  # átszámítás forint vs. valutákra
+c = CurrencyConverter()
 
 # Munkalap stílusának beálítása forintra
 still = NamedStyle(name="Pénzecske")  # Ilyen nevű stílus hozzáadása
@@ -29,20 +28,14 @@ rule = Rule(type="expression", dxf=diff_style)  # Feltételes kifejezés megadá
 rule.formula = ["$B2>0"]  # Formula a felt. formázáshoz
 
 
-def penzvalto(mit, arfolyam=arfolyamok):
+def penzvalto(mit):
     """ Árfolyam váltó függvény
     a bejövő mit hez 123,45 GBP
     kiszámolja, hogy az mennyi forintban """
     valuta = mit[-3:]  # A bejövő valuta megnevezésének eltávolítása
-    if valuta in arfolyam:
-        logging.debug('Váltás 1 HUF = {} - {}-ben/ban'.format(arfolyam[valuta], valuta))
-        valtoertek = arfolyam[valuta]
-        mit = mit[:-4]
-        mit = mit.replace(",", ".")
-        return float(mit) / valtoertek
-    else:
-        logging.debug('Nem találtam ilyen valutát!')
-        return False
+    mennyi = mit[:-3].strip().replace(',', '.')
+    ennyi = c.convert(mennyi, valuta, "HUF")
+    return round(ennyi, 2)
 
 
 def ujlap_letrehozasa(lap_elnevezese):
@@ -132,13 +125,13 @@ for elem in items:  # SMS-ek beolvasása
         # ha DEBUG-ra van állítva a loggolás
         i += 1  # sorszám növelése
     except AttributeError:
-        logging.debug("Sorszám:{}; - Nem átutalásos sms - {}".format(i, bd))
+        logging.info("Sorszám:{}; - {} - Nem átutalásos sms - {}".format(i, rd, bd))
         continue
     sor += 1
     # Az összegeket az oszlop végén öszeadjuk és beírjuk az eredményt. és hozzáadjuk a stílust
     ws.cell(row=ws.max_row + 1, column=2, value="=SUM(B2:B{})".format(ws.max_row)).style = still # B oszlop összegzése
     ws.cell(row=ws.max_row, column=2).font = Font(bold=True, italic=True)  # A betűtípust vastaggá tesszük az eredményen
-    logging.debug('Munkalap max sorszáma: {}'.format(ws.max_row))
+    # logging.debug('Munkalap max sorszáma: {}'.format(ws.max_row))
 ws.conditional_formatting.add("B2:B{}".format(ws.max_row), rule) # feltételes formázás hozzáadása
 # összeadjuk a bevételeket.
 ws.cell(row=ws.max_row + 1, column=1, value='Bevétel:')
