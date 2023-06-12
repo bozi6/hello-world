@@ -5,8 +5,7 @@ import openpyxl
 import sqlescapy
 import logging
 import time
-import funct.funct as adatok
-
+import aut.python.funct.funkciok as funkciok
 
 KezdesiIdo = time.time()
 
@@ -53,7 +52,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
     '''
     print("Munkalap neve: ", sh.title)
     for c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 in cells:
-        egyadat = adatok.Bemeno(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, '')
+        egyadat = funkciok.Bemeno(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, '')
         if (c1.value and c3.value) and (c3.value != 'Tánckar'):  # dátum tánckar kitöltve
             result = re.match(r'^\d+.\d+.\d+', str(c1.value))
             if result:

@@ -1,10 +1,10 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="ds718.lan",
+    host="debian.hedomain.local",
     user="root",
     password="qwe",
-    port=3307,
+    port=3306,
     database="honved2"
 )
 
@@ -22,8 +22,22 @@ def helykerd(hely):
     return retval
 
 
+def helyeklista():
+    retval = []
+    mycursor = mydb.cursor()
+    mycursor.execute("select distinct hely from helyszinek")
+    myresult = mycursor.fetchall()
+    if myresult is not None:
+        for eredmenyek in myresult:
+            retval.append(eredmenyek)
+    else:
+        return None
+    return retval
+
+
 if __name__ == '__main__':
-    x = helykerd('pécs')
+    helyszin = input("Adjál meg egy helyszínt!")
+    x = helykerd(helyszin)
     print(len(x))
     if x:
         for egy in x:

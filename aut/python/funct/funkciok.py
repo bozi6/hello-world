@@ -1,7 +1,7 @@
 import datetime
 import pprint
 from datetime import date
-import funct.mysqlcrud
+from aut.python.funct.mysqlcrud import helykerd, helyeklista
 
 
 class Bemeno:
@@ -175,7 +175,7 @@ class Bemeno:
 
     @helykod.setter
     def helykod(self, value):
-        result = funct.mysqlcrud.helykerd(value)
+        result = helykerd(value)
         return result
 
 
@@ -186,8 +186,15 @@ if __name__ == "__main__":
     pprint.pprint(bem.__dict__)
     bem.tev = 'próba'
     print(bem.tev)
-    result = funct.mysqlcrud.helykerd('pécs')
+    result = helykerd('kecskemét')
     print("Keresés: ", result[0])
     print("találat(ok):")
+    i = 1
     for x in result:
-        print(x)
+        print("{}; - {}".format(i, x))
+        i += 1
+    i = 1
+    helyek = helyeklista()
+    for x in helyek:
+        print("{}; - {}".format(i, x))
+        i += 1
