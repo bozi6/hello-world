@@ -68,10 +68,18 @@ items = mydoc.getElementsByTagName('sms')  # smsek beolvasása az items-be
 lapnev = items[0].attributes['readable_date'].value  # Az első sms dátumának kinyerése
 lapnev = lapnev[:4]  # Csak az évszám kivágása
 
+cserek = [
+    ("Egy.:", "Egyenleg:"),
+    ("Egy:", "Egyenleg:"),
+    ("Egy:+", "Egyenleg:"),
+    ("Egyenleg:+", "Egyenleg: "),
+    (",-HUF", " HUF"),
+]
+
 ujlap_letrehozasa(lapnev)  # beküldjük az új laphoz
 sor = 3  # a táblázat írni kívánt első sora
 i = 1  # belső változó
-
+zd = 0 # debug változó
 for elem in items:  # SMS-ek beolvasása
     # if 'SIKERTELEN' in elem.attributes['body'].value:  # Ha a SIKERTELEN üzenetet kaptuk, akkor nem törődünk vele
     #     continue
@@ -98,9 +106,12 @@ for elem in items:  # SMS-ek beolvasása
         sor = 3
     try:
         x = re.search(penz_pattern, bd).group()  # megkeressük a pénzeket az üzenetből
-        egybd = bd.replace("Egy:", "Egyenleg: ")
-        ketbd = egybd.replace(",-HUF;", " HUF;")
-        egyenleg = re.search(egyenleg_pattern, ketbd).group(2)
+        #egybd = bd.replace("Egy:", "Egyenleg: ")
+        #egybd = bd.replace("Egy.:", "Egyenleg: ")
+        #ketbd = egybd.replace(",-HUF;", " HUF;")
+        for old, new in cserek:
+            bd = bd.replace(old, new)
+        egyenleg = re.search(egyenleg_pattern, bd).group(2)
         logging.debug('Egyenleg értéke: {} - Üzi: {}'.format(egyenleg, bd))
         x = x.replace(".", "")  # kivesszük a pontot (ezres elválasztó) az összegek közül
         x = x.replace(",-HUF", " HUF")  # Ha az üzenetben ,-HUF van azt átalakítjuk HUf-ra
