@@ -7,8 +7,8 @@ szekhelyek = ['Kecskemét', 'Pécs', 'Békéscsaba', 'Miskolc', 'Szeged', 'Szék
               'Budapest', 'Kaposvár', 'Nyíregyháza', 'Szekszárd', 'Szombathely',
               'Veszprém', 'Zalaegerszeg', 'Budapest']
 
-# print(states)  # prints all elements in a list
-# print(states[0])  # print first element from a list
+# print(megyek)  # prints all elements in a list
+# print(megyek[0])  # print first element from a list
 
 
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
