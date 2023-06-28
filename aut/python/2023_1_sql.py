@@ -9,7 +9,6 @@ import aut.python.funct.funkciok as funkciok
 
 KezdesiIdo = time.time()
 
-
 logging.basicConfig(level=logging.INFO, format=' %(asctime)s  - %(message)s')
 # logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 # logging.disable(logging.INFO)
@@ -98,8 +97,9 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     hely = c2db[0].replace(kezdes, '', 1)
                     hely = " ".join(hely.split())
                     egyadat.helykod = hely
+
                     # hely elejéről levesszük a spacet
-                    print(hely)
+                    # print(hely)
                     logging.debug('Helyszín eredménye: ' + hely)
                 else:
                     kezdes = 'Nincs megadva kezdés.'
