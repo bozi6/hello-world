@@ -175,8 +175,7 @@ class Bemeno:
 
     @helykod.setter
     def helykod(self, value):
-        result = helykerd(value)
-        return result
+        return helykerd(value)
 
 
 if __name__ == "__main__":
