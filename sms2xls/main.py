@@ -106,9 +106,6 @@ for elem in items:  # SMS-ek beolvasása
         sor = 3
     try:
         x = re.search(penz_pattern, bd).group()  # megkeressük a pénzeket az üzenetből
-        #egybd = bd.replace("Egy:", "Egyenleg: ")
-        #egybd = bd.replace("Egy.:", "Egyenleg: ")
-        #ketbd = egybd.replace(",-HUF;", " HUF;")
         for old, new in cserek:
             bd = bd.replace(old, new)
         egyenleg = re.search(egyenleg_pattern, bd).group(2)

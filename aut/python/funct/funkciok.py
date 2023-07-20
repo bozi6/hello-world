@@ -180,11 +180,9 @@ class Bemeno:
 
 if __name__ == "__main__":
     bem = Bemeno("2022-09-01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
-                 'Rudi Pötsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
+                 'Rudi Pietsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
                  'Egér haknizik, a többiek dolgoznak', "Ide írok\n sok \t\t\n szép      megjegyzést", "előadás")
-    pprint.pprint(bem.__dict__)
-    bem.tev = 'próba'
-    print(bem.tev)
+    # pprint.pprint(bem.__dict__)
     result = helykerd('kecskemét')
     print("Keresés: ", result[0])
     print("találat(ok):")
@@ -193,7 +191,4 @@ if __name__ == "__main__":
         print("{}; - {}".format(i, x))
         i += 1
     i = 1
-    helyek = helyeklista()
-    for x in helyek:
-        print("{}; - {}".format(i, x))
-        i += 1
+

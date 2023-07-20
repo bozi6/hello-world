@@ -109,8 +109,9 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     hely = c2db[0].replace(kezdes, '', 1)
                     hely = " ".join(hely.split())
                     egyadat.helykod = hely
+
                     # hely elejéről levesszük a spacet
-                    print(hely)
+                    # print(hely)
                     logging.debug('Helyszín eredménye: ' + hely)
                 else:
                     kezdes = 'Nincs megadva kezdés.'
