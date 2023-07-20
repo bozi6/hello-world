@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/filshashing2sql/adatbazis" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/sms2xls/env" />
+      <excludeFolder url="file://$MODULE_DIR$/aut/xlsxs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

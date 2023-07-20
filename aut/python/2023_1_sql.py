@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
+import os.path
 import re
 import datetime
+import shutil
+
 import openpyxl
 import sqlescapy
 import logging
@@ -9,13 +12,21 @@ import aut.python.funct.funkciok as funkciok
 
 KezdesiIdo = time.time()
 
-
 logging.basicConfig(level=logging.INFO, format=' %(asctime)s  - %(message)s')
 # logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 # logging.disable(logging.INFO)
 # logging.info('Program elkezdődött.')
 
-BemenetFile = "../xlsxs/2023_Autentikus.xlsx"
+# BemenetFile = "../xlsxs/2023_Autentikus.xlsx"
+MasoltFile = "../xlsxs/2023_Autentikus.xlsx"
+TestBemenetiFile = "z:/NYILVÁNOS/Szereplési terv/2023/2023_Autentikus és  munkarend/_______2023_Autentikus_.xlsx"
+if os.path.exists(TestBemenetiFile):
+    shutil.copyfile(TestBemenetiFile, MasoltFile)
+    print("File másolva")
+    BemenetFile = MasoltFile
+else:
+    print(TestBemenetiFile," nem található.")
+
 KimenetFile = "../sql/2023_aut.sql"
 SqlSor = '\nINSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES \n'
 ujSqlSor = SqlSor
