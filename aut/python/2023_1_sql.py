@@ -25,7 +25,7 @@ if os.path.exists(TestBemenetiFile):
     print("File másolva")
     BemenetFile = MasoltFile
 else:
-    print(TestBemenetiFile," nem található.")
+    print(TestBemenetiFile, " nem található.")
 
 KimenetFile = "../sql/2023_aut.sql"
 SqlSor = '\nINSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES \n'
