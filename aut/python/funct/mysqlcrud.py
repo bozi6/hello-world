@@ -1,10 +1,10 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-    host="ds718.lan",
+    host="debian.hedomain.local",
     user="root",
     password="qwe",
-    port=3307,
+    port=3306,
     database="honved2"
 )
 
