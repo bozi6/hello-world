@@ -23,7 +23,7 @@ def caesar(text, step, alphabets):
 with open('test.txt', 'r') as file:
     szoveg = file.read()
 
-lepesek = 25
+lepesek = 2
 
 cezar = caesar(szoveg, step=lepesek, alphabets=alphabets)
 

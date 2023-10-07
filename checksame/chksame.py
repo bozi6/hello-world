@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import os
 import hashlib
 from pathlib import Path
