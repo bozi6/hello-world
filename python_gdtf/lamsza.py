@@ -95,5 +95,6 @@ try:
 except AttributeError:
     print('Valami fos van...')
 finally:
+    print('-'* 80)
     for file in fileok:
-        print('{}'.format(file))
+        print('Feldolgozott fájlok: {}'.format(file))
