@@ -9,5 +9,6 @@ s.listen(5)
 while True:
     c, addr = s.accept()
     print('Got connection from, ', addr)
-    c.send('Thank you for connecting')
+    szoveg = bytes('Thank you for conecting', 'utf-8')
+    c.send(szoveg)
     c.close()

@@ -3,11 +3,17 @@ import pygdtf
 import os
 from termcolor import cprint
 from colorama import init
-
+from colorama import Fore
+from colorama import Style
 init(autoreset=True)
 
 
 def szinesben(mi, rizsa):
+    """
+    :param mi: A kiírás definíciója pl. név:
+    :param rizsa: A szöveg pl: PAR64
+    :return: false
+    """
     print(mi, end='')
     cprint(rizsa, 'green')
 
@@ -20,7 +26,7 @@ def getmembers(osztaly):
 
 
 def gdtfinfo(egy):
-    # egy = pygdtf.FixtureType('./par64.gdtf')
+    # egy = pygdtf.FixtureType('./CPMini.gdtf')
     szinesben('Név: ', egy.name)
     szinesben('Rövid név: ', egy.short_name)
     szinesben('Hosszú név: ', egy.long_name)
@@ -31,18 +37,30 @@ def gdtfinfo(egy):
     i = 0
     for slot in tar:
         for egyslot in slot.wheel_slots:
-            szinesben('\t{}'.format(i), ' - {} '.format(egyslot.name))
-
-            # szinesben('\t\tSzín IEC: ', 'x: {}, Y: {}, y: {}, z: {}'.format(egyslot.color.x, egyslot.color.Y,
-            # egyslot.color.y, egyslot.color.z))
+            print('\t{} - {}  Szín CIE: Y: {}, x {}, y {}'.
+                  format(i, egyslot.name, egyslot.color.Y, egyslot.color.x, egyslot.color.y))
             i += 1
     szinesben('Színtér: ', egy.color_space.mode)
     print('DMX módok:')
+    dmxinfo = pygdtf.utils.get_dmx_modes_info(egy)
+    for i in dmxinfo:
+        ki = ('\t Mód: {} - Név: {} - DMX csatorna számok: {}'.
+              format(i.get('mode_id'), i.get('mode_name'), i.get('mode_dmx_channel_count')))
+        print(ki)
+
+        #  print(dmxinfo)
+        DmxChanInfo = pygdtf.utils.get_dmx_channels(egy, i.get('mode_name'))
+        #  print(DmxChanInfo)
+        for egycsat in DmxChanInfo:
+            for param in egycsat:
+                print('\t\tDMX cím: {} - Azononsító: {}'.format(param.get('dmx'), param.get('id')))
+    """
     for mod in egy.dmx_modes:
         szinesben('\tMód: ', '{}, attribútumok szám: {}'.format(mod.name, len(mod.dmx_channels)))
         for i in range(0, len(mod.dmx_channels)):
             dmxchs = mod.dmx_channels[i].logical_channels[0].attribute
             szinesben('\t\t{}. Channel: '.format(i+1), dmxchs)
+    """
     szinesben('Lámpatípus Id: ', egy.fixture_type_id)
     feny = pygdtf.GeometryBeam()
     szinesben('Fényforrás típusa: ', feny.beam_type)
@@ -60,9 +78,9 @@ def gdtfinfo(egy):
 
 
 mappa = os.path.expanduser('~')
-if os.name == 'nt':
+if os.name == 'nt':  # Ha Windózban vagyunk
     mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
-elif os.name == 'posix':
+elif os.name == 'posix':  # Ha Macen vagyunk
     mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
 fileok = []
 try:
@@ -70,11 +88,12 @@ try:
         for file in files:
             if file.endswith('.gdtf'):
                 print('-' * 80)
-                print(root, file)
+                szinesben(root, '/'+file)
                 print('-' * 80)
                 gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
                 fileok.append(file)
 except AttributeError:
     print('Valami fos van...')
+finally:
     for file in fileok:
-        print('- {}'.format(file))
+        print('{}'.format(file))
