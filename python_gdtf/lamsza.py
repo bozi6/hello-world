@@ -7,6 +7,28 @@ from colorama import Fore
 from colorama import Style
 init(autoreset=True)
 
+def filescan():
+    mappa = os.path.expanduser('~')
+    if os.name == 'nt':  # Ha Windózban vagyunk
+        mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
+    elif os.name == 'posix':  # Ha Macen vagyunk
+        mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
+    fileok = []
+    try:
+        for root, dirs, files in os.walk(mappa):
+            for file in files:
+                if file.endswith('.gdtf'):
+                    szinesben(root, '/'+file)
+                    # gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
+                    fileok.append(file)
+    except AttributeError:
+        print('Nem találtam fájlokat ...')
+    return fileok,root
+
+def print_menu():
+    for key in menu.keys():
+        print(key, '--', menu[key])
+
 
 def szinesben(mi, rizsa):
     """
@@ -76,25 +98,29 @@ def gdtfinfo(egy):
         print('\t', '-' * 60)
     """
 
-
-mappa = os.path.expanduser('~')
-if os.name == 'nt':  # Ha Windózban vagyunk
-    mappa = "C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/"
-elif os.name == 'posix':  # Ha Macen vagyunk
-    mappa = os.path.join(mappa, 'MALightingTechnology', 'gma3_library', 'fixturetypes')
-fileok = []
-try:
-    for root, dirs, files in os.walk(mappa):
-        for file in files:
-            if file.endswith('.gdtf'):
-                print('-' * 80)
-                szinesben(root, '/'+file)
-                print('-' * 80)
-                gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
-                fileok.append(file)
-except AttributeError:
-    print('Valami fos van...')
-finally:
-    print('-'* 80)
-    for file in fileok:
-        print('Feldolgozott fájlok: {}'.format(file))
+if __name__ == '__main__':
+    fileok,root = filescan()
+    menu = {}
+    i = 0
+    for egyfile in fileok:
+        menu[i] = egyfile
+        i += 1
+    menu[len(menu)] = 'Kilépés.'
+    while(True):
+        print_menu()
+        option = ''
+        try:
+            option = int(input('Melyiket nézzük: '))
+        except IndexError:
+            print('Nem találok ilyen számot ...')
+        if option == len(menu)-1:
+            exit(0)
+        if option < len(menu):
+            gdtfinfo(pygdtf.FixtureType(root+'/'+fileok[option]))
+        else:
+            cprint('Nem találok ilyen számú elemet ...', 'red')
+    """cuccz = (dir(pygdtf))
+    i = 0
+    for egyitem in cuccz:
+        print('{}; {}'.format(i,egyitem))
+        i += 1"""
