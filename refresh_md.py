@@ -1,7 +1,6 @@
 # Refresh README.md file
 import os
 from datetime import datetime
-
 from pathlib import Path
 
 intro = """
@@ -13,17 +12,21 @@ intro = """
 
 footer = """
 ---
-## License
-
-MIT
-
----
-Created by kontab@gmail.com
-\nLatest version generated:
+## License  
+MIT  
+---  
+Created by kontab@gmail.com  
+Latest version generated:
 """
 footer += str(datetime.now())
 
+
 def dispcrmod(mappa):
+    """
+    Create a dictionary from directories with some date info
+    :param mappa: current working directory
+    :return:dictionary: contains number, filename, creation date, modified date
+    """
     fdpaths = [fd for fd in os.listdir(mappa)]
     szoveg = {}
     i = 0
@@ -41,6 +44,12 @@ def dispcrmod(mappa):
 
 
 def mappalista(mappa):
+    """
+    Returns list of directories
+    not included hidden one
+    :param mappa: current working directory
+    :return: array of directories
+    """
     dirs = []
     for f in sorted(mappa.iterdir()):
         if f.is_dir():
@@ -50,6 +59,10 @@ def mappalista(mappa):
 
 
 def main():
+    """
+    Refresh the README.md file in current working directory.
+    :return: nothing
+    """
     link = "https://github.com/bozi6/hello-world/tree/master/"
     path = Path.cwd()
     szovegek = dispcrmod(path)
@@ -58,9 +71,10 @@ def main():
         f.write(intro)
         for k, v in szovegek.items():
             if v['filename'][0] != '.':
-                irando = f"| [{v['filename']}]({link+v['filename']}) | {v["createdate"]} | {v["moddate"]} |\n"
+                irando = f"| [{v['filename']}]({link + v['filename']}) | {v["createdate"]} | {v["moddate"]} |\n"
                 f.write(irando)
         f.write(footer)
+
 
 if __name__ == '__main__':
     main()

@@ -11,7 +11,7 @@
 | [08robot](https://github.com/bozi6/hello-world/tree/master/08robot) | 2021-12-05 21:20:27.303439 | 2021-12-05 21:20:27.303439 |
 | [aut](https://github.com/bozi6/hello-world/tree/master/aut) | 2023-02-27 17:43:52.972452 | 2023-02-27 17:43:52.972452 |
 | [friends.py](https://github.com/bozi6/hello-world/tree/master/friends.py) | 2021-12-05 21:20:27.315220 | 2021-12-05 21:20:27.315220 |
-| [refresh_md.py](https://github.com/bozi6/hello-world/tree/master/refresh_md.py) | 2023-12-01 19:43:37.657461 | 2023-12-01 19:43:37.657461 |
+| [refresh_md.py](https://github.com/bozi6/hello-world/tree/master/refresh_md.py) | 2023-12-01 19:58:22.304219 | 2023-12-01 19:58:22.304219 |
 | [tankonyv](https://github.com/bozi6/hello-world/tree/master/tankonyv) | 2022-02-12 11:20:57.680162 | 2022-02-12 11:20:57.680162 |
 | [LICENSE](https://github.com/bozi6/hello-world/tree/master/LICENSE) | 2022-08-29 23:58:59.432750 | 2022-08-29 23:58:59.432750 |
 | [caesar](https://github.com/bozi6/hello-world/tree/master/caesar) | 2023-10-07 18:34:02.308631 | 2023-10-07 18:34:02.308631 |
@@ -30,7 +30,7 @@
 | [Ma2_gobos2html](https://github.com/bozi6/hello-world/tree/master/Ma2_gobos2html) | 2023-02-26 17:01:31.085618 | 2023-02-26 17:01:31.085618 |
 | [beautifusoup](https://github.com/bozi6/hello-world/tree/master/beautifusoup) | 2022-11-14 19:08:56.838182 | 2022-11-14 19:08:56.838182 |
 | [alice](https://github.com/bozi6/hello-world/tree/master/alice) | 2022-08-01 16:37:37.778545 | 2022-08-01 16:37:37.778545 |
-| [README.md](https://github.com/bozi6/hello-world/tree/master/README.md) | 2023-12-01 19:43:11.633170 | 2023-12-01 19:43:11.633170 |
+| [README.md](https://github.com/bozi6/hello-world/tree/master/README.md) | 2023-12-01 19:57:58.904680 | 2023-12-01 19:57:58.904680 |
 | [moviexmltest](https://github.com/bozi6/hello-world/tree/master/moviexmltest) | 2022-12-17 17:57:54.255028 | 2022-12-17 17:57:54.255028 |
 | [anagramma](https://github.com/bozi6/hello-world/tree/master/anagramma) | 2023-12-01 17:40:09.915196 | 2023-12-01 17:40:09.915196 |
 | [ma2html_parser](https://github.com/bozi6/hello-world/tree/master/ma2html_parser) | 2021-12-05 21:20:27.316097 | 2021-12-05 21:20:27.316097 |
@@ -56,12 +56,9 @@
 | [jsonprobak](https://github.com/bozi6/hello-world/tree/master/jsonprobak) | 2023-06-28 23:52:16.725831 | 2023-06-28 23:52:16.725831 |
 
 ---
-## License
-
-MIT
-
----
-Created by kontab@gmail.com
-
+## License  
+MIT  
+---  
+Created by kontab@gmail.com  
 Latest version generated:
-2023-12-01 19:43:37.697113
+2023-12-01 19:58:22.346458
