@@ -5,6 +5,9 @@ from aut.python.funct.mysqlcrud import helykerd, helyeklista
 
 
 class Bemeno:
+    """
+    Bemenő adatok szortírozása, vagy mi a lófa.
+    """
     def __init__(self, datum: date, napok, tkzkr, zkr, ffk, kuls, kont,
                  stat, kulsz, megjegy, tev):
         """
@@ -182,7 +185,6 @@ if __name__ == "__main__":
     bem = Bemeno("2022-09-01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
                  'Rudi Pietsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
                  'Egér haknizik, a többiek dolgoznak', "Ide írok\n sok \t\t\n szép      megjegyzést", "előadás")
-    # pprint.pprint(bem.__dict__)
     result = helykerd('kecskemét')
     print("Keresés: ", result[0])
     print("találat(ok):")
