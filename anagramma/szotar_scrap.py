@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 kimeneti_file = open('teszt_szotar.txt', 'w')
 
 """
-# Ez az összes oldalt megpróbálja lezedni, de a 'ly', 'm' után
+# Ez az összes oldalt megpróbálja leszedni, de a 'ly', 'm' után
 # már hisztizett az oldal, hogy túl sok próbálkozás :-)
 
 abc = ('a', 'aa', 'b', 'c', 'cs', 'd', 'dz', 'e', 'ee', 'f', 'g', 'gy', 'h', 'i',

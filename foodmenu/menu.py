@@ -10,7 +10,7 @@ class Food(object):
         return self.price
 
     def __str__(self):
-        return self.name + ' : ' + str(self.getprice()) + ' -Pénz'
+        return self.name + ' : ' + str(self.getprice()) + ' - Money'
 
 
 # Definig a function for building a Menu

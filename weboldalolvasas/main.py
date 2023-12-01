@@ -16,15 +16,20 @@ def oldallekeres(oldalcim):
     except HTTPError as http_err:
         print(f"HTTP hiba történt: {http_err}")
     except Exception as err:
-        print(f"Más hiba történt {err}")
+        print(f"Más hiba történt: {err}")
 
 
 def getverzion() -> object:
     if sys.platform == "darwin":
         stream = os.popen('mdls -raw -name kMDItemVersion /Applications/grandMA3.app')
-        verzio: str = stream.read()
-    return verzio
-
+        AppVersion: str = stream.read()
+    elif sys.platform == "nt":
+        stream = os.popen('wmic datafile where name="C:/Program Files/MALightingTechnology/ma3/gma3.exe"'
+                          ' get Version /value')
+        AppVersion: str = stream.read()
+    else:
+        AppVersion = ''
+    return AppVersion
 
 if __name__ == "__main__":
     html_page = oldallekeres(url)
