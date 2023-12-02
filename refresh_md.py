@@ -6,8 +6,8 @@ from pathlib import Path
 intro = """
 # Python Home Projects
 ## Projects list:
-| File Name | Creation Date | Last Modificated Date |
-| --------- | ------------- | ------------------ |
+| File Name | Creation Date | Last Modificated Date | Description |
+| --------- | ------------- | --------------------- | ----------- |
 """
 
 footer = """
@@ -18,7 +18,7 @@ MIT
 Created by kontab@gmail.com  
 Latest version generated:
 """
-footer += str(datetime.now())
+footer += str(datetime.today().strftime('%Y-%m-%d %H:%m:%S'))
 
 
 def dispcrmod(mappa):
@@ -37,8 +37,8 @@ def dispcrmod(mappa):
         szoveg[i] = {}
         szoveg[i]['sorsz'] = i
         szoveg[i]['filename'] = fdpath
-        szoveg[i]['createdate'] = creadate
-        szoveg[i]['moddate'] = moddate
+        szoveg[i]['createdate'] = creadate.strftime('%Y-%m-%d %H:%m:%S')
+        szoveg[i]['moddate'] = moddate.strftime('%Y-%m-%d %H:%m:%S')
         i += 1
     return szoveg
 
@@ -58,6 +58,16 @@ def mappalista(mappa):
     return dirs
 
 
+def leirasszedo(mappa):
+    filepath = Path.cwd() / mappa / "description.txt"
+    try:
+        with filepath.open("r", encoding="utf-8") as f:
+            leir = f.read()
+    except:
+        leir = '-'
+    return leir
+
+
 def main():
     """
     Refresh the README.md file in current working directory.
@@ -66,12 +76,13 @@ def main():
     link = "https://github.com/bozi6/hello-world/tree/master/"
     path = Path.cwd()
     szovegek = dispcrmod(path)
-    filepath = Path.cwd() / "README.md"
+    filepath = path / "README.md"
     with filepath.open("w", encoding="utf-8") as f:
         f.write(intro)
         for k, v in szovegek.items():
             if v['filename'][0] != '.':
-                irando = f"| [{v['filename']}]({link + v['filename']}) | {v["createdate"]} | {v["moddate"]} |\n"
+                desc = leirasszedo(path / v['filename'])
+                irando = f"| [{v['filename']}]({link + v['filename']}) | {v["createdate"]} | {v["moddate"]} | {desc}\n"
                 f.write(irando)
         f.write(footer)
 

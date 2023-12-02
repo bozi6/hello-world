@@ -30,13 +30,12 @@ MasoltFile = "../xlsxs/2023_Autentikus.xlsx"
 TestBemenetiFile = "z:/NYILVÁNOS/Szereplési terv/2023/2023_Autentikus és  munkarend/_______2023_Autentikus_.xlsx"
 if os.path.exists(TestBemenetiFile):
     shutil.copyfile(TestBemenetiFile, MasoltFile)
-
     cprint.info("File másolva a legújabbera")
-
     BemenetFile = MasoltFile
 else:
-    cprint.warn(TestBemenetiFile, ' nevű fájl nem található.\nLehet nincs csatlakoztatva a távoli hely?\n'
-                'mindegy... használom a régit.')
+    cprint.warn(TestBemenetiFile, ' nevű fájl nem található.\n'
+                                  'Lehet nincs csatlakoztatva a távoli hely?\n'
+                                  'mindegy... használom a régit.')
     BemenetFile = MasoltFile
 
 KimenetFile = "../sql/2023_aut.sql"
@@ -70,8 +69,6 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
     c9  - Külsős szállítás
     c10  - megjegyzés
     Ezek a 2023_AUTENTIKUS.xlsx táblázat fejlécsorának összetevői.
-    Továbbá! Közhírré tétetik!
-    Az excel fileban a dátum mezőt tessék rendesen beállítani.
     '''
     cprint.info("Munkalap neve: ", sh.title)
     for c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 in cells:
@@ -100,8 +97,6 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
                     hely = c2db[0].replace(kezdes, '', 1)
                     hely = " ".join(hely.split())
                     egyadat.helykod = hely
-
-                    # hely elejéről levesszük a spacet
                     # print(hely)
                     logging.debug('Helyszín eredménye: ' + hely)
                 else:
