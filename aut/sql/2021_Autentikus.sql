@@ -1,7 +1,8 @@
 # Honvédelmi adatok 2021-re az autentikusból
 # Készítette: Konta Boáz (kontab6@gmail.com).
 USE honved2;
-INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2021-01-05","24","19:00","Bp. NTSZ","Kalotaszeg (Martin Maraton 1.) *","","* A Kormányrendelet értelmében 21.01.11. érvényes a kijárási korlátozás, a színházak zárva","0");
+INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES
+ ( NULL,"2021-01-05","24","19:00","Bp. NTSZ","Kalotaszeg (Martin Maraton 1.) *","","* A Kormányrendelet értelmében 21.01.11. érvényes a kijárási korlátozás, a színházak zárva","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2021-01-09","24","19:00","Bp. Müpa","Betyárvilág","","* A Kormányrendelet értelmében 21.01.11. érvényes a kijárási korlátozás, a színházak zárva","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2021-01-12","24","19:00","Bp. NTSZ","Bonchida (Martin Maraton 2.)","","","0");
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod) VALUES ( NULL,"2021-01-19","24","19:00","Bp. NTSZ","Mezőség (Martin Maraton 3.)","","","0");

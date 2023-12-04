@@ -66,9 +66,9 @@ def ismeretlen_szavak_keresese(szokincs, szavak):
     for w in szavak:
         if linearis_kereses(szokincs, w) < 0:
             eredmeny.append(w)
-    print(eredmeny)
     return eredmeny
 
 
 baratok = ["Péter", "Zoltán", "János", "Kata", "Zita", "Sándor", "Panni"]
 
+szavak_a_konyvbol("alice_in_wonderland.txt")

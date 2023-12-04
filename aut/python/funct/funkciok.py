@@ -8,8 +8,8 @@ class Bemeno:
     """
     Bemenő adatok szortírozása, vagy mi a lófa.
     """
-    def __init__(self, datum: date, napok, tkzkr, zkr, ffk, kuls, kont,
-                 stat, kulsz, megjegy, tev):
+    def __init__(self, datum: date, napok, tkzkr, zkr="-", ffk="-", kuls="-", kont="-",
+                 stat="-", kulsz="-", megjegy="-", tev="-"):
         """
         :type datum: date
         :type napok: str
@@ -185,12 +185,16 @@ if __name__ == "__main__":
     bem = Bemeno("2022-09-01", "hétfő", "Mindenki", 'Hegedős', 'férfikar',
                  'Rudi Pietsch', 'joskapista@nagyonfontos.tr', 'Valamilyen állapot',
                  'Egér haknizik, a többiek dolgoznak', "Ide írok\n sok \t\t\n szép      megjegyzést", "előadás")
-    result = helykerd('kecskemét')
-    print("Keresés: ", result[0])
+    result = helykerd('Bp., Müpa Fesztivál Színház')
+    print("Keresés eredménye: ", result)
     print("találat(ok):")
     i = 1
-    for x in result:
-        print("{}; - {}".format(i, x))
-        i += 1
-    i = 1
+    if result:
+        for x in result:
+            print("{}; - {}".format(i, x))
+            i += 1
+        i = 1
+    else:
+        print("Nincs találat.")
+
 

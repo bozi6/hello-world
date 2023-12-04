@@ -1,4 +1,5 @@
 import mysql.connector
+from sqlescapy import sqlescape
 
 mydb = mysql.connector.connect(
     host="ds718.lan",
@@ -12,7 +13,7 @@ mydb = mysql.connector.connect(
 def helykerd(hely):
     retval = [hely]
     mycursor = mydb.cursor()
-    mycursor.execute("select * from helyszinek where hely like \"%{}%\"".format(hely))
+    mycursor.execute("select * from helyszinek where hely like \"%{}%\"".format(sqlescape(hely)))
     myresult = mycursor.fetchall()
     if len(myresult) != 0:
         for eredmenyek in myresult:
