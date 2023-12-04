@@ -13,7 +13,8 @@ __copyright__ = "Konta Boáz 2023"
 BemenetiFile = "z:/NYILVÁNOS/Szereplési terv/2023/2023_Autentikus és  munkarend/_______2023_Autentikus_.xlsx"
 MasoltFile = "2023_Autentikus.xlsx"
 KimenetFile = "../sql/2023_aut.sql"
-elirasok = ["Tánckar", "tánckar", "TÁNCKAR (és Zenekar)", "FÉRFIKAR"]
+tancnevezes = ["Tánckar", "tánckar", "TÁNCKAR (és Zenekar)"]
+ferfikarnevek = ["FÉRFIKAR"]
 
 """
 Az autentikus Excel tábla átalakítása mySQL fájllá, ami nekem jó.
@@ -45,11 +46,15 @@ BemenetFile = testinpufile(BemenetiFile)
 SqlSor = '\nINSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES \n'
 
 kiiroFajl = open(KimenetFile, 'w', encoding='utf8')
-kiiroFajl.write('# Honvédelmi adatok 2023-ra az autentikusból\n')
-kiiroFajl.write('# Készítette: Konta Boáz (kontab6@gmail.com).\n')
-kiiroFajl.write('USE honved2;\n')  # select current database
-kiiroFajl.write("SET GLOBAL max_allowed_packet=524288000;\n")  # increase max allowed packets to 500MB from 1MB
-kiiroFajl.write("DELETE FROM aut WHERE datum >= '2023-01-01';")  # delete previos records from actual date.
+sqlalap = """# Honvédelmi adatok a 2023-ra az autentikusból.
+# Készítette: Konta Boáz (kontab6@gmail.com)
+# Select current database
+USE honved2;
+# Increase max allowed packets to 500MB from 1MB
+SET GLOBAL max_allowed_packet=524288000;
+DELETE FROM aut WHERE datum >= '2023-01-01';
+"""
+kiiroFajl.write(sqlalap)
 kiiroFajl.write(SqlSor)
 cprint.info('Bemeneti fájl: ', BemenetFile)
 cprint.info('Kimenetei fájl: ', KimenetFile)
@@ -63,7 +68,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
     for c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 in cells:
         SqlSor = '( NULL,'
         # egyadat = funkciok.Bemeno(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, '')
-        if (c1.value and c3.value) and (c3.value not in elirasok):  # dátum tánckar kitöltve.
+        if (c1.value and c3.value) and (c3.value not in tancnevezes):  # dátum tánckar kitöltve.
             procad = proc.Egysor(c1.value, c2.value, c3.value, c4.value, c5.value, c6.value, c7.value, c8.value,
                                  c9.value, c10.value)
             datum = procad.datum
@@ -71,7 +76,7 @@ for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
             sqlValues.append(proc.sqlrak(procad))
             logging.debug(SqlSor)
             i = i + 1  # feldolgozott sorok száma.
-        if (c1.value and c5.value) and (c5.value not in elirasok):  # dátum férfikar kitöltve.
+        elif (c1.value and c5.value) and (c5.value not in ferfikarnevek):  # dátum férfikar kitöltve.
             procadf = proc.Egysor(c1.value, c2.value, c3.value, c4.value, c5.value, c6.value, c7.value, c8.value,
                                   c9.value, c10.value)
             datum = procadf.datum
