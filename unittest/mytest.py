@@ -1,0 +1,32 @@
+import unittest
+
+
+class MyFirstTests(unittest.TestCase):
+    def test_hello(self):
+        self.assertEqual(hello_world(), 'hello world')
+
+    def test_custom_num_list(self):
+        self.assertEqual(len(create_num_list(10)), 10)
+
+    def test_custom_func_x(self):
+        self.assertEqual(custom_func_x(3, 2, 3), 54)
+
+    def test_custom_non_lin_num_list(self):
+        self.assertEqual(custom_non_lin_num_list(5, 2, 3)[2], 16)
+        self.assertEqual(custom_non_lin_num_list(5, 3, 2)[4], 48)
+
+
+def hello_world():
+    return 'hello world'
+
+
+def create_num_list(length):
+    return [x for x in range(length)]
+
+
+def custom_func_x(x, const, power):
+    return const * x ** power
+
+
+def custom_non_lin_num_list(length, const, power):
+    return [custom_func_x(x, const, power) for x in range(length)]

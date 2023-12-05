@@ -2,18 +2,16 @@ import mysql.connector
 from sqlescapy import sqlescape
 
 mydb = mysql.connector.connect(
-    host="ds718.lan",
-    user="root",
-    password="qwe",
-    port=3307,
-    database="honved2"
+    host="ds718.lan", user="root", password="qwe", port=3307, database="honved2"
 )
 
 
 def helykerd(hely):
     retval = [hely]
     mycursor = mydb.cursor()
-    mycursor.execute("select * from helyszinek where hely like \"%{}%\"".format(sqlescape(hely)))
+    mycursor.execute(
+        'SELECT * FROM helyszinek WHERE hely LIKE "%{}%"'.format(sqlescape(hely))
+    )
     myresult = mycursor.fetchall()
     if len(myresult) != 0:
         for eredmenyek in myresult:
@@ -26,7 +24,7 @@ def helykerd(hely):
 def helyeklista():
     retval = []
     mycursor = mydb.cursor()
-    mycursor.execute("select distinct hely from helyszinek")
+    mycursor.execute("SELECT DISTINCT hely FROM helyszinek")
     myresult = mycursor.fetchall()
     if myresult is not None:
         for eredmenyek in myresult:
@@ -36,7 +34,7 @@ def helyeklista():
     return retval
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     helyszin = input("Adjál meg egy helyszínt!")
     x = helykerd(helyszin)
     if x:
