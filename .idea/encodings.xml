@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/aut/python/sql/2021_Autentikus.sql" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/aut/sql/2021_Autentikus.sql" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/caesar/2B3A0EE3A80F.cky" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/ma2xml2capture/mindenki.xml_conv.csv" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/ma2xml2capture/teruletisebzes.xml_conv.csv" charset="windows-1250" />
-    <file url="file://$PROJECT_DIR$/ma2xml2capture/testshow.xml_conv.csv" charset="windows-1250" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -3,6 +3,11 @@ from matplotlib import pyplot as plt
 
 
 class Cannon:
+    """
+    Ágyu osztály
+
+    """
+
     def __init__(self, x0, y0, v, angle):
         """
         :param x0: initial coordinate of cannon
@@ -28,22 +33,51 @@ class Cannon:
         self.yarr = [self.y]
 
     def updateVx(self, dt):
+        """
+        VX frissítése
+        :param dt: távolság
+        :return: az x elmozdulás
+
+        """
         self.vx = self.vx + self.ax * dt
         return self.vx
 
     def updateVy(self, dt):
+        """
+        VY frissítése
+        :param dt: távolság
+        :return: az y elmozdulás
+
+        """
         self.vy = self.vy + self.ay * dt
         return self.vy
 
     def updateX(self, dt):
+        """
+        X frissítése
+        :param dt: távolság
+        :return: az x értéke
+
+        """
         self.x = self.x + 0.5 * (self.vx + self.updateVx(dt)) * dt
         return self.x
 
     def updateY(self, dt):
+        """
+        Y frissítése
+        :param dt: távolság
+        :return: az y értéke
+
+        """
         self.y = self.y + 0.5 * (self.vy + self.updateVy(dt)) * dt
         return self.y
 
     def step(self, dt):
+        """
+        Lépések
+        :param dt: távolság
+        :return: az időt lépteti a távolsággal
+        """
         self.xarr.append(self.updateX(dt))
         self.yarr.append(self.updateY(dt))
         self.time = self.time + dt
@@ -51,7 +85,7 @@ class Cannon:
 
 def makeShoot(x0, y0, velocity, angle):
     """
-
+    Lövés készítése
     :param x0:
     :param y0:
     :param velocity:
@@ -73,6 +107,10 @@ def makeShoot(x0, y0, velocity, angle):
 
 
 def main():
+    """
+    Főprogram
+    :return: lövöldözünk
+    """
     x0 = 0
     y0 = 0
     velocity = 10
@@ -80,12 +118,28 @@ def main():
     x50, y50 = makeShoot(x0, y0, velocity, 50)
     x30, y30 = makeShoot(x0, y0, velocity, 30)
     x60, y60 = makeShoot(x0, y0, velocity, 60)
-    plt.plot(x45, y45, 'bo-', x30, y30, 'ro-', x50, y50, 'go-', x60, y60, 'ko-', [0, 12], [0, 0], 'k-')
-    plt.legend(['45 deg shoot', '30 deg shoot', '50 deg shoot', '60 deg shoot'])
-    plt.xlabel('x coordinate (m)')
-    plt.ylabel('y coordinate (m)')
+    plt.plot(
+        x45,
+        y45,
+        "bo-",
+        x30,
+        y30,
+        "ro-",
+        x50,
+        y50,
+        "go-",
+        x60,
+        y60,
+        "ko-",
+        [0, 12],
+        [0, 0],
+        "k-",
+    )
+    plt.legend(["45 deg shoot", "30 deg shoot", "50 deg shoot", "60 deg shoot"])
+    plt.xlabel("x coordinate (m)")
+    plt.ylabel("y coordinate (m)")
     plt.show()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

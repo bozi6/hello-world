@@ -3,18 +3,18 @@ from python_mysql_dbconfig import read_db_config
 
 
 def connect():
-    """ Connect to MySQL database """
+    """Connect to MySQL database"""
 
-    db_config = read_db_config(filename='..\\config.ini')
+    db_config = read_db_config(filename="..\\config.ini")
     conn = None
     try:
-        print('Kapcsolódás a MySQL adatbázishoz...')
+        print("Kapcsolódás a MySQL adatbázishoz...")
         conn = MySQLConnection(**db_config)
 
         if conn.is_connected():
-            print('Kapcsolat létrejött.')
+            print("Kapcsolat létrejött.")
         else:
-            print('Kapcsolati hiba.')
+            print("Kapcsolati hiba.")
 
     except Error as error:
         print(error)
@@ -22,8 +22,8 @@ def connect():
     finally:
         if conn is not None and conn.is_connected():
             conn.close()
-            print('Kapcsolat lezárva.')
+            print("Kapcsolat lezárva.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     connect()

@@ -1,0 +1,7 @@
+findprimes module
+=================
+
+.. automodule:: findprimes
+   :members:
+   :undoc-members:
+   :show-inheritance:

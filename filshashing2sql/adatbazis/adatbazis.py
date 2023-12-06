@@ -4,7 +4,7 @@ import mysql.connector
 from mysql.connector import Error
 
 
-class MySQLstuffz():
+class MySQLstuffz:
     def __init__(self, host, user, pwd, port, db, tabla):
         """
         Connect to database
@@ -19,8 +19,14 @@ class MySQLstuffz():
         self.connect()
 
     def connect(self):
+        """
+        Initialize database connection
+        :return: connection.cursor()
+        """
         try:
-            connection = mysql.connector.connect(self.host, self.user, self.pwd, self.port, self.db)
+            connection = mysql.connector.connect(
+                self.host, self.user, self.pwd, self.port, self.db
+            )
             return connection.cursor()
         except Error as e:
             print("Nem lehet csatalkozni valamiért:\n {},".format(e))
@@ -33,7 +39,7 @@ class MySQLstuffz():
         """
         con = self.connect()
         try:
-            sql = '''
+            sql = """
             CREATE DATABASE IF NOT EXISTS zfoto DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
             USE zfoto;
             DROP TABLE IF EXISTS {0}; CREATE TABLE {0} (sorsz int(4) NOT NULL,filenev varchar(254) NOT NULL,
@@ -42,7 +48,9 @@ class MySQLstuffz():
             ALTER TABLE {0} ADD PRIMARY KEY(sorsz);
             ALTER TABLE {0} ADD FULLTEXT filenevIDX (filenev(32));
             ALTER TABLE {0} MODIFY sorsz int(4) NOT NULL AUTO_INCREMENT;
-            COMMIT;'''.format(tabla)
+            COMMIT;""".format(
+                tabla
+            )
             con.execute(sql)
 
         finally:

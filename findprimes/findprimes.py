@@ -1,4 +1,5 @@
 import time
+
 str2 = time.time()
 
 
@@ -25,9 +26,9 @@ def findprime(startnumber, endnumber):
 
     end = round(time.time() - start, 4)
 
-    print('Az összes prímszám megkeresése ' + str(endnumber) + '-ig')
-    print('Eltelt idő: ' + str(end) + ' másodperc')
-    print('Megtalált prímszámok: ' + str(no_primes))
+    print("Az összes prímszám megkeresése " + str(endnumber) + "-ig")
+    print("Eltelt idő: " + str(end) + " másodperc")
+    print("Megtalált prímszámok: " + str(no_primes))
     return primes
 
 
@@ -38,22 +39,28 @@ def insert_newlines(string, every=128):
     :param every: hova szúrja be az újsor karaktert
     :return: a feldarabolt string
     """
-    return '\n'.join(string[i:i+every] for i in range(0, len(string), every))
+    return "\n".join(string[i : i + every] for i in range(0, len(string), every))
 
 
 def main():
+    """
+    Main program
+    :return: Print out find first 10000 prime number
+    """
     pr = findprime(1, 10000)
-    soros = insert_newlines('Helló ez egy hosszú string akar lenni, amibe a python beletesz,'
-                            'elvileg minden 128-ik karakternél'
-                            ' egy jó kis újsor karaktert, amivel aztán lehet'
-                            ' hogy hosszabb lófaszok is bekerülhetnek, mert az'
-                            ' nagyon jó nekünk.')
+    soros = insert_newlines(
+        "Helló ez egy hosszú string akar lenni, amibe a python beletesz,"
+        "elvileg minden 128-ik karakternél"
+        " egy jó kis újsor karaktert, amivel aztán lehet"
+        " hogy hosszabb lófaszok is bekerülhetnek, mert az"
+        " nagyon jó nekünk."
+    )
 
     print(soros)
-    print('Ja a megtalált számok: \n' + insert_newlines(str(pr)))
+    print("Ja a megtalált számok: \n" + insert_newlines(str(pr)))
     vege = round(time.time() - str2, 4)
-    print('És a teljes futásidő: ' + str(vege) + ' sec.')
+    print("És a teljes futásidő: " + str(vege) + " sec.")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

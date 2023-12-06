@@ -67,3 +67,85 @@ beautifusoup
 
     bfs
     bs_objects
+
+blog_app
+======================
+
+.. toctree::
+    :maxdepth: 4
+
+    blog
+
+caesar
+======================
+
+.. toctree::
+    :maxdepth: 2
+
+    test
+
+Calculus
+=======================
+
+.. toctree::
+    :maxdepth: 2
+
+    Calculus
+    Calculus.calculus
+    Calculus.calculus.test
+
+checksame
+=======================
+
+.. toctree::
+    :maxdepth: 2
+
+    chksame
+
+dmx2percent
+========================
+
+.. toctree::
+    :maxdepth: 2
+
+    main
+
+dobas
+=======================
+
+.. toctree::
+    :maxdepth: 2
+
+    dob2
+    dob_main
+
+docx2html
+=======================
+.. toctree::
+    :maxdepth: 2
+
+    docx2html
+    ujabb_docx2html
+
+exercises
+====================
+
+.. describe:: exercises/exec01 - reversing words
+.. describe:: exercises/exec02 - ordering a slicing lists
+.. describe:: exercises/exec03 - changes keys/values in dictionary
+
+face
+=====================
+.. toctree::
+    :maxdepth: 2
+
+    facebook_groups
+
+filshashing2sql
+=======================
+
+.. toctree::
+    :maxdepth: 2
+
+    hash
+    adatbazis
