@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "aut"
+version = "0.1.0"
+description = "Autentikus converter"
+authors = ["Konta Boáz <kontab6@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
