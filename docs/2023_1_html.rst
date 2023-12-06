@@ -1,0 +1,7 @@
+2023\_1\_html module
+====================
+
+.. automodule:: aut.python.2023_1_html
+   :members:
+   :undoc-members:
+   :show-inheritance:

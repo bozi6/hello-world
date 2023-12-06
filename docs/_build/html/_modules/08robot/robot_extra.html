@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08robot.robot_extra &#8212; Autentika 1.2.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=1300ac08"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">08robot.robot_extra</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>08robot.robot_extra forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">import</span> <span class="nn">math</span>  <span class="c1"># sqrt</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> robot_extra.py</span>
+<span class="sd"> Érettségi feladat: 2008. október, Robot</span>
+<span class="sd"> Feladatkiírások: http://www.oktatas.hu/kozneveles/erettsegi/feladatsorok</span>
+<span class="sd"> Program: Koós Antal, 2018</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../robot_extra.html#08robot.robot_extra.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Főprogram</span>
+<span class="sd">    :return: Null</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># --- 1. feladat ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">1. feladat: Az adatok beolvasása.&quot;</span><span class="p">)</span>
+    <span class="n">programok</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;program.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
+        <span class="n">ff</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>  <span class="c1"># A fájl első sorát beolvassuk, de nincs rá szükségünk.</span>
+        <span class="n">programok</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">sor</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">sor</span> <span class="ow">in</span> <span class="n">ff</span>
+        <span class="p">]</span>  <span class="c1"># A második sortól folytatódik a beolvasás.</span>
+
+    <span class="c1"># --- 2. feladat ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">2. feladat&quot;</span><span class="p">)</span>
+    <span class="c1"># --- 2a. ---</span>
+    <span class="n">sorszám</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Kérem az utasítás sorszámát (1-</span><span class="si">{}</span><span class="s2">):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">programok</span><span class="p">))))</span>
+    <span class="n">sor</span> <span class="o">=</span> <span class="n">programok</span><span class="p">[</span><span class="n">sorszám</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sor</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">minta</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;ED&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;KN&quot;</span><span class="p">,</span> <span class="s2">&quot;NK&quot;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">minta</span> <span class="ow">in</span> <span class="n">sor</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;egyszerűsíthető&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># A &#39;for&#39;-hoz tartozik; akkor hajtódik végre, ha nem volt a ciklusban &#39;break&#39;.</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nem egyszerűsíthető&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 2b.,2c. ---</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">maxtáv2</span><span class="p">,</span> <span class="n">lépészám</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+    <span class="n">mozgás</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;E&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="s2">&quot;D&quot;</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="s2">&quot;K&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;N&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+    <span class="p">}</span>  <span class="c1"># Kiegészíthetnénk pl. az ÉNy-i iránnyal: &quot;Q&quot;:(1,-1)</span>
+
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">irány</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sor</span><span class="p">):</span>
+        <span class="n">dy</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">mozgás</span><span class="p">[</span><span class="n">irány</span><span class="p">]</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="n">dy</span>
+        <span class="n">x</span> <span class="o">+=</span> <span class="n">dx</span>
+
+        <span class="n">táv2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span>
+        <span class="k">if</span> <span class="n">táv2</span> <span class="o">&gt;</span> <span class="n">maxtáv2</span><span class="p">:</span>
+            <span class="n">lépésszám</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">maxtáv2</span> <span class="o">=</span> <span class="n">táv2</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> lépést kell tenni az ED, </span><span class="si">{}</span><span class="s2"> lépést a KN tengely mentén.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">abs</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lépésszám</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">maxtáv2</span><span class="p">),</span> <span class="mi">3</span><span class="p">))</span>
+
+    <span class="c1"># --- 3. feladat ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">3. feladat&quot;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">progindex</span><span class="p">,</span> <span class="n">sor</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">programok</span><span class="p">):</span>
+        <span class="n">fogyasztás</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">sor</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">sor</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">sor</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="n">sor</span><span class="p">[</span><span class="n">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="n">fogyasztás</span> <span class="o">+=</span> <span class="mi">2</span>
+
+        <span class="k">if</span> <span class="n">fogyasztás</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">progindex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fogyasztás</span><span class="p">)</span>
+
+    <span class="c1"># --- 4. feladat ---</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">4. feladat: az új programok kiírása&quot;</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ujprog.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">prog</span> <span class="ow">in</span> <span class="n">programok</span><span class="p">:</span>
+            <span class="n">db</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">irány</span> <span class="o">=</span> <span class="p">[</span><span class="n">prog</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">prog</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">prog</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="n">irány</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="n">db</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">irány</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prog</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+                    <span class="n">db</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">irány</span><span class="p">)):</span>
+                <span class="k">if</span> <span class="n">db</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">ff</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="n">index</span><span class="p">]))</span>
+                <span class="n">ff</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">irány</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+
+            <span class="n">ff</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># --- 5. feladat ---</span>
+    <span class="n">újformátum</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">5. feladat: Adjon meg egy új formátumú programot: &quot;</span><span class="p">)</span>
+    <span class="n">szám</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">karakter</span> <span class="ow">in</span> <span class="n">újformátum</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">karakter</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+            <span class="n">szám</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">szám</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">karakter</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">karakter</span> <span class="k">if</span> <span class="n">szám</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">szám</span> <span class="o">*</span> <span class="n">karakter</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">szám</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="nb">print</span><span class="p">()</span></div>
+
+
+    <span class="c1"># ---------------------------------------------------------------------------</span>
+    <span class="c1"># További feladatok: http://sites.google.com/site/eutlantis/erettsegi</span>
+    <span class="c1"># Ajánlott olvasmány: www.interkonyv.hu/konyvek/koos_antal_python_a_gepben</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">08robot.robot_extra</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

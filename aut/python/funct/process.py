@@ -1,3 +1,8 @@
+"""
+Az adatok feldolgozásáért végző
+funkciók osztályok meg miegyebek.
+"""
+
 import datetime
 import re
 
@@ -12,6 +17,7 @@ def cleaner(mit):
     :param mit: bejövő szöveg
     :return: a kicserélt szöveg
     """
+
     if mit:
         mit = mit.replace("\n", " ")
         mit = mit.replace("  ", " ")
@@ -95,6 +101,11 @@ class Egysor:
 
     @property
     def tevekenyseg(self):
+        """
+        Ha a tevékenység nem megadott akkor
+        automatikusan Előadás állítódik be.
+        :return: A megadott vagy "Előadás"
+        """
         return self._tevekenyseg
 
     @tevekenyseg.setter
@@ -106,6 +117,10 @@ class Egysor:
 
     @property
     def datum(self):
+        """
+        Dátum visszaadása
+        :return: Dátum
+        """
         return self._datum
 
     @datum.setter
@@ -177,6 +192,10 @@ class Egysor:
 
     @property
     def megjegy(self):
+        """
+        Megjegyzés
+        :return: a megjegyzés átírása
+        """
         return self._megjegy
 
     @megjegy.setter
@@ -189,6 +208,10 @@ class Egysor:
 
     @property
     def kulszal(self):
+        """
+        Külsős szállítás kiírása
+        :return:
+        """
         return self._kulszal
 
     @kulszal.setter
@@ -200,6 +223,9 @@ class Egysor:
 
     @property
     def kontakt(self):
+        """ "
+        Kapcsolattartó visszaadása
+        """
         return self._kontakt
 
     @kontakt.setter
@@ -212,9 +238,10 @@ class Egysor:
 
 def teszt(sikeres_teszt):
     """
-    :param sikeres_teszt:
-    :return: kiirja az eredményt
     Egy teszt eredményének megjelenítése.
+    :param sikeres_teszt:
+    :return: kiirja a tesztelt sort és az eredményt sikeres/SIKERTELEN
+
     """
     sorszam = sys._getframe(1).f_lineno  # A hívó sorénak széma
     if sikeres_teszt:
@@ -226,7 +253,10 @@ def teszt(sikeres_teszt):
 
 
 def tesztkeszlet():
-    """Az ehhez a modulhoz tartozó tesztkészlet futtatása."""
+    """
+    Az ehhez a modulhoz tartozó tesztkészlet futtatása.
+    """
+
     egy = Egysor(datetime.date(2023, 1, 1), "hétfő")
     egy.datum = datetime.date(2023, 1, 1)
     teszt(egy.datum == "2023-01-01")

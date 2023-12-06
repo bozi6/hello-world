@@ -1,0 +1,7 @@
+2019\_1\_sql module
+===================
+
+.. automodule:: aut.python.2019_1_sql
+   :members:
+   :undoc-members:
+   :show-inheritance:

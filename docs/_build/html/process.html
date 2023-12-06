@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>process module &#8212; Autentika 1.2.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=1300ac08"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="genindex.html" />
+    <link rel="search" title="Keresés" href="search.html" />
+    <link rel="next" title="funkciok module" href="funkciok.html" />
+    <link rel="prev" title="2023_1_sql module" href="2023_1_sql.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="right" >
+          <a href="funkciok.html" title="funkciok module"
+             accesskey="N">következő</a> |</li>
+        <li class="right" >
+          <a href="2023_1_sql.html" title="2023_1_sql module"
+             accesskey="P">előző</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">08robot</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">process module</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-aut.python.funct.process">
+<span id="process-module"></span><h1>process module<a class="headerlink" href="#module-aut.python.funct.process" title="Link to this heading">¶</a></h1>
+<p>Az adatok feldolgozásáért végző
+funkciók osztályok meg miegyebek.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aut.python.funct.process.</span></span><span class="sig-name descname"><span class="pre">Egysor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">napok</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tanckar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zkr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ffikar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kozrem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kontakt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kulszall</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">megjegy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aut/python/funct/process.html#Egysor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aut.python.funct.process.Egysor" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Egy sor feldolgozásáért felelős osztály</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.datum">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">datum</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.datum" title="Link to this definition">¶</a></dt>
+<dd><p>Dátum visszaadása
+:return: Dátum</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.ffkar">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ffkar</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.ffkar" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.kontakt">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kontakt</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.kontakt" title="Link to this definition">¶</a></dt>
+<dd><p>”
+Kapcsolattartó visszaadása</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.kulszal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">kulszal</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.kulszal" title="Link to this definition">¶</a></dt>
+<dd><p>Külsős szállítás kiírása
+:return:</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.megjegy">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">megjegy</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.megjegy" title="Link to this definition">¶</a></dt>
+<dd><p>Megjegyzés
+:return: a megjegyzés átírása</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.tanckar">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tanckar</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.tanckar" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="aut.python.funct.process.Egysor.tevekenyseg">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tevekenyseg</span></span><a class="headerlink" href="#aut.python.funct.process.Egysor.tevekenyseg" title="Link to this definition">¶</a></dt>
+<dd><p>Ha a tevékenység nem megadott akkor
+automatikusan Előadás állítódik be.
+:return: A megadott vagy „Előadás”</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aut.python.funct.process.cleaner">
+<span class="sig-prename descclassname"><span class="pre">aut.python.funct.process.</span></span><span class="sig-name descname"><span class="pre">cleaner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aut/python/funct/process.html#cleaner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aut.python.funct.process.cleaner" title="Link to this definition">¶</a></dt>
+<dd><p>Cseréli az újsor és a dupla szóközt
+:rtype: basestring
+:type mit: string
+:param mit: bejövő szöveg
+:return: a kicserélt szöveg</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aut.python.funct.process.sqlrak">
+<span class="sig-prename descclassname"><span class="pre">aut.python.funct.process.</span></span><span class="sig-name descname"><span class="pre">sqlrak</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">beobj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aut/python/funct/process.html#sqlrak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aut.python.funct.process.sqlrak" title="Link to this definition">¶</a></dt>
+<dd><p>Összeállítja az sqlsort ami kell az autentikusba.
+:param beobj: A kész osztály paraméterei
+:return: A kész stringet adja vissza.
+:rtype: str</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aut.python.funct.process.teszt">
+<span class="sig-prename descclassname"><span class="pre">aut.python.funct.process.</span></span><span class="sig-name descname"><span class="pre">teszt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sikeres_teszt</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/aut/python/funct/process.html#teszt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aut.python.funct.process.teszt" title="Link to this definition">¶</a></dt>
+<dd><p>Egy teszt eredményének megjelenítése.
+:param sikeres_teszt:
+:return: kiirja a tesztelt sort és az eredményt sikeres/SIKERTELEN</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aut.python.funct.process.tesztkeszlet">
+<span class="sig-prename descclassname"><span class="pre">aut.python.funct.process.</span></span><span class="sig-name descname"><span class="pre">tesztkeszlet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/aut/python/funct/process.html#tesztkeszlet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#aut.python.funct.process.tesztkeszlet" title="Link to this definition">¶</a></dt>
+<dd><p>Az ehhez a modulhoz tartozó tesztkészlet futtatása.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">process module</a><ul>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor"><code class="docutils literal notranslate"><span class="pre">Egysor</span></code></a><ul>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.datum"><code class="docutils literal notranslate"><span class="pre">Egysor.datum</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.ffkar"><code class="docutils literal notranslate"><span class="pre">Egysor.ffkar</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.kontakt"><code class="docutils literal notranslate"><span class="pre">Egysor.kontakt</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.kulszal"><code class="docutils literal notranslate"><span class="pre">Egysor.kulszal</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.megjegy"><code class="docutils literal notranslate"><span class="pre">Egysor.megjegy</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.tanckar"><code class="docutils literal notranslate"><span class="pre">Egysor.tanckar</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.Egysor.tevekenyseg"><code class="docutils literal notranslate"><span class="pre">Egysor.tevekenyseg</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aut.python.funct.process.cleaner"><code class="docutils literal notranslate"><span class="pre">cleaner()</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.sqlrak"><code class="docutils literal notranslate"><span class="pre">sqlrak()</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.teszt"><code class="docutils literal notranslate"><span class="pre">teszt()</span></code></a></li>
+<li><a class="reference internal" href="#aut.python.funct.process.tesztkeszlet"><code class="docutils literal notranslate"><span class="pre">tesztkeszlet()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Előző témakör</h4>
+    <p class="topless"><a href="2023_1_sql.html"
+                          title="előző fejezet">2023_1_sql module</a></p>
+  </div>
+  <div>
+    <h4>Következő témakör</h4>
+    <p class="topless"><a href="funkciok.html"
+                          title="következő fejezet">funkciok module</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Ez az Oldal</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/process.rst.txt"
+            rel="nofollow">Forrás megtekintése</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="right" >
+          <a href="funkciok.html" title="funkciok module"
+             >következő</a> |</li>
+        <li class="right" >
+          <a href="2023_1_sql.html" title="2023_1_sql module"
+             >előző</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >08robot</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">process module</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

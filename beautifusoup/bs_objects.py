@@ -1,5 +1,11 @@
 from bs4 import BeautifulSoup
 
+"""
+BeautifulSoup Test
+
+"""
+
+
 html_doc = """
 <html>
 <head>
@@ -26,26 +32,26 @@ html_doc = """
 """
 
 menu_opciok = {
-    1: 'HTML kiiratása',
-    2: 'Tag kiíratása',
-    3: 'Öszes Tag kiíratása',
-    4: 'Több tag kiíratásas',
-    5: 'Kilépés',
+    1: "HTML kiiratása",
+    2: "Tag kiíratása",
+    3: "Öszes Tag kiíratása",
+    4: "Több tag kiíratásas",
+    5: "Kilépés",
 }
 
-soup = BeautifulSoup(html_doc, 'lxml')
+soup = BeautifulSoup(html_doc, "lxml")
 
 
 def print_menu():
     for key in menu_opciok.keys():
-        print(key, '--', menu_opciok[key])
+        print(key, "--", menu_opciok[key])
 
 
 def elso_pont():
     print(soup.prettify())
 
 
-with open('index.html', 'w') as f:
+with open("index.html", "w") as f:
     f.write(html_doc)
 
 f.close()
@@ -61,25 +67,28 @@ def masodik_pont():
 
 
 def harmadik_pont():
-    # If we want to find all of the elements on the page
-    # with the "b" tag, we can use  the "find_all" function
-    print('soup.find_all(b): ', soup.find_all('b'))
+    """
+    If we want to find all of the elements on the page
+    with the "b" tag, we can use  the "find_all" function
+    :return: Prints all b element
+
+    """
+    print("soup.find_all(b): ", soup.find_all("b"))
 
 
 def negyedik_pont():
-    tag = soup.find_all('b')[3]
-    print('tag id 3: ', tag)
+    tag = soup.find_all("b")[3]
+    print("tag id 3: ", tag)
     #  We can even access multiple attributes that are
     #  non standard HTML attributes
-    print('id tag: ', tag['id'])
-    print('another-attrib tag: ', tag['another-attribute'])
+    print("id tag: ", tag["id"])
+    print("another-attrib tag: ", tag["another-attribute"])
 
 
 # The "find" function also does the same, where it
 # only finds the first occurence in the HTML doc
 # of a tag with "b"
 ##print('soup.find.b: ', soup.find('b'))
-
 
 # Name
 
@@ -96,8 +105,8 @@ def negyedik_pont():
 
 #  Attributes:
 
-print(soup.find_all('b'))
-print('-' * 24)
+print(soup.find_all("b"))
+print("-" * 24)
 
 ##tag = soup.find_all('b')[2]
 ##print('souptag: ', tag)
@@ -105,8 +114,6 @@ print('-' * 24)
 # This specific tag has the attribute "id", which
 # which can be accessed like so:
 ##print('tag id 2 : ', tag['id'])
-
-
 
 #  If we want to see all attributes, we can access them
 #  as dictionary object:
@@ -121,30 +128,31 @@ print('-' * 24)
 ##tag['another-attribute'] = 2
 ##print('chtag: ', tag)
 
-# We can also use Python's del command for lists to 
+# We can also use Python's del command for lists to
 # remove attributes:
 ##del tag['id']
 ##del tag['another-attribute']
 ##print('deleted tag: ', tag)
 
 # NavigableStrin
-tag = soup.find_all('b')[3]
-print('tag: ', tag)
-print('tag.string: ', tag.string)
+tag = soup.find_all("b")[3]
+print("tag: ", tag)
+print("tag.string: ", tag.string)
 
 # We can use the "replace_with" function to replace
 #  the content of the string with something different:
 tag.string.replace_with("This is another string")
-print('newtag: ', tag)
+print("newtag: ", tag)
 
-if __name__ == '__main__':
-    while (True):
+
+if __name__ == "__main__":
+    while True:
         print_menu()
-        option = ''
+        option = ""
         try:
-            option = int(input('Enter your choice: '))
+            option = int(input("Enter your choice: "))
         except:
-            print('Wrong input. Please enter a number ...')
+            print("Wrong input. Please enter a number ...")
         # Check what choice was entered and act accordingly
         if option == 1:
             elso_pont()
@@ -155,7 +163,7 @@ if __name__ == '__main__':
         elif option == 4:
             negyedik_pont()
         elif option == 5:
-            print('Köszönjük a használatot.')
+            print("Köszönjük a használatot.")
             exit()
         else:
-            print('Invalid option. Please enter a number between 1 and 5.')
+            print("Invalid option. Please enter a number between 1 and 5.")

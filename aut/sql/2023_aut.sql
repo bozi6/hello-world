@@ -1,8 +1,8 @@
-# Honvédelmi adatok a 2023-ra az autentikusból.
-# Készítette: Konta Boáz (kontab6@gmail.com)
-# Select current database
+-- Honvédelmi adatok 2023-ra az autentikusból.
+-- Készítette: Konta Boáz (kontab6@gmail.com)
+-- Select current database
 USE honved2;
-# Increase max allowed packets to 500MB from 1MB
+-- Increase max allowed packets to 500MB from 1MB
 SET GLOBAL max_allowed_packet=524288000;
 DELETE FROM aut WHERE datum >= '2023-01-01';
 

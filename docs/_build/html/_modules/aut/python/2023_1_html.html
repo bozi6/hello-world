@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aut.python.2023_1_html &#8212; Autentika 1.2.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css?v=601dbdee" />
+    <script src="../../../_static/documentation_options.js?v=1300ac08"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">aut.python.2023_1_html</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>aut.python.2023_1_html forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<div class="viewcode-block" id="sor">
+<a class="viewcode-back" href="../../../2023_1_html.html#aut.python.2023_1_html.sor">[docs]</a>
+<span class="k">def</span> <span class="nf">sor</span><span class="p">(</span><span class="n">uzi</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Egy sor üzenet írása 80 karakternyi - al aláhúzbva :-)</span>
+<span class="sd">    :param uzi:</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">emptyspaces</span> <span class="o">=</span> <span class="mi">80</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">emptyspaces</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">uzi</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="n">emptyspaces</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="n">emptyspaces</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../2023_1_html.html#aut.python.2023_1_html.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Pandas próbálkozás html alakítással autentikusan.</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bem</span> <span class="o">=</span> <span class="s2">&quot;../xlsxs/2023_Autentikus.xlsx&quot;</span>
+    <span class="n">kim</span> <span class="o">=</span> <span class="s2">&quot;../sql/2023_aut.html&quot;</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">honapok</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;JANUÁR&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;FEBRUÁR&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MÁRCIUS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ÁPRILIS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;MÁJUS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;JÚNIUS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;JÚLIUS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AUGUSZTUS&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SZEPTEMBER&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;OKTÓBER&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;NOVEMBER&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;DECEMBER&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Itt megnyitjuk a kimeneti sql fájlt a megfelelő qsl </span>
+<span class="sd">        parancs létrehozásához</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">kim</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+    <span class="c1"># f.write(&#39;# Honvédelmi adatok 2023-ra az autentikusból\n&#39;)</span>
+    <span class="c1"># f.write(&#39;# Készítette: Konta Boáz (kontab6@gmail.com).\n&#39;)</span>
+    <span class="c1"># f.write(&#39;USE honved2;\n&#39;)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;&lt;!doctype html&gt;</span>
+<span class="sd">                &lt;html lang=&quot;hu&quot;&gt;</span>
+<span class="sd">                &lt;head&gt;</span>
+<span class="sd">                    &lt;meta charset=&quot;utf-8&quot;&gt;</span>
+<span class="sd">                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span>
+<span class="sd">                    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD&quot; crossorigin=&quot;anonymous&quot;&gt;</span>
+<span class="sd">                &lt;/head&gt;</span>
+<span class="sd">                &lt;body class=&quot;container text-bg-secondary text-black&quot;&gt;</span>
+<span class="sd">                &quot;&quot;&quot;</span>
+    <span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Itt történne az autentikus felodgozása</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">Autentikus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">bem</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="s2">&quot;A,C:J&quot;</span><span class="p">)</span>
+    <span class="n">Autentikus</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">:</span> <span class="s2">&quot;datum&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Tánckar&quot;</span><span class="p">:</span> <span class="s2">&quot;tanckar&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Zenekar önálló&quot;</span><span class="p">:</span> <span class="s2">&quot;zkr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FÉRFIKAR&quot;</span><span class="p">:</span> <span class="s2">&quot;ffkar&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;KÖZREMŰK. EGY. ALATT/ KÜLSŐS&quot;</span><span class="p">:</span> <span class="s2">&quot;kozrem&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;KONTAKT&quot;</span><span class="p">:</span> <span class="s2">&quot;kontakt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;STÁTUSZ&quot;</span><span class="p">:</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;KÜLSŐS SZÁLLÍTÁS&quot;</span><span class="p">:</span> <span class="s2">&quot;kulszall&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MEGJEGYZÉS&quot;</span><span class="p">:</span> <span class="s2">&quot;comment&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>  <span class="c1"># Oszlopok átnevezése</span>
+    <span class="n">Autentikus</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Kidobunk minden töküres sort</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Autentikus</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">Autentikus</span> <span class="o">=</span> <span class="n">Autentikus</span><span class="p">[</span><span class="n">Autentikus</span><span class="o">.</span><span class="n">tanckar</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s2">&quot;Tánckar&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Autentikus</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+    <span class="c1"># Autentikus.dropna(thresh=2, inplace=True)</span>
+
+    <span class="n">Autentikus</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">AutDropped</span> <span class="o">=</span> <span class="n">Autentikus</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">classes</span><span class="o">=</span><span class="s2">&quot;table-sm table-bordered&quot;</span><span class="p">,</span> <span class="n">na_rep</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+    <span class="c1">#  htmlkesz = AutDropped.replace(&#39;\n&#39;, &#39;&lt;br&gt;&#39;)</span>
+    <span class="n">htmlkesz</span> <span class="o">=</span> <span class="n">AutDropped</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">htmlkesz</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;&lt;/body&gt;</span><span class="se">\n</span><span class="s2">&lt;/html&gt;&quot;</span><span class="p">)</span>
+
+    <span class="c1"># exit(0)</span>
+    <span class="n">sor</span><span class="p">(</span><span class="s2">&quot;Alap&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Autentikus</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape: &quot;</span><span class="p">,</span> <span class="n">Autentikus</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">sor</span><span class="p">(</span><span class="s2">&quot;Összesítő a hiányzó értékekről&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Autentikus</span><span class="o">.</span><span class="n">ne</span><span class="p">(</span><span class="n">honapok</span><span class="p">))</span>
+    <span class="n">Tanckar</span> <span class="o">=</span> <span class="n">Autentikus</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span>
+        <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">]</span>
+    <span class="p">)</span>  <span class="c1"># eldobtuk azokat a sorokat ahol nincs a tánckar.</span>
+    <span class="n">sor</span><span class="p">(</span><span class="s2">&quot;Első dobás&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Tanckar</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Tanckar</span><span class="o">.</span><span class="n">to_string</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape: &quot;</span><span class="p">,</span> <span class="n">Tanckar</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Tanckar</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Linkek:</span>
+<span class="sd">    https://www.w3schools.com/python/pandas/pandas_cleaning_wrong_data.asp</span>
+<span class="sd">    https://pythonguides.com/pandas-drop/</span>
+<span class="sd">    https://pandas.pydata.org/docs/user_guide/10min.html</span>
+<span class="sd">    https://www.w3schools.com/python/python_tuples.asp</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Autentika 1.2.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">aut.python.2023_1_html</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

@@ -1,13 +1,18 @@
 import datetime
-import pprint
 from datetime import date
 
-from aut.python.funct.mysqlcrud import helyeklista, helykerd
+from .mysqlcrud import helykerd
+
+"""
+Régebbi (szar) funkciók az autentikhoz
+
+"""
 
 
 class Bemeno:
     """
     Bemenő adatok szortírozása, vagy mi a lófa.
+
     """
 
     def __init__(

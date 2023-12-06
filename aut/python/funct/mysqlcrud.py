@@ -1,12 +1,24 @@
 import mysql.connector
 from sqlescapy import sqlescape
 
+"""
+MySQL lehetőségek az Autentikában
+
+"""
+
 mydb = mysql.connector.connect(
     host="ds718.lan", user="root", password="qwe", port=3307, database="honved2"
 )
 
 
 def helykerd(hely):
+    """
+    Hely lekérdezése az aut táblából
+
+    :param hely: A hely neve:str
+    :return: lista a helyekkel:list
+
+    """
     retval = [hely]
     mycursor = mydb.cursor()
     mycursor.execute(
@@ -22,6 +34,11 @@ def helykerd(hely):
 
 
 def helyeklista():
+    """
+    Összes hely lekérdezése egyszer
+    :return: A helyek listája:list
+
+    """
     retval = []
     mycursor = mydb.cursor()
     mycursor.execute("SELECT DISTINCT hely FROM helyszinek")
@@ -35,6 +52,9 @@ def helyeklista():
 
 
 if __name__ == "__main__":
+    """
+    Főprogram tesztlekérdezéshez.
+    """
     helyszin = input("Adjál meg egy helyszínt!")
     x = helykerd(helyszin)
     if x:

@@ -1,4 +1,15 @@
+"""
+MA attributumok osztályai
+
+"""
+
+
 class ma2attribs(object):
+    """
+    MA2 osztályok
+
+    """
+
     def __init__(self):
         self.info = {
             "datetime": "2022-10-02T13:45:31",
@@ -8,11 +19,7 @@ class ma2attribs(object):
             "index": "0",
             "name": "Robotok",
         }
-        self.subfixtures = {
-            "fix_id": "41",
-            "sub_index": "1",
-            "cha_id": "255"
-        }
+        self.subfixtures = {"fix_id": "41", "sub_index": "1", "cha_id": "255"}
         self.layoutdata = {
             "index": "0",
             "marker_visible": "true",
@@ -42,18 +49,20 @@ class ma2attribs(object):
             "show_dimmer_bar": "Off",
             "function_type": "Filled",
             "select_group": "1",
-            "image_size": "Fit"
+            "image_size": "Fit",
         }
-        self.image = {
-            "name": "Moving 2 8",
-            "no": 8
-        }
+        self.image = {"name": "Moving 2 8", "no": 8}
 
     def __str__(self):
         return f"Info:{self.info} \nGroup:{self.group}\nSubfixture:{self.subfixtures}"
 
 
 class ma3attribs(object):
+    """
+    MA3 osztályok
+
+    """
+
     def __init__(self):
         self.layout = {
             "Name": "Tarantula",
