@@ -1,4 +1,7 @@
 def szamol(dmx):
+    """
+    dmx átszámolása valami teljesen mássá...
+    """
     try:
         if dmx > 255:
             print('Nem lehet nagyobb 255 nél.')
