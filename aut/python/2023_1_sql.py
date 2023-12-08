@@ -11,7 +11,7 @@ import time
 import openpyxl
 from cprint import *
 
-import funct.process as proc
+import aut.python.funct.process as proc
 
 __author__ = "Konta Boáz"
 __author_email__ = "kontab6@gmail.com"
@@ -26,12 +26,13 @@ KezdesiIdo = time.time()
 logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")
 logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 # logging.disable(logging.INFO)
-logging.info(f"Program elkezdődött. {KezdesiIdo}")
+# logging.info(f"Program elkezdődött. {KezdesiIdo}")
 
 
 def testinpufile(filename):
     """
     Bemeneti fájl tesztelése
+
     :param filename: A bejövő csatolt mappa ellenőrzése
     :return: A készülő fájl neve
 

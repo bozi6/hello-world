@@ -11,10 +11,10 @@ time = 0  # repülési idő
 def visztav(vkezd, fiszog, magassag=0):
     a = (vkezd * math.cos(math.radians(fiszog))) / GRAV
     b = vkezd * math.sin(math.radians(fiszog))
-    c = b ** 2
-    d = 2*(GRAV*magassag)
+    c = b**2
+    d = 2 * (GRAV * magassag)
     if magassag == 0:
-        tavolsag = (vkezd**2*math.sin(2*math.radians(fiszog)))/GRAV
+        tavolsag = (vkezd**2 * math.sin(2 * math.radians(fiszog))) / GRAV
     else:
         tavolsag = a * (b + math.sqrt(c + d))
     return tavolsag
@@ -25,6 +25,17 @@ def repido(tavolsag, vk, fisz):
     return ido
 
 
-tav = visztav(10, 45, 2.5)
-print(tav, "méter")
-print(repido(tav, 10, 45), " sec")
+def main():
+    """
+    Főprogram - dobálózunk
+
+    :return: kiírja a távolságot
+    :returns: kiírja az időt és a távolságot
+    """
+    tav = visztav(10, 45, 2.5)
+    print(tav, "méter")
+    print(repido(tav, 10, 45), " sec")
+
+
+if __name__ == "__main__":
+    main()

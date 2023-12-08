@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alice.alice_prodfunc &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">alice.alice_prodfunc</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>alice.alice_prodfunc forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Alice csodaországban</span>
+<span class="sd">Funkciók szétszedve</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">baratok</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Péter&quot;</span><span class="p">,</span> <span class="s2">&quot;Zoltán&quot;</span><span class="p">,</span> <span class="s2">&quot;János&quot;</span><span class="p">,</span> <span class="s2">&quot;Kata&quot;</span><span class="p">,</span> <span class="s2">&quot;Zita&quot;</span><span class="p">,</span> <span class="s2">&quot;Sándor&quot;</span><span class="p">,</span> <span class="s2">&quot;Panni&quot;</span><span class="p">]</span>
+<span class="n">szokincs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;alma&quot;</span><span class="p">,</span> <span class="s2">&quot;esett&quot;</span><span class="p">,</span> <span class="s2">&quot;fűre&quot;</span><span class="p">,</span> <span class="s2">&quot;fáról&quot;</span><span class="p">,</span> <span class="s2">&quot;alá&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;fel&quot;</span><span class="p">]</span>
+<span class="n">konyv_szavai</span> <span class="o">=</span> <span class="s2">&quot;az alma a fáról le esett a fűre&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">24</span><span class="p">]</span>
+<span class="n">zs</span> <span class="o">=</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">ys</span>
+<span class="n">zs</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="teszt">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.teszt">[docs]</a>
+<span class="k">def</span> <span class="nf">teszt</span><span class="p">(</span><span class="n">sikeres_teszt</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param sikeres_teszt:</span>
+<span class="sd">    :return: kiirja az eredményt</span>
+
+<span class="sd">    Egy teszt eredményének megjelenítése.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sorszam</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">f_lineno</span>  <span class="c1"># A hívó sorénak széma</span>
+    <span class="k">if</span> <span class="n">sikeres_teszt</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;A(z) </span><span class="si">{0}</span><span class="s2">. sorban álló teszt sikeres.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sorszam</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;A(z) </span><span class="si">{0}</span><span class="s2">. sorban álló teszt SIKERTELEN.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sorszam</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="tesztkeszlet">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.tesztkeszlet">[docs]</a>
+<span class="k">def</span> <span class="nf">tesztkeszlet</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Az ehhez a modulhoz tartozó tesztkészlet futtatása.&quot;&quot;&quot;</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="mi">17</span><span class="p">)</span> <span class="o">==</span> <span class="mi">17</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="o">-</span><span class="mi">17</span><span class="p">)</span> <span class="o">==</span> <span class="mi">17</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span> <span class="o">==</span> <span class="mf">3.14</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span> <span class="o">==</span> <span class="mf">3.14</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">teljes_kereses</span><span class="p">(</span><span class="n">baratok</span><span class="p">,</span> <span class="s2">&quot;Zoltán&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">teljes_kereses</span><span class="p">(</span><span class="n">baratok</span><span class="p">,</span> <span class="s2">&quot;Péter&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">teljes_kereses</span><span class="p">(</span><span class="n">baratok</span><span class="p">,</span> <span class="s2">&quot;Panni&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">teljes_kereses</span><span class="p">(</span><span class="n">baratok</span><span class="p">,</span> <span class="s2">&quot;Béla&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">ismeretlen_szavak_keresese</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">konyv_szavai</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;az&quot;</span><span class="p">,</span> <span class="s2">&quot;le&quot;</span><span class="p">])</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">ismeretlen_szavak_keresese</span><span class="p">([],</span> <span class="n">konyv_szavai</span><span class="p">)</span> <span class="o">==</span> <span class="n">konyv_szavai</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">ismeretlen_szavak_keresese</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;alma&quot;</span><span class="p">,</span> <span class="s2">&quot;alá&quot;</span><span class="p">,</span> <span class="s2">&quot;esett&quot;</span><span class="p">])</span> <span class="o">==</span> <span class="p">[])</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">szovegbol_szavak</span><span class="p">(</span><span class="s2">&quot;Az én nevem Alice!&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;az&quot;</span><span class="p">,</span> <span class="s2">&quot;én&quot;</span><span class="p">,</span> <span class="s2">&quot;nevem&quot;</span><span class="p">,</span> <span class="s2">&quot;alice&quot;</span><span class="p">])</span>
+    <span class="n">teszt</span><span class="p">(</span>
+        <span class="n">szovegbol_szavak</span><span class="p">(</span><span class="s1">&#39;&quot;Nem, én soha!&quot;, mondta Alice.&#39;</span><span class="p">)</span>
+        <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;nem&quot;</span><span class="p">,</span> <span class="s2">&quot;én&quot;</span><span class="p">,</span> <span class="s2">&quot;soha&quot;</span><span class="p">,</span> <span class="s2">&quot;mondta&quot;</span><span class="p">,</span> <span class="s2">&quot;alice&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span>
+        <span class="n">szomszedos_dupl_eltavolit</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+        <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">szomszedos_dupl_eltavolit</span><span class="p">([])</span> <span class="o">==</span> <span class="p">[])</span>
+    <span class="n">teszt</span><span class="p">(</span>
+        <span class="n">szomszedos_dupl_eltavolit</span><span class="p">([</span><span class="s2">&quot;egy&quot;</span><span class="p">,</span> <span class="s2">&quot;kis&quot;</span><span class="p">,</span> <span class="s2">&quot;kis&quot;</span><span class="p">,</span> <span class="s2">&quot;kölyök&quot;</span><span class="p">,</span> <span class="s2">&quot;kutya&quot;</span><span class="p">])</span>
+        <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;egy&quot;</span><span class="p">,</span> <span class="s2">&quot;kis&quot;</span><span class="p">,</span> <span class="s2">&quot;kölyök&quot;</span><span class="p">,</span> <span class="s2">&quot;kutya&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">osszefesul</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="p">[])</span> <span class="o">==</span> <span class="n">xs</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">osszefesul</span><span class="p">([],</span> <span class="n">ys</span><span class="p">)</span> <span class="o">==</span> <span class="n">ys</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">osszefesul</span><span class="p">([],</span> <span class="p">[])</span> <span class="o">==</span> <span class="p">[])</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">osszefesul</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span> <span class="o">==</span> <span class="n">zs</span><span class="p">)</span>
+    <span class="n">teszt</span><span class="p">(</span><span class="n">osszefesul</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+    <span class="n">teszt</span><span class="p">(</span>
+        <span class="n">osszefesul</span><span class="p">([</span><span class="s2">&quot;cica&quot;</span><span class="p">,</span> <span class="s2">&quot;egér&quot;</span><span class="p">,</span> <span class="s2">&quot;kutya&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;cica&quot;</span><span class="p">,</span> <span class="s2">&quot;kakas&quot;</span><span class="p">,</span> <span class="s2">&quot;medve&quot;</span><span class="p">])</span>
+        <span class="o">==</span> <span class="p">[</span><span class="s2">&quot;cica&quot;</span><span class="p">,</span> <span class="s2">&quot;cica&quot;</span><span class="p">,</span> <span class="s2">&quot;egér&quot;</span><span class="p">,</span> <span class="s2">&quot;kakas&quot;</span><span class="p">,</span> <span class="s2">&quot;kutya&quot;</span><span class="p">,</span> <span class="s2">&quot;medve&quot;</span><span class="p">]</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="abszolut_ertek">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.abszolut_ertek">[docs]</a>
+<span class="k">def</span> <span class="nf">abszolut_ertek</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Egy szám abszolút értékét adja meg.</span>
+<span class="sd">    :param n: a vizsgálandó szám</span>
+<span class="sd">    :return: a szám abszolútértéke</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="o">-</span><span class="n">n</span>
+    <span class="k">return</span> <span class="n">n</span></div>
+
+
+
+<div class="viewcode-block" id="teljes_kereses">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.teljes_kereses">[docs]</a>
+<span class="k">def</span> <span class="nf">teljes_kereses</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ertek</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Keresse meg és térjen visza az érték indexével az xs sorozatban.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">ertek</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="ismeretlen_szavak_keresese">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.ismeretlen_szavak_keresese">[docs]</a>
+<span class="k">def</span> <span class="nf">ismeretlen_szavak_keresese</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">szavak</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visszatérünk a könyv azon szavainak listájával, amelyek ninccsenek benne a szókincsben&quot;&quot;&quot;</span>
+    <span class="n">eredmeny</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">szavak</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">teljes_kereses</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">eredmeny</span></div>
+
+
+
+<div class="viewcode-block" id="ismeretlen_szavak_keresese_bin">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.ismeretlen_szavak_keresese_bin">[docs]</a>
+<span class="k">def</span> <span class="nf">ismeretlen_szavak_keresese_bin</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">szavak</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visszatérünk a könyv azon szavainak listájával, amelyek ninccsenek benne a szókincsben&quot;&quot;&quot;</span>
+    <span class="n">eredmeny</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">szavak</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">binaris_kereses</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">eredmeny</span></div>
+
+
+
+<div class="viewcode-block" id="szavak_betoltese_fajlbol">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.szavak_betoltese_fajlbol">[docs]</a>
+<span class="k">def</span> <span class="nf">szavak_betoltese_fajlbol</span><span class="p">(</span><span class="n">fajlnev</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Szavak olvasása a megadott fájlból, visszatér a szavak listájával.&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajlnev</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">tartalom</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">szavak</span> <span class="o">=</span> <span class="n">tartalom</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">szavak</span></div>
+
+
+
+<div class="viewcode-block" id="szovegbol_szavak">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.szovegbol_szavak">[docs]</a>
+<span class="k">def</span> <span class="nf">szovegbol_szavak</span><span class="p">(</span><span class="n">szoveg</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visszaadja a szavak listáját, eltávolítva az</span>
+<span class="sd">    összes írásjelet és minden szót kisbetüssé alakít</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">helyettesites</span> <span class="o">=</span> <span class="n">szoveg</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span>
+        <span class="s2">&quot;AÁBCDEÉFGHIÍJKLMNOÓÖŐPQRSTUÚÜŰVWXYZ0123456789!</span><span class="se">\&quot;</span><span class="s2">#$%&amp;()*+,-./:;&lt;=&gt;?@[]^_`{|}~&#39;</span><span class="se">\\</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;aábcdeéfghiíjklmnoóöőpqrstuúüűvwxyz                                          &quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">tisztitott_szoveg</span> <span class="o">=</span> <span class="n">szoveg</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">helyettesites</span><span class="p">)</span>
+    <span class="n">szavak</span> <span class="o">=</span> <span class="n">tisztitott_szoveg</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">szavak</span></div>
+
+
+
+<div class="viewcode-block" id="szavak_a_konyvbol">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.szavak_a_konyvbol">[docs]</a>
+<span class="k">def</span> <span class="nf">szavak_a_konyvbol</span><span class="p">(</span><span class="n">fajlnev</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Olvassa be a könyvet a megadott fájlból, és adja vissza a szavak listáját.&quot;&quot;&quot;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajlnev</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">tartalom</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">szavak</span> <span class="o">=</span> <span class="n">szovegbol_szavak</span><span class="p">(</span><span class="n">tartalom</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">szavak</span></div>
+
+
+
+<div class="viewcode-block" id="binaris_kereses">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.binaris_kereses">[docs]</a>
+<span class="k">def</span> <span class="nf">binaris_kereses</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ertek</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Keressük meg és térjünk vissza az érték</span>
+<span class="sd">    indexével az xs sorozatban.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ah</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fh</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ah</span> <span class="o">==</span> <span class="n">fh</span><span class="p">:</span>  <span class="c1"># Ha a vizsgált terület üres</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+
+        <span class="c1"># A következő összehasonlítás a ROI közepén kell legyen</span>
+        <span class="n">kozep_index</span> <span class="o">=</span> <span class="p">(</span><span class="n">ah</span> <span class="o">+</span> <span class="n">fh</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="c1"># Fogjuk a középső indexen lévő elemet</span>
+        <span class="n">kozep_elem</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="n">kozep_index</span><span class="p">]</span>
+        <span class="c1"># print(&quot;ROI[{0}:{1}](méret={2}), próba=&#39;{3}&#39;, érték=&#39;{4}&#39;&quot;</span>
+        <span class="c1">#      .format(ah, fh, fh-ah, kozep_elem, ertek))</span>
+
+        <span class="c1"># Hasonlítsuk össze az elemet az adott pozícióban lévővel</span>
+        <span class="k">if</span> <span class="n">kozep_elem</span> <span class="o">==</span> <span class="n">ertek</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">kozep_index</span>  <span class="c1"># Megtaláltuk !</span>
+        <span class="k">if</span> <span class="n">kozep_elem</span> <span class="o">&lt;</span> <span class="n">ertek</span><span class="p">:</span>
+            <span class="n">ah</span> <span class="o">=</span> <span class="n">kozep_index</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Használjuk a felső ROI-t</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fh</span> <span class="o">=</span> <span class="n">kozep_index</span>  <span class="c1"># Használjuk az also ROI-t</span></div>
+
+
+
+<div class="viewcode-block" id="szomszedos_dupl_eltavolit">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.szomszedos_dupl_eltavolit">[docs]</a>
+<span class="k">def</span> <span class="nf">szomszedos_dupl_eltavolit</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Visszatér egy új listával, amelyben a szomszédos</span>
+<span class="sd">    duplikátumok el vannak távolítva az xs listából.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">eredmeny</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">aktualis_elem</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span> <span class="o">!=</span> <span class="n">aktualis_elem</span><span class="p">:</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="n">aktualis_elem</span> <span class="o">=</span> <span class="n">e</span>
+    <span class="k">return</span> <span class="n">eredmeny</span></div>
+
+
+
+<div class="viewcode-block" id="osszefesul">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.osszefesul">[docs]</a>
+<span class="k">def</span> <span class="nf">osszefesul</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Összefésüli a rendezett xs és ys listákat.</span>
+<span class="sd">    Visszatér a rendezett eredménnyel.</span>
+<span class="sd">    :type ys: list</span>
+<span class="sd">    :type xs: list</span>
+<span class="sd">    :param xs: Az első rendezett lista</span>
+<span class="sd">    :param ys: A második rendezett lista</span>
+<span class="sd">    :return: az eredmény lista</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">eredmeny</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xi</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">yi</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">xi</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">xs</span><span class="p">):</span>  <span class="c1"># Ha az xs lista végére értünk</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">yi</span><span class="p">:])</span>  <span class="c1"># Még vannak elemek az ys listában</span>
+            <span class="k">return</span> <span class="n">eredmeny</span>  <span class="c1"># Készen vagyunk</span>
+        <span class="k">if</span> <span class="n">yi</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">):</span>  <span class="c1"># Ugyanaz csak fordítva</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">xi</span><span class="p">:])</span>
+            <span class="k">return</span> <span class="n">eredmeny</span>
+        <span class="c1"># Ha mindkét listában vannak még elemek, akkor a kisebbik elemet másoljuk</span>
+        <span class="c1"># az eredmény listába</span>
+        <span class="k">if</span> <span class="n">xs</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">ys</span><span class="p">[</span><span class="n">yi</span><span class="p">]:</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">xi</span><span class="p">])</span>
+            <span class="n">xi</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">yi</span><span class="p">])</span>
+            <span class="n">yi</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="ismeretlen_szavak_osszefesulessel">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.ismeretlen_szavak_osszefesulessel">[docs]</a>
+<span class="k">def</span> <span class="nf">ismeretlen_szavak_osszefesulessel</span><span class="p">(</span><span class="n">szokincs</span><span class="p">,</span> <span class="n">szavak</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Mind a szókincs és könyv szavai rendezettek kell, legyenek.</span>
+<span class="sd">    Visszatérünk egy új szólistával, mely szavak benne vannak a könyvben,</span>
+<span class="sd">    de nincsenek a szókincsben.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">eredmeny</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">xi</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">yi</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">xi</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">szokincs</span><span class="p">):</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">szavak</span><span class="p">[</span><span class="n">yi</span><span class="p">:])</span>
+            <span class="k">return</span> <span class="n">eredmeny</span>
+        <span class="k">if</span> <span class="n">yi</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">szavak</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">eredmeny</span>
+        <span class="k">if</span> <span class="n">szokincs</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span> <span class="o">==</span> <span class="n">szavak</span><span class="p">[</span><span class="n">yi</span><span class="p">]:</span>  <span class="c1"># A szó benne van a szókincsben</span>
+            <span class="n">yi</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="n">szokincs</span><span class="p">[</span><span class="n">xi</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">szavak</span><span class="p">[</span><span class="n">yi</span><span class="p">]:</span>  <span class="c1"># Haladjon tovább</span>
+            <span class="n">xi</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Találtunk olyan szót, mely nincs a szókincsben</span>
+            <span class="n">eredmeny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">szavak</span><span class="p">[</span><span class="n">yi</span><span class="p">])</span>
+            <span class="n">yi</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../alice.html#alice.alice_prodfunc.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Főprogram</span>
+<span class="sd">    :return: Null</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">nagyobb_szokincs</span> <span class="o">=</span> <span class="n">szavak_betoltese_fajlbol</span><span class="p">(</span><span class="s2">&quot;szotar_sorted.txt&quot;</span><span class="p">)</span>
+    <span class="n">konyv_szavai</span> <span class="o">=</span> <span class="n">szavak_a_konyvbol</span><span class="p">(</span><span class="s2">&quot;alice_csodaorszagban.txt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;A könyvben </span><span class="si">{}</span><span class="s2"> szó található, az első 10 a következő:</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">konyv_szavai</span><span class="p">),</span> <span class="n">konyv_szavai</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;A szókincsben </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">nagyobb_szokincs</span><span class="p">)</span><span class="si">}</span><span class="s2"> szó található, kezdve: </span><span class="se">\n</span><span class="si">{</span><span class="n">nagyobb_szokincs</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">hianyzo_szavak</span> <span class="o">=</span> <span class="n">ismeretlen_szavak_keresese_bin</span><span class="p">(</span><span class="n">nagyobb_szokincs</span><span class="p">,</span> <span class="n">konyv_szavai</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> ismeretlen szó van.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hianyzo_szavak</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ez </span><span class="si">{0:.4f}</span><span class="s2"> másodpercet vett igénybe&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+    <span class="n">osszes_szo</span> <span class="o">=</span> <span class="n">szavak_a_konyvbol</span><span class="p">(</span><span class="s2">&quot;alice_csodaorszagban.txt&quot;</span><span class="p">)</span>
+    <span class="n">osszes_szo</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="n">konyv_szavai</span> <span class="o">=</span> <span class="n">szomszedos_dupl_eltavolit</span><span class="p">(</span><span class="n">osszes_szo</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;A könyvben </span><span class="si">{}</span><span class="s2"> szó van. Csak </span><span class="si">{}</span><span class="s2"> egyedi.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">len</span><span class="p">(</span><span class="n">osszes_szo</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">konyv_szavai</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Az elso 10 szó</span><span class="se">\n</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">konyv_szavai</span><span class="p">[:</span><span class="mi">10</span><span class="p">]))</span>
+    <span class="n">hianyzo_szavak</span> <span class="o">=</span> <span class="n">ismeretlen_szavak_osszefesulessel</span><span class="p">(</span><span class="n">nagyobb_szokincs</span><span class="p">,</span> <span class="n">konyv_szavai</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> ismeretlen szó van.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">hianyzo_szavak</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ez </span><span class="si">{0:.4f}</span><span class="s2"> másodpercet vett igénybe.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
+    <span class="n">tesztkeszlet</span><span class="p">()</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">alice.alice_prodfunc</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

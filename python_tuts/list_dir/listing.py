@@ -1,8 +1,7 @@
-
-
 from pathlib import Path
 
-path = '.'
+if __name__ == "__main__":
+    path = "."
 
-for path in Path(path).iterdir():
-    print(path)
+    for path in Path(path).iterdir():
+        print(path)

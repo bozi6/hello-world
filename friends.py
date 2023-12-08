@@ -2,15 +2,30 @@ class Friend:
     """
     Haverok osztálya
     """
+
     def __init__(self, name):
         self.name = name
         self.job = "None"
         self.age = "None"
 
     def getAge(self):
+        """
+        Return age
+
+        :return: self.age
+        :rtype: str
+
+        """
         return self.age
 
     def setAge(self, age):
+        """
+        Set age
+
+        :return: self.age
+        :rtype: str
+
+        """
         self.age = age
 
     def getJob(self):
@@ -20,18 +35,30 @@ class Friend:
         self.job = job
 
 
-x = Friend('ALice')
-y = Friend('Bob')
-z = Friend('Jim')
+def main():
+    """
+    Főprogrma
 
-nepek = (x, y, z)
+    :return: emberkék nevét és életkorát írja ki
+    :rtype: object
 
-x.setJob("Carpenter")
-y.setJob("Stagehand")
-z.setAge(42)
-z.setJob('Electrician')
-x.setAge(27)
-y.setAge(35)
+    """
+    x = Friend("ALice")
+    y = Friend("Bob")
+    z = Friend("Jim")
 
-for nep in nepek:
-    print("{} is: {}, age: {}".format(nep.name, nep.job, nep.age))
+    nepek = (x, y, z)
+
+    x.setJob("Carpenter")
+    y.setJob("Stagehand")
+    z.setAge(42)
+    z.setJob("Electrician")
+    x.setAge(27)
+    y.setAge(35)
+
+    for nep in nepek:
+        print("{} is: {}, age: {}".format(nep.name, nep.job, nep.age))
+
+
+if __name__ == "__main__":
+    main()

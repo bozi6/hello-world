@@ -10,7 +10,9 @@ Weboldal részleteinek kiiratása
 def main():
     """
     Főprogram
-    :return: Null
+
+    :return: weboldal csak szöveges részének kiíratása
+    :rtype: str
 
     """
     # Making a GET request

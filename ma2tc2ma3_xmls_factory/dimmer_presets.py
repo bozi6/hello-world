@@ -8,11 +8,14 @@ import xml.etree.ElementTree as ett
 
 class CreatePresets(object):
     def __init__(self):
-
-        if platform.system() == 'Darwin':
-            self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
-        elif platform.system() == 'Windows':
-            self.kimeneti_mappa = "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
+        if platform.system() == "Darwin":
+            self.kimeneti_mappa = (
+                "/Users/mnte/MALightingTechnology/gma3_library/datapools/macros/"
+            )
+        elif platform.system() == "Windows":
+            self.kimeneti_mappa = (
+                "C:/ProgramData/MALightingTechnology/gma3_library/datapools/macros/"
+            )
         else:
             self.kimeneti_mappa = "./debugtest/"
             self.pathexist(self.kimeneti_mappa)
@@ -22,6 +25,13 @@ class CreatePresets(object):
 
     @staticmethod
     def pathexist(path):
+        """
+        Test if given path is exists
+        :param path: the path going to tested
+        :type path: str
+        :return: Ture|False if path exists or not
+        :rtype: bool
+        """
         if os.path.exists(path):
             return True
         else:
@@ -31,8 +41,13 @@ class CreatePresets(object):
 
     @staticmethod
     def uidgen():
+        """
+        Generate uuid
+        :return: uuid
+        :rtype: str
+        """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
-        uid = ' '.join(szoveg[i:i + 2] for i in range(0, len(szoveg), 2))
+        uid = " ".join(szoveg[i : i + 2] for i in range(0, len(szoveg), 2))
         return uid.upper()
 
     def create_macro(self):
@@ -54,7 +69,9 @@ class CreatePresets(object):
             macroline = ett.SubElement(macro, "MacroLine")
             macroline.set("Command", "Store Preset 1.{} /universal".format(i))
             macroline = ett.SubElement(macro, "MacroLine")
-            macroline.set("Command", "Label Preset 1.{} \"{}%\"".format(i, self.ertekek[i - 1]))
+            macroline.set(
+                "Command", 'Label Preset 1.{} "{}%"'.format(i, self.ertekek[i - 1])
+            )
 
         self.tree = ett.ElementTree(root)
         ett.indent(self.tree)

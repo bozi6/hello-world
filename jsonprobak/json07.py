@@ -10,11 +10,28 @@ class Vehicle:
 
 
 def vehileDecoder(obj):
-    return Vehicle(obj['name'], obj['engine'], obj['price'])
+    """
+    Jármű dekódoló
+
+    :param obj: jsonból kikódolt objektum
+    :type obj: json object
+    :return: Vehicle tömb
+    :rtype: list
+
+    """
+    return Vehicle(obj["name"], obj["engine"], obj["price"])
 
 
-vehicleObj = json.loads('{"name": "Toyota Rav4", "engine": "2.5L", "price": 32000}', object_hook=vehileDecoder)
-print("Type of decoed object from JSON data")
-print(type(vehicleObj))
-print("Vehicle Details:")
-print(" Name: {}\n Engine: {}\n Price: {}".format(vehicleObj.name, vehicleObj.engine, vehicleObj.price))
+if __name__ == "__main__":
+    vehicleObj = json.loads(
+        '{"name": "Toyota Rav4", "engine": "2.5L", "price": 32000}',
+        object_hook=vehileDecoder,
+    )
+    print("Type of decoed object from JSON data")
+    print(type(vehicleObj))
+    print("Vehicle Details:")
+    print(
+        " Name: {}\n Engine: {}\n Price: {}".format(
+            vehicleObj.name, vehicleObj.engine, vehicleObj.price
+        )
+    )

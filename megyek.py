@@ -52,7 +52,7 @@ szekhelyek = [
 lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
-def main():
+if __name__ == "__main__":
     """
     A mgeadott megyékről mindeféle statisztika kiiratása
     """
@@ -70,7 +70,3 @@ def main():
     print(lista[0])
     print("Lista utolsó eleme:")
     print(lista[-1])
-
-
-if __name__ == "__main__":
-    main()

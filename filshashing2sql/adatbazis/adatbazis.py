@@ -8,7 +8,9 @@ class MySQLstuffz:
     def __init__(self, host, user, pwd, port, db, tabla):
         """
         Connect to database
+
         :return: connection
+
         """
         self.host = host
         self.user = user
@@ -21,7 +23,9 @@ class MySQLstuffz:
     def connect(self):
         """
         Initialize database connection
+
         :return: connection.cursor()
+
         """
         try:
             connection = mysql.connector.connect(
@@ -34,8 +38,10 @@ class MySQLstuffz:
     def kezdotabla(self, tabla):
         """
         Initialize database and create table for it.
+
         :param tabla:
         :return:
+
         """
         con = self.connect()
         try:

@@ -1,26 +1,15 @@
-#!/usr/bin/env python3
-
-#  <program>  Copyright (C) <$year>  <name of author>
-#      This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
-#      This is free software, and you are welcome to redistribute it
-#      under certain conditions; type `show c' for details.
-
 import datetime
 import logging
-import re
-
 import openpyxl
-
-"""
-Autentikus convert 2018-ra
-
-"""
+import re
 
 
 def main():
     """
-    Főprogram
-    :return: Null
+    Főprogram ami az xlsxből sql-t csinál
+
+    :return: sql file 2018-ra
+    :rtype: str
 
     """
     logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")
@@ -43,7 +32,10 @@ def main():
     for sh in wb.worksheets:  # Végigmegyünk a munkafüzet lapjain
         cells = sh["A3":"I204"]  # K210 a vége
         i = 0
-        """ Az értékek a következők:
+        """ 
+        Parameters
+        ----------
+        
         c1  - Dátum ( óraperc nélkül )
         c2  - Tánckar és Zenekar
         c3  - Zenekar önálló
@@ -57,6 +49,7 @@ def main():
         Ezek a 2018_AUTENTIKUS.xlsx táblázat fejlécsorának összetevői.
         Továbbá! Közhírré tétetik!
         Az excel fileban a dátum mezőt tessék rendesen beállítani.
+        
         """
         print(sh.title)
         for c1, c2, c3, c4, c5, c6, c7, c8, c9 in cells:

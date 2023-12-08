@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sms2xls.main_mysql &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sms2xls.main_mysql</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>sms2xls.main_mysql forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">csv</span>  <span class="c1"># árfolyamok csv file kezeléséhez</span>
+<span class="kn">import</span> <span class="nn">logging</span>  <span class="c1"># Loggoláshoz modul</span>
+<span class="kn">import</span> <span class="nn">os</span>  <span class="c1"># dátum kinyerése</span>
+<span class="kn">import</span> <span class="nn">os.path</span>  <span class="c1"># fájlétezés vizsgálatra</span>
+<span class="kn">import</span> <span class="nn">re</span>  <span class="c1"># Reguláris kifejezésekhez modul</span>
+<span class="kn">import</span> <span class="nn">shutil</span>  <span class="c1"># Fájl másoláshoz</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>  <span class="c1"># timestampból emberi dátum</span>
+<span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>  <span class="c1"># xml fájl olvasásához modul</span>
+
+<span class="c1"># from forex_python.converter import CurrencyRates  # valutaárfolyam lekérdezőke modul</span>
+
+
+<div class="viewcode-block" id="file_checker">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.main_mysql.file_checker">[docs]</a>
+<span class="k">def</span> <span class="nf">file_checker</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+        <span class="n">fileido</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="p">)</span>  <span class="c1"># a meglévő file idejének lekérdezése</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        <span class="n">max_delay</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">now</span> <span class="o">-</span> <span class="n">fileido</span> <span class="o">&gt;</span> <span class="n">max_delay</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copyfile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">.csv&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">fileido</span><span class="p">))</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="arfolyam_feltoltes">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.main_mysql.arfolyam_feltoltes">[docs]</a>
+<span class="k">def</span> <span class="nf">arfolyam_feltoltes</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">file_checker</span><span class="p">(</span><span class="s2">&quot;arfolyamok.csv&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arfolyamok.csv&quot;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
+            <span class="n">arfolyam_dict_file</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span> <span class="nb">float</span><span class="p">(</span><span class="n">rows</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">rows</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">CurrencyRates</span><span class="p">()</span>
+        <span class="n">arfolyam_dict_file</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">get_rates</span><span class="p">(</span><span class="s2">&quot;HUF&quot;</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">((</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arfolyamok.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">arfolyam_dict_file</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">w</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">arfolyam_dict_file</span></div>
+
+
+
+<div class="viewcode-block" id="penz_valto">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.main_mysql.penz_valto">[docs]</a>
+<span class="k">def</span> <span class="nf">penz_valto</span><span class="p">(</span><span class="n">mit</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Árfolyam váltó függvény</span>
+<span class="sd">    a bejövő mit hez 123,45 GBP</span>
+<span class="sd">    kiszámolja, hogy az mennyi forintban&quot;&quot;&quot;</span>
+    <span class="n">valuta</span> <span class="o">=</span> <span class="n">mit</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>  <span class="c1"># A bejövő valuta megnevezésének eltávolítása</span>
+    <span class="k">if</span> <span class="n">valuta</span> <span class="ow">in</span> <span class="n">arfolyam</span><span class="p">:</span>
+        <span class="n">valtoertek</span> <span class="o">=</span> <span class="n">arfolyam</span><span class="p">[</span><span class="n">valuta</span><span class="p">]</span>
+        <span class="n">mit</span> <span class="o">=</span> <span class="n">mit</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">mit</span> <span class="o">=</span> <span class="n">mit</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">mit</span><span class="p">)</span> <span class="o">/</span> <span class="n">valtoertek</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nem találtam ilyen valutát a fileban! &quot;</span><span class="p">,</span> <span class="n">mit</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="egyenleg_kerdez">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.main_mysql.egyenleg_kerdez">[docs]</a>
+<span class="k">def</span> <span class="nf">egyenleg_kerdez</span><span class="p">(</span><span class="n">melyik</span><span class="p">):</span>
+    <span class="n">egyenleg_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(Egyenleg:\s)(\+?[0-9]+.[0-9]+\.?[0-9]+)&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">vissza</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">egyenleg_pattern</span><span class="p">,</span> <span class="n">melyik</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">vissza</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<div class="viewcode-block" id="convert_to_mysql_format">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.main_mysql.convert_to_mysql_format">[docs]</a>
+<span class="k">def</span> <span class="nf">convert_to_mysql_format</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Az sms-ben lévő dátum pl.: &#39;2022. febr. 4. 9:29:36&#39;</span>
+<span class="sd">    átalakítása a mysql datetime formátumának megfelelően.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">explode</span> <span class="o">=</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="n">day_of_the_month</span> <span class="o">=</span> <span class="n">explode</span><span class="p">[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">day_of_the_month</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%02d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">2</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),)</span>
+
+    <span class="k">if</span> <span class="n">ev_honapjai</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%02d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ev_honapjai</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">explode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%02d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),)</span>
+    <span class="k">return</span> <span class="n">explode</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">+</span> <span class="n">day_of_the_month</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">explode</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="c1"># Loggolás alapbeállításai</span>
+    <span class="n">FORMAT</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%(levelname)s</span><span class="s2">: </span><span class="si">%(asctime)-2s</span><span class="s2"> prgsor: </span><span class="si">%(lineno)d</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span>  <span class="c1"># Loggolás formátumának beállításra</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+        <span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
+    <span class="p">)</span>  <span class="c1"># loggolás beálltása INFO-ra(csak a lényeg)</span>
+
+    <span class="c1"># Alapértelmezett változók</span>
+    <span class="n">olvasando_fajl</span> <span class="o">=</span> <span class="s2">&quot;sms_full.xml&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;A beolvasandó file: &quot;</span> <span class="o">+</span> <span class="n">olvasando_fajl</span><span class="p">)</span>
+    <span class="n">kiirando_fajl</span> <span class="o">=</span> <span class="s2">&quot;balance.sql&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;A kiírandó file: &quot;</span> <span class="o">+</span> <span class="n">kiirando_fajl</span><span class="p">)</span>
+    <span class="n">arfolyam_file</span> <span class="o">=</span> <span class="s2">&quot;arfolyamok.csv&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;A használt árfolyamok file: &quot;</span> <span class="o">+</span> <span class="n">arfolyam_file</span><span class="p">)</span>
+    <span class="n">arfolyam</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">egyenleg2</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">ev_honapjai</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;jan.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;febr.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;márc.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ápr.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;máj.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;jún.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;júl.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;aug.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;szept.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;okt.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nov.&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;dec.&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO beki (sorsz, datum, bekiv, valuta, egyenleg, sms, hely) VALUES &quot;</span>
+    <span class="n">sql_sorok_szama</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># xml fájl betöltése</span>
+    <span class="n">mydoc</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">olvasando_fajl</span><span class="p">)</span>
+
+    <span class="c1"># Árfolyam file meglétének ellenőrzése és frissítése ha két óránál régebbi</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">arfolyam</span> <span class="o">=</span> <span class="n">arfolyam_feltoltes</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nincseh meg a file&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Nem található a file.&quot;</span><span class="p">)</span>
+
+    <span class="n">items</span> <span class="o">=</span> <span class="n">mydoc</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;sms&quot;</span><span class="p">)</span>  <span class="c1"># smsek beolvasása az items-be</span>
+
+    <span class="n">lapnev</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s2">&quot;readable_date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+    <span class="p">)</span>  <span class="c1"># Az első sms dátumának kinyerése</span>
+    <span class="n">lapnev</span> <span class="o">=</span> <span class="n">lapnev</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Csak az évszám kivágása</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># belső változó</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;bevetel.sql&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;/*</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">MySQL exportálva a </span><span class="se">\n\t</span><span class="s2">következő időpontban:</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">*/</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>  <span class="c1"># SMS-ek beolvasása</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="s2">&quot;SIKERTELEN&quot;</span> <span class="ow">in</span> <span class="n">elem</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+        <span class="p">):</span>  <span class="c1"># Ha a SIKERTELEN üzenetet kaptuk, akkor nem törődünk vele</span>
+            <span class="k">continue</span>
+        <span class="n">tel</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span>
+            <span class="s2">&quot;address&quot;</span>
+        <span class="p">]</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># telefonszám kinyerése az üzenetből, később lehet szűrni.</span>
+        <span class="n">rd</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s2">&quot;readable_date&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Dátum hozzáadása az rd változóhoz</span>
+        <span class="n">bd</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s2">&quot;body&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Az üzenet szövege</span>
+        <span class="n">cn</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">attributes</span><span class="p">[</span><span class="s2">&quot;contact_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Az üzenetküldő neve</span>
+        <span class="c1"># penz_pattern = r&#39;(-|\+)[0-9]+(,?|\.?)[0-9]+\s?,?-?[A-Z][A-Z][A-Z]&#39;</span>
+        <span class="n">penz_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;(-|\+|\ )\d{1,}(\.|,|\s)(\d{1,3}|,)*.(\d{1,3}|\w{1,3});&quot;</span>
+        <span class="c1"># előjel - vagy +, utána 0 vagy több szám, aztán 0 vagy egy karakter,</span>
+        <span class="c1"># 0 vagy több szám, 0 vagy 1 szóköz 0 vagy 1 , 0 vagy 1 - és három karakter a pénznem azonosításhoz.</span>
+        <span class="c1"># x = re.findall(pattern, bd)</span>
+        <span class="n">aktev</span> <span class="o">=</span> <span class="n">rd</span><span class="p">[:</span><span class="mi">4</span><span class="p">]</span>  <span class="c1"># Az aktulis évszám kinyerése a dátumból.</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">osszeg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+                <span class="n">penz_pattern</span><span class="p">,</span> <span class="n">bd</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>  <span class="c1"># megkeressük a pénzeket az üzenetből</span>
+            <span class="n">egybd</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+                <span class="sa">r</span><span class="s2">&quot;(;\sEgy:)|(;\sEgy\.:)&quot;</span><span class="p">,</span> <span class="s2">&quot;; Egyenleg: &quot;</span><span class="p">,</span> <span class="n">bd</span>
+            <span class="p">)</span>  <span class="c1"># csak az sms végi egyenleg keresése</span>
+            <span class="n">egybd</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">egybd</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>  <span class="c1"># A két szóköz eltávolítása</span>
+            <span class="n">ketbd</span> <span class="o">=</span> <span class="n">egybd</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,-HUF;&quot;</span><span class="p">,</span> <span class="s2">&quot; HUF;&quot;</span><span class="p">)</span>  <span class="c1"># A &quot;,-HUF&quot; átíráasa &quot;HUF&quot;-ra</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">egyenleg_kerdez</span><span class="p">(</span>
+                <span class="n">ketbd</span>
+            <span class="p">):</span>  <span class="c1"># Hs nincs egyenleg az SMS végén akkor az előzőt használjuk</span>
+                <span class="n">egyenleg</span> <span class="o">=</span> <span class="n">egyenleg2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">egyenleg</span> <span class="o">=</span> <span class="n">egyenleg_kerdez</span><span class="p">(</span><span class="n">ketbd</span><span class="p">)</span>
+                <span class="n">egyenleg2</span> <span class="o">=</span> <span class="n">egyenleg_kerdez</span><span class="p">(</span><span class="n">ketbd</span><span class="p">)</span>
+            <span class="n">osszeg</span> <span class="o">=</span> <span class="n">osszeg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">)</span>  <span class="c1"># kivesszük a pontot (ezres elválasztó) az összegek közül</span>
+            <span class="n">osszeg</span> <span class="o">=</span> <span class="n">osszeg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s2">&quot;;&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+            <span class="p">)</span>  <span class="c1"># kivesszük a végén a ;-t (kellet az smsek miatt a regexphez)</span>
+            <span class="n">osszeg</span> <span class="o">=</span> <span class="n">osszeg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                <span class="s2">&quot;,-HUF&quot;</span><span class="p">,</span> <span class="s2">&quot; HUF&quot;</span>
+            <span class="p">)</span>  <span class="c1"># Ha az üzenetben ,-HUF van azt átalakítjuk HUF-ra</span>
+            <span class="n">valuta</span> <span class="o">=</span> <span class="s2">&quot;0&quot;</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">osszeg</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;HUF&quot;</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="p">):</span>  <span class="c1"># Ha benne van az összegben a HUF =&gt; forint alapú a dolog</span>
+                <span class="n">osszeg</span> <span class="o">=</span> <span class="n">osszeg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span>
+                    <span class="s2">&quot; HUF&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span>
+                <span class="p">)</span>  <span class="c1"># Kivesszük a HUF szöveget az excel pénznem felismerése miatt.</span>
+            <span class="k">else</span><span class="p">:</span>  <span class="c1"># ha nem HUF-ban van megadva a pénz</span>
+                <span class="n">valuta</span> <span class="o">=</span> <span class="n">osszeg</span>
+                <span class="n">osszeg</span> <span class="o">=</span> <span class="n">penz_valto</span><span class="p">(</span><span class="n">osszeg</span><span class="p">)</span>  <span class="c1"># Átváltjuk az összeget forintra</span>
+                <span class="c1">#  logging.debug(&#39;Valuta értéke: {} külföldi, {} HUF&#39;.format(osszeg, forintban))</span>
+            <span class="n">egyenleg</span> <span class="o">=</span> <span class="n">egyenleg</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">bd</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;...&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>  <span class="c1"># Az üzenet elejéről a pontokat kivesszük még.</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># sorszám növelése</span>
+            <span class="n">jodate</span> <span class="o">=</span> <span class="n">convert_to_mysql_format</span><span class="p">(</span><span class="n">rd</span><span class="p">)</span>
+            <span class="n">bd</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span> <span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+            <span class="n">bd</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Így kell kinéznie:</span>
+<span class="sd">            INSERT INTO `beki` (`sorsz`, `datum`, `bekiv`, `valuta`, `egyenleg`, `sms`) VALUES </span>
+<span class="sd">            (NULL, &#39;2022-02-14 18:36:08.000000&#39;, &#39;-456&#39;, &#39;0&#39;, &#39;+948647&#39;, &#39;7878 Szàmla (120904) MUNKABÉR </span>
+<span class="sd">            àTUTALàS:+142.934,-HUF; Közl:165; Partner:Honvéd Együttes Müvészeti; Egy:+763.192,-HUF; OTPdirekt&#39;); </span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">explode</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+            <span class="n">sql</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">(NULL, &quot;</span><span class="si">{}</span><span class="s1">&quot;, &quot;</span><span class="si">{}</span><span class="s1">&quot;, &quot;</span><span class="si">{}</span><span class="s1">&quot;, &quot;</span><span class="si">{}</span><span class="s1">&quot;, &quot;</span><span class="si">{}</span><span class="s1">&quot;, &quot;</span><span class="si">{}</span><span class="s1">&quot;),&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">jodate</span><span class="p">,</span> <span class="n">osszeg</span><span class="p">,</span> <span class="n">valuta</span><span class="p">,</span> <span class="n">egyenleg</span><span class="p">,</span> <span class="n">bd</span><span class="p">,</span> <span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">explode</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Sorszám:</span><span class="si">{}</span><span class="s2">; - Nem átutalásos sms - </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">bd</span><span class="p">))</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">sql_sorok_szama</span> <span class="o">%</span> <span class="mi">25</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">sql</span> <span class="o">=</span> <span class="n">sql</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span>
+            <span class="n">sql</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">INSERT INTO beki (sorsz, datum, bekiv, valuta, egyenleg, sms, hely) VALUES  &quot;</span>
+        <span class="n">sql_sorok_szama</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sql</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;;&quot;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">sms2xls.main_mysql</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

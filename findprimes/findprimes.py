@@ -6,9 +6,11 @@ str2 = time.time()
 def findprime(startnumber, endnumber):
     """
     A prímszámokat keresi meg
-    :param startnumber: a kezdő szám
-    :param endnumber: a vége szám
+
+    :param: startnumber: a kezdő szám
+    :param: endnumber: a vége szám
     :return: a megtalált prímszámok listája
+
     """
     start = time.time()
     primes = []
@@ -35,9 +37,12 @@ def findprime(startnumber, endnumber):
 def insert_newlines(string, every=128):
     """
     Minden 128-ik karakterhez beszúr egy újsor karaktert
-    :param string: a bejövő karakterlánc
-    :param every: hova szúrja be az újsor karaktert
+
+    :param: string: a bejövő karakterlánc
+    :param: every: hova szúrja be az újsor karaktert
     :return: a feldarabolt string
+    :rtype: str
+
     """
     return "\n".join(string[i : i + every] for i in range(0, len(string), every))
 
@@ -45,7 +50,9 @@ def insert_newlines(string, every=128):
 def main():
     """
     Main program
+
     :return: Print out find first 10000 prime number
+    :rtype: str
     """
     pr = findprime(1, 10000)
     soros = insert_newlines(

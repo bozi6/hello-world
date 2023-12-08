@@ -1,6 +1,6 @@
 import unittest
 
-import calc
+import tankonyv.calc as calc
 
 
 class TestCalc(unittest.TestCase):
@@ -26,5 +26,5 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.division(6, 3), 2)
 
 
-if __name__ == '__main__':
-    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+if __name__ == "__main__":
+    unittest.main(argv=["first-arg-is-ignored"], exit=False)

@@ -16,7 +16,10 @@ Autentika converter 2022
 def main():
     """
     Főprogram
+
     :return: SQL fájl 2022-re
+    :rtype: str
+
     """
     kezd = time.time()
 

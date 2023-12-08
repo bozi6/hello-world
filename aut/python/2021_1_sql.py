@@ -15,8 +15,11 @@ Autentika converter 2021
 
 def main():
     """
-    Főprogram
-    :return: SQL filek
+    Főprogram xlsből sql 2021-re
+
+    :return: SQL fileok
+    :rtype: str
+
     """
     kezd = time.time()
 

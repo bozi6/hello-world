@@ -1,7 +1,0 @@
-2018\_4\_sql module
-===================
-
-.. automodule:: aut.python.2018_4_sql
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -13,8 +13,10 @@ Autentik converter 2020
 
 def main():
     """
-    Főprogram
-    :return: None
+    xlsxből sql fájl 2020-ra
+
+    :return: sql file
+    :rtype: str
 
     """
     logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")

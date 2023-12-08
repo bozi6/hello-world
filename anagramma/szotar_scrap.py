@@ -10,11 +10,13 @@ Szótárfájl létrehozása
 def main():
     """
     Főprogram
+    Teszt_szotar.txt file ami a h betűtől tartalmaz szavakat
+    a szotar.com oldaláról
+
     :return: None
 
-     teszt_szotar.txt file ami a h betűtől tartalmaz szavakat
-     a szotar.com oldaláról
     """
+
     kimeneti_file = open("teszt_szotar.txt", "w")
 
     """

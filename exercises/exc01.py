@@ -5,6 +5,7 @@ def reverse_words(Sentence):
     return res_str
 
 
-# Given string
-str1 = "My Name is Jessa"
-print(reverse_words(str1))
+if __name__ == "__main__":
+    # Given string
+    str1 = "My Name is Jessa"
+    print(reverse_words(str1))

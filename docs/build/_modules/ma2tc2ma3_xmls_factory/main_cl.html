@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ma2tc2ma3_xmls_factory.main_cl &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ma2tc2ma3_xmls_factory.main_cl</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>ma2tc2ma3_xmls_factory.main_cl forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ett</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">unidecode</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Konta Boáz&#39;</span>
+<span class="n">__email__</span> <span class="o">=</span> <span class="s1">&#39;kontab6@gmail.com&#39;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s1">&#39;2.0&#39;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;Copyright (c) 2022 Konta Boáz&quot;</span>
+<span class="n">__title__</span> <span class="o">=</span> <span class="s1">&#39;from csv to MA3 xmls&#39;</span>
+<span class="n">__description__</span> <span class="o">=</span> <span class="s2">&quot;Ma3 classes to create xml to timecode and sequence&quot;</span>
+<span class="n">__url__</span> <span class="o">=</span> <span class="s2">&quot;https://www.git.org/bozi6/&quot;</span>
+<span class="n">__uri__</span> <span class="o">=</span> <span class="n">__url__</span>
+<span class="vm">__doc__</span> <span class="o">=</span> <span class="n">__description__</span> <span class="o">+</span> <span class="s2">&quot; &lt;&quot;</span> <span class="o">+</span> <span class="n">__uri__</span> <span class="o">+</span> <span class="s2">&quot;&gt;&quot;</span>
+
+<span class="c1"># For debugging remove # from next line.</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> - </span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml">[docs]</a>
+<span class="k">class</span> <span class="nc">CreateMacroFromXml</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bemenet_file</span><span class="p">,</span> <span class="n">seq_szam</span><span class="p">,</span> <span class="n">projekt_nev</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param bemenet_file: input csv file</span>
+<span class="sd">        :param seq_szam: the number of generated sequence in sequence pool.</span>
+<span class="sd">        :param projekt_nev: The name of generated macro and sequence and timecode pool objects.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bemenet_file</span> <span class="o">=</span> <span class="n">bemenet_file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seq_szam</span> <span class="o">=</span> <span class="n">seq_szam</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span> <span class="o">=</span> <span class="n">projekt_nev</span>
+        <span class="k">if</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">getEffectiveLevel</span><span class="p">()</span> <span class="o">==</span> <span class="mi">30</span><span class="p">:</span>  <span class="c1"># ha nem debuggolunk akkor mehet élesben</span>
+            <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Darwin&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span> <span class="o">=</span> <span class="s2">&quot;/Users/mnte/MALightingTechnology/gma3_library/datapools/&quot;</span>
+            <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;Windows&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span> <span class="o">=</span> <span class="s2">&quot;C:/ProgramData/MALightingTechnology/gma3_library/datapools/&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span> <span class="o">=</span> <span class="s2">&quot;./debugtest/&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pathexist</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">ElementTree</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">read_xml</span><span class="p">()</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Init called.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_xml_macro</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_xml_time</span><span class="p">()</span>
+
+<div class="viewcode-block" id="CreateMacroFromXml.pathexist">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.pathexist">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">pathexist</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/macros&quot;</span><span class="p">)</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/timecodes&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.uidgen">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.uidgen">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">uidgen</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a uuid for xml attributes</span>
+<span class="sd">        :return: the generated uid with spaces between two numbers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">szoveg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">hexdigits</span><span class="p">[:</span><span class="mi">16</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">)])</span>
+        <span class="n">uid</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">szoveg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">szoveg</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Generated UUID: </span><span class="si">{</span><span class="n">uid</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">uid</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.read_xml">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.read_xml">[docs]</a>
+    <span class="k">def</span> <span class="nf">read_xml</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Read given xml file and convert it to dictionary</span>
+<span class="sd">        :return: Readad xml file into dictionary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">tree</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bemenet_file</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;for child in root.iter():</span>
+<span class="sd">                print(&quot;Tag: &quot;, child.tag, &quot; Attrib: &quot;, child.attrib)&quot;&quot;&quot;</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//{http://schemas.malighting.de/grandma2/xml/MA}SubTrack&#39;</span><span class="p">):</span>
+                <span class="c1"># print(&quot;child attrib: &quot;, child.attrib)</span>
+                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SubTrack index attrib: </span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;index&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">cue</span> <span class="ow">in</span> <span class="n">child</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//{http://schemas.malighting.de/grandma2/xml/MA}Event&#39;</span><span class="p">):</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;child command attrib: </span><span class="si">{</span><span class="n">child</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;command&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">cue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">ido</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sectotime</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">cue</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)))</span>
+                        <span class="n">ido</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ido</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">ido</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ido érték:  </span><span class="si">{</span><span class="n">ido</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cue name:  </span><span class="si">{</span><span class="n">cue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">cuename</span> <span class="o">=</span> <span class="n">cue</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+                    <span class="c1"># logging.debug(f&quot;cue: {cue[0].text}&quot;)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cue: </span><span class="si">{</span><span class="n">cue</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cue: </span><span class="si">{</span><span class="n">cue</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="n">cuenum</span> <span class="o">=</span> <span class="n">cue</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+                    <span class="n">egy</span> <span class="o">=</span> <span class="p">[</span><span class="n">cuenum</span><span class="p">,</span> <span class="n">cuename</span><span class="p">,</span> <span class="n">ido</span><span class="p">]</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">egy</span><span class="p">)</span>
+
+                <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">32</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File not found...&#39;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File format mismatch...&#39;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.create_xml_macro">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.create_xml_macro">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_xml_macro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create {projectname}_macro.xml file in destination folder</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;create_xml_macro called&quot;</span><span class="p">)</span>
+        <span class="n">kimeneti_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span> <span class="o">+</span> <span class="s2">&quot;_macro.xml&quot;</span>
+        <span class="n">cuek_szama</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output macroxml file name: </span><span class="si">{</span><span class="n">kimeneti_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of cues in file: </span><span class="si">{</span><span class="n">cuek_szama</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;GMA3&quot;</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;DataVersion&quot;</span><span class="p">,</span> <span class="s2">&quot;1.8.1.0&quot;</span><span class="p">)</span>
+
+        <span class="n">macro</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;Macro&quot;</span><span class="p">)</span>
+        <span class="n">macro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">)</span>
+        <span class="n">macro</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Guid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uidgen</span><span class="p">())</span>
+
+        <span class="n">macroline</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="s2">&quot;MacroLine&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Command&quot;</span><span class="p">,</span> <span class="s2">&quot;Store Sequence </span><span class="si">{}</span><span class="s2"> Cue 1 thru </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq_szam</span><span class="p">,</span> <span class="n">cuek_szama</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Wait&quot;</span><span class="p">,</span> <span class="s2">&quot;0.10&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">sorsz</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">cuek_szama</span><span class="p">):</span>
+            <span class="n">macroline</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="s2">&quot;MacroLine&quot;</span><span class="p">)</span>
+            <span class="n">cueneve</span> <span class="o">=</span> <span class="n">unidecode</span><span class="o">.</span><span class="n">unidecode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="p">[</span><span class="n">sorsz</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+            <span class="n">cueneve</span> <span class="o">=</span> <span class="n">cueneve</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+            <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Command&quot;</span><span class="p">,</span> <span class="s2">&quot;Label Sequence </span><span class="si">{}</span><span class="s2"> Cue </span><span class="si">{}</span><span class="s2"> </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq_szam</span><span class="p">,</span> <span class="n">sorsz</span><span class="p">,</span> <span class="n">cueneve</span><span class="p">))</span>
+            <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Wait&quot;</span><span class="p">,</span> <span class="s2">&quot;0.10&quot;</span><span class="p">)</span>
+
+        <span class="n">macroline</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="s2">&quot;MacroLine&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Command&quot;</span><span class="p">,</span> <span class="s2">&quot;Label Sequence </span><span class="si">{}</span><span class="s2"> </span><span class="se">\&quot;</span><span class="si">{}</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq_szam</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">))</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Wait&quot;</span><span class="p">,</span> <span class="s2">&quot;0.10&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="s2">&quot;MacroLine&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Command&quot;</span><span class="p">,</span> <span class="s2">&quot;Drive 1&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">macro</span><span class="p">,</span> <span class="s2">&quot;MacroLine&quot;</span><span class="p">)</span>
+        <span class="n">macroline</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Command&quot;</span><span class="p">,</span> <span class="s2">&quot;import timecode </span><span class="se">\&quot;</span><span class="si">{}</span><span class="s2">_timecode</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">ett</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_xml_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span> <span class="o">+</span> <span class="s2">&quot;macros/&quot;</span> <span class="o">+</span> <span class="n">kimeneti_file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.create_xml_time">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.create_xml_time">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_xml_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Create the {project_name}_timecode.xml file in output folder</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">kimeneti_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span> <span class="o">+</span> <span class="s2">&quot;_timecode.xml&quot;</span>
+        <span class="n">cuek_szama</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">utolso_marker</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="p">[</span><span class="n">cuek_szama</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Create timceode called&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Cues numbers: </span><span class="si">{</span><span class="n">cuek_szama</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Last marker: </span><span class="si">{</span><span class="n">utolso_marker</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s2">&quot;GMA3&quot;</span><span class="p">)</span>
+        <span class="n">root</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;DataVersion&quot;</span><span class="p">,</span> <span class="s2">&quot;1.8.1.0&quot;</span><span class="p">)</span>
+
+        <span class="n">idocode</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;Timecode&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Guid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uidgen</span><span class="p">())</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Cursor&quot;</span><span class="p">,</span> <span class="s2">&quot;00.00&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Duration&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">utolso_marker</span><span class="p">))</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;LoopCount&quot;</span><span class="p">,</span> <span class="s2">&quot;0&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;TCSlot&quot;</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;AutoStop&quot;</span><span class="p">,</span> <span class="s2">&quot;No&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;SwitchOff&quot;</span><span class="p">,</span> <span class="s2">&quot;Keep Playbacks&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Goto&quot;</span><span class="p">,</span> <span class="s2">&quot;as Go&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;TimeDisplayFormat&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;Default&gt;&quot;</span><span class="p">)</span>
+        <span class="n">idocode</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;FrameReadout&quot;</span><span class="p">,</span> <span class="s2">&quot;Default&quot;</span><span class="p">)</span>
+
+        <span class="n">trackgroup</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">idocode</span><span class="p">,</span> <span class="s2">&quot;TrackGroup&quot;</span><span class="p">)</span>
+        <span class="n">trackgroup</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Play&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">trackgroup</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Rec&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="n">markertrack</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">trackgroup</span><span class="p">,</span> <span class="s2">&quot;MarkerTrack&quot;</span><span class="p">)</span>
+        <span class="n">markertrack</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Marker&quot;</span><span class="p">)</span>
+        <span class="n">markertrack</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Guid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uidgen</span><span class="p">())</span>
+
+        <span class="n">track</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">trackgroup</span><span class="p">,</span> <span class="s2">&quot;Track&quot;</span><span class="p">)</span>
+        <span class="n">track</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">)</span>
+        <span class="n">track</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Guid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uidgen</span><span class="p">())</span>
+        <span class="n">track</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Target&quot;</span><span class="p">,</span> <span class="s2">&quot;ShowData.DataPools.Default.Sequences.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span><span class="p">))</span>
+        <span class="n">track</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Play&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">track</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Rec&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="n">timerange</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">track</span><span class="p">,</span> <span class="s2">&quot;TimeRange&quot;</span><span class="p">)</span>
+        <span class="n">timerange</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Guid&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">uidgen</span><span class="p">())</span>
+        <span class="n">timerange</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Duration&quot;</span><span class="p">,</span> <span class="s2">&quot;To End&quot;</span><span class="p">)</span>
+        <span class="n">timerange</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Play&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">timerange</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Rec&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="n">cmdsubtrack</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">timerange</span><span class="p">,</span> <span class="s2">&quot;CmdSubTrack&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">ertekek</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cuek_szama</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">cmdevent</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">cmdsubtrack</span><span class="p">,</span> <span class="s2">&quot;CmdEvent&quot;</span><span class="p">)</span>
+            <span class="n">cmdevent</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Go+&quot;</span><span class="p">)</span>
+            <span class="n">cmdevent</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">csv_dict</span><span class="p">[</span><span class="n">ertekek</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
+            <span class="n">realtime_attribs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Key&quot;</span><span class="p">,</span> <span class="s2">&quot;Source&quot;</span><span class="p">:</span> <span class="s2">&quot;Original&quot;</span><span class="p">,</span> <span class="s2">&quot;UserProfile&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;User&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;On&quot;</span><span class="p">,</span> <span class="s2">&quot;IsRealtime&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;IsXFade&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;IgnoreFollow&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;IgnoreCommand&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;Assert&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;IgnoreNetwork&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;FromTriggerNode&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;IgnoreExecTime&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;IssuedByTimecode&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;FromLocalHardwareFader&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;IgnoreExecXFade&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;IsExecXFade&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;ExecToken&quot;</span><span class="p">:</span> <span class="s2">&quot;Go+&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;ValCueDestination&quot;</span><span class="p">:</span>
+                                    <span class="s2">&quot;12.12.0.4.</span><span class="si">{}</span><span class="s2">.</span><span class="si">{}</span><span class="s2">000&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">seq_szam</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ertekek</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+                                <span class="p">}</span>
+            <span class="c1"># old value: &quot;ValCueDestination&quot;: &quot;12.12.0.4.49.{}000&quot;.format(ertekek + 1)</span>
+            <span class="c1"># az Object is ugyanaz 12.12.0.4.99</span>
+            <span class="n">realtimecmd</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">cmdevent</span><span class="p">,</span> <span class="s2">&quot;RealtimeCmd&quot;</span><span class="p">,</span> <span class="n">realtime_attribs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">ett</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="n">ett</span><span class="o">.</span><span class="n">indent</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write_xml_file</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kimeneti_mappa</span> <span class="o">+</span> <span class="s2">&quot;timecodes/&quot;</span> <span class="o">+</span> <span class="n">kimeneti_file</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.write_xml_file">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.write_xml_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_xml_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mitirokki</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Files created in: &quot;</span> <span class="o">+</span> <span class="n">mitirokki</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">mitirokki</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">files</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">xml_declaration</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;xml&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CreateMacroFromXml.sectotime">
+<a class="viewcode-back" href="../../ma2tc2ma3_xmls_factory.html#ma2tc2ma3_xmls_factory.main_cl.CreateMacroFromXml.sectotime">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">sectotime</span><span class="p">(</span><span class="n">secs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">secs</span> <span class="o">/</span> <span class="mi">30</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MA2 exported xml to Ma3 timecode converter for MA3 version:1.8.1.0.&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    bem = input(&quot;csv file name:&quot;)</span>
+<span class="sd">    seq = input(&quot;Sequence number&quot;)</span>
+<span class="sd">    pnev = input(&quot;Project name:&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bem</span> <span class="o">=</span> <span class="s2">&quot;halaltimecode.xml&quot;</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">pnev</span> <span class="o">=</span> <span class="s2">&quot;halali&quot;</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;input file:</span><span class="si">{</span><span class="n">bem</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sequence number:</span><span class="si">{</span><span class="n">seq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Project name:</span><span class="si">{</span><span class="n">pnev</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">new_test</span> <span class="o">=</span> <span class="n">CreateMacroFromXml</span><span class="p">(</span><span class="n">bem</span><span class="p">,</span> <span class="n">seq</span><span class="p">,</span> <span class="n">pnev</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">ma2tc2ma3_xmls_factory.main_cl</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

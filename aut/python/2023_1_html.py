@@ -1,12 +1,14 @@
-import numpy as np
 import pandas as pd
 
 
 def sor(uzi):
     """
     Egy sor üzenet írása 80 karakternyi - al aláhúzbva :-)
-    :param uzi:
-    :return:
+
+    :param: uzi
+    :return: Az üzenet
+    :rtype: str
+
     """
     emptyspaces = 80
     print("-" * emptyspaces)
@@ -17,7 +19,9 @@ def sor(uzi):
 def main():
     """
     Pandas próbálkozás html alakítással autentikusan.
+
     :return:
+
     """
     bem = "../xlsxs/2023_Autentikus.xlsx"
     kim = "../sql/2023_aut.html"

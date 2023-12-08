@@ -1,11 +1,12 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+if __name__ == "__main__":
 
-    def __repr__(self):
-        return f'Person{{name: {self.name}, age: {self.age}}}'
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
 
+        def __repr__(self):
+            return f"Person{{name: {self.name}, age: {self.age}}}"
 
-p = Person('John Doe', 34)
-print(p)
+    p = Person("John Doe", 34)
+    print(p)

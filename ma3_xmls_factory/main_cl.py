@@ -6,12 +6,12 @@ import string
 import unidecode
 import logging
 
-__author__ = 'Konta Boáz'
-__email__ = 'kontab6@gmail.com'
-__version__ = '2.0'
+__author__ = "Konta Boáz"
+__email__ = "kontab6@gmail.com"
+__version__ = "2.0"
 __license__ = "MIT"
 __copyright__ = "Copyright (c) 2022 Konta Boáz"
-__title__ = 'from csv to MA3 xmls'
+__title__ = "from csv to MA3 xmls"
 __description__ = "Ma3 classes to create xml to timecode and sequence"
 __url__ = "https://www.gituhb.org/bozi6/"
 __uri__ = __url__
@@ -28,12 +28,17 @@ class CreateMacroFromCsv(object):
         :param bemenet_file: input csv file
         :param seq_szam: the number of generated sequence in sequence pool.
         :param projekt_nev: The name of generated macro and sequence and timecode pool objects.
+
         """
         self.bemenet_file = bemenet_file
         self.seq_szam = int(seq_szam)
         self.projekt_nev = projekt_nev
-        if logging.getLogger().getEffectiveLevel() == 30:  # ha nem debuggolunk akkor mehet élesben
-            self.kimeneti_mappa = "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
+        if (
+            logging.getLogger().getEffectiveLevel() == 30
+        ):  # ha nem debuggolunk akkor mehet élesben
+            self.kimeneti_mappa = (
+                "/Users/mnte/MALightingTechnology/gma3_library/datapools/"
+            )
         else:
             self.kimeneti_mappa = "./test/"
             self.pathexist(self.kimeneti_mappa)
@@ -50,8 +55,8 @@ class CreateMacroFromCsv(object):
             return True
         else:
             os.mkdir(path)
-            os.mkdir(path+"/macros")
-            os.mkdir(path+"/timecodes")
+            os.mkdir(path + "/macros")
+            os.mkdir(path + "/timecodes")
 
     @staticmethod
     def uidgen():
@@ -60,14 +65,16 @@ class CreateMacroFromCsv(object):
         :return: the generated uid with spaces between two numbers
         """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
-        uid = ' '.join(szoveg[i:i + 2] for i in range(0, len(szoveg), 2))
+        uid = " ".join(szoveg[i : i + 2] for i in range(0, len(szoveg), 2))
         logging.debug(f"Generated UUID: {uid.upper()}")
         return uid.upper()
 
     def read_xml(self):
         """
         Read given csv file and convert it to dictionary
+
         :return: Readad csv file into dictionary
+
         """
         try:
             csv_file = open(self.bemenet_file)
@@ -82,10 +89,10 @@ class CreateMacroFromCsv(object):
             logging.debug(f"Output dictionary first element: {self.csv_dict[0]}")
             return self.csv_dict
         except FileNotFoundError:
-            print('File not found...')
+            print("File not found...")
             exit(1)
         except IndexError:
-            print('File format mismatch...')
+            print("File format mismatch...")
             exit(1)
 
     def create_xml_macro(self):
@@ -106,7 +113,10 @@ class CreateMacroFromCsv(object):
         macro.set("Guid", self.uidgen())
 
         macroline = ett.SubElement(macro, "MacroLine")
-        macroline.set("Command", "Store Sequence {} Cue 1 thru {}".format(self.seq_szam, cuek_szama -1))
+        macroline.set(
+            "Command",
+            "Store Sequence {} Cue 1 thru {}".format(self.seq_szam, cuek_szama - 1),
+        )
         macroline.set("Wait", "0.10")
 
         for sorsz in range(1, cuek_szama):
@@ -114,16 +124,23 @@ class CreateMacroFromCsv(object):
             cueneve = unidecode.unidecode(self.csv_dict[sorsz - 1][1])
             cueneve = cueneve.replace(" ", "")
             cueneve = cueneve.capitalize()
-            macroline.set("Command", 'Label Sequence {} Cue {} "{}"'.format(self.seq_szam, sorsz, cueneve))
+            macroline.set(
+                "Command",
+                'Label Sequence {} Cue {} "{}"'.format(self.seq_szam, sorsz, cueneve),
+            )
             macroline.set("Wait", "0.10")
 
         macroline = ett.SubElement(macro, "MacroLine")
-        macroline.set("Command", "Label Sequence {} \"{}\"".format(self.seq_szam, self.projekt_nev))
+        macroline.set(
+            "Command", 'Label Sequence {} "{}"'.format(self.seq_szam, self.projekt_nev)
+        )
         macroline.set("Wait", "0.10")
         macroline = ett.SubElement(macro, "MacroLine")
         macroline.set("Command", "Drive 1")
         macroline = ett.SubElement(macro, "MacroLine")
-        macroline.set("Command", "import timecode \"{}_timecode\"".format(self.projekt_nev))
+        macroline.set(
+            "Command", 'import timecode "{}_timecode"'.format(self.projekt_nev)
+        )
 
         self.tree = ett.ElementTree(root)
         ett.indent(self.tree)
@@ -131,7 +148,8 @@ class CreateMacroFromCsv(object):
 
     def create_xml_time(self):
         """
-            Create the {project_name}_timecode.xml file in output folder
+        Create the {project_name}_timecode.xml file in output folder
+
         """
         kimeneti_file = self.projekt_nev + "_timecode.xml"
         cuek_szama = len(self.csv_dict) - 1
@@ -166,7 +184,9 @@ class CreateMacroFromCsv(object):
         track = ett.SubElement(trackgroup, "Track")
         track.set("Name", self.projekt_nev)
         track.set("Guid", self.uidgen())
-        track.set("Target", "ShowData.DataPools.Default.Sequences.{}".format(self.projekt_nev))
+        track.set(
+            "Target", "ShowData.DataPools.Default.Sequences.{}".format(self.projekt_nev)
+        )
         track.set("Play", "")
         track.set("Rec", "")
 
@@ -181,17 +201,29 @@ class CreateMacroFromCsv(object):
             cmdevent = ett.SubElement(cmdsubtrack, "CmdEvent")
             cmdevent.set("Name", "Go+")
             cmdevent.set("Time", self.csv_dict[ertekek][2])
-            realtime_attribs = {"Type": "Key", "Source": "Original", "UserProfile": "0",
-                                "User": "1", "Status": "On", "IsRealtime": "0",
-                                "IsXFade": "0", "IgnoreFollow": "0", "IgnoreCommand": "0",
-                                "Assert": "0", "IgnoreNetwork": "0", "FromTriggerNode": "0",
-                                "IgnoreExecTime": "0", "IssuedByTimecode": "0",
-                                "FromLocalHardwareFader": "1", "IgnoreExecXFade": "0",
-                                "IsExecXFade": "0",
-                                "ExecToken": "Go+",
-                                "ValCueDestination":
-                                    "12.12.0.4.{}.{}000".format(self.seq_szam-1, ertekek + 1)
-                                }
+            realtime_attribs = {
+                "Type": "Key",
+                "Source": "Original",
+                "UserProfile": "0",
+                "User": "1",
+                "Status": "On",
+                "IsRealtime": "0",
+                "IsXFade": "0",
+                "IgnoreFollow": "0",
+                "IgnoreCommand": "0",
+                "Assert": "0",
+                "IgnoreNetwork": "0",
+                "FromTriggerNode": "0",
+                "IgnoreExecTime": "0",
+                "IssuedByTimecode": "0",
+                "FromLocalHardwareFader": "1",
+                "IgnoreExecXFade": "0",
+                "IsExecXFade": "0",
+                "ExecToken": "Go+",
+                "ValCueDestination": "12.12.0.4.{}.{}000".format(
+                    self.seq_szam - 1, ertekek + 1
+                ),
+            }
             # old value: "ValCueDestination": "12.12.0.4.49.{}000".format(ertekek + 1)
             # az Object is ugyanaz 12.12.0.4.99
             realtimecmd = ett.SubElement(cmdevent, "RealtimeCmd", realtime_attribs)
@@ -200,7 +232,16 @@ class CreateMacroFromCsv(object):
         self.write_xml_file(self.kimeneti_mappa + "timecodes/" + kimeneti_file)
 
     def write_xml_file(self, mitirokki):
-        print("Files created in: "+mitirokki)
+        """
+        Writes xml file
+
+        :param: mitirokki: a kiirandó fájl neve
+        :type: xml
+        :return: Nothing
+        :rtype: Null
+
+        """
+        print("Files created in: " + mitirokki)
         with open(mitirokki, "wb") as files:
             self.tree.write(files, xml_declaration=True, encoding="UTF-8", method="xml")
 
@@ -220,4 +261,3 @@ if __name__ == "__main__":
     logging.debug(f"Sequence number:{seq}")
     logging.debug(f"Project name:{pnev}")
     new_test = CreateMacroFromCsv(bem, seq, pnev)
-

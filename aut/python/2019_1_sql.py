@@ -1,20 +1,16 @@
-#!/usr/bin/env python3
 import datetime
 import logging
 import re
 
 import openpyxl
 
-"""
-Autentikus converter 2019
-
-"""
-
 
 def main():
     """
     Főprogram
-    :return: None
+
+    :return: A 2019es sql fájl
+    :rtype: str
 
     """
     logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")

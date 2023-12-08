@@ -12,10 +12,12 @@ from cprint import *
 def cleaner(mit):
     """
     Cseréli az újsor és a dupla szóközt
-    :rtype: basestring
-    :type mit: string
-    :param mit: bejövő szöveg
+
+    :rtype: base string
+    :type: mit: string
+    :param: mit: bejövő szöveg
     :return: a kicserélt szöveg
+
     """
 
     if mit:
@@ -28,9 +30,11 @@ def cleaner(mit):
 def sqlrak(beobj):
     """
     Összeállítja az sqlsort ami kell az autentikusba.
-    :param beobj: A kész osztály paraméterei
+
+    :param: beobj: A kész osztály paraméterei
     :return: A kész stringet adja vissza.
     :rtype: str
+
     """
     SqlSor = "( NUll, "
     SqlSor += '"'
@@ -59,6 +63,7 @@ def sqlrak(beobj):
 class Egysor:
     """
     Egy sor feldolgozásáért felelős osztály
+
     """
 
     def __init__(
@@ -75,6 +80,7 @@ class Egysor:
         megjegy: object = False,
     ) -> object:
         """
+
         :param datum: Dátum: date
         :param napok: Napok: str
         :param tanckar: Tánckar
@@ -86,6 +92,7 @@ class Egysor:
         :param kulszall: Külső szállítás
         :param megjegy: Megjegyzés
         :return:
+
         """
         self.datum = datum
         self.napok = napok
@@ -104,7 +111,9 @@ class Egysor:
         """
         Ha a tevékenység nem megadott akkor
         automatikusan Előadás állítódik be.
+
         :return: A megadott vagy "Előadás"
+
         """
         return self._tevekenyseg
 
@@ -119,7 +128,9 @@ class Egysor:
     def datum(self):
         """
         Dátum visszaadása
+
         :return: Dátum
+
         """
         return self._datum
 
@@ -164,6 +175,13 @@ class Egysor:
 
     @property
     def ffkar(self):
+        """
+        műsor,hely,kezdés kiválogatása a bejövő adatokból
+
+        :return: musor,hely,kezdes
+        :rtype: str
+
+        """
         return self._ffkar
 
     @ffkar.setter
@@ -194,7 +212,9 @@ class Egysor:
     def megjegy(self):
         """
         Megjegyzés
+
         :return: a megjegyzés átírása
+
         """
         return self._megjegy
 
@@ -210,7 +230,10 @@ class Egysor:
     def kulszal(self):
         """
         Külsős szállítás kiírása
-        :return:
+
+        :return: kiulszal
+        :rtype: str
+
         """
         return self._kulszal
 
@@ -223,13 +246,24 @@ class Egysor:
 
     @property
     def kontakt(self):
-        """ "
+        """
         Kapcsolattartó visszaadása
+
+        :return: kontakt személy
         """
         return self._kontakt
 
     @kontakt.setter
     def kontakt(self, v):
+        """
+        Kapcslattartó beállítása
+
+        :param: v: kontakt változó
+        :type: v: str
+        :return: kontakt vagy '' beállítása
+        :rtype: str
+
+        """
         if v:
             self._kontakt = cleaner(v)
         else:
@@ -239,6 +273,7 @@ class Egysor:
 def teszt(sikeres_teszt):
     """
     Egy teszt eredményének megjelenítése.
+
     :param sikeres_teszt:
     :return: kiirja a tesztelt sort és az eredményt sikeres/SIKERTELEN
 
@@ -254,9 +289,12 @@ def teszt(sikeres_teszt):
 
 def tesztkeszlet():
     """
-    Az ehhez a modulhoz tartozó tesztkészlet futtatása.
-    """
+    Tesztkészlet a process funkciók miatt
 
+    :return: Igaz vagy hamis lett a teszt
+    :rtype: bool
+
+    """
     egy = Egysor(datetime.date(2023, 1, 1), "hétfő")
     egy.datum = datetime.date(2023, 1, 1)
     teszt(egy.datum == "2023-01-01")

@@ -1,9 +1,11 @@
 def valami(*args, **kwargs):
     """
     visszaadja a belerúgott argumentumokat.
+
     :param args: akármennyi egy db argumentum lehet
     :param kwargs: nevesített argumentumok, így faszább
     :return: semmit nem ad vissza egyenlőre, mert csak kiírja azokat.
+
     """
     for a in args:
         print(f'argumentum: {a}')
@@ -18,4 +20,5 @@ def valami(*args, **kwargs):
         """
 
 
-valami(1, 2, 3, beszolas='qrvaanyád', kedvesszo='suka', forditas='bjlaty')
+if __name__ == '__main__':
+    valami(1, 2, 3, beszolas='qrvaanyád', kedvesszo='suka', forditas='bjlaty')

@@ -6,8 +6,10 @@ class Point:
 
     def __init__(self, x=0, y=0):
         """Initialize the position of a new point.
-         The x and y coordinates can be specified.
-         If they are not, the point defaults to the origin."""
+        The x and y coordinates can be specified.
+        If they are not, the point defaults to the origin."""
+        self.y = None
+        self.x = None
         self.move(x, y)
 
     def move(self, x, y):
@@ -16,15 +18,15 @@ class Point:
         self.y = y
 
     def reset(self):
-        'Reset the point back to the geometric origin: 0, 0'
+        "Reset the point back to the geometric origin: 0, 0"
         self.move(0, 0)
 
     def calculate_distance(self, other_point):
         """Calculate the distance from this point to a second
-        point passed as a parameter.
-        This function uses the Pythagorean Theorem to calculate
-       the distance between the two points. The distance is
-        returned as a float."""
+         point passed as a parameter.
+         This function uses the Pythagorean Theorem to calculate
+        the distance between the two points. The distance is
+         returned as a float."""
         return math.sqrt(
-            (self.x - other_point.osszeg) ** 2 +
-            (self.y - other_point.y) ** 2)
+            (self.x - other_point.osszeg) ** 2 + (self.y - other_point.y) ** 2
+        )

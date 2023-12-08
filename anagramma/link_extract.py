@@ -9,7 +9,9 @@ Linkből képek listájával tér vissza
 def main():
     """
     Főprogram
+
     :return: linkek listája
+
     """
     # Making get request
     r = requests.get(

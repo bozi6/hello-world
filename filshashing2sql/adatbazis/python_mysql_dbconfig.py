@@ -4,9 +4,11 @@ from configparser import ConfigParser
 def read_db_config(filename="config.ini", section="mysql"):
     """
     Read config.ini file for MySQL settings
+
     :param filename: name of the configuration file
     :param section: section of database configuration
     :return: a dictionary of database parameters
+
     """
     # create a parser and read ini configuration files
     parser = ConfigParser()

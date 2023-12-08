@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>aut.python.funct.funkciok &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/nature.css?v=601dbdee" />
+    <script src="../../../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">aut.python.funct.funkciok</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>aut.python.funct.funkciok forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="kn">from</span> <span class="nn">.mysqlcrud</span> <span class="kn">import</span> <span class="n">helykerd</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Régebbi (szar) funkciók az autentikhoz</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Bemeno">
+<a class="viewcode-back" href="../../../../funkciok.html#aut.python.funct.funkciok.Bemeno">[docs]</a>
+<span class="k">class</span> <span class="nc">Bemeno</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Bemenő adatok szortírozása, vagy mi a lófa.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">datum</span><span class="p">:</span> <span class="n">date</span><span class="p">,</span>
+        <span class="n">napok</span><span class="p">,</span>
+        <span class="n">tkzkr</span><span class="p">,</span>
+        <span class="n">zkr</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">ffk</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">kuls</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">kont</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">stat</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">kulsz</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">megjegy</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+        <span class="n">tev</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :type datum: date</span>
+<span class="sd">        :type napok: str</span>
+<span class="sd">        :type tkzkr: str</span>
+<span class="sd">        :type zkr: str</span>
+<span class="sd">        :type ffk: str</span>
+<span class="sd">        :type kuls: str</span>
+<span class="sd">        :type kont: str</span>
+<span class="sd">        :type stat: str</span>
+<span class="sd">        :type kulsz: str</span>
+<span class="sd">        :type megjegy: str</span>
+<span class="sd">        :type tev: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">helykod</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">honapok</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;JANUÁR&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FEBRUÁR&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MÁRCIUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ÁPRILIS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MÁJUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;JÚNIUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;JÚLIUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AUGUSZTUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SZEPTEMBER&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;OKTÓBER&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NOVEMBER&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DECEMBER&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;datum&quot;</span><span class="p">:</span> <span class="n">datum</span><span class="p">,</span>
+            <span class="s2">&quot;napok&quot;</span><span class="p">:</span> <span class="n">napok</span><span class="p">,</span>
+            <span class="s2">&quot;tkzkr&quot;</span><span class="p">:</span> <span class="n">tkzkr</span><span class="p">,</span>
+            <span class="s2">&quot;zkr&quot;</span><span class="p">:</span> <span class="n">zkr</span><span class="p">,</span>
+            <span class="s2">&quot;ffk&quot;</span><span class="p">:</span> <span class="n">ffk</span><span class="p">,</span>
+            <span class="s2">&quot;kuls&quot;</span><span class="p">:</span> <span class="n">kuls</span><span class="p">,</span>
+            <span class="s2">&quot;kont&quot;</span><span class="p">:</span> <span class="n">kont</span><span class="p">,</span>
+            <span class="s2">&quot;stat&quot;</span><span class="p">:</span> <span class="n">stat</span><span class="p">,</span>
+            <span class="s2">&quot;kulsz&quot;</span><span class="p">:</span> <span class="n">kulsz</span><span class="p">,</span>
+            <span class="s2">&quot;megjegy&quot;</span><span class="p">:</span> <span class="n">megjegy</span><span class="p">,</span>
+            <span class="s2">&quot;tev&quot;</span><span class="p">:</span> <span class="n">tev</span><span class="p">,</span>
+            <span class="s2">&quot;helykod&quot;</span><span class="p">:</span> <span class="n">helykod</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">datum</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;dátum bevitele&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;datum&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">napok</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;napok bevitele / nincs használva semmire&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;napok&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tkzkr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;tánckar zenekar mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;tkzkr&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">zkr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;zenekar önálló mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;zkr&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">ffk</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Férfikari mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;ffk&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kuls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;külsős mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kuls&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kont</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;kontakt mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kont&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">stat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;státusz mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">kulsz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;külső szállítás mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kulsz&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">megjegy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;megjegyzés mező&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;megjegy&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">tev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;tevékenység mező /kitalált&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;tev&quot;</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">helykod</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;helykód visszaadása&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;helykod&quot;</span><span class="p">]</span>
+
+    <span class="nd">@datum</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">datum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;dátum beállítása&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;datum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">datumszo</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;datum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">datumszo</span>
+
+    <span class="nd">@napok</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">napok</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;napok&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">_value</span>
+
+    <span class="nd">@tkzkr</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">tkzkr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tkzkr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;tánckar beállítása&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;tkzkr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tkzkr</span>
+
+    <span class="nd">@zkr</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">zkr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zkr</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot; &quot;zenekar beállítása&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;zkr&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zkr</span>
+
+    <span class="nd">@ffk</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">ffk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ffk</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;ffk&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ffk</span>
+
+    <span class="nd">@kuls</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kuls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kuls</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kuls&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kuls</span>
+
+    <span class="nd">@kont</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kont</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kont</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;kontakt mező beállítása&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">kont</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">szkont</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">kont</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kont&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">szkont</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kont&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+
+    <span class="nd">@stat</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">stat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stat</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;stat&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">stat</span>
+
+    <span class="nd">@kulsz</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">kulsz</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kulsz</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">kulsz</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kulsz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kulsz</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;kulsz&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+
+    <span class="nd">@megjegy</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">megjegy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">megjegy</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">megjegy</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">szmeg</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">megjegy</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;megjegy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">szmeg</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;megjegy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+
+    <span class="nd">@tev</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">tev</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tev</span><span class="p">):</span>
+        <span class="n">engtev</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;beépítés&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bejárás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;egyeztetés&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;elmarad&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;előadás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;építés&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;esküvő&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;esőnap&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;felvétel&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;forgatás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;fotózás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;főpróba&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gumicsere&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hakken&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;karácsony&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lemondva&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;molyirtás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;munka&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pihenő&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;prezentáció&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;próba&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sajtótájékoztató&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;stream&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;szabadság&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tanítás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;társulati&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;temetés&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;turné&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;TV felvétel&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;utazás&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;utazónap&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;világítás&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">tev</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">engtev</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;tev&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tev</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_erdekes</span><span class="p">[</span><span class="s2">&quot;tev&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nem ismert tevékenység:&quot;</span><span class="p">,</span> <span class="n">tev</span><span class="p">)</span>
+
+    <span class="nd">@helykod</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">helykod</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">helykerd</span><span class="p">(</span><span class="n">value</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">bem</span> <span class="o">=</span> <span class="n">Bemeno</span><span class="p">(</span>
+        <span class="s2">&quot;2022-09-01&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;hétfő&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Mindenki&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Hegedős&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;férfikar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Rudi Pietsch&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;joskapista@nagyonfontos.tr&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Valamilyen állapot&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Egér haknizik, a többiek dolgoznak&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Ide írok</span><span class="se">\n</span><span class="s2"> sok </span><span class="se">\t\t\n</span><span class="s2"> szép      megjegyzést&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;előadás&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">helykerd</span><span class="p">(</span><span class="s2">&quot;Bp., Müpa Fesztivál Színház&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Keresés eredménye: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;találat(ok):&quot;</span><span class="p">)</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2">; - </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nincs találat.&quot;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">aut.python.funct.funkciok</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

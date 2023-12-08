@@ -2,9 +2,11 @@
 
 from pathlib import Path
 
-path = Path('../')
 
-files = [e for e in path.iterdir() if e.is_file()]
+if __name__ == "__main__":
+    path = Path("../")
 
-for file in files:
-    print(file)
+    files = [e for e in path.iterdir() if e.is_file()]
+
+    for file in files:
+        print(file)

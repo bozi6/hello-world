@@ -1,30 +1,31 @@
 # Parse the following JSON to get all the values of a key 'name' wihtin an array
 import json
 
-sampleJson = """[
-    {
-        "id":1,
-        "name":"name1",
-        "color":[
-            "red",
-            "green"
-        ]
-    },
-    {
-        "id":2,
-        "name":"name2",
-        "color":[
-            "pink",
-            "yellow"
-        ]
-    }
-]"""
+if __name__ == "__main__":
+    sampleJson = """[
+        {
+            "id":1,
+            "name":"name1",
+            "color":[
+                "red",
+                "green"
+            ]
+        },
+        {
+            "id":2,
+            "name":"name2",
+            "color":[
+                "pink",
+                "yellow"
+            ]
+        }
+    ]"""
 
-data = []
-try:
-    data = json.loads(sampleJson)
-except Exception as e:
-    print(e)
+    data = []
+    try:
+        data = json.loads(sampleJson)
+    except Exception as e:
+        print(e)
 
-dataList = [item.get('name') for item in data]
-print(dataList)
+    dataList = [item.get("name") for item in data]
+    print(dataList)

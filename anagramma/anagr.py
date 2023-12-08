@@ -15,7 +15,11 @@ Hasznos szavak pl. állat, csákós, alszik, drága, eresz stb...
 
 def main():
     """
-    Főprogram
+    Kiírja a variációkat a mtsdááa karaktereker
+
+    :return: a megtalált szó a szotar.txt-ben
+    :rtype: str
+
     """
     szo = "mtsdááa"
 

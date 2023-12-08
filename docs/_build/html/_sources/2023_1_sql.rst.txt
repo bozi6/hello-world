@@ -1,7 +1,0 @@
-2023\_1\_sql module
-===================
-
-.. automodule:: aut.python.2023_1_sql
-   :members:
-   :undoc-members:
-   :show-inheritance:

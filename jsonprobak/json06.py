@@ -1,4 +1,3 @@
-
 # Convert the following Vehicle Object into JSON
 import json
 from json import JSONEncoder
@@ -16,9 +15,9 @@ class VehicleEncoder(JSONEncoder):
         return o.__dict__
 
 
-vehicle = Vehicle("Toyota Rav4", "2.5L", 32000)
+if __name__ == "__main__":
+    vehicle = Vehicle("Toyota Rav4", "2.5L", 32000)
 
-print("Encode Vehicle Object into JSON")
-vehicleJson = json.dumps(vehicle, indent=4, cls=VehicleEncoder)
-print(vehicleJson)
-
+    print("Encode Vehicle Object into JSON")
+    vehicleJson = json.dumps(vehicle, indent=4, cls=VehicleEncoder)
+    print(vehicleJson)

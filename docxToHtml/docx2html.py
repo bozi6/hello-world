@@ -5,7 +5,9 @@ import mammoth
 def main():
     """
     Főprogram
+
     :return: a mammoth segítségével átalakítunk egy docxet htmlre
+
     """
     befile = "21.09.27.-10.03.docx"
     outfile = befile[:-4] + "html"

@@ -1,5 +1,5 @@
 import sys
-import teszteles
+import unittest as teszteles
 
 
 class Test(teszteles.TestCase):
@@ -12,7 +12,7 @@ class Test(teszteles.TestCase):
 
 
 def teszt(sikeres_teszt):
-    """ Egy teszt eredményének megjelenítése."""
+    """Egy teszt eredményének megjelenítése."""
     sorszam = sys._getframe(1).f_lineno  # a hívó sorának száma.
     if sikeres_teszt:
         msg = "A(z) {}. sorban álló teszt sikeres.".format(sorszam)
@@ -35,5 +35,5 @@ def tesztkeszlet():
     teszt(abszolut_ertek(-3.14) == 3.14)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     teszteles.main()

@@ -84,65 +84,64 @@ def negyedik_pont():
     print("id tag: ", tag["id"])
     print("another-attrib tag: ", tag["another-attribute"])
 
+    # The "find" function also does the same, where it
+    # only finds the first occurence in the HTML doc
+    # of a tag with "b"
+    ##print('soup.find.b: ', soup.find('b'))
 
-# The "find" function also does the same, where it
-# only finds the first occurence in the HTML doc
-# of a tag with "b"
-##print('soup.find.b: ', soup.find('b'))
+    # Name
 
-# Name
+    # This gives the name of the tag. In this case, the_
+    # tag name is "b".
+    ##print('soup.b.name: ', soup.b.name)
 
-# This gives the name of the tag. In this case, the_
-# tag name is "b".
-##print('soup.b.name: ', soup.b.name)
+    # We can alter the name and have the reflected in the
+    #  source. For instance
+    # tag = soup.b
+    # print('tag: ', tag)
+    # tag.name = "blockquote"
+    # print('tag: ', tag)
 
-# We can alter the name and have the reflected in the
-#  source. For instance
-# tag = soup.b
-# print('tag: ', tag)
-# tag.name = "blockquote"
-# print('tag: ', tag)
+    #  Attributes:
 
-#  Attributes:
+    print(soup.find_all("b"))
+    print("-" * 24)
 
-print(soup.find_all("b"))
-print("-" * 24)
+    ##tag = soup.find_all('b')[2]
+    ##print('souptag: ', tag)
 
-##tag = soup.find_all('b')[2]
-##print('souptag: ', tag)
+    # This specific tag has the attribute "id", which
+    # which can be accessed like so:
+    ##print('tag id 2 : ', tag['id'])
 
-# This specific tag has the attribute "id", which
-# which can be accessed like so:
-##print('tag id 2 : ', tag['id'])
+    #  If we want to see all attributes, we can access them
+    #  as dictionary object:
+    ##tag = soup.find_all('b')[3]
+    ##print('tag 3: ', tag)
 
-#  If we want to see all attributes, we can access them
-#  as dictionary object:
-##tag = soup.find_all('b')[3]
-##print('tag 3: ', tag)
+    ##print('tag attribs: ', tag.attrs)
 
-##print('tag attribs: ', tag.attrs)
+    # These properties are mutable, and we can alter them
+    # in the following manner.
+    ##print('tag 3 : ', tag)
+    ##tag['another-attribute'] = 2
+    ##print('chtag: ', tag)
 
-# These properties are mutable, and we can alter them
-# in the following manner.
-##print('tag 3 : ', tag)
-##tag['another-attribute'] = 2
-##print('chtag: ', tag)
+    # We can also use Python's del command for lists to
+    # remove attributes:
+    ##del tag['id']
+    ##del tag['another-attribute']
+    ##print('deleted tag: ', tag)
 
-# We can also use Python's del command for lists to
-# remove attributes:
-##del tag['id']
-##del tag['another-attribute']
-##print('deleted tag: ', tag)
+    # NavigableStrin
+    tag = soup.find_all("b")[3]
+    print("tag: ", tag)
+    print("tag.string: ", tag.string)
 
-# NavigableStrin
-tag = soup.find_all("b")[3]
-print("tag: ", tag)
-print("tag.string: ", tag.string)
-
-# We can use the "replace_with" function to replace
-#  the content of the string with something different:
-tag.string.replace_with("This is another string")
-print("newtag: ", tag)
+    # We can use the "replace_with" function to replace
+    #  the content of the string with something different:
+    tag.string.replace_with("This is another string")
+    print("newtag: ", tag)
 
 
 if __name__ == "__main__":
