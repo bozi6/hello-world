@@ -1,10 +1,11 @@
 import csv
+import logging
 import os.path
-import xml.etree.ElementTree as ett
 import random
 import string
+import xml.etree.ElementTree as ett
+
 import unidecode
-import logging
 
 __author__ = "Konta Boáz"
 __email__ = "kontab6@gmail.com"
@@ -22,6 +23,10 @@ __doc__ = __description__ + " <" + __uri__ + ">"
 
 
 class CreateMacroFromCsv(object):
+    """
+    MA3 Macro createer Class from csv file
+    """
+
     def __init__(self, bemenet_file, seq_szam, projekt_nev):
         """
 
@@ -62,6 +67,7 @@ class CreateMacroFromCsv(object):
     def uidgen():
         """
         Create a uuid for xml attributes
+
         :return: the generated uid with spaces between two numbers
         """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
@@ -150,7 +156,11 @@ class CreateMacroFromCsv(object):
         """
         Create the {project_name}_timecode.xml file in output folder
 
+        :return: output file
+        :rtype: xml file
+
         """
+
         kimeneti_file = self.projekt_nev + "_timecode.xml"
         cuek_szama = len(self.csv_dict) - 1
         utolso_marker = float(self.csv_dict[cuek_szama][2]) + 1

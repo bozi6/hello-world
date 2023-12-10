@@ -22,7 +22,9 @@ class HighTemperature:
 
     def __init__(self, value: float):
         """
+
         :param value: hőméréskleti érték
+
         """
 
         self.value = value

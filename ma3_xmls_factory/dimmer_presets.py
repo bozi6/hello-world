@@ -41,7 +41,7 @@ class CreatePresets(object):
 
         :return: dimmer presets.xml file
         """
-        kimeneti_file = "dimmer presets.xml"
+        kimeneti_file = "dimmer_presets.xml"
 
         root = ett.Element("GMA3")
         root.set("DataVersion", "1.8.1.0")
@@ -68,9 +68,11 @@ class CreatePresets(object):
         """
         Write output xml file
         :param output_file: output file name
+
         :type output_file: file
         :return: Null
         :rtype: Null
+
         """
         try:
             with open(output_file, "wb") as files:

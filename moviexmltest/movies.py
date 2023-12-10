@@ -3,36 +3,113 @@ if __name__ == "__main__":
 
     tree = Et.parse("movies.xml")
     root = tree.getroot()
-    for child in root:
-        print(child.tag, child.attrib)
+
+    def childattrib(root):
+        """
+        Kiirja az gyermekobjekteket
+
+        :param root: xml root
+        :type root: str
+        :return: prints children tags and attribs
+        :rtype: str
+
+        """
+        for child in root:
+            print(child.tag, child.attrib)
+
+    def childrenwrite(root):
+        """
+
+        :param root: xml root object
+        :type root: Etree
+        :return: prints movie attribs
+        :rtype: str
+
+        """
+        for movie in root.iter("movie"):
+            print(movie.attrib)
+
+    def descript(root):
+        """
+        Prints description field
+
+        :param root: xml file with description field
+        :type root: xml
+        :return: prints description
+        :rtype: str
+
+        """
+        for description in root.iter("description"):
+            print(description.text)
+
+    def moviedate(miko="1992"):
+        """
+        Prints 1992 films
+
+        :param miko: year when released
+        :type miko: str
+        :return: prints finded films
+        :rtype: str
+
+        """
+        for movie in root.findall(f"./genre/decade/movie/[year='{miko}']"):
+            print(movie.attrib)
+
+    def multipleformats(root):
+        """
+        Find movies that are available in multiple formats
+
+        :return: print films
+        :rtype: str
+
+        """
+        for movie in root.findall("./genre/decade/movie/format/[@multiple='Yes']"):
+            print(movie.attrib)
+
+    def multilpeparent(root):
+        """
+        Find movies that are available in multiple formats print the parent element
+
+        :return: print multiformats parent element
+        :rtype: str
+
+        """
+        for movie in root.findall("./genre/decade/movie/format/[@multiple='Yes']..."):
+            print(movie.attrib)
+
+    def cimcsere(mit, mire):
+        """
+        Kicseréli a film címét.
+
+        :param: mit:Melyik címet keressük
+        :type: mit: str
+        :param: mire: Mire cseréljük
+        :type: mire: str
+        :return: kiirja ha kész
+        :rtype: str
+
+        """
+        # Egy elem megkeresése és cserélése
+        b2tf = root.find(f"./genre/decade/movie/[@title='{mit}']")
+        print(b2tf)
+        b2tf.attrib["title"] = mire
+        print(b2tf.attrib)
 
     input("gyerek elemek listázása")
-    for movie in root.iter("movie"):
-        print(movie.attrib)
-
+    childattrib(root)
     input("filmek attribútumai")
-    for description in root.iter("description"):
-        print(description.text)
+    childrenwrite(root)
     input("filmek leírása")
-    # search the tree for movies that came out in 1992:
-    for movie in root.findall("./genre/decade/movie/[year='1992']"):
-        print(movie.attrib)
+    descript(root)
     input("1992-es filmek listája")
-    # find movies that are available in multiple formats
-    for movie in root.findall("./genre/decade/movie/format/[@multiple='Yes']"):
-        print(movie.attrib)
+    moviedate("1992")
     input("multiformátumú filmek listázása")
-    # find movies that are available in multiple formats print the parent element
-    # with ...
-    for movie in root.findall("./genre/decade/movie/format/[@multiple='Yes']..."):
-        print(movie.attrib)
+    multipleformats(root)
     input("multiformátum szülő lista")
-    # Egy elem megkeresése és cserélése
-    b2tf = root.find("./genre/decade/movie/[@title='Back 2 the Future']")
-    print(b2tf)
-    b2tf.attrib["title"] = "Back to the Future"
-    print(b2tf.attrib)
+    multilpeparent(root)
     input("Back 2 the future javítása")
+    cimcsere("Back 2 the Future", "Back to the future")
+
     """
     # Fájl kiírása vissza és a javított dolog elhelyezése
     tree.write("movies.xml")

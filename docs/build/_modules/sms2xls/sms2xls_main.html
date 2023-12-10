@@ -49,9 +49,15 @@
 <div class="viewcode-block" id="penzvalto">
 <a class="viewcode-back" href="../../sms2xls.html#sms2xls.sms2xls_main.penzvalto">[docs]</a>
 <span class="k">def</span> <span class="nf">penzvalto</span><span class="p">(</span><span class="n">mit</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Árfolyam váltó függvény</span>
-<span class="sd">    a bejövő mit hez 123,45 GBP</span>
-<span class="sd">    kiszámolja, hogy az mennyi forintban&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Árfolyam váltó függvény a bejövő mit hez 123,45 GBP kiszámolja, hogy az mennyi forintban</span>
+
+<span class="sd">    :param mit: bejövő összeg valutában</span>
+<span class="sd">    :type mit: str</span>
+<span class="sd">    :return: az összeg forintban</span>
+<span class="sd">    :rtype: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">valuta</span> <span class="o">=</span> <span class="n">mit</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]</span>  <span class="c1"># A bejövő valuta megnevezésének eltávolítása</span>
     <span class="n">mennyi</span> <span class="o">=</span> <span class="n">mit</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">)</span>
     <span class="n">ennyi</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="n">mennyi</span><span class="p">,</span> <span class="n">valuta</span><span class="p">,</span> <span class="s2">&quot;HUF&quot;</span><span class="p">)</span>
@@ -62,7 +68,15 @@
 <div class="viewcode-block" id="ujlap_letrehozasa">
 <a class="viewcode-back" href="../../sms2xls.html#sms2xls.sms2xls_main.ujlap_letrehozasa">[docs]</a>
 <span class="k">def</span> <span class="nf">ujlap_letrehozasa</span><span class="p">(</span><span class="n">lap_elnevezese</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Új munkalap létrehozása a munkafüzetben.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Új munkalap létrehozása</span>
+
+<span class="sd">    :param lap_elnevezese: A munkalap neve</span>
+<span class="sd">    :type lap_elnevezese: dict</span>
+<span class="sd">    :return: Null</span>
+<span class="sd">    :rtype: Null</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;ujlap funkció meghívva&quot;</span><span class="p">)</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Alapértékek megadása&quot;&quot;&quot;</span>
     <span class="n">szotar</span> <span class="o">=</span> <span class="p">{</span>
@@ -89,14 +103,20 @@
 
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<div class="viewcode-block" id="debugformat">
+<a class="viewcode-back" href="../../sms2xls.html#sms2xls.sms2xls_main.debugformat">[docs]</a>
+<span class="k">def</span> <span class="nf">debugformat</span><span class="p">():</span>
     <span class="n">FORMAT</span> <span class="o">=</span> <span class="p">(</span>
         <span class="s2">&quot;</span><span class="si">%(levelname)s</span><span class="s2">: </span><span class="si">%(asctime)-2s</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span>  <span class="c1"># Loggolás formátumának beállításra</span>
     <span class="p">)</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
         <span class="nb">format</span><span class="o">=</span><span class="n">FORMAT</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span>
-    <span class="p">)</span>  <span class="c1"># loggolás beálltása INFO-ra(csak a lényeg)</span>
+    <span class="p">)</span>  <span class="c1"># loggolás beálltása INFO-ra(csak a lényeg)</span></div>
 
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">debugformat</span><span class="p">()</span>
     <span class="n">olvasando_fajl</span> <span class="o">=</span> <span class="s2">&quot;sms_full.xml&quot;</span>
     <span class="n">kiirando_fajl</span> <span class="o">=</span> <span class="s2">&quot;./balance.xlsx&quot;</span>
 

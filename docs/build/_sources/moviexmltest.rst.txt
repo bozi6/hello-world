@@ -11,11 +11,3 @@ moviexmltest.movies module
    :members:
    :undoc-members:
    :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: moviexmltest
-   :members:
-   :undoc-members:
-   :show-inheritance:

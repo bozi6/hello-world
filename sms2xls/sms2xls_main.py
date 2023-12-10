@@ -10,9 +10,15 @@ from openpyxl.styles.differential import DifferentialStyle
 
 
 def penzvalto(mit):
-    """Árfolyam váltó függvény
-    a bejövő mit hez 123,45 GBP
-    kiszámolja, hogy az mennyi forintban"""
+    """
+    Árfolyam váltó függvény a bejövő mit hez 123,45 GBP kiszámolja, hogy az mennyi forintban
+
+    :param mit: bejövő összeg valutában
+    :type mit: str
+    :return: az összeg forintban
+    :rtype: str
+
+    """
     valuta = mit[-3:]  # A bejövő valuta megnevezésének eltávolítása
     mennyi = mit[:-3].strip().replace(",", ".")
     ennyi = c.convert(mennyi, valuta, "HUF")
@@ -20,7 +26,15 @@ def penzvalto(mit):
 
 
 def ujlap_letrehozasa(lap_elnevezese):
-    """Új munkalap létrehozása a munkafüzetben."""
+    """
+    Új munkalap létrehozása
+
+    :param lap_elnevezese: A munkalap neve
+    :type lap_elnevezese: dict
+    :return: Null
+    :rtype: Null
+
+    """
     logging.debug("ujlap funkció meghívva")
     """Alapértékek megadása"""
     szotar = {
@@ -46,7 +60,7 @@ def ujlap_letrehozasa(lap_elnevezese):
     ws.sheet_view.zoomScale = 170  # A nézet kinagyítása az aktuális oldalon
 
 
-if __name__ == "__main__":
+def debugformat():
     FORMAT = (
         "%(levelname)s: %(asctime)-2s %(message)s"  # Loggolás formátumának beállításra
     )
@@ -54,6 +68,9 @@ if __name__ == "__main__":
         format=FORMAT, level=logging.INFO
     )  # loggolás beálltása INFO-ra(csak a lényeg)
 
+
+if __name__ == "__main__":
+    debugformat()
     olvasando_fajl = "sms_full.xml"
     kiirando_fajl = "./balance.xlsx"
 

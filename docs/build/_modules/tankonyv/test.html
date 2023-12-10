@@ -57,7 +57,7 @@
 <div class="viewcode-block" id="teszt">
 <a class="viewcode-back" href="../../tankonyv.html#tankonyv.test.teszt">[docs]</a>
 <span class="k">def</span> <span class="nf">teszt</span><span class="p">(</span><span class="n">sikeres_teszt</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Egy teszt eredményének megjelenítése.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; &quot;&quot;&quot;</span>
     <span class="n">sorszam</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">_getframe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">f_lineno</span>  <span class="c1"># a hívó sorának száma.</span>
     <span class="k">if</span> <span class="n">sikeres_teszt</span><span class="p">:</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;A(z) </span><span class="si">{}</span><span class="s2">. sorban álló teszt sikeres.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">sorszam</span><span class="p">)</span>
@@ -70,6 +70,15 @@
 <div class="viewcode-block" id="abszolut_ertek">
 <a class="viewcode-back" href="../../tankonyv.html#tankonyv.test.abszolut_ertek">[docs]</a>
 <span class="k">def</span> <span class="nf">abszolut_ertek</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A szám abszolút értékét adja vissza</span>
+
+<span class="sd">    :param x: a szám</span>
+<span class="sd">    :type x: int</span>
+<span class="sd">    :return: a szám abszolút értéke</span>
+<span class="sd">    :rtype: int</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="o">-</span><span class="n">x</span>
     <span class="k">return</span> <span class="n">x</span></div>
@@ -84,6 +93,29 @@
     <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span> <span class="o">==</span> <span class="mf">3.14</span><span class="p">)</span>
     <span class="n">teszt</span><span class="p">(</span><span class="n">abszolut_ertek</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span> <span class="o">==</span> <span class="mf">3.14</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="Foo">
+<a class="viewcode-back" href="../../tankonyv.html#tankonyv.test.Foo">[docs]</a>
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Docstring for class Foo.&quot;&quot;&quot;</span>
+
+    <span class="c1">#: Doc comment for class attribute Foo.bar.</span>
+    <span class="c1">#: It can have multiple lines.</span>
+    <span class="n">bar</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">flox</span> <span class="o">=</span> <span class="mf">1.5</span>  <span class="c1">#: Doc comment for Foo.flox. One line only.</span>
+
+    <span class="n">baz</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Docstring for class attribute Foo.baz.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#: Doc comment for instance attribute qux.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">qux</span> <span class="o">=</span> <span class="mi">3</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">spam</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Docstring for instance attribute spam.&quot;&quot;&quot;</span></div>
 
 
 
