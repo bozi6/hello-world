@@ -5,6 +5,7 @@ hello-world
    :maxdepth: 4
    :numbered:
 
+   demo
    08_robot1
    08_robot2
    08_robot_extra

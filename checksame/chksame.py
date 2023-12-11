@@ -7,7 +7,9 @@ def main():
     """
     Main program
     deletes the files with same md5 hash value
-    :return: None
+
+    :TODO: order of deleted files do to create order, oldest stay intact.
+    :returns: Message files deleted
     """
     file_path = "./"
     list_of_files = os.walk(file_path)
