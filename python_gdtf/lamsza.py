@@ -11,7 +11,8 @@ import pygdtf
 import os
 from termcolor import cprint
 from colorama import init
-
+from colorama import Fore
+from colorama import Style
 init(autoreset=True)
 
 
@@ -36,7 +37,7 @@ def filescan():
     try:
         for root, dirs, files in os.walk(mappa):
             for file in files:
-                if file.endswith(".gdtf"):
+                if file.endswith('.gdtf'):
                     # szinesben(root, '/'+file)
                     # gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))
                     fileok.append(file)
@@ -89,7 +90,10 @@ def getmembers(osztaly):
 
 def gdtfinfo(egy):
     """
+    gdtf fileból infort szed ki egy lámpához
+
     :param egy: egy pygdtf osztály
+
     """
     # egy = pygdtf.FixtureType('./CPMini.gdtf')
     szinesben("Név: ", egy.name)
@@ -170,14 +174,14 @@ if __name__ == "__main__":
     for egyfile in fileok:
         menu[i] = egyfile
         i += 1
-    menu[len(menu)] = "Kilépés."
+    menu[len(menu)] = 'Kilépés.'
     while True:
         print_menu()
         option = ""
         try:
-            option = int(input("Melyiket nézzük: "))
+            option = int(input('Melyiket nézzük: '))
         except Exception as err:
-            print("Valami nem lett jó ...", err)
+            print('Valami nem lett jó ...', err)
         if option == len(menu) - 1:
             exit(0)
         if option < len(menu):

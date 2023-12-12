@@ -16,6 +16,7 @@ class Pizza:
 
     """
     Osztályon belüli methodok
+    
     """
 
     @classmethod
@@ -23,7 +24,7 @@ class Pizza:
         return cls(["mozzarella", "tomatoes"])
 
     @classmethod
-    def prsciutto(cls):
+    def prosciutto(cls):
         return cls(["mozarella", "tomatoes", "ham"])
 
     def area(self):

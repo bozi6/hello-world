@@ -1,0 +1,292 @@
+<!--
+  ~ lamsza.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>python_gdtf.lamsza &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">python_gdtf.lamsza</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>python_gdtf.lamsza forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">GrandMA3 downloaded gdtf file viewer</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;1.6&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Konta Boáz&quot;</span>
+<span class="n">__author_email__</span> <span class="o">=</span> <span class="s2">&quot;kontab@gmail.com&quot;</span>
+<span class="n">__creation_date__</span> <span class="o">=</span> <span class="s2">&quot;2023.11.30&quot;</span>
+
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">pygdtf</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">termcolor</span> <span class="kn">import</span> <span class="n">cprint</span>
+<span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">init</span>
+<span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Fore</span>
+<span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Style</span>
+<span class="n">init</span><span class="p">(</span><span class="n">autoreset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="filescan">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.filescan">[docs]</a>
+<span class="k">def</span> <span class="nf">filescan</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Átnézi a telepített MA3 könyvtárát</span>
+<span class="sd">    a letöltött GDTF fileokhoz,</span>
+<span class="sd">    ha nem talál ilyet akkor kilép jól.</span>
+
+<span class="sd">    :return: fileok nevű tömb a gdtf fileokkal és root a kezdőkönyvtárral</span>
+<span class="sd">    :rtype: list</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mappa</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;nt&quot;</span><span class="p">:</span>  <span class="c1"># Ha Windózban vagyunk</span>
+        <span class="n">mappa</span> <span class="o">=</span> <span class="s2">&quot;C:/ProgramData/MALightingTechnology/gma3_library/fixturetypes/&quot;</span>
+    <span class="k">elif</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;posix&quot;</span><span class="p">:</span>  <span class="c1"># Ha Macen vagyunk</span>
+        <span class="n">mappa</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="n">mappa</span><span class="p">,</span> <span class="s2">&quot;MALightingTechnology&quot;</span><span class="p">,</span> <span class="s2">&quot;gma3_library&quot;</span><span class="p">,</span> <span class="s2">&quot;fixturetypes&quot;</span>
+        <span class="p">)</span>
+    <span class="n">fileok</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">mappa</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.gdtf&#39;</span><span class="p">):</span>
+                    <span class="c1"># szinesben(root, &#39;/&#39;+file)</span>
+                    <span class="c1"># gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))</span>
+                    <span class="n">fileok</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">fileok</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span>
+<span class="w">                </span><span class="sd">&quot;&quot;&quot;Nem találtam gdtf kiterjesztésű fájlokat a: \n{} mappában.</span>
+<span class="sd">Lehet nincs telepítve az MA3 applikáció, vagy nincs letöltve</span>
+<span class="sd">GDTF lámpainformáció a netről?&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">mappa</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nem találtam fájlokat ...&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fileok</span><span class="p">,</span> <span class="n">root</span></div>
+
+
+
+<div class="viewcode-block" id="print_menu">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.print_menu">[docs]</a>
+<span class="k">def</span> <span class="nf">print_menu</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Menü kiiratása</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">menu</span><span class="p">[</span><span class="n">key</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="szinesben">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.szinesben">[docs]</a>
+<span class="k">def</span> <span class="nf">szinesben</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Színesiti a kiirást</span>
+
+<span class="sd">    :param mi: A kiírás definíciója pl. név:</span>
+<span class="sd">    :return: a színes szöveg</span>
+<span class="sd">    :rtype: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="n">cprint</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="getmembers">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.getmembers">[docs]</a>
+<span class="k">def</span> <span class="nf">getmembers</span><span class="p">(</span><span class="n">osztaly</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    :param osztaly: a kilistázni kívánt osztály neve</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="n">osztaly</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="gdtfinfo">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.gdtfinfo">[docs]</a>
+<span class="k">def</span> <span class="nf">gdtfinfo</span><span class="p">(</span><span class="n">egy</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    gdtf fileból infort szed ki egy lámpához</span>
+
+<span class="sd">    :param egy: egy pygdtf osztály</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># egy = pygdtf.FixtureType(&#39;./CPMini.gdtf&#39;)</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Név: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Rövid név: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">short_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">egy</span><span class="o">.</span><span class="n">description</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Hosszú név: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">long_name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">egy</span><span class="o">.</span><span class="n">description</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Leírás: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Gyártó: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">manufacturer</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">egy</span><span class="o">.</span><span class="n">wheels</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tárcsák:&quot;</span><span class="p">)</span>
+        <span class="n">tar</span> <span class="o">=</span> <span class="n">egy</span><span class="o">.</span><span class="n">wheels</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">tar</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">egyslot</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">wheel_slots</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="s2">&quot;</span><span class="se">\t</span><span class="si">{}</span><span class="s2">; </span><span class="si">{}</span><span class="s2"> - Szín CIE: Y: </span><span class="si">{}</span><span class="s2">, x </span><span class="si">{}</span><span class="s2">, y </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="n">i</span><span class="p">,</span>
+                        <span class="n">egyslot</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                        <span class="n">egyslot</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">Y</span><span class="p">,</span>
+                        <span class="n">egyslot</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+                        <span class="n">egyslot</span><span class="o">.</span><span class="n">color</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Színtér: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">color_space</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;DMX módok:&quot;</span><span class="p">)</span>
+    <span class="n">dmxinfo</span> <span class="o">=</span> <span class="n">pygdtf</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_dmx_modes_info</span><span class="p">(</span><span class="n">egy</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">dmxinfo</span><span class="p">:</span>
+        <span class="n">ki</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2"> Mód: </span><span class="si">{}</span><span class="s2"> - Név: </span><span class="si">{}</span><span class="s2"> - DMX csatorna számok: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mode_id&quot;</span><span class="p">),</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mode_name&quot;</span><span class="p">),</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mode_dmx_channel_count&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">ki</span><span class="p">)</span>
+
+        <span class="c1">#  print(dmxinfo)</span>
+        <span class="n">DmxChanInfo</span> <span class="o">=</span> <span class="n">pygdtf</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_dmx_channels</span><span class="p">(</span><span class="n">egy</span><span class="p">,</span> <span class="n">i</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;mode_name&quot;</span><span class="p">))</span>
+        <span class="c1">#  print(DmxChanInfo)</span>
+        <span class="k">for</span> <span class="n">egycsat</span> <span class="ow">in</span> <span class="n">DmxChanInfo</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">egycsat</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span><span class="p">:</span>
+                    <span class="n">tizenhatbit</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;Fine &quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">DMX cím: </span><span class="si">{}</span><span class="s2"> - Id: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dmx&quot;</span><span class="p">),</span> <span class="n">tizenhatbit</span><span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span>
+                        <span class="s2">&quot;</span><span class="se">\t\t</span><span class="s2">DMX cím: </span><span class="si">{}</span><span class="s2"> - Id: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;dmx&quot;</span><span class="p">),</span> <span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    for mod in egy.dmx_modes:</span>
+<span class="sd">        szinesben(&#39;\tMód: &#39;, &#39;{}, attribútumok szám: {}&#39;.format(mod.name, len(mod.dmx_channels)))</span>
+<span class="sd">        for i in range(0, len(mod.dmx_channels)):</span>
+<span class="sd">            dmxchs = mod.dmx_channels[i].logical_channels[0].attribute</span>
+<span class="sd">            szinesben(&#39;\t\t{}. Channel: &#39;.format(i+1), dmxchs)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Lámpatípus Id: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">fixture_type_id</span><span class="p">)</span>
+    <span class="n">feny</span> <span class="o">=</span> <span class="n">pygdtf</span><span class="o">.</span><span class="n">GeometryBeam</span><span class="p">()</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Fényforrás típusa: &quot;</span><span class="p">,</span> <span class="n">feny</span><span class="o">.</span><span class="n">beam_type</span><span class="p">)</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Fénysugár szög: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">°&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feny</span><span class="o">.</span><span class="n">beam_angle</span><span class="p">))</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Fogyasztás: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">W&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feny</span><span class="o">.</span><span class="n">power_consumption</span><span class="p">))</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Színhőmérséklet: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">K&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feny</span><span class="o">.</span><span class="n">color_temperature</span><span class="p">))</span>
+    <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Fényerő: &quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">LUX&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feny</span><span class="o">.</span><span class="n">luminous_flux</span><span class="p">))</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;print(&#39;Változások: &#39;)</span>
+<span class="sd">    for rev in egy.revisions:</span>
+<span class="sd">        szinesben(&#39;\tDátum: &#39;, rev.date)</span>
+<span class="sd">        szinesben(&#39;\tSzöveg: &#39;, rev.text)</span>
+<span class="sd">        szinesben(&#39;\tFelhasználó ID: &#39;, rev.user_id)</span>
+<span class="sd">        print(&#39;\t&#39;, &#39;-&#39; * 60)</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">fileok</span><span class="p">,</span> <span class="n">root</span> <span class="o">=</span> <span class="n">filescan</span><span class="p">()</span>
+    <span class="n">menu</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">egyfile</span> <span class="ow">in</span> <span class="n">fileok</span><span class="p">:</span>
+        <span class="n">menu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">egyfile</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">menu</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;Kilépés.&#39;</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">print_menu</span><span class="p">()</span>
+        <span class="n">option</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Melyiket nézzük: &#39;</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valami nem lett jó ...&#39;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">option</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">):</span>
+            <span class="n">gdtfinfo</span><span class="p">(</span><span class="n">pygdtf</span><span class="o">.</span><span class="n">FixtureType</span><span class="p">(</span><span class="n">root</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">fileok</span><span class="p">[</span><span class="n">option</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">cprint</span><span class="p">(</span><span class="s2">&quot;Nem találok ilyen számú elemet ...&quot;</span><span class="p">,</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">python_gdtf.lamsza</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

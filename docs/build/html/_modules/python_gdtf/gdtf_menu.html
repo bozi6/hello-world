@@ -1,0 +1,149 @@
+<!--
+  ~ gdtf_menu.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>python_gdtf.gdtf_menu &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">python_gdtf.gdtf_menu</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>python_gdtf.gdtf_menu forráskódja</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="print_menu">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.gdtf_menu.print_menu">[docs]</a>
+<span></span><span class="k">def</span> <span class="nf">print_menu</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Menü kiiratása</span>
+
+<span class="sd">    :return: a menü listája</span>
+<span class="sd">    :rtype: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">menu_options</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">menu_options</span><span class="p">[</span><span class="n">key</span><span class="p">])</span></div>
+
+
+
+<div class="viewcode-block" id="option1">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.gdtf_menu.option1">[docs]</a>
+<span class="k">def</span> <span class="nf">option1</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Handle option &#39;Option 1&#39;&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="option2">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.gdtf_menu.option2">[docs]</a>
+<span class="k">def</span> <span class="nf">option2</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Handle option &#39;Option 2&#39;&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="option3">
+<a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.gdtf_menu.option3">[docs]</a>
+<span class="k">def</span> <span class="nf">option3</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Handle option &#39;Option 3&#39;&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">menu_options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;Option 1&quot;</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;Option 2&quot;</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;Option 3&quot;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;Exit&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">print_menu</span><span class="p">()</span>
+        <span class="n">option</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your choice: &quot;</span><span class="p">))</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wrong input. Please enter a number ...&quot;</span><span class="p">)</span>
+        <span class="c1"># Check what choice was entered and act accordingly</span>
+        <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">option1</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">option2</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">option3</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">option</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Thanks for using it&quot;</span><span class="p">)</span>
+            <span class="n">exit</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Invalid option. Please enter a number between 1 and 4.&quot;</span><span class="p">)</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">python_gdtf.gdtf_menu</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

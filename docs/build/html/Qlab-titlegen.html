@@ -1,0 +1,292 @@
+<!--
+  ~ Qlab-titlegen.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>7. Qlab-titlegen package &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=601dbdee" />
+    <script src="_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="genindex.html" />
+    <link rel="search" title="Keresés" href="search.html" />
+    <link rel="next" title="8. alice package" href="alice.html" />
+    <link rel="prev" title="6. Ma2_gobos2html package" href="Ma2_gobos2html.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="right" >
+          <a href="alice.html" title="8. alice package"
+             accesskey="N">következő</a> |</li>
+        <li class="right" >
+          <a href="Ma2_gobos2html.html" title="6. Ma2_gobos2html package"
+             accesskey="P">előző</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">hello-world</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>Qlab-titlegen package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="qlab-titlegen-package">
+<h1><span class="section-number">7. </span>Qlab-titlegen package<a class="headerlink" href="#qlab-titlegen-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2><span class="section-number">7.1. </span>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-Qlab_titlegen.qlab_client">
+<span id="qlab-titlegen-client-module"></span><h2><span class="section-number">7.2. </span>Qlab-titlegen.client module<a class="headerlink" href="#module-Qlab_titlegen.qlab_client" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Qlab_titlegen.qlab_client.</span></span><span class="sig-name descname"><span class="pre">Interface</span></span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interface for QLab</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.bundi">
+<span class="sig-name descname"><span class="pre">bundi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">messages</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.bundi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.bundi" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.get_uniqid">
+<span class="sig-name descname"><span class="pre">get_uniqid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.get_uniqid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.get_uniqid" title="Link to this definition">¶</a></dt>
+<dd><p>Try to get an unique id of main que list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Unique id of first cuelist</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.get_wpid">
+<span class="sig-name descname"><span class="pre">get_wpid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.get_wpid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.get_wpid" title="Link to this definition">¶</a></dt>
+<dd><p>Get a Workspace ID from QLab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-odd"><p>workspace ID from QLab</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.getques">
+<span class="sig-name descname"><span class="pre">getques</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.getques"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.getques" title="Link to this definition">¶</a></dt>
+<dd><p>Receive quelists information</p>
+<dl class="field-list simple">
+<dt class="field-odd">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cue list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.newcue">
+<span class="sig-name descname"><span class="pre">newcue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'memo'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.newcue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.newcue" title="Link to this definition">¶</a></dt>
+<dd><p>Create new cue in QLab when no parameter default to memo</p>
+<p>in QLab 4: Supported strings include:
+audio, mic, video, camera, text, light,
+fade, network, midi, midi file,
+timecode, group, start, stop, pause,
+load, reset, devamp, goto, target, arm,
+disarm, wait, memo, script, list, cuelist,
+cue list, cart, cuecart, or cue cart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paraméterek<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mit</strong> – type of newly created cue</p>
+</dd>
+<dt class="field-even">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-even"><p>nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.renumber">
+<span class="sig-name descname"><span class="pre">renumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.renumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.renumber" title="Link to this definition">¶</a></dt>
+<dd><p>Try to renumber cues</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paraméterek<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – new starting number</p></li>
+<li><p><strong>step</strong> – steps through unmbers</p></li>
+</ul>
+</dd>
+<dt class="field-even">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-even"><p>nothing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.select_all_cues">
+<span class="sig-name descname"><span class="pre">select_all_cues</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.select_all_cues"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.select_all_cues" title="Link to this definition">¶</a></dt>
+<dd><p>Try to select all cues in current workspace</p>
+<dl class="field-list simple">
+<dt class="field-odd">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Null</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Interface.set_cue_prop">
+<span class="sig-name descname"><span class="pre">set_cue_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cue_no</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Interface.set_cue_prop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Interface.set_cue_prop" title="Link to this definition">¶</a></dt>
+<dd><p>Set a cue parameters in QLab</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paraméterek<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cue_no</strong> – cue number, also accept selected</p></li>
+<li><p><strong>name</strong> – changeable parameter name eg.: name</p></li>
+<li><p><strong>value</strong> – parameter value eg.: 120</p></li>
+</ul>
+</dd>
+<dt class="field-even">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-even"><p>return any response from QLab</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Listener">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Qlab_titlegen.qlab_client.</span></span><span class="sig-name descname"><span class="pre">Listener</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Listener"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Listener" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Setup a server for listening to QLab /reply messages</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Qlab_titlegen.qlab_client.Listener.get_message">
+<span class="sig-name descname"><span class="pre">get_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/Qlab_titlegen/qlab_client.html#Listener.get_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Qlab_titlegen.qlab_client.Listener.get_message" title="Link to this definition">¶</a></dt>
+<dd><p>Get a OSC message from OSC server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Visszatérési érték<span class="colon">:</span></dt>
+<dd class="field-odd"><p>message from OSC server</p>
+</dd>
+<dt class="field-even">Visszatérés típusa<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="qlab-titlegen-szovegosc-module">
+<h2><span class="section-number">7.3. </span>Qlab-titlegen.szovegosc module<a class="headerlink" href="#qlab-titlegen-szovegosc-module" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">7. Qlab-titlegen package</a><ul>
+<li><a class="reference internal" href="#submodules">7.1. Submodules</a></li>
+<li><a class="reference internal" href="#module-Qlab_titlegen.qlab_client">7.2. Qlab-titlegen.client module</a><ul>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface"><code class="docutils literal notranslate"><span class="pre">Interface</span></code></a><ul>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.bundi"><code class="docutils literal notranslate"><span class="pre">Interface.bundi()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.get_uniqid"><code class="docutils literal notranslate"><span class="pre">Interface.get_uniqid()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.get_wpid"><code class="docutils literal notranslate"><span class="pre">Interface.get_wpid()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.getques"><code class="docutils literal notranslate"><span class="pre">Interface.getques()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.newcue"><code class="docutils literal notranslate"><span class="pre">Interface.newcue()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.renumber"><code class="docutils literal notranslate"><span class="pre">Interface.renumber()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.select_all_cues"><code class="docutils literal notranslate"><span class="pre">Interface.select_all_cues()</span></code></a></li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Interface.set_cue_prop"><code class="docutils literal notranslate"><span class="pre">Interface.set_cue_prop()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Listener"><code class="docutils literal notranslate"><span class="pre">Listener</span></code></a><ul>
+<li><a class="reference internal" href="#Qlab_titlegen.qlab_client.Listener.get_message"><code class="docutils literal notranslate"><span class="pre">Listener.get_message()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#qlab-titlegen-szovegosc-module">7.3. Qlab-titlegen.szovegosc module</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Előző témakör</h4>
+    <p class="topless"><a href="Ma2_gobos2html.html"
+                          title="előző fejezet"><span class="section-number">6. </span>Ma2_gobos2html package</a></p>
+  </div>
+  <div>
+    <h4>Következő témakör</h4>
+    <p class="topless"><a href="alice.html"
+                          title="következő fejezet"><span class="section-number">8. </span>alice package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Ez az Oldal</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Qlab-titlegen.rst.txt"
+            rel="nofollow">Forrás megtekintése</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="right" >
+          <a href="alice.html" title="8. alice package"
+             >következő</a> |</li>
+        <li class="right" >
+          <a href="Ma2_gobos2html.html" title="6. Ma2_gobos2html package"
+             >előző</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >hello-world</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">7. </span>Qlab-titlegen package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

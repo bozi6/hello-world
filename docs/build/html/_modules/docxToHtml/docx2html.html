@@ -1,0 +1,156 @@
+<!--
+  ~ docx2html.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>docxToHtml.docx2html &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">docxToHtml.docx2html</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>docxToHtml.docx2html forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/python3</span>
+<span class="kn">import</span> <span class="nn">mammoth</span>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../docxToHtml.html#docxToHtml.docx2html.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Főprogram</span>
+
+<span class="sd">    :return: a mammoth segítségével átalakítunk egy docxet htmlre</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">befile</span> <span class="o">=</span> <span class="s2">&quot;21.09.27.-10.03.docx&quot;</span>
+    <span class="n">outfile</span> <span class="o">=</span> <span class="n">befile</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;html&quot;</span>
+
+    <span class="k">def</span> <span class="nf">htmlcser</span><span class="p">(</span><span class="n">bej</span><span class="p">,</span> <span class="n">mit</span><span class="p">,</span> <span class="n">mire</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">bej</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">mit</span><span class="p">,</span> <span class="n">mire</span><span class="p">)</span>
+
+    <span class="n">custom_styles</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                    table =&gt; table.table.table-bordered.table-striped.shadow.bg-light</span>
+<span class="s2">                    #r =&gt; p.text-light.bg-dark</span>
+<span class="s2">                    #a pt lecseréli td class p re majd beszúr egy mt-0 class text-centert</span>
+<span class="s2">                    p =&gt; p.my-1.px-1.mx-5</span>
+<span class="s2">                    #p =&gt; td.p &gt; mt-0.text-center</span>
+<span class="s2">                    #r =&gt; tr.w-25.p-3</span>
+<span class="s2">                    &quot;&quot;&quot;</span>
+    <span class="n">htmlkezd</span> <span class="o">=</span> <span class="p">(</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;&lt;!DOCTYPE html&gt;</span>
+<span class="sd">        &lt;html lang=&quot;hu&quot;&gt;</span>
+<span class="sd">        &lt;head&gt;</span>
+<span class="sd">        &lt;meta charset=&quot;utf-8&quot;&gt;</span>
+<span class="sd">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</span>
+<span class="sd">        &lt;title&gt;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="o">+</span> <span class="n">befile</span>
+        <span class="o">+</span> <span class="s2">&quot;&lt;/title&gt;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+    <span class="n">bootstrap_css</span> <span class="o">=</span> <span class="s1">&#39;&lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl&quot; crossorigin=&quot;anonymous&quot;&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="n">bootstrap_js</span> <span class="o">=</span> <span class="s1">&#39;&lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+    <span class="n">css</span> <span class="o">=</span> <span class="s1">&#39;&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;&#39;</span>
+    <span class="n">headerend</span> <span class="o">=</span> <span class="s1">&#39;&lt;/head&gt;&lt;body&gt;&lt;div class=&quot;container-fluid px-3 pb-5&quot;&gt;&lt;br&gt;&lt;br&gt;&#39;</span>
+    <span class="n">htmlveg</span> <span class="o">=</span> <span class="s2">&quot;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">befile</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">docx_file</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">mammoth</span><span class="o">.</span><span class="n">convert_to_html</span><span class="p">(</span><span class="n">docx_file</span><span class="p">,</span> <span class="n">style_map</span><span class="o">=</span><span class="n">custom_styles</span><span class="p">)</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">messages</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">messages</span>
+
+    <span class="c1"># html új sorok beszúrása</span>
+    <span class="n">ker</span> <span class="o">=</span> <span class="s2">&quot;&gt;&lt;&quot;</span>
+    <span class="n">cser</span> <span class="o">=</span> <span class="s2">&quot;&gt;</span><span class="se">\n</span><span class="s2">&lt;&quot;</span>
+    <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">html</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;td&gt;</span><span class="se">\n</span><span class="s2">&lt;p&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;td&gt;&quot;</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;&lt;/p&gt;</span><span class="se">\n</span><span class="s2">&lt;/td&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;/td&gt;&quot;</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;strong&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">)</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ker</span><span class="p">,</span> <span class="n">cser</span><span class="p">)</span>
+
+    <span class="n">edited_html</span> <span class="o">=</span> <span class="n">htmlkezd</span> <span class="o">+</span> <span class="n">bootstrap_css</span> <span class="o">+</span> <span class="n">headerend</span> <span class="o">+</span> <span class="n">html</span> <span class="o">+</span> <span class="n">bootstrap_js</span> <span class="o">+</span> <span class="n">htmlveg</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hibaüzik: &quot;</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">messages</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">html_file</span><span class="p">:</span>
+        <span class="n">html_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
+            <span class="n">edited_html</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">docxToHtml.docx2html</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

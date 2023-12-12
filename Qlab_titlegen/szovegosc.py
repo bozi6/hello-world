@@ -1,7 +1,7 @@
-import Qlab_titlegen.qlab_client
+import qlab_client
 
 
-cli = Qlab_titlegen.qlab_client.Interface()
+cli = qlab_client.Interface()
 
 if __name__ == "__main__":
     try:

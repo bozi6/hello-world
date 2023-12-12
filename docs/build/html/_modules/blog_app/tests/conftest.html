@@ -1,0 +1,105 @@
+<!--
+  ~ conftest.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog_app.tests.conftest &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/nature.css?v=601dbdee" />
+    <script src="../../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">blog_app.tests.conftest</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>blog_app.tests.conftest forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">tempfile</span>
+
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="kn">from</span> <span class="nn">blog_app.blog.models</span> <span class="kn">import</span> <span class="n">Article</span>
+
+
+<div class="viewcode-block" id="database">
+<a class="viewcode-back" href="../../../blog_app.tests.html#blog_app.tests.conftest.database">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span><span class="p">(</span><span class="n">autouse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">database</span><span class="p">():</span>
+    <span class="n">_</span><span class="p">,</span> <span class="n">file_name</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkstemp</span><span class="p">()</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;DATABASE_NAME&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_name</span>
+    <span class="n">Article</span><span class="o">.</span><span class="n">create_table</span><span class="p">(</span><span class="n">database_name</span><span class="o">=</span><span class="n">file_name</span><span class="p">)</span>
+    <span class="k">yield</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">blog_app.tests.conftest</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

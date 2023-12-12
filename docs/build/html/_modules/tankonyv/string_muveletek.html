@@ -1,0 +1,176 @@
+<!--
+  ~ string_muveletek.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tankonyv.string_muveletek &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">tankonyv.string_muveletek</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>tankonyv.string_muveletek forráskódja</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../tankonyv.html#tankonyv.string_muveletek.main">[docs]</a>
+<span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    String formázások pythonban</span>
+
+<span class="sd">    :return: a formázott szövegek</span>
+<span class="sd">    :rtype: str</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># String formázók a Pythonban</span>
+    <span class="c1"># String formázás az f-strings használatával</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;-------------Példa 1--------------------&gt;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Írd be a neved&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hey !! </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, üdvözlünk a buliban...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;-------------Példa 2--------------------&gt;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Írd be az első számot&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Írd be a második számot&quot;</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;az </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> és </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> összege </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># String formázás a format() eljárással</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;--------Alapvető sorrend------------&gt;&quot;</span><span class="p">)</span>
+    <span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Utazás&quot;</span><span class="p">,</span> <span class="s2">&quot;az&quot;</span><span class="p">,</span> <span class="s2">&quot;élet&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A string az alapvető sorrendben van kiírva:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;--------Pozíció szerinti formázás------------&gt;&quot;</span><span class="p">)</span>
+    <span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{1}</span><span class="s2"> </span><span class="si">{2}</span><span class="s2"> </span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;szerelem&quot;</span><span class="p">,</span> <span class="s2">&quot;Utazás&quot;</span><span class="p">,</span> <span class="s2">&quot;egy&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&lt;--------Kulcsszó szerinti formázás------------&gt;&quot;</span><span class="p">)</span>
+    <span class="n">str3</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">{T}</span><span class="s2"> </span><span class="si">{i}</span><span class="s2"> </span><span class="si">{l}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="s2">&quot;Utazás&quot;</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="s2">&quot;szerelem&quot;</span><span class="p">,</span> <span class="n">i</span><span class="o">=</span><span class="s2">&quot;egy&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">str3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="c1"># String formázás a % operátor használatával</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Írd be az elemek számát&quot;</span><span class="p">)</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> cipel </span><span class="si">%d</span><span class="s2"> tárgyat&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">item</span><span class="p">))</span>
+
+    <span class="c1"># String methods Part 1</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;Különböző string metódusok&quot;</span>
+    <span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;  fektess a tanulásba       &quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lower()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;upper()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;islower()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;isupper()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;startswith&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Var&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;endswith()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;el&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;join()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--&gt;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;various&quot;</span><span class="p">,</span> <span class="s2">&quot;strings&quot;</span><span class="p">,</span> <span class="s2">&quot;methods&quot;</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;split()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ljust()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rjust(*)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="o">.</span><span class="n">rjust</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;center()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;welcome&quot;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;strip()&gt;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string2</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;lstrip()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string2</span><span class="o">.</span><span class="n">lstrip</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;rstrip()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">string2</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+
+    <span class="c1"># String methods --&gt; Part 2</span>
+    <span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;objektum orientált programozás&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A string változó tartalma: &quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;index()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Az &#39;r&#39; indexe az: &#39;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="s2">&quot;&#39; szövegben:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;count()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Az &#39;o&#39; számossága az &#39;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="s2">&quot;&#39; szövegben:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;o&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;find()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A &#39;z&#39; indexe az &#39;&quot;</span><span class="p">,</span> <span class="n">string</span><span class="p">,</span> <span class="s2">&quot;&#39; szövegben:&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;z&quot;</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;replace()&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;icseréljük az &#39;e&#39;-t &#39;3&#39;-ra :&quot;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">))</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">tankonyv.string_muveletek</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

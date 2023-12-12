@@ -1,0 +1,284 @@
+<!--
+  ~ qlab_client.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qlab_titlegen.qlab_client &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Qlab_titlegen.qlab_client</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Qlab_titlegen.qlab_client forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+<span class="kn">from</span> <span class="nn">oscpy.client</span> <span class="kn">import</span> <span class="n">OSCClient</span>
+
+
+<div class="viewcode-block" id="Listener">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Listener">[docs]</a>
+<span class="k">class</span> <span class="nc">Listener</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Setup a server for listening to QLab /reply messages</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">address</span><span class="p">,</span> <span class="n">port</span><span class="p">):</span>
+        <span class="c1"># print(&quot;Starting listener&quot;)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">address</span> <span class="o">=</span> <span class="n">address</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET6</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">port</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_message</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">_get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span><span class="p">,</span> <span class="n">address</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sock</span><span class="o">.</span><span class="n">recvfrom</span><span class="p">(</span><span class="mi">8192</span><span class="p">)</span>
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="n">parts</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="nb">bool</span><span class="p">,</span> <span class="n">raw</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)))</span>
+        <span class="n">json_message</span> <span class="o">=</span> <span class="n">parts</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">last_message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_message</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">json</span><span class="o">.</span><span class="n">decoder</span><span class="o">.</span><span class="n">JSONDecodeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error. server raw response:&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">raw</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parts&quot;</span><span class="p">,</span> <span class="n">parts</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">last_message</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Listener.get_message">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Listener.get_message">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_message</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a OSC message from OSC server</span>
+
+<span class="sd">        :return: message from OSC server</span>
+<span class="sd">        :rtype: str</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_message</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_message</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Interface">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface">[docs]</a>
+<span class="k">class</span> <span class="nc">Interface</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Interface for QLab</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a client connection to QLab</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">OSCClient</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">53000</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">Listener</span><span class="p">(</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="mi">53001</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wpid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_wpid</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span>
+        <span class="c1"># print(&quot;WPID: {}&quot;.format(self.wpid))</span>
+
+<div class="viewcode-block" id="Interface.get_wpid">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.get_wpid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_wpid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get a Workspace ID from QLab</span>
+
+<span class="sd">        :return: workspace ID from QLab</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;/workspaces&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uniqueID&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Interface.get_uniqid">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.get_uniqid">[docs]</a>
+    <span class="k">def</span> <span class="nf">get_uniqid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Try to get an unique id of main que list</span>
+
+<span class="sd">        :return:  Unique id of first cuelist</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;/cueLists/uniqueID&quot;</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;uniqueID&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Interface.bundi">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.bundi">[docs]</a>
+    <span class="k">def</span> <span class="nf">bundi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">messages</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_bundle</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Interface.set_cue_prop">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.set_cue_prop">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_cue_prop</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cue_no</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set a cue parameters in QLab</span>
+
+<span class="sd">        :param cue_no: cue number, also accept selected</span>
+<span class="sd">        :param name: changeable parameter name eg.: name</span>
+<span class="sd">        :param value: parameter value eg.: 120</span>
+<span class="sd">        :return: return any response from QLab</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/cue/</span><span class="si">{cue_no}</span><span class="s2">/</span><span class="si">{name}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="nb">locals</span><span class="p">()),</span> <span class="n">value</span><span class="p">)</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;response = self.server.get_message()</span>
+<span class="sd">        if response:</span>
+<span class="sd">            return response.get(&#39;data&#39;)</span>
+<span class="sd">        &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="Interface.newcue">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.newcue">[docs]</a>
+    <span class="k">def</span> <span class="nf">newcue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mit</span><span class="o">=</span><span class="s2">&quot;memo&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create new cue in QLab when no parameter default to memo</span>
+
+<span class="sd">        in QLab 4: Supported strings include:</span>
+<span class="sd">        audio, mic, video, camera, text, light,</span>
+<span class="sd">        fade, network, midi, midi file,</span>
+<span class="sd">        timecode, group, start, stop, pause,</span>
+<span class="sd">        load, reset, devamp, goto, target, arm,</span>
+<span class="sd">        disarm, wait, memo, script, list, cuelist,</span>
+<span class="sd">        cue list, cart, cuecart, or cue cart.</span>
+
+<span class="sd">        :param mit: type of newly created cue</span>
+<span class="sd">        :return: nothing</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wpid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wpid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/workspace/</span><span class="si">{}</span><span class="s2">/new&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wpid</span><span class="p">),</span> <span class="p">[</span><span class="n">mit</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Interface.select_all_cues">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.select_all_cues">[docs]</a>
+    <span class="k">def</span> <span class="nf">select_all_cues</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Try to select all cues in current workspace</span>
+
+<span class="sd">        :return: Null</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wpid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wpid</span>
+        <span class="n">uniqid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_uniqid</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/workspace/</span><span class="si">{}</span><span class="s2">/select/*&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wpid</span><span class="p">),</span> <span class="p">[])</span></div>
+
+
+<div class="viewcode-block" id="Interface.renumber">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.renumber">[docs]</a>
+    <span class="k">def</span> <span class="nf">renumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Try to renumber cues</span>
+
+<span class="sd">        :param start: new starting number</span>
+<span class="sd">        :param step: steps through unmbers</span>
+<span class="sd">        :return: nothing</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wpid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wpid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">select_all_cues</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/workspace/</span><span class="si">{}</span><span class="s2">/renumber&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wpid</span><span class="p">),</span> <span class="p">[</span><span class="n">start</span><span class="p">,</span> <span class="n">step</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Interface.getques">
+<a class="viewcode-back" href="../../Qlab-titlegen.html#Qlab_titlegen.qlab_client.Interface.getques">[docs]</a>
+    <span class="k">def</span> <span class="nf">getques</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Receive quelists information</span>
+
+<span class="sd">        :return: cue list</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">wpid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wpid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="s2">&quot;/workspace/</span><span class="si">{}</span><span class="s2">/cueLists/shallow&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">wpid</span><span class="p">),</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">get_message</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">response</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data&quot;</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Qlab_titlegen.qlab_client</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

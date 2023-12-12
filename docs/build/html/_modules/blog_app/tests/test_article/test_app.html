@@ -1,0 +1,251 @@
+<!--
+  ~ test_app.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 12. 9:30
+  -->
+
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog_app.tests.test_article.test_app &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/nature.css?v=601dbdee" />
+    <script src="../../../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">blog_app.tests.test_article.test_app</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>blog_app.tests.test_article.test_app forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">jsonschema</span> <span class="kn">import</span> <span class="n">validate</span><span class="p">,</span> <span class="n">RefResolver</span>
+
+<span class="kn">from</span> <span class="nn">blog_app.blog.app</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="kn">from</span> <span class="nn">blog_app.blog.models</span> <span class="kn">import</span> <span class="n">Article</span>
+
+
+<div class="viewcode-block" id="tesT_create_list_get">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.tesT_create_list_get">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">e2e</span>
+<span class="k">def</span> <span class="nf">tesT_create_list_get</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+    <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s2">&quot;http://localhost:5000/create-article&quot;</span><span class="p">,</span>
+        <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;john@doe.com&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Some extra awesome content&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">)</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s2">&quot;http://localhost:5000/article-list/&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">articles</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;http://localhost:5000/article/</span><span class="si">{</span><span class="n">articles</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span></div>
+
+
+
+<div class="viewcode-block" id="client">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.client">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">fixture</span>
+<span class="k">def</span> <span class="nf">client</span><span class="p">():</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;TESTING&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">test_client</span><span class="p">()</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">client</span></div>
+
+
+
+<div class="viewcode-block" id="validate_payload">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.validate_payload">[docs]</a>
+<span class="k">def</span> <span class="nf">validate_payload</span><span class="p">(</span><span class="n">payload</span><span class="p">,</span> <span class="n">schema_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Validate payload with selected schema</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">schemas_dir</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">absolute</span><span class="p">()</span><span class="si">}</span><span class="s2">/schemas&quot;</span><span class="p">)</span>
+    <span class="n">schema</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">schemas_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">schema_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
+    <span class="n">validate</span><span class="p">(</span>
+        <span class="n">payload</span><span class="p">,</span>
+        <span class="n">schema</span><span class="p">,</span>
+        <span class="n">resolver</span><span class="o">=</span><span class="n">RefResolver</span><span class="p">(</span>
+            <span class="s2">&quot;file://&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">schemas_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">schema_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">absolute</span><span class="p">()),</span>
+            <span class="n">schema</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_create_article">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.test_create_article">[docs]</a>
+<span class="k">def</span> <span class="nf">test_create_article</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GIVEN request data for new article</span>
+<span class="sd">    WHEN endpoint /create-article/ is called</span>
+<span class="sd">    THEN it should return Article in json format that matches the schema</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;john@doe.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Some extra awesome content&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s2">&quot;/create-article/&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">validate_payload</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">,</span> <span class="s2">&quot;Article.json&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_get_article">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.test_get_article">[docs]</a>
+<span class="k">def</span> <span class="nf">test_get_article</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GIVEN ID of article stored in the database</span>
+<span class="sd">    WHEN endpoint /article/&lt;id-of-article&gt;/ is called</span>
+<span class="sd">    THEN it should return Article in json format that matches the schema</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span>
+        <span class="n">author</span><span class="o">=</span><span class="s2">&quot;jane@doe.com&quot;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Super extra awesome article&quot;</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;/article/</span><span class="si">{</span><span class="n">article</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/&quot;</span><span class="p">,</span>
+        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">validate_payload</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">,</span> <span class="s2">&quot;Article.json&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_list_articles">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.test_list_articles">[docs]</a>
+<span class="k">def</span> <span class="nf">test_list_articles</span><span class="p">(</span><span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GIVEN articles stored in the database</span>
+<span class="sd">    WHEN endpoint /article-list/ is called</span>
+<span class="sd">    THEN it should return list of Article in json format that matches the schema</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">Article</span><span class="p">(</span>
+        <span class="n">author</span><span class="o">=</span><span class="s2">&quot;jane@doe.com&quot;</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+        <span class="n">content</span><span class="o">=</span><span class="s2">&quot;Super extra awesome article&quot;</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="s2">&quot;/article-list/&quot;</span><span class="p">,</span>
+        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">validate_payload</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">,</span> <span class="s2">&quot;ArticleList.json&quot;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="test_create_article_bad_request">
+<a class="viewcode-back" href="../../../../blog_app.tests.test_article.html#blog_app.tests.test_article.test_app.test_create_article_bad_request">[docs]</a>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">&quot;data&quot;</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Some extra awesome content&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;New Article&quot;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="p">{</span><span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Some extra awesome content&quot;</span><span class="p">},</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_create_article_bad_request</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    GIVEN request data with invalid values or missing attributes</span>
+<span class="sd">    WHEN endpoint /create-article/ is called</span>
+<span class="sd">    THEN it should return status 400</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="s2">&quot;/create-article/&quot;</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">),</span>
+        <span class="n">content_type</span><span class="o">=</span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">400</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">blog_app.tests.test_article.test_app</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
