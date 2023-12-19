@@ -1,11 +1,3 @@
-<!--
-  ~ lamsza.html Copyright (C) 2023  Konta Boáz
-  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
-  ~     This is free software, and you are welcome to redistribute it
-  ~     under certain conditions; type `show c' for details.
-  ~  Last Modified: 2023. 12. 12. 9:30
-  -->
-
 <!DOCTYPE html>
 
 <html lang="hu" data-content_root="../../">
@@ -56,8 +48,7 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">termcolor</span> <span class="kn">import</span> <span class="n">cprint</span>
 <span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">init</span>
-<span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Fore</span>
-<span class="kn">from</span> <span class="nn">colorama</span> <span class="kn">import</span> <span class="n">Style</span>
+
 <span class="n">init</span><span class="p">(</span><span class="n">autoreset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -84,7 +75,7 @@
     <span class="k">try</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">mappa</span><span class="p">):</span>
             <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.gdtf&#39;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.gdtf&quot;</span><span class="p">):</span>
                     <span class="c1"># szinesben(root, &#39;/&#39;+file)</span>
                     <span class="c1"># gdtfinfo(pygdtf.FixtureType(os.path.join(root, file)))</span>
                     <span class="n">fileok</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
@@ -149,10 +140,7 @@
 <a class="viewcode-back" href="../../python_gdtf.html#python_gdtf.lamsza.gdtfinfo">[docs]</a>
 <span class="k">def</span> <span class="nf">gdtfinfo</span><span class="p">(</span><span class="n">egy</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    gdtf fileból infort szed ki egy lámpához</span>
-
 <span class="sd">    :param egy: egy pygdtf osztály</span>
-
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># egy = pygdtf.FixtureType(&#39;./CPMini.gdtf&#39;)</span>
     <span class="n">szinesben</span><span class="p">(</span><span class="s2">&quot;Név: &quot;</span><span class="p">,</span> <span class="n">egy</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -234,14 +222,14 @@
     <span class="k">for</span> <span class="n">egyfile</span> <span class="ow">in</span> <span class="n">fileok</span><span class="p">:</span>
         <span class="n">menu</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">egyfile</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="n">menu</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;Kilépés.&#39;</span>
+    <span class="n">menu</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)]</span> <span class="o">=</span> <span class="s2">&quot;Kilépés.&quot;</span>
     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">print_menu</span><span class="p">()</span>
         <span class="n">option</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="n">option</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Melyiket nézzük: &#39;</span><span class="p">))</span>
+            <span class="n">option</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Melyiket nézzük: &quot;</span><span class="p">))</span>
         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Valami nem lett jó ...&#39;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valami nem lett jó ...&quot;</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
             <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">option</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">menu</span><span class="p">):</span>

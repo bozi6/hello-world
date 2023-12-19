@@ -27,11 +27,15 @@ class CreateMacroFromCsv(object):
     MA3 Macro createer Class from csv file
     """
 
+    projekt_nev: str
+    seq_szam: int
+    bemenet_file: object
+
     def __init__(self, bemenet_file, seq_szam, projekt_nev):
         """
 
         :param bemenet_file: input csv file
-        :param seq_szam: the number of generated sequence in sequence pool.
+        :param seq_szam: the number of sequence pool where sequences generated.
         :param projekt_nev: The name of generated macro and sequence and timecode pool objects.
 
         """
@@ -56,12 +60,22 @@ class CreateMacroFromCsv(object):
 
     @staticmethod
     def pathexist(path):
+        """
+        Runtime path checker for folders available
+
+        :param path: existing path
+        :type path: str
+        :return: Ture
+        :rtype: bool
+
+        """
         if os.path.exists(path):
             return True
         else:
             os.mkdir(path)
             os.mkdir(path + "/macros")
             os.mkdir(path + "/timecodes")
+            return True
 
     @staticmethod
     def uidgen():
@@ -69,6 +83,8 @@ class CreateMacroFromCsv(object):
         Create a uuid for xml attributes
 
         :return: the generated uid with spaces between two numbers
+        :rtype: str
+
         """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
         uid = " ".join(szoveg[i : i + 2] for i in range(0, len(szoveg), 2))
@@ -80,6 +96,7 @@ class CreateMacroFromCsv(object):
         Read given csv file and convert it to dictionary
 
         :return: Readad csv file into dictionary
+        :rtype: dict
 
         """
         try:
@@ -104,6 +121,8 @@ class CreateMacroFromCsv(object):
     def create_xml_macro(self):
         """
         Create {projectname}_macro.xml file in destination folder
+
+
         """
         logging.debug("create_xml_macro called")
         kimeneti_file = self.projekt_nev + "_macro.xml"

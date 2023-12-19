@@ -1,11 +1,3 @@
-<!--
-  ~ main_cl.html Copyright (C) 2023  Konta Boáz
-  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
-  ~     This is free software, and you are welcome to redistribute it
-  ~     under certain conditions; type `show c' for details.
-  ~  Last Modified: 2023. 12. 12. 9:30
-  -->
-
 <!DOCTYPE html>
 
 <html lang="hu" data-content_root="../../">
@@ -74,11 +66,15 @@
 <span class="sd">    MA3 Macro createer Class from csv file</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
+    <span class="n">projekt_nev</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">seq_szam</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">bemenet_file</span><span class="p">:</span> <span class="nb">object</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bemenet_file</span><span class="p">,</span> <span class="n">seq_szam</span><span class="p">,</span> <span class="n">projekt_nev</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        :param bemenet_file: input csv file</span>
-<span class="sd">        :param seq_szam: the number of generated sequence in sequence pool.</span>
+<span class="sd">        :param seq_szam: the number of sequence pool where sequences generated.</span>
 <span class="sd">        :param projekt_nev: The name of generated macro and sequence and timecode pool objects.</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -105,12 +101,22 @@
 <a class="viewcode-back" href="../../ma3_xmls_factory.html#ma3_xmls_factory.main_cl.CreateMacroFromCsv.pathexist">[docs]</a>
     <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">pathexist</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Runtime path checker for folders available</span>
+
+<span class="sd">        :param path: existing path</span>
+<span class="sd">        :type path: str</span>
+<span class="sd">        :return: Ture</span>
+<span class="sd">        :rtype: bool</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">True</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
             <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/macros&quot;</span><span class="p">)</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/timecodes&quot;</span><span class="p">)</span></div>
+            <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/timecodes&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span></div>
 
 
 <div class="viewcode-block" id="CreateMacroFromCsv.uidgen">
@@ -121,6 +127,8 @@
 <span class="sd">        Create a uuid for xml attributes</span>
 
 <span class="sd">        :return: the generated uid with spaces between two numbers</span>
+<span class="sd">        :rtype: str</span>
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">szoveg</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">hexdigits</span><span class="p">[:</span><span class="mi">16</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">32</span><span class="p">)])</span>
         <span class="n">uid</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">szoveg</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">szoveg</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
@@ -135,6 +143,7 @@
 <span class="sd">        Read given csv file and convert it to dictionary</span>
 
 <span class="sd">        :return: Readad csv file into dictionary</span>
+<span class="sd">        :rtype: dict</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">try</span><span class="p">:</span>
@@ -162,6 +171,8 @@
     <span class="k">def</span> <span class="nf">create_xml_macro</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create {projectname}_macro.xml file in destination folder</span>
+
+
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;create_xml_macro called&quot;</span><span class="p">)</span>
         <span class="n">kimeneti_file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">projekt_nev</span> <span class="o">+</span> <span class="s2">&quot;_macro.xml&quot;</span>

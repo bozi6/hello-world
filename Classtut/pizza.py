@@ -36,6 +36,7 @@ class Pizza:
 
 
 p = Pizza(4, ["sajt", "paradicsom"])
+d = Pizza.margherita()
 print(p)
 print(p.area())
 print(p.circle_area(4))

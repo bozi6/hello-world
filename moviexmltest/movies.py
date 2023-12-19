@@ -108,7 +108,7 @@ if __name__ == "__main__":
     input("multiformátum szülő lista")
     multilpeparent(root)
     input("Back 2 the future javítása")
-    cimcsere("Back 2 the Future", "Back to the future")
+    cimcsere("Vissza 2 jövőbe", "Vissza a jövőbe")
 
     """
     # Fájl kiírása vissza és a javított dolog elhelyezése
@@ -158,7 +158,7 @@ if __name__ == "__main__":
         print(movie.attrib)
     input("Filmek listázása 2000-ből")
     # Új évtized hozzáadása az akciófilmek kategóriához
-    action = root.find("./genre[@category='Action']")
+    action = root.find("./genre[@category='Akció']")
     new_dec = Et.SubElement(action, "decade")
     new_dec.attrib["years"] = "2000s"
 
@@ -166,9 +166,9 @@ if __name__ == "__main__":
     input("Új kategória hozzáadva")
     # márcsak átrakjuk az X-ment a 90-esből a 2000-es évtizedbe
     xmen = root.find("./genre/decade/movie[@title='X-Men']")
-    dec2000s = root.find("./genre[@category='Action']/decade[@years='2000s']")
+    dec2000s = root.find("./genre[@category='Akció']/decade[@years='2000s']")
     dec2000s.append(xmen)
-    dec1990s = root.find("./genre[@category='Action']/decade[@years='1990s']")
+    dec1990s = root.find("./genre[@category='Akció']/decade[@years='1990s']")
     dec1990s.remove(xmen)
 
     print(Et.tostring(action, encoding="utf8").decode("utf8"))
