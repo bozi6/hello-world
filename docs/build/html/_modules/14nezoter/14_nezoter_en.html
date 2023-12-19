@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="hu" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14nezoter.14_nezoter_en &#8212; Hello World 0.6.0 dokumentáció</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/nature.css?v=601dbdee" />
+    <script src="../../_static/documentation_options.js?v=f254bc6b"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=f0e509d9"></script>
+    <link rel="index" title="Tárgymutató" href="../../genindex.html" />
+    <link rel="search" title="Keresés" href="../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             accesskey="I">nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">14nezoter.14_nezoter_en</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>14nezoter.14_nezoter_en forráskódja</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/bin/env python3</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Nézőtéri feladatok, saját mgeoldással</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="NezoTer">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer">[docs]</a>
+<span class="k">class</span> <span class="nc">NezoTer</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Nézőtéri osztály, székekkel, meg széksorokkal, meg foglaltsággal, meg árakkal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">file2</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">file1</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">szekszam</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">sorokszama</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">fogkat</span><span class="p">:</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">katstat</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">foglalt</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">jegyarak</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">,</span> <span class="mi">3000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
+    <span class="c1"># (Sor,szék,foglalt,kategória)</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">foglfile</span><span class="p">,</span> <span class="n">katfile</span><span class="p">,</span> <span class="n">arak</span><span class="o">=</span><span class="n">jegyarak</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file1</span> <span class="o">=</span> <span class="n">foglfile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file2</span> <span class="o">=</span> <span class="n">katfile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setSor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setFogkat</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">getbev</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arak</span> <span class="o">=</span> <span class="n">arak</span>
+
+<div class="viewcode-block" id="NezoTer.setFogkat">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.setFogkat">[docs]</a>
+    <span class="k">def</span> <span class="nf">setFogkat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Foglaltság és kategória fájlok beolvasása, és áthelyzése a fogkat listába</span>
+
+<span class="sd">        :file1: a foglaltsági fájl</span>
+<span class="sd">        :file2: a kategoriak fájl</span>
+<span class="sd">        :return: fogkat</span>
+<span class="sd">        :rtype: object</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file1</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">foglaltsag</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file2</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">kateg</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">sor</span><span class="p">,</span> <span class="n">egysor</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">foglaltsag</span><span class="p">):</span>
+                <span class="n">egysor</span> <span class="o">=</span> <span class="n">egysor</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="n">katsor</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">kateg</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">egysor</span><span class="p">)):</span>  <span class="c1"># fogkat = [sor,szék,foglalt,árkategória]</span>
+                    <span class="n">NezoTer</span><span class="o">.</span><span class="n">fogkat</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">sor</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">egysor</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">katsor</span><span class="p">[</span><span class="n">i</span><span class="p">])])</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.getFogkat">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getFogkat">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">getFogkat</span><span class="p">():</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Foglalt kategória lekérése&quot;&quot;&quot;</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">NezoTer</span><span class="o">.</span><span class="n">fogkat</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cols</span></div>
+
+        <span class="c1"># print(cols)</span>
+
+<div class="viewcode-block" id="NezoTer.getFoglalt">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getFoglalt">[docs]</a>
+    <span class="k">def</span> <span class="nf">getFoglalt</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sorszam</span><span class="p">,</span> <span class="n">szekszam</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Adott sor / szék foglalt-e</span>
+
+<span class="sd">        :param sorszam:  a keresett sor száma</span>
+<span class="sd">        :type sorszam: int</span>
+<span class="sd">        :param szekszam: a keresett szék száma az adott sorban</span>
+<span class="sd">        :type szekszam: int</span>
+<span class="sd">        :return: Szöveg, a szék foglalt = x, még szabad = o</span>
+<span class="sd">        :rtype: str</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">sor</span><span class="p">,</span> <span class="n">szek</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">szek</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sorszam</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">szek</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">szekszam</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">szek</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;A(z) </span><span class="si">{</span><span class="n">sorszam</span><span class="si">}</span><span class="s2">.sor - </span><span class="si">{</span><span class="n">szekszam</span><span class="si">}</span><span class="s2">.széke már foglalt.&quot;</span>
+                    <span class="k">elif</span> <span class="n">szek</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;A </span><span class="si">{</span><span class="n">sorszam</span><span class="si">}</span><span class="s2">.sor - </span><span class="si">{</span><span class="n">szekszam</span><span class="si">}</span><span class="s2">.széke még szabad.&quot;</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hibás bejövő érték van a széksorok között.&quot;</span></div>
+
+                <span class="c1"># return &#39;Foglalt helyek összesen: {} db&#39;.format(NezoTer.foglalt)</span>
+
+<div class="viewcode-block" id="NezoTer.setSor">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.setSor">[docs]</a>
+    <span class="k">def</span> <span class="nf">setSor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Nézőtéri székszám és sorokszáma feltöltése, meg a foglaltság feltöltése is&quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">file1</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sor</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">egysor</span> <span class="ow">in</span> <span class="n">sor</span><span class="p">:</span>
+                <span class="n">NezoTer</span><span class="o">.</span><span class="n">szekszam</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">egysor</span><span class="p">)</span>
+                <span class="n">NezoTer</span><span class="o">.</span><span class="n">sorokszama</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="k">for</span> <span class="n">szek</span> <span class="ow">in</span> <span class="n">egysor</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">szek</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">foglalt</span> <span class="o">+=</span> <span class="mi">1</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.getSor">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getSor">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">getSor</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Nézőtéri sorok számának visszaadása&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;Sorok száma a nézőtéren: </span><span class="si">{}</span><span class="s2"> db&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NezoTer</span><span class="o">.</span><span class="n">sorokszama</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.getSzek">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getSzek">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">getSzek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Nézőtéri székek visszadaása&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="s2">&quot;Összes szék száma: </span><span class="si">{}</span><span class="s2"> db&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">NezoTer</span><span class="o">.</span><span class="n">szekszam</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.hanyjegyet">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.hanyjegyet">[docs]</a>
+    <span class="k">def</span> <span class="nf">hanyjegyet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A foglaltság alapján összesíti a foglalt helyeket (x)</span>
+
+<span class="sd">        :return: Az eladott jegyek db.</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># fogkat = [sor,szék,foglalt,árkategória]</span>
+        <span class="n">eladott</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">fogl</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">fogl</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="n">eladott</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">eladott</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.eladottszazalek">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.eladottszazalek">[docs]</a>
+    <span class="k">def</span> <span class="nf">eladottszazalek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Eladott jegyek százalékban</span>
+
+<span class="sd">        :return: százalék az eladott jegyek alapján</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">round</span><span class="p">((</span><span class="mi">100</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">szekszam</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">foglalt</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.getKatRog">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getKatRog">[docs]</a>
+    <span class="k">def</span> <span class="nf">getKatRog</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Melyik kategóriából adták el a legtöbbet.</span>
+
+<span class="sd">        :return: az adott kategoria</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># fogkat = [sor,szék,foglalt,árkategória]</span>
+        <span class="k">for</span> <span class="n">kateglist</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">kateglist</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                <span class="n">kateg</span> <span class="o">=</span> <span class="n">kateglist</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">katstat</span><span class="p">[</span><span class="n">kateg</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">katstat</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">kateg</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">legtobb</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">katstat</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">kategoria</span><span class="p">,</span> <span class="n">db</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">katstat</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">db</span> <span class="o">==</span> <span class="n">legtobb</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">kategoria</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.getbev">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.getbev">[docs]</a>
+    <span class="k">def</span> <span class="nf">getbev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Bevétel kiszámolása</span>
+
+<span class="sd">        :return: A foglaltság alapján a bevétel.</span>
+<span class="sd">        :rtype:  int</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">bevetel</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">kat</span><span class="p">,</span> <span class="n">db</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">katstat</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">bevetel</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">arak</span><span class="p">[</span><span class="n">kat</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">db</span>
+        <span class="k">return</span> <span class="n">bevetel</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.egyeduliek">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.egyeduliek">[docs]</a>
+    <span class="k">def</span> <span class="nf">egyeduliek</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Egyedüli székek</span>
+
+<span class="sd">        :return: egyedül álló székek</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">egyeduli</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">egysor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">:</span>
+            <span class="n">ures_szakasz</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="c1"># fogkat = [sor,szék,foglalt,árkategória]</span>
+            <span class="k">if</span> <span class="n">egysor</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                <span class="n">ures_szakasz</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">ures_szakasz</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">egyeduli</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">ures_szakasz</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="k">if</span> <span class="n">ures_szakasz</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">egyeduli</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">egyeduli</span></div>
+
+
+<div class="viewcode-block" id="NezoTer.szabad">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.NezoTer.szabad">[docs]</a>
+    <span class="k">def</span> <span class="nf">szabad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        A szabad helyek kiirása a *szabadhelyek.txt* be</span>
+
+<span class="sd">        :return: *szabadhelyek.txt* file kiirva az aktuális mappába.</span>
+<span class="sd">        :rtype: textIOWrapper.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;szabadhelyek.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">szek</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span>
+                    <span class="n">egyszek</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;o&quot;</span><span class="p">:</span>
+                    <span class="n">egyszek</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fogkat</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+                    <span class="n">egyszek</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">egyszek</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../14nezoter.html#14nezoter.14_nezoter_en.main">[docs]</a>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Főporgram</span>
+
+<span class="sd">    :return: Null</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">nezoter</span> <span class="o">=</span> <span class="n">NezoTer</span><span class="p">(</span><span class="s2">&quot;foglaltsag.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;kategoria.txt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. feladat...&quot;</span><span class="p">)</span>
+    <span class="c1"># print(nezoter.getFogkat())  # Az egész tömb kiíratása.</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Beolvasva eltárolva.&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># ssz = int(input(&quot;\tAdja meg a sor számát:&quot;))</span>
+        <span class="n">ssz</span> <span class="o">=</span> <span class="mi">7</span>
+        <span class="c1"># szksz = int(input(&quot;\tAdja meg a szék számát:&quot;))</span>
+        <span class="n">szksz</span> <span class="o">=</span> <span class="mi">14</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2.feladat...&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">nezoter</span><span class="o">.</span><span class="n">getFoglalt</span><span class="p">(</span><span class="n">ssz</span><span class="p">,</span> <span class="n">szksz</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Egész számot tessék megadni.&quot;</span><span class="p">)</span>
+    <span class="c1"># print(nezoter.getSor())</span>
+    <span class="c1"># print(nezoter.getSzek())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. feladat...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Az előadásra eddig </span><span class="si">{</span><span class="n">nezoter</span><span class="o">.</span><span class="n">hanyjegyet</span><span class="p">()</span><span class="si">}</span><span class="s2"> jegyet adtak el, ez a nézőtér </span><span class="si">{</span><span class="n">nezoter</span><span class="o">.</span><span class="n">eladottszazalek</span><span class="p">()</span><span class="si">}</span><span class="s2">%-a.&quot;</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4.feladat...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">A legtöbb jegyet a </span><span class="si">{</span><span class="n">nezoter</span><span class="o">.</span><span class="n">getKatRog</span><span class="p">()</span><span class="si">}</span><span class="s2">. árkategóriában rögzítették.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5. feladat...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">A színház bevétele: </span><span class="si">{:,.1f}</span><span class="s2"> Ft.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nezoter</span><span class="o">.</span><span class="n">getbev</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;6. feladat...&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Az egyedülálló helyek száma: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nezoter</span><span class="o">.</span><span class="n">egyeduliek</span><span class="p">()))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;7. feladat.&quot;</span><span class="p">)</span>
+    <span class="n">nezoter</span><span class="o">.</span><span class="n">szabad</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">A szabad.txt kiírása...&quot;</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Gyorskeresés</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ok" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigáció</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="Általános tárgymutató"
+             >nyitóoldal</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Modul Mutató"
+             >modulok</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Hello World 0.6.0 dokumentáció</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Modul forráskód</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">14nezoter.14_nezoter_en</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Minden jog fenntartva 2023, Konta Boáz.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

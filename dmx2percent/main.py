@@ -1,26 +1,30 @@
-def main():
-    def szamol(dmx):
-        """
-        dmx átszámolása valami teljesen mássá...
+def szamol(dmx: float):
+    """
+    dmx átszámolása valami teljesen mássá...
 
-        :param bejövő dmx cím
-        :type int
-        :return: DMX százalékba átszámolva.
-        """
-        try:
-            if dmx > 255:
-                print("Nem lehet nagyobb 255 nél.")
-                return 0
-            ered = (dmx / 255) * 100
-            return ered
-        except ValueError:
+    :param dmx: Dmx address to calculate
+    :type dmx: int
+    :return: DMX százalékba átszámolva.
+    :rtype: percent
+
+    """
+    dmx = dmx.replace(",", ".")
+    if dmx is None:
+        return 0
+    try:
+        dmx = float(dmx)
+        if float(dmx) > 255:
+            print("nem lehet nagyobb 255-nél.")
             return 0
-
-    while True:
-        cuc = input(" dmx:")
-        a = szamol(int(cuc))
-        print("{:.2f}".format(a))
+        ered = (float(dmx) / 255) * 100
+        return ered
+    except ValueError:
+        return 0
+    return ered
 
 
 if __name__ == "__main__":
-    main()
+    while True:
+        cuc = input(" dmx:")
+        a = szamol(cuc)
+        print("{:.2f}%".format(a))

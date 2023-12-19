@@ -114,8 +114,8 @@ class NezoTer:
         """
         Eladott jegyek százalékban
 
-        :return: 100/székszám * foglalt
-        :rtype int
+        :return: százalék az eladott jegyek alapján
+        :rtype: int
 
         """
         return round((100 / self.szekszam) * self.foglalt)
@@ -207,9 +207,9 @@ def main():
     print("\tBeolvasva eltárolva.")
     try:
         # ssz = int(input("\tAdja meg a sor számát:"))
-        ssz = 4
+        ssz = 7
         # szksz = int(input("\tAdja meg a szék számát:"))
-        szksz = 3
+        szksz = 14
         print("2.feladat...")
         print("\t", nezoter.getFoglalt(ssz, szksz))
     except ValueError:

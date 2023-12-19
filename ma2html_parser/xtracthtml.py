@@ -23,9 +23,11 @@ if __name__ == "__main__":
             attrclass = ""
         else:
             attrclass = attrclass[0]
-        sql += "( NULL, '{}', '{}', '{}', '{}', '{}', '{}', '{}'),".format(
-            did, rel, dataid, title, attrclass, datakeyword, datajstree
-        )
+        # sql += "( NULL, '{}', '{}', '{}', '{}', '{}', '{}', '{}'),".format(
+        #     did, rel, dataid, title, attrclass, datakeyword, datajstree
+        # )
+
+        sql += f"(NUll '{did}', '{rel}', '{dataid}', '{title}', '{attrclass}', '{datakeyword}', '{datajstree}',)\n"
     sql = sql[:-1]
     sql = sql + ";"
     sqlfile.write(sql)

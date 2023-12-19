@@ -23,7 +23,7 @@ class Pizza:
         return cls(["mozzarella", "tomatoes"])
 
     @classmethod
-    def prsciutto(cls):
+    def prosciutto(cls):
         return cls(["mozarella", "tomatoes", "ham"])
 
     def area(self):
@@ -35,6 +35,7 @@ class Pizza:
 
 
 p = Pizza(4, ["sajt", "paradicsom"])
+d = Pizza.margherita()
 print(p)
 print(p.area())
 print(p.circle_area(4))
