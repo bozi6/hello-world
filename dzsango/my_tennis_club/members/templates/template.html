@@ -1,0 +1,79 @@
+<!--
+  ~ template.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 23. 17:34
+  -->
+{% extends "master.html" %}
+
+{% block title %}
+blokkcím
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    {% with firstname="Tobias" %}
+    <h1>Hello {{ firstname }}, how are you?</h1>
+    {% endwith %}
+
+    <h1> Hello {{ firstname }}, how are you?</h1>
+
+    {% for x in fruits %}
+    <h1>{{ x }}</h1>
+    {% endfor %}
+</div>
+First name alapján kiírt adatok
+<div class="row">
+    <ul class="list-group col-6">
+        {% for x in mymembers %}
+        <li class="list-group-item">{{ x.firstname }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if greeting == 1 %}
+    <h1>Hello</h1>
+    {% elif greeting == 2 %}
+    <h1>Welcome</h1>
+    {% else %}
+    <h1>Goodbye</h1>
+    {% endif %}
+
+    <div class="card" style="width: 18rem;">
+        {% for x in mymembers %}
+        <h4 class="card-title">{{ x.id }}</h4>
+        <p class="card-text">
+            {{ x.firstname }}
+            {{ x.lastname }}
+        </p>
+        {% endfor %}
+    </div>
+
+
+    <h1>Welcome Everyone</h1>
+    {% comment %}
+    <h1>Welcome ladies and gentlemen</h1>
+    {% endcomment %}
+
+    <table class="table bg-info">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+        </tr>
+        </thead>
+        {% for x in mymembers %}
+        <tr>
+            <td scope="row">{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <p>In views.py you can see what the fruits variable looks like.</p>
+
+    {% include "footer.html" %}
+</div>
+{% endblock %}

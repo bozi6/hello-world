@@ -1,0 +1,22 @@
+<!--
+  ~ details.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 23. 17:09
+  -->
+{% extends "master.html" %}
+
+{% block title %}
+Details about {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h1 class="card-title">{{ mymember.firstname }} {{ mymember.lastname }}</h1>
+        <p class="card-text">Telefonszám: {{ mymember.phone }}</p>
+        <p class="card-text">{{ mymember.joined_date }} óta a tagunk.</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!--
+  ~ master.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 24. 23:15
+  -->
+
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load bootstrap5 %}
+    <title>{% block title %}{% endblock %}</title>
+    {% bootstrap_css %}
+
+</head>
+<body class="bg-secondary">
+
+<div class="container">
+    {% include "menu.html" %}
+
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+{% bootstrap_javascript %}
+</body>
+</html>

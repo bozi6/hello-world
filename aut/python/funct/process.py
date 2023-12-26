@@ -69,15 +69,15 @@ class Egysor:
     def __init__(
         self,
         datum: object,
-        napok: object,
-        tanckar: object = None,
-        zkr: object = False,
-        ffikar: object = False,
-        kozrem: object = False,
-        kontakt: object = False,
-        status: object = False,
-        kulszall: object = False,
-        megjegy: object = False,
+        napok: str,
+        tanckar: str = None,
+        zkr: str = False,
+        ffikar: str = False,
+        kozrem: str = False,
+        kontakt: str = False,
+        status: str = False,
+        kulszall: str = False,
+        megjegy: str = False,
     ) -> object:
         """
 

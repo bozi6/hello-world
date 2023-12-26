@@ -1,7 +1,7 @@
 import datetime
 from datetime import date
 
-from .mysqlcrud import helykerd
+from mysqlcrud import helykerd
 
 """
 Régebbi (szar) funkciók az autentikhoz
