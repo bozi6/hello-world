@@ -39,11 +39,11 @@ def tesztinputfile(filename):
 
     """
     xlsdir = "../xlsxs/"
-    MasolandoFile = xlsdir + "2023_Autentikus.xlsx"
+    masolando_file = xlsdir + "2023_Autentikus.xlsx"
     if os.path.exists(filename):
-        shutil.copyfile(filename, MasolandoFile)
+        shutil.copyfile(filename, masolando_file)
         cprint.info("File másolva a legújabbra.")
-        return MasolandoFile
+        return masolando_file
     else:
         cprint.warn(
             filename,
@@ -51,7 +51,7 @@ def tesztinputfile(filename):
             "Lehet nincs csatlakoztatva a távoli hely?\n"
             "mindegy... használom a régit.",
         )
-        return MasolandoFile
+        return masolando_file
 
 
 if __name__ == "__main__":

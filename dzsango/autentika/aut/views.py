@@ -11,7 +11,7 @@ def aut(request):
     """
     template = loader.get_template("first.html")
     evek = Aut.objects.raw(
-        "SELECT sorsz, YEAR(datum), count(*) as db FROM aut WHERE tev='előadás' GROUP BY YEAR(datum)"
+        "SELECT sorsz_id, YEAR(datum), count(*) as db FROM aut WHERE tev='előadás' GROUP BY YEAR(datum)"
     )
     # print(evek.query)
     # print(dir(evek))
@@ -28,16 +28,16 @@ def mindenki(request):
     """mindenki betöltése a mindeki.html a templateban
     és hozzáadjuk a mind változót a lekérdezésből."""
     mind = Aut.objects.all().order_by("-datum").filter(tev__exact="előadás").values()
-    evek = Aut.objects.raw("SELECT sorsz, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
+    evek = Aut.objects.raw("SELECT sorsz_id, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
     template = loader.get_template("mindenki.html")
     context = {"mindenki": mind, "hol": 2, "evek": evek, "esetszam": mind.count}
     return HttpResponse(template.render(context, request))
 
 
 def reszletek(request, azonosito):
-    egybuli = Aut.objects.get(sorsz=azonosito)
+    egybuli = Aut.objects.get(sorsz_id=azonosito)
     template = loader.get_template("reszletek.html")
-    evek = Aut.objects.raw("SELECT sorsz, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
+    evek = Aut.objects.raw("SELECT sorsz_id, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
     context = {
         "valami": egybuli,
         "hol": 3,
@@ -47,11 +47,9 @@ def reszletek(request, azonosito):
 
 
 def eveslista(request, evszam):
-    import datetime
-
     template = loader.get_template("eveslista.html")
     evesbuli = Aut.objects.filter(datum__year=evszam).filter(tev__exact="előadás")
-    evek = Aut.objects.raw("SELECT sorsz, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
+    evek = Aut.objects.raw("SELECT sorsz_id, YEAR(datum) FROM aut GROUP BY YEAR(datum)")
     context = {
         "ev": evszam,
         "bulik": evesbuli,

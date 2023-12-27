@@ -9,25 +9,25 @@
 {% extends "master.html" %}
 
 {% block title %}
-Előadások - {{ ev }}
+    Előadások - {{ ev }}
 {% endblock %}
 
 {% block content %}
 
-<h3>Előadások ebben az évben: {{ ev }}. </h3>
-<h4>{{ osszesen }} darab. </h4>
-<div class="fs-4 row text-light" style="background-color: #7A795A;">
-    <div class="col-1">#</div>
-    <div class="col-2">Dátum</div>
-    <div class="col-4">Helyszín</div>
-    <div class="col-2">Műsor</div>
-</div>
-{% for buli in bulik %}
-<div class="row row-cols-auto" style="background-color: #FFFEB7;">
-    <div class="col-1">{{ forloop.counter }};</div>
-    <div class="col-2"><a class="link-dark" href="/reszletek/{{ buli.sorsz}}">{{ buli.datum }}</a></div>
-    <div class="col-4">{{ buli.hely }}</div>
-    <div class="col-2">{{ buli.musor }}</div>
-</div>
-{% endfor %}
+    <h3>Előadások ebben az évben: {{ ev }}. </h3>
+    <h4>{{ osszesen }} darab. </h4>
+    <div class="fs-4 row text-light" style="background-color: #7A795A;">
+        <div class="col-1">#</div>
+        <div class="col-2">Dátum</div>
+        <div class="col-4">Helyszín</div>
+        <div class="col-2">Műsor</div>
+    </div>
+    {% for buli in bulik %}
+        <div class="row row-cols-auto" style="background-color: #FFFEB7;">
+            <div class="col-1">{{ forloop.counter }};</div>
+            <div class="col-2"><a class="link-dark" href="/reszletek/{{ buli.sorsz_id }}">{{ buli.datum }}</a></div>
+            <div class="col-4">{{ buli.hely }}</div>
+            <div class="col-2">{{ buli.musor }}</div>
+        </div>
+    {% endfor %}
 {% endblock %}

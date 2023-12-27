@@ -9,28 +9,38 @@
 {% extends "master.html" %}
 
 {% block title %}
-{{ valami.musor }}
+    {{ valami.sorsz }}
 {% endblock %}
 
 {% block content %}
-<div class="card">
-    <div class="card-body" style="background-color: #7A795A;">
-        <h5 class="card-title ">Műsor: {{ valami.musor }}</h5>
-        <p class="card-text">Dátum: {{ valami.datum }}</p>
-        <p class="card-text">Kezdés: {{ valami.kezd }}</p>
-        <p class="card-text">Helyszín: {{ valami.hely }}</p>
-        <p class="card-text">Helyszín kód: {{ valami.helykod }}</p>
-        <p class="card-text">Megjegyzés: {{ valami.megjegyzes }}</p>
-        <p class="card-text">Kontakt: {{ valami.kontankt }}</p>
-        <p class="card-text">tevékenység: {{ valami.tev }}</p>
-        <p class="card-text">Honvéd Együttesi: {{ valami.honv }}</p>
-        <p class="card-text">Honvéd Jelmeztár: {{ valami.jelmezt }}</p>
-        <p class="card-text">Kiállás: {{ valami.kiallas }}</p>
-        <p class="card-text">Külsős: {{ valami.kulsos }}</p>
-        <p class="card-text">Műszak: {{ valami.muszak }}</p>
-        <p class="card-text">Szállítás: {{ valami.szallitas }}</p>
+    <div class="row">
+        <div class="card">
+            <div class="card-body" style="background-color: #7A795A;">
+                <h5 class="card-title ">Műsor: {{ valami.musor }}</h5>
+                <p class="card-text">Sorszám: {{ valami.sorsz }}</p>
+                <p class="card-text">Dátum: {{ valami.datum }}</p>
+                <p class="card-text">Cég: {{ valami.ceg }}</p>
+                <p class="card-text">Kezdés: {{ valami.kezd }}</p>
+                <p class="card-text">Helyszín: {{ valami.hely }}</p>
+                <p class="card-text">Helyszín kód: {{ valami.helykod }}</p>
+                <p class="card-text">Műsor: {{ valami.musor }}</p>
+                <p class="card-text">Tevékenység: {{ valami.tev }}</p>
+                <p class="card-text">Honvéd Együttesi: {{ valami.honv }}</p>
+                <p class="card-text">Külsős: {{ valami.kulsos }}</p>
+                <p class="card-text">Megjegyzés: {{ valami.megjegyzes }}</p>
+                <p class="card-text">Kontakt: {{ valami.kontakt }}</p>
+                <p class="card-text">Műszak: {{ valami.muszak }}</p>
+                <p class="card-text">Honvéd Jelmeztár: {{ valami.jelmezt }}</p>
+                <p class="card-text">Szállítás: {{ valami.szallitas }}</p>
+                <p class="card-text">Kiállás: {{ valami.kiallas }}</p>
+                <p class="card-text">Felelős: {{ valami.felelos }}</p>
+                <p class="card-text">Alkalom jellege: {{ valami.alkjell }}</p>
+                <p class="card-text">Rögzítés ideje: {{ valami.bevitel_time }}</p>
 
+            </div>
+        </div>
     </div>
-</div>
-<p>Vissza <a href="/mindenki" class="link-light">mindenkihez</a></p>
+    <div class="row">
+        <div class="col-6">Vissza <a href="/mindenki" class="link-light">mindenkihez</a></div>
+    </div>
 {% endblock %}

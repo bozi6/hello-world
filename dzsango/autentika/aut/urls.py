@@ -10,5 +10,6 @@ urlpatterns = [
     path("", views.aut, name="aut"),
     path("mindenki", views.mindenki, name="mindenki"),
     path("reszletek/<int:azonosito>", views.reszletek, name="reszletek"),
+    # path("reszletek/<slug:slug>", views.reszletek, name="reszletek"),
     path("first/<int:evszam>", views.eveslista, name="eveslista"),
 ]

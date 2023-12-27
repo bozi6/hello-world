@@ -26,15 +26,35 @@ class Amk(models.Model):
         db_table = "amk"
 
 
+class Helyszinek(models.Model):
+    sorsz_helyid = models.SmallAutoField(primary_key=True, db_comment="helyek sorszáma")
+    hely = models.CharField(
+        max_length=255,
+        db_collation="utf8mb3_hungarian_ci",
+        db_comment="helyszín megnevezése",
+    )
+    kord = models.CharField(max_length=39)
+
+    def __str__(self):
+        return f"{self.hely} - {self.sorsz}"
+
+    class Meta:
+        managed = False
+        db_table = "helyszinek"
+        db_table_comment = "Helyszínek adatai"
+        ordering = ["hely"]
+
+
 class Aut(models.Model):
-    sorsz = models.SmallAutoField(primary_key=True, db_comment="sorszám")
+    sorsz_id = models.SmallAutoField(primary_key=True, db_comment="sorszám")
     datum = models.DateField(db_comment="datum")
     ceg = models.CharField(max_length=127, db_comment="szervezo ceg")
     kezd = models.CharField(max_length=127, db_comment="kezdés ideje")
     hely = models.TextField(db_comment="helyszín")
     helykod = models.SmallIntegerField(
-        db_comment="Helyszín kódja a helyszinek táblázatban"
+        db_comment="Helyszín kódja a helyszínek táblában."
     )
+    # helykod = models.ForeignKey(Helyszinek, db_column=hely, on_delete=models.CASCADE)
     musor = models.CharField(max_length=200, db_comment="előadás neve")
     tev = models.CharField(max_length=127, db_comment="tevékenység")
     honv = models.TextField(blank=True, null=True, db_comment="közremukodok honvedos")
@@ -62,6 +82,7 @@ class Aut(models.Model):
         max_length=127, blank=True, null=True, db_comment="alkalom jellege"
     )
     bevitel_time = models.DateTimeField(db_comment="Adatbevitel ideje.")
+    # slug = models.SlugField(default="", null=False)
 
     def __str__(self):
         return f"{self.datum} - {self.musor} - {self.hely}"
@@ -119,25 +140,6 @@ class Headatok(models.Model):
         managed = False
         db_table = "headatok"
         db_table_comment = "Dolgozók adatai"
-
-
-class Helyszinek(models.Model):
-    sorsz = models.SmallAutoField(primary_key=True, db_comment="helyek sorszáma")
-    hely = models.CharField(
-        max_length=255,
-        db_collation="utf8mb3_hungarian_ci",
-        db_comment="helyszín megnevezése",
-    )
-    kord = models.CharField(max_length=39)
-
-    def __str__(self):
-        return f"{self.hely} - {self.sorsz}"
-
-    class Meta:
-        managed = False
-        db_table = "helyszinek"
-        db_table_comment = "Helyszínek adatai"
-        ordering = ["hely"]
 
 
 class Karok(models.Model):
