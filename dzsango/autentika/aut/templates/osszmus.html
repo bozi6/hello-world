@@ -1,0 +1,36 @@
+{% extends "master.html" %}
+
+{% load static %}
+{% block title %}
+    Minden előadás listázása
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-4">
+        <h4>Előadás: {{ musor.musor }}.</h4>
+        <h4> Összesen: {{ musdb }} db.</h4>
+    </div>
+    <div>
+        <ul>
+            <div class="h4 row text-light">
+                <div class="col-1 bi-hash"></div>
+                <div class="col-1"><span class="bi-pencil"></span></div>
+                <div class="col-2"><span class="bi-calendar"></span> Dátum</div>
+                <div class="col-5"><span class="bi-building"></span> Hely</div>
+                <div class="col-3"><span class="bi-award"></span> Műsor</div>
+            </div>
+            {% for x in object_list %}
+                <div class="row bg-secondary">
+                    <div class="col-1 ">{{ forloop.counter }}</div>
+                    <div class="col-1">
+                        <a href="/szerkesztes/{{ x.sorsz }}" class="bi-pencil "></a>
+                    </div>
+                    <div class="col-2"><a href="/reszletek/{{ x.sorsz }}" class="link-dark"> {{ x.datum }}
+                    </a></div>
+                    <div class="col-5">{{ x.hely }}</div>
+                    <div class="col-3">{{ x.musor }}</div>
+                </div>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

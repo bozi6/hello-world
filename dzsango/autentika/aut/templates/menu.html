@@ -1,36 +1,63 @@
-{% load bootstrap_icons %}
-<nav class="navbar navbar-expand-lg" role="navigation" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-        <span>{% bs_icon 'globe' %}</span>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+{% load static %}
+<div class="row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " role="navigation"
+         style="background-color: #e3f2fd;">
+        <span class="navbar-item navbar-brand img-fluid rounded"><a href="{% url 'aut' %}">
+                        <img src="{% static 'images/logo.svg' %}" width="80px" alt="Logo">
+                    </a></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">{% bs_icon 'folder' %}</span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Kezdőlap</a>
+                    <a class="nav-link active" aria-current="page" href="/"><span class="bi-building">Kezdőlap</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/mindenki">Minden esemény listázása</a>
+                    <a class="nav-link" href="/mindenki"><span class="bi-table">Minden esemény</span></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">Évek</a>
+                       aria-expanded="false"><span class="bi-floppy">Évek szerint</span> </a>
                     <ul class="dropdown-menu">
                         {% for i in evek %}
-                        <li><a class="dropdown-item" href="/first/{{ i.datum.year }}"> {{ i.datum.year }}</a></li>
+                            <li><a class="dropdown-item" href="/first/{{ i.db }}"> {{ i.db }} - {{ i.cnt_evek }} db.</a>
+                            </li>
                         {% endfor %}
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'musordb' %}"><span class="bi-calendar">Előadás/db.</span> </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false"><span class="bi-alphabet"> ABC műsor</span></a>
+                    <ul class="dropdown-menu">
+                        {% for i in kb %}
+                            <li><a class="dropdown-item-text fs-6" href="/kezdobetu/{{ i.buli }}"><span>{{ i.buli }}
+                                - {{ i.cnt_musor }}</span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mindenki' %}"><span class="bi-x">Nem előadás</span> </a>
+                </li>
+                <form class="d-flex" role="search" action="{% url 'search_results' %}" method="get">
+                    <div class="input-group">
+                        <div class="input-group-text"><span class="bi-search"></span></div>
+                        <input name="q" class="form-control me-2" type="search" placeholder="Keresés"
+                               aria-label="Keresés">
+                    </div>
+                    <button class="btn btn-outline-success" type="submit">Keresés</button>
+                </form>
+                <li class="nav-item">
                     <a class="nav-link disabled" aria-disabled="true">{{ hol }}</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Keresés">
-                <button class="btn btn-outline-success" type="submit">Keresés</button>
-            </form>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>

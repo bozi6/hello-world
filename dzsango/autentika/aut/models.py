@@ -12,6 +12,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from datetime import datetime
 
 
 class Amk(models.Model):
@@ -24,6 +25,7 @@ class Amk(models.Model):
     class Meta:
         managed = False
         db_table = "amk"
+        verbose_name_plural = "amk-k"
 
 
 class Helyszinek(models.Model):
@@ -43,22 +45,35 @@ class Helyszinek(models.Model):
         db_table = "helyszinek"
         db_table_comment = "Helyszínek adatai"
         ordering = ["hely"]
+        verbose_name_plural = "helyszinek"
 
 
 class Aut(models.Model):
-    sorsz_id = models.SmallAutoField(primary_key=True, db_comment="sorszám")
-    datum = models.DateField(db_comment="datum")
-    ceg = models.CharField(max_length=127, db_comment="szervezo ceg")
-    kezd = models.CharField(max_length=127, db_comment="kezdés ideje")
-    hely = models.TextField(db_comment="helyszín")
+    sorsz = models.SmallAutoField(primary_key=True, db_comment="sorszám")
+    datum = models.DateField(db_comment="datum", blank=False, null=False)
+    ceg = models.CharField(max_length=127, db_comment="szervezo ceg", default=24)
+    kezd = models.CharField(
+        max_length=127,
+        db_comment="kezdés ideje",
+        default="Nincs megadva kezdés.",
+        blank=True,
+        null=True,
+    )
+    HM = models.BooleanField(db_comment="HM-esrendezvény")
+    hely = models.TextField(db_comment="helyszín", blank=False)
     helykod = models.SmallIntegerField(
-        db_comment="Helyszín kódja a helyszínek táblában."
+        db_comment="Helyszín kódja a helyszínek táblában.", default=995
     )
     # helykod = models.ForeignKey(Helyszinek, db_column=hely, on_delete=models.CASCADE)
-    musor = models.CharField(max_length=200, db_comment="előadás neve")
-    tev = models.CharField(max_length=127, db_comment="tevékenység")
-    honv = models.TextField(blank=True, null=True, db_comment="közremukodok honvedos")
-    kulsos = models.CharField(max_length=254, db_comment="Külsős résztvevő")
+    musor = models.CharField(max_length=200, db_comment="előadás neve", null=False)
+    tev = models.CharField(max_length=127, db_comment="tevékenység", default="előadás")
+    honv = models.TextField(blank=True, null=True)
+    kulsos = models.CharField(
+        max_length=254,
+        db_comment="Külsős résztvevő",
+        null=True,
+        blank=True,
+    )
     megjegyzes = models.TextField(blank=True, null=True, db_comment="megjegyzes")
     kontakt = models.CharField(
         max_length=254, blank=True, null=True, db_comment="kontakt"
@@ -81,8 +96,10 @@ class Aut(models.Model):
     alkjell = models.CharField(
         max_length=127, blank=True, null=True, db_comment="alkalom jellege"
     )
-    bevitel_time = models.DateTimeField(db_comment="Adatbevitel ideje.")
-    # slug = models.SlugField(default="", null=False)
+    bevitel_time = models.DateTimeField(
+        db_comment="Adatbevitel ideje.", default=datetime.now(), null=True, blank=True
+    )
+    slug = models.SlugField(default="", null=True, blank=True)
 
     def __str__(self):
         return f"{self.datum} - {self.musor} - {self.hely}"
@@ -92,8 +109,13 @@ class Aut(models.Model):
         db_table = "aut"
         db_table_comment = "autentikus főtábla"
         indexes = [
-            models.Index(fields=["datum"]),
+            models.Index(
+                fields=[
+                    "datum",
+                ]
+            ),
         ]
+        verbose_name_plural = "autentikus"
 
 
 class Ceglista(models.Model):

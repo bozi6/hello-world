@@ -7,7 +7,7 @@ from geopy.geocoders import Nominatim
 import time
 
 geolocator = Nominatim(user_agent="autentika application")
-sqfile = open("helyszinek_gps.sql", "w")
+sqfile = open("helyszinek_gps.sql", "a")
 sql = "INSERT INTO helyszinek (sorsz_helyid, hely, kord) VALUES \n"
 sqfile.write(sql)
 with open("autcsakhely.csv", mode="r", encoding="utf-8") as f:
@@ -32,6 +32,7 @@ with open("autcsakhely.csv", mode="r", encoding="utf-8") as f:
         except AttributeError:
             print("Nem találtam.")
             sqfile.write(f"(NULL, '{cim}',''),\n")
+            time.sleep(3)
             pass
 
 sqfile.close()

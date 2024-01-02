@@ -51,9 +51,7 @@ def sqlrak(beobj):
     SqlSor += '","'
     SqlSor += beobj.megjegy  # Megjegyzés
     SqlSor += '","'
-    SqlSor += str(0)  # helykod
-    SqlSor += '","'
-    SqlSor += beobj.kulszal  # Külső szállítás
+    SqlSor += str(995)  # helykod
     SqlSor += '","'
     SqlSor += beobj.tevekenyseg
     SqlSor += '"),\n'
@@ -76,9 +74,8 @@ class Egysor:
         kozrem: str = False,
         kontakt: str = False,
         status: str = False,
-        kulszall: str = False,
         megjegy: str = False,
-    ) -> object:
+    ):
         """
 
         :param datum: Dátum: date
@@ -89,7 +86,6 @@ class Egysor:
         :param kozrem: Közreműködők
         :param kontakt: Kontakt
         :param status: Státusz
-        :param kulszall: Külső szállítás
         :param megjegy: Megjegyzés
         :return:
 
@@ -102,7 +98,6 @@ class Egysor:
         self.egyez = kozrem
         self.kontakt = kontakt
         self.stat = status
-        self.kulszal = kulszall
         self.megjegy = megjegy
         self.tevekenyseg = None
 
@@ -225,24 +220,6 @@ class Egysor:
             self._megjegy = v
         else:
             self._megjegy = ""
-
-    @property
-    def kulszal(self):
-        """
-        Külsős szállítás kiírása
-
-        :return: kiulszal
-        :rtype: str
-
-        """
-        return self._kulszal
-
-    @kulszal.setter
-    def kulszal(self, v):
-        if v:
-            self._kulszal = v
-        else:
-            self._kulszal = ""
 
     @property
     def kontakt(self):

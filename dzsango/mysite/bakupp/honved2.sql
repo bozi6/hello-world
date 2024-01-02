@@ -5908,7 +5908,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `musordarab`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `musordarab`  AS SELECT `aut`.`musor` AS `musor`, count(0) AS `db` FROM `aut` WHERE `aut`.`tev` = 'előadás' GROUP BY `aut`.`musor` ORDER BY count(0) AS `DESCdesc` ASC  ;
+CREATE ALGORITHM=UNDEFINED
+    DEFINER=`root`@`localhost`
+    SQL SECURITY DEFINER
+    VIEW `musordarab`  AS
+    SELECT `aut`.`musor` AS `musor`, count(0) AS `db`
+    FROM `aut`
+    WHERE `aut`.`tev` = 'előadás'
+    GROUP BY `aut`.`musor`
+    ORDER BY count(0) AS `DESCdesc` ASC  ;
 
 -- --------------------------------------------------------
 
