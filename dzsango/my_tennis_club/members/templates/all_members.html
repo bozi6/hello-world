@@ -1,0 +1,26 @@
+<!--
+  ~ all_members.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 23. 13:18
+  -->
+{% extends "master.html" %}
+
+{% block title %}
+Teniszklub - Tagok listája
+{% endblock %}
+
+{% block content %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Tagok</h5>
+
+        <ul class="card-text">
+            {% for x in mymembers %}
+            <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }} {{ x.lastname }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

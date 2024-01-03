@@ -1,0 +1,36 @@
+<!--
+  ~ master.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 23. 17:19
+  -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body class="bg-secondary">
+
+<div class="container bg-secondary">
+  <ul class="nav bg-info">
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/">KEZDŐLAP</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link link-light" href="/members">TAGOK</a>
+    </li>
+      <li class="nav-item">
+      <a class="nav-link link-light" href="/testing">template</a>
+    </li>
+  </ul>
+
+{% block content %}
+{% endblock %}
+</body>
+</html>

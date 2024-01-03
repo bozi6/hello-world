@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+{% block title %}
+    Műsorok darabszám szerint
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-4">
+        <h3>Műsorok darabszám szerinti bontásban</h3>
+    </div>
+    <table class="table table-hover">
+        <thead>
+        <th scope="col">Előadás</th>
+        <th scope="col">Darab</th>
+        </thead>
+        <tbody>
+        {% for e in musdb %}
+        <tr onclick="window.location='/osszmus/{{ e.musor }}'">
+            <td>{{ e.musor }}</td>
+            <td>{{ e.db }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% for egymus in musdb %}
+        <div class="tr" onclick="window.location='/osszmus/{{ egymus.musor }}'">
+            <div class="td col-6">{{ egymus.musor }}</div>
+            <div class="td col-6">{{ egymus.db }}</div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

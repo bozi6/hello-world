@@ -1,0 +1,39 @@
+<!--
+  ~ first.html Copyright (C) 2023  Konta Boáz
+  ~     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+  ~     This is free software, and you are welcome to redistribute it
+  ~     under certain conditions; type `show c' for details.
+  ~  Last Modified: 2023. 12. 24. 20:40
+  -->
+
+{% extends "master.html" %}
+
+{% block title %}
+    Autentikus oldal 2024
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-4">
+        <div class="h2 bg-primary">Autentikus táblázat</div>
+        <table class="table table-hover table-dark table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Dátum</th>
+                <th scope="col">Darabszám</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for x in evek %}
+                <tr onclick="window.location='/first/{{ x.db }}'" style="[data-href] {cursor: pointer;}">
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ x.db }}</td>
+                    <td>{{ x.cnt_evek }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <p>Minden előadás <a href="mindenki" class="link-light">listázása.</a></p>
+    </div>
+{% endblock %}

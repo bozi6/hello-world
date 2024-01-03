@@ -1,0 +1,30 @@
+{% extends "master.html" %}
+{% block title %}
+    {{ kezdbet }} - betűs műsor(ok).
+{% endblock %}
+{% block content %}
+    <div class="h2 mt-4">{{ kezdbet }} betű - {{ bdb }} db. találat.</div>
+    <div class="row">
+        {% for kar in kb %}
+            <div class="col"><a
+                    class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                    href="{% url 'kezdobetu' kar.buli %}"> {{ kar.buli }} </a></div>
+        {% endfor %}
+    </div>
+    <div class="row mt-4">
+        <div class="col h4">Előadás</div>
+        <div class="col h4">Helyszín</div>
+        <div class="col h4">Időpont</div>
+    </div>
+    {% for bul in bulik %}
+        <div class="row">
+            <div class="col"><a class="link-light inline-" href="{% url 'reszletek' bul.sorsz %}"> {{ bul.musor }}</a>
+            </div>
+            <div class="col"><a class="link-light inline-" href="{% url 'reszletek' bul.sorsz %}"> {{ bul.hely }}</a>
+            </div>
+            <div class="col"><a class="link-light inline-" href="{% url 'reszletek' bul.sorsz %}"> {{ bul.datum }}</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

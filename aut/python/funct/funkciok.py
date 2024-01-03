@@ -1,7 +1,7 @@
 import datetime
 from datetime import date
 
-from .mysqlcrud import helykerd
+from mysqlcrud import helykerd
 
 """
 Régebbi (szar) funkciók az autentikhoz
@@ -253,7 +253,7 @@ if __name__ == "__main__":
         "Ide írok\n sok \t\t\n szép      megjegyzést",
         "előadás",
     )
-    result = helykerd("Bp., Müpa Fesztivál Színház")
+    result = helykerd("Budapest, Müpa Fesztivál Színház")
     print("Keresés eredménye: ", result)
     print("találat(ok):")
     i = 1

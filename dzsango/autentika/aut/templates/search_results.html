@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block title %}
+    Keresés
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="h3">Keresés eredménye:</div>
+        <div class="h5">Összesen {{ elemsz }} találat:</div>
+
+        <div class="h6 col-1">#</div>
+        <div class="h6 col-1">Sz.</div>
+        <div class="h6 col-3">Dátum</div>
+        <div class="h6 col-4">Előadás</div>
+        <div class="h6 col-3">Helyszín</div>
+    </div>
+    {% for musor in object_list %}
+        <div class="row" onclick="window.location='/reszletek/{{ musor.sorsz }}'"
+             style="[data-href] {cursor: pointer;}">
+            <div class="col-1"> {{ forloop.counter }}</div>
+            <div class="col-1"><a class="link-dark" href="{% url 'szerkesztes' musor.sorsz %}"><span class="bi-pencil"></span> </a></div>
+            <div class="col-3"> {{ musor.datum }}</div>
+            <div class="col-4"> {{ musor.musor }}</div>
+            <div class="col-3"> {{ musor.hely }}</div>
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

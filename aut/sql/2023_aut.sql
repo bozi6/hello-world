@@ -5,7 +5,7 @@ USE honved2;
 -- Increase max allowed packets to 500MB from 1MB
 SET GLOBAL max_allowed_packet=524288000;
 DELETE FROM aut WHERE datum >= '2023-01-01';
-
+    
 INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES 
 ( NUll, "2023-01-05","24","Nincs megadva kezdés.","Bp., Müpa Fesztivál Színház","BEÉPÍTÉS","Hajós Nikolett","","0","","Előadás"),
 ( NUll, "2023-01-06","24","19:00","Bp., Müpa Fesztivál Színház","A hűtlen feleség","","","0","","Előadás"),
@@ -122,7 +122,6 @@ INSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szal
 ( NUll, "2023-09-27","24","18:00","HM Bp., Stefánia Palota","Folklór 20 perc (Nemzetiközi Katonaorvosi kongresszus, 130 fő)","Zsurával egyeztetve 23.05.04.","","0","","Előadás"),
 ( NUll, "2023-09-28","24","17:00","HM Sukoró, Református Templom 20 perc","Nincs megadva műsor","Tatár Mária. HM 22 518 tatar.maria@hm.gov.hu MNTE Szentendre : Pethőné Nagy Andrea 06303049400 nagy.andrea2@mil.hu VAGY Rédei Juli H.Férfikar: Dr. Görög István 06304747905 kempp@kempp.hu","HM Társadalmi Kapcsolatok és Humántámogatási Főosztály vidám, zenés összeállítás, operett részletekkel MNTE: MH Szentendrei Helyőrségtámogató Parancsnokság, 300 fő Férfikar: KEMPP, Honvédfesztivál-Haditanács","0","","Előadás"),
 ( NUll, "2023-09-30","24","14:30","HM Pákozd, Katonai Emlékpark","Férfikari produkció","Györgypál Csaba nyá. alezredes 06303813795 gypcsne@freemail.hu","Bem József Honvéd Nyugdíjas Egyesület, 102. letü.e. megalakulásának 65. évfordulója (120-130 fő) vidám/zenés műsor Kalocsai Légvédelmi Katonák Hagyományőrzők Köre, 60. évforduló","0","","Előadás"),
-( NUll, "1978-02-26","24","Nincs megadva kezdés.","Férfikar","Nincs megadva műsor","Kontakt","Megjegyzés","0","Külsős szállítás","Előadás"),
 ( NUll, "2023-10-01","24","19:30","Bp., Pesti Vigadó","Álarcok","","","0","","Előadás"),
 ( NUll, "2023-10-02","24","10:00","HM Bp., Bálna","Crossover (26 fő)","Szaniszló Éva 30 908 7950","MH Haderőmodernizációs és Transzformációs Parancsnokság, Alakulat napja (230 fő)","0","","Előadás"),
 ( NUll, "2023-10-11","24","14:30","HM Budapest, Stefánia Palota HKK Pódium bár 30 perc","Kamarakórus + Ökrös Tibor","Aranyos Károly/ Pácser Bálint ny. alezredes 06209279572 pacser.balint@t-online.hu","Budapesti Nyugállományúak Klub Törzsasztal tagozat, 25. évforduló (100 fő)","0","","Előadás"),
