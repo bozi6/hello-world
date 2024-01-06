@@ -18,7 +18,7 @@
         <div class="row" onclick="window.location='/reszletek/{{ musor.sorsz }}'"
              style="[data-href] {cursor: pointer;}">
             <div class="col-1"> {{ forloop.counter }}</div>
-            <div class="col-1"><a class="link-dark" href="{% url 'szerkesztes' musor.sorsz %}"><span class="bi-pencil"></span> </a></div>
+            <div class="col-1"><a class="link-light" href="{% url 'szerkesztes' musor.sorsz %}"><span class="bi-pencil"></span> </a></div>
             <div class="col-3"> {{ musor.datum }}</div>
             <div class="col-4"> {{ musor.musor }}</div>
             <div class="col-3"> {{ musor.hely }}</div>

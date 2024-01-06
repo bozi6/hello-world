@@ -1,11 +1,11 @@
 from datetime import datetime
 
-from django.http import HttpResponse
-from django.template import loader
+from django.core.paginator import Paginator
 from django.db.models import Q, Count, F
 from django.db.models.functions import Left
-
+from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template import loader
 from django.utils.text import slugify
 
 from .forms import AutForm
@@ -61,13 +61,17 @@ def mindenki(request):
     """mindenki betöltése a mindeki.html a templateban
     és hozzáadjuk a mind változót a lekérdezésből."""
     mind = Aut.objects.all().order_by("-datum").filter(tev__exact="előadás").values()
+    paginator = Paginator(mind, 20)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     template = loader.get_template("mindenki.html")
     context = {
-        "mindenki": mind,
+        # "mindenki": mind,
         "hol": 2,
         "evek": evek(),
         "esetszam": mind.count,
         "kb": muskezdbet(),
+        "page_obj": page_obj,
     }
     return HttpResponse(template.render(context, request))
 
@@ -105,7 +109,7 @@ def get_queryset(request):
     query = request.GET.get("q")
     object_list = Aut.objects.filter(
         Q(musor__icontains=query) | Q(hely__icontains=query), Q(tev__exact="Előadás")
-    )
+    ).order_by("datum")
     context = {
         "evek": evek(),
         "object_list": object_list,
@@ -160,7 +164,7 @@ def get_osszmus(request, musornev):
     object_list = (
         Aut.objects.all().filter(musor__exact=musornev).filter(tev__exact="előadás")
     )
-    musor = Aut.objects.filter(musor__exact=musornev).filter(tev__exact="előadás")[0]
+    musor = Aut.objects.filter(musor__exact=musornev).filter(tev__exact="előadás")
     context = {
         "object_list": object_list,
         "hol": 7,
@@ -192,7 +196,7 @@ def szerkesztes(request, sorszam, template_name="szerkesztes.html"):
 
 
 def mindenmas(request):
-    """mindenki aki nemelőadás betöltése a mindeki.html a templateban
+    """mindenki ami nem előadás betöltése a mindeki.html a templateban
     és hozzáadjuk a mind változót a lekérdezésből."""
     mind = (
         Aut.objects.all()
@@ -201,13 +205,37 @@ def mindenmas(request):
         .order_by("tev", "datum")
         .values()
     )
+    paginator = Paginator(mind, 20)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     template = loader.get_template("mindenki.html")
     context = {
-        "mindenki": mind,
         "hol": 2,
         "evek": evek(),
         "esetszam": mind.count,
         "kb": muskezdbet(),
         "m": 1,
+        "page_obj": page_obj,
+    }
+    return HttpResponse(template.render(context, request))
+
+
+def teszting(request):
+    object_list = (
+        Aut.objects.alias(db=Count("hely"))
+        .values("hely")
+        .annotate(db=F("db"))
+        .annotate(musor=F("hely"))
+        .filter(tev__exact="előadás")
+        .order_by("-db", "hely")
+    )
+
+    # print(object_list.query)
+    template = loader.get_template("musordb.html")
+    context = {
+        "evek": evek(),
+        "hol": 6,
+        "musdb": object_list,
+        "kb": muskezdbet(),
     }
     return HttpResponse(template.render(context, request))
