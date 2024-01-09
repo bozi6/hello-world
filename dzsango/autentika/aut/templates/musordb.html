@@ -14,18 +14,11 @@
         </thead>
         <tbody>
         {% for e in musdb %}
-        <tr onclick="window.location='/osszmus/{{ e.musor }}'">
-            <td>{{ e.musor }}</td>
-            <td>{{ e.db }}</td>
-        </tr>
+            <tr onclick="window.location='/osszmus/{{ e.musor }}'">
+                <td>{{ e.musor }}</td>
+                <td>{{ e.db }}</td>
+            </tr>
         {% endfor %}
         </tbody>
     </table>
-    {% for egymus in musdb %}
-        <div class="tr" onclick="window.location='/osszmus/{{ egymus.musor }}'">
-            <div class="td col-6">{{ egymus.musor }}</div>
-            <div class="td col-6">{{ egymus.db }}</div>
-        </div>
-    {% endfor %}
-
 {% endblock %}

@@ -13,58 +13,56 @@
 {% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="card bg-secondary">
-            <div class="card-body bg-secondary">
-                <h5 class="card-title bg-primary p-4"><a class="link-dark"
-                                                         href="{% url 'szerkesztes' valami.sorsz %}"><span
+    <div class="row rounded-3">
+        <div class="card text-light" style="background-color: #072356;">
+            <div class="card-body">
+                <h5 class="card-title p-4"><a class="link-light"
+                                              href="{% url 'szerkesztes' valami.sorsz %}"><span
                         class="bi-pencil"></span></a>
-                    Műsor: {{ valami.musor }}</h5>
-                <div class="row my-2">
-                    <div class="col-3 "><span
-                            class="bi-file-earmark-spreadsheet"> Sorszám: {{ valami.sorsz }}</span>
+                    Előadás:<span class="bg-secondary p-1"> {{ valami.musor }}</span></h5>
+                <div class="row my-4">
+                    <div class="col-3"><span
+                            class="bi-file-earmark-spreadsheet"> Sorszám: <span class="bg-secondary p-1">{{ valami.sorsz }}</span></span>
                     </div>
-                    <div class="col-3"><span class="bi-calendar-date"> Dátum: {{ valami.datum }}</span></div>
-                    <div class="col-3"><span class="bi-building"> Cég: {{ valami.ceg }}</span></div>
-                    <div class="col-3"><span class="bi-clock"> Kezdés: {{ valami.kezd }}</span></div>
+                    <div class="col-3"><span class="bi-calendar-date"> Dátum: <span class="bg-secondary p-1">{{ valami.datum }}</span></span></div>
+                    <div class="col-3"><span class="bi-building"> Cég: <span class="bg-secondary p-1">{{ valami.ceg }}</span></span></div>
+                    <div class="col-3"><span class="bi-clock"> Kezdés: <span class="bg-secondary p-1">{{ valami.kezd }}</span></span></div>
                 </div>
-                <div class="row my-2">
-                    <div class="col-4"><span class="bi-flag">Helyszín: {{ valami.hely }}</span></div>
-                    <div class="col-4 bi-pencil">Helyszín kód: {{ valami.helykod }}</div>
-                    <div class="col-4">Tevékenység: {{ valami.tev }}</div>
+                <div class="row my-4">
+                    <div class="col-4"><span class="bi-flag">Helyszín: <span class="bg-secondary p-1">{{ valami.hely }}</span></span></div>
+                    <div class="col-4 bi-pencil">Helyszín kód: <span class="bg-secondary p-1">{{ valami.helykod }}</span></div>
+                    <div class="col-4">Tevékenység: <span class="bg-secondary p-1">{{ valami.tev }}</span></div>
                 </div>
-                <div class="row my-2">
-                    <div class="col-6 bi-star">Műsor: {{ valami.musor }}</div>
-                    <div class="col-6 bi-stack">Alkalom jellege: {{ valami.alkjell }}</div>
+                <div class="row my-4">
+                    <div class="col-6 bi-star">Műsor: <span class="bg-secondary p-1">{{ valami.musor }}</span></div>
+                    <div class="col-6 bi-stack">Alkalom jellege: <span class="bg-secondary p-1">{{ valami.alkjell }}</span></div>
                 </div>
                 <div class="row">
-                    <div class="col-12 bi-text-center">Megjegyzés: {{ valami.megjegyzes }}</div>
+                    <div class="col-12 bi-text-center">Megjegyzés: <span class="bg-secondary p-1">{{ valami.megjegyzes }}</span></div>
                 </div>
-                <div class="row h3">
-                    <div class="col text-center m-4">Résztvevők</div>
+                <div class="row my-4">
+                    <div class="col-4">Résztvevők</div>
+                    <div class="col-4 bi-backpack">Honvéd részéről: <span class="bg-secondary p-1">{{ valami.honv }}</span></div>
+                    <div class="col-4 bi-backpack2">Külsős résztvevő: <span class="bg-secondary p-1">{{ valami.kulsos }}</span></div>
                 </div>
-                <div class="row my-2">
-                    <div class="col-6 bi-backpack">Honvéd részéről: {{ valami.honv }}</div>
-                    <div class="col-6 bi-backpack2">Külsős résztvevő: {{ valami.kulsos }}</div>
-                </div>
-                <div class="row my-2">
-                    <div class="col-4 bi-car-front">Szállítás: {{ valami.szallitas }}</div>
-                    <div class="col-4 bi-person-workspace">Műszak: {{ valami.muszak }}</div>
-                    <div class="col-4 bi-suitcase">Jelmeztár: {{ valami.jelmezt }}</div>
+                <div class="row my-4">
+                    <div class="col-4 bi-car-front">Szállítás: <span class="bg-secondary p-1">{{ valami.szallitas }}</span></div>
+                    <div class="col-4 bi-person-workspace">Műszak: <span class="bg-secondary p-1">{{ valami.muszak }}</span></div>
+                    <div class="col-4 bi-suitcase">Jelmeztár: <span class="bg-secondary p-1">{{ valami.jelmezt }}</span></div>
                 </div>
                 <div class="row my-2">
-                    <div class="col-4 bi-moon-stars">Kiállás: {{ valami.kiallas }}</div>
-                    <div class="col-4 bi-phone">Kapcsolat: {{ valami.kontakt }}</div>
-                    <div class="col-4 bi-person">Felelős: {{ valami.felelos }}</div>
+                    <div class="col-4 bi-moon-stars">Kiállás: <span class="bg-secondary p-1">{{ valami.kiallas }}</span></div>
+                    <div class="col-4 bi-phone">Kapcsolat: <span class="bg-secondary p-1">{{ valami.kontakt }}</span></div>
+                    <div class="col-4 bi-person">Felelős: <span class="bg-secondary p-1">{{ valami.felelos }}</span></div>
                 </div>
                 <div class="row my-2">
-                    <div class="col-6 bi-calendar2-date">Rögzítve: {{ valami.bevitel_time }}</div>
-                    <div class="col-6">Slug: {{ valami.slug }}</div>
+                    <div class="col-6 bi-calendar2-date">Rögzítve: <span class="bg-secondary p-1">{{ valami.bevitel_time }}</span></div>
+                    <div class="col-6">Slug: <span class="bg-secondary p-1">{{ valami.slug }}</span></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row my-2">
+    <div class="row py-4">
         <div class="col-6">Vissza <a href="/mindenki" class="link-light">mindenkihez</a></div>
     </div>
 {% endblock %}

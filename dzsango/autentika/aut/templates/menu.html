@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light " role="navigation"
          style="background-color: #e3f2fd;">
         <span class="navbar-item navbar-brand img-fluid rounded"><a href="{% url 'aut' %}">
-                        <img src="{% static 'images/logo.svg' %}" width="80px" alt="Logo">
+                        <img class="m-2" src="{% static 'images/logo.svg' %}" height="40px" alt="Logo">
                     </a></span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent"
@@ -13,7 +13,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/"><span class="bi-building">Kezdőlap</span></a>
+                    <a class="nav-link active" aria-current="page" href="/"><span
+                            class="bi-building">Kezdőlap</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/mindenki"><span class="bi-table">Minden esemény</span></a>
@@ -44,7 +45,8 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'mindenki' %}"><span class="bi-x">Nem előadás</span> </a>
+                    <a class="nav-link" href="{% url 'mindenki' %}"><span class="bi-x" style="color: orangered;"></span>Nem
+                        előadás</a>
                 </li>
                 <form class="d-flex" role="search" action="{% url 'search_results' %}" method="get">
                     <div class="input-group">

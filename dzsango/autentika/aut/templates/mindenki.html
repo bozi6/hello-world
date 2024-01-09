@@ -8,31 +8,49 @@
     <div class="row mt-4">
         <h3>Minden esemény. Összesen: {{ esetszam }} db.</h3>
     </div>
-    <div>
-        <ul>
-            <div class="fs-4 row text-light">
-                <div class="col-1">#</div>
-                    <div class="col-2">Dátum</div>
-                {% if m %}
-                    <div class="col-2">Tev</div>
-                {% endif %}
-                <div class="col-2">Hely</div>
-                <div class="col-3">Műsor</div>
-                <div class="col-2">Kezdés</div>
-            </div>
-            {% for x in mindenki %}
-                <div class="row row-cols-auto bg-secondary">
-                    <div class="col-1">{{ forloop.counter }}</div>
-                    <div class="col-2"><a href="{% url 'reszletek' x.sorsz %}" class="link-dark"> {{ x.datum }}
-                    </a></div>
-                    {% if m %}
-                    <div class="col-2">{{ x.tev }}</div>
-                    {% endif %}
-                    <div class="col-2">{{ x.hely }}</div>
-                    <div class="col-3">{{ x.musor }}</div>
-                    <div class="col-2">{{ x.kezd }}</div>
-                </div>
-            {% endfor %}
-        </ul>
+    <div class="fs-4 row text-light">
+        <div class="col-1">#</div>
+        <div class="col-2">Dátum</div>
+        {% if m %}
+            <div class="col-2">Tev</div>
+        {% endif %}
+        <div class="col-2">Hely</div>
+        <div class="col-3">Műsor</div>
+        <div class="col-2">Kezdés</div>
     </div>
+    {% for mindenki in page_obj %}
+        {#                {% for x in mindenki %}#}
+        <div class="row row-cols-auto">
+            <div class="col-1">{{ mindenki.sorsz }}</div>
+            <div class="col-2"><a href="{% url 'reszletek' mindenki.sorsz %}" class="link-light"> {{ mindenki.datum }}
+            </a></div>
+            {% if m %}
+                <div class="col-2">{{ mindenki.tev }}</div>
+            {% endif %}
+            <div class="col-2">{{ mindenki.hely }}</div>
+            <div class="col-3">{{ mindenki.musor }}</div>
+            <div class="col-2">{{ mindenki.kezd }}</div>
+        </div>
+        {#                {% endfor %}#}
+    {% endfor %}
+
+    <ul class="pagination pt-5 justify-content-center">
+
+        {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; Első</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Előző</a>
+            </li>
+        {% endif %}
+
+        <li class="page-item"><span class="page-link">Oldal {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}.</span></li>
+
+
+
+        {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Következő</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Utolsó
+                &raquo;</a></li>
+        {% endif %}
+
+    </ul>
 {% endblock %}
