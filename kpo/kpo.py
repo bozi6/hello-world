@@ -13,6 +13,13 @@ class Ko:
         self.uti = 3
         self.kb = 2
         self.nev = "Kaics"
+        self.pont = 0
+
+    def addpont(self):
+        self.pont += 1
+
+    def reset(self):
+        self.pont = 0
 
 
 class Papir:
@@ -21,6 +28,13 @@ class Papir:
         self.uti = 1
         self.kb = 3
         self.nev = "Papír"
+        self.pont = 0
+
+    def addpont(self):
+        self.pont += 1
+
+    def reset(self):
+        self.pont = 0
 
 
 class Ollo:
@@ -29,24 +43,37 @@ class Ollo:
         self.uti = 2
         self.kb = 1
         self.nev = "Olló"
+        self.pont = 0
+
+    def addpont(self):
+        self.pont += 1
+
+    def reset(self):
+        self.pont = 0
 
 
-def prog():
+def main():
     ko = Ko()
     papir = Papir()
     ollo = Ollo()
     targyak = [ko, papir, ollo]
-    for i in range(3):
+    iteraciok = 1000000
+    for i in range(iteraciok):
         egy = random.choice(targyak)
         ketto = random.choice(targyak)
         if egy.num == ketto.num:
             ketto = random.choice(targyak)
-        print(f"{egy.nev} VS {ketto.nev}")
+        # print(f"{egy.nev} VS {ketto.nev}")
         if egy.num == ketto.uti:
-            print(f"A(z) {ketto.nev} kiütötte a(z) {egy.nev}-t")
+            # print(f"A(z) {ketto.nev} kiütötte a(z) {egy.nev}-t")
+            ketto.addpont()
         if ketto.num == egy.uti:
-            print(f"A(z) {egy.nev} kiütötte a(z) {ketto.nev}-t")
+            # print(f"A(z) {egy.nev} kiütötte a(z) {ketto.nev}-t")
+            egy.addpont()
+    print(iteraciok, " iterációból.")
+    for i in targyak:
+        print(f"{i.nev} - {i.pont}")
 
 
 if __name__ == "__main__":
-    prog()
+    main()
