@@ -1,0 +1,513 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Honvéd Együttes
+X-WR-TIMEZONE:Europe/Budapest
+X-WR-CALDESC:Honvéd Együttes események leírása
+BEGIN:VEVENT
+DTSTART:20120511T073000Z
+DTEND:20120511T083000Z
+DTSTAMP:20240106T201741Z
+UID:2kaik5s9lvkgopv88c4474hlho@google.com
+CREATED:20120507T125058Z
+LAST-MODIFIED:20120507T125103Z
+LOCATION:Stefánia Palota földszinti ovál
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Himnusz Szózat
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130213
+DTEND;VALUE=DATE:20130214
+DTSTAMP:20240106T201741Z
+UID:jv3k8raq3f9vp1o1ajqllkpgk8@google.com
+CREATED:20130129T180924Z
+DESCRIPTION:Műszak: mindenki\nSzállítás:\nJárművek:\n1.\n2.\nIndulás:\nFele
+ lős: Niederkirchner\nKontakt: Csenky László 30 815 3584
+LAST-MODIFIED:20130129T180931Z
+LOCATION:Budapest\, Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Téli tánc/BEÉPÍTÉS
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130820
+DTEND;VALUE=DATE:20130821
+DTSTAMP:20240106T201741Z
+UID:t0afocsq56db67ms131n7sct8s@google.com
+CREATED:20130728T144440Z
+DESCRIPTION:eaH.Férfikar\nHMK Kiképzési Csoportfőnökség\nTóth Gábor alezred
+ es +36 30 9772 503\, toth.gabor3@hm.gov.hu
+LAST-MODIFIED:20130829T085912Z
+LOCATION:Budapest\, Hősök tere
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tisztavatás
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131204T140000Z
+DTEND:20131204T150000Z
+DTSTAMP:20240106T201741Z
+UID:is1gl6vlm3nj6eutg8sd0lvtok@google.com
+CREATED:20131128T104135Z
+DESCRIPTION:H.Táncszínház\nMűszak: Bajkó\, Szalóczi\, Konta\, Patai\, Laczk
+ ó\nJelmeztár: Fekecs\, Ritecz\, Sztolnai\nJelmeztár beérkezése:08.00\nSzáll
+ ítás: Vígh\nJárművek:\n1. JEJ-860\n2. HLC-687 > érkezik a 2. ea. végére\nMű
+ szakkal indul: 07.00\nKözreműködők beérkezése:08.15\nPróba: 08.30\nÜgyelő:
+ Benedek\nFelelős: Zsuráfszky Z.\nKontakt: Németh Katalin +36 30 4975 920
+LAST-MODIFIED:20131128T104135Z
+LOCATION:Budapest Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tündérmese
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131206T150000Z
+DTEND:20131206T160000Z
+DTSTAMP:20240106T201741Z
+UID:spuekuhtkjsm6948d6dfsvg990@google.com
+CREATED:20131120T143454Z
+DESCRIPTION:16.00 Mikulás műsor >Vargánya dalrészletek + tánctanítás\nH.Tán
+ cszínház: Aranyos\, Fekete\, Juhász\, Bacsó\, Payer\, \nZenekar: mindenki\n
+ Hangszerállítás: cimbalom\, nagybőgő\nMűszak: Niederkirchner\, Mazán\nJelme
+ ztár: Sztolnai\nSzállítás: Egri\nJármű: ICC-335\nIndulás: 14.30\nKözreműköd
+ ők beérkezése: 15.00\nFelelős: Kovács M.\nKontakt: Gémes Szilvia 30 681 004
+ 1\n
+LAST-MODIFIED:20131128T104300Z
+LOCATION:HM Budapest Nemzeti Közszolgálati Egyetem díszterme
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mikulás műsor
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131203T120000Z
+DTEND:20131203T130000Z
+DTSTAMP:20240106T201741Z
+UID:p2c7iml895tdf9bqg199e6gpe0@google.com
+CREATED:20131128T104048Z
+DESCRIPTION:Műszak: Niederkirchner\, Bajkó\, Laczkó\, Szalóczi\, Mazán\nSzá
+ llítás: Egri\nJármű: HLC-687\nIndulás:13.00\nFelelős: Niederkirchner
+LAST-MODIFIED:20131203T060316Z
+LOCATION:Budapest Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tündérmese  KISZÁLLÍTÁS
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20131209
+DTEND;VALUE=DATE:20131210
+DTSTAMP:20240106T201741Z
+UID:ftpcbhcc8gasktelf97iv2pf7c@google.com
+CREATED:20131204T052922Z
+LAST-MODIFIED:20131204T052922Z
+LOCATION:Gödöllő\, Magyarország
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Csipkerózsika Beépítés
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131209T180000Z
+DTEND:20131209T190000Z
+DTSTAMP:20240106T201741Z
+UID:nfk230u860pqvfjsnr09j8ojk4@google.com
+CREATED:20131204T052947Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T052947Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131210T180000Z
+DTEND:20131210T190000Z
+DTSTAMP:20240106T201741Z
+UID:ko9b2a535qvi43iga57eh51tdc@google.com
+CREATED:20131204T053034Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053034Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120511T073000Z
+DTEND:20120511T083000Z
+DTSTAMP:20240106T201741Z
+UID:2kaik5s9lvkgopv88c4474hlho@google.com
+CREATED:20120507T125058Z
+LAST-MODIFIED:20120507T125103Z
+LOCATION:Stefánia Palota földszinti ovál
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Himnusz Szózat
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130213
+DTEND;VALUE=DATE:20130214
+DTSTAMP:20240106T201741Z
+UID:jv3k8raq3f9vp1o1ajqllkpgk8@google.com
+CREATED:20130129T180924Z
+DESCRIPTION:Műszak: mindenki\nSzállítás:\nJárművek:\n1.\n2.\nIndulás:\nFele
+ lős: Niederkirchner\nKontakt: Csenky László 30 815 3584
+LAST-MODIFIED:20130129T180931Z
+LOCATION:Budapest\, Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Téli tánc/BEÉPÍTÉS
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20130820
+DTEND;VALUE=DATE:20130821
+DTSTAMP:20240106T201741Z
+UID:t0afocsq56db67ms131n7sct8s@google.com
+CREATED:20130728T144440Z
+DESCRIPTION:eaH.Férfikar\nHMK Kiképzési Csoportfőnökség\nTóth Gábor alezred
+ es +36 30 9772 503\, toth.gabor3@hm.gov.hu
+LAST-MODIFIED:20130829T085912Z
+LOCATION:Budapest\, Hősök tere
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tisztavatás
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131204T140000Z
+DTEND:20131204T150000Z
+DTSTAMP:20240106T201741Z
+UID:is1gl6vlm3nj6eutg8sd0lvtok@google.com
+CREATED:20131128T104135Z
+DESCRIPTION:H.Táncszínház\nMűszak: Bajkó\, Szalóczi\, Konta\, Patai\, Laczk
+ ó\nJelmeztár: Fekecs\, Ritecz\, Sztolnai\nJelmeztár beérkezése:08.00\nSzáll
+ ítás: Vígh\nJárművek:\n1. JEJ-860\n2. HLC-687 > érkezik a 2. ea. végére\nMű
+ szakkal indul: 07.00\nKözreműködők beérkezése:08.15\nPróba: 08.30\nÜgyelő:
+ Benedek\nFelelős: Zsuráfszky Z.\nKontakt: Németh Katalin +36 30 4975 920
+LAST-MODIFIED:20131128T104135Z
+LOCATION:Budapest Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tündérmese
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131206T150000Z
+DTEND:20131206T160000Z
+DTSTAMP:20240106T201741Z
+UID:spuekuhtkjsm6948d6dfsvg990@google.com
+CREATED:20131120T143454Z
+DESCRIPTION:16.00 Mikulás műsor >Vargánya dalrészletek + tánctanítás\nH.Tán
+ cszínház: Aranyos\, Fekete\, Juhász\, Bacsó\, Payer\, \nZenekar: mindenki\n
+ Hangszerállítás: cimbalom\, nagybőgő\nMűszak: Niederkirchner\, Mazán\nJelme
+ ztár: Sztolnai\nSzállítás: Egri\nJármű: ICC-335\nIndulás: 14.30\nKözreműköd
+ ők beérkezése: 15.00\nFelelős: Kovács M.\nKontakt: Gémes Szilvia 30 681 004
+ 1\n
+LAST-MODIFIED:20131128T104300Z
+LOCATION:HM Budapest Nemzeti Közszolgálati Egyetem díszterme
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Mikulás műsor
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131203T120000Z
+DTEND:20131203T130000Z
+DTSTAMP:20240106T201741Z
+UID:p2c7iml895tdf9bqg199e6gpe0@google.com
+CREATED:20131128T104048Z
+DESCRIPTION:Műszak: Niederkirchner\, Bajkó\, Laczkó\, Szalóczi\, Mazán\nSzá
+ llítás: Egri\nJármű: HLC-687\nIndulás:13.00\nFelelős: Niederkirchner
+LAST-MODIFIED:20131203T060316Z
+LOCATION:Budapest Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Tündérmese  KISZÁLLÍTÁS
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20131209
+DTEND;VALUE=DATE:20131210
+DTSTAMP:20240106T201741Z
+UID:ftpcbhcc8gasktelf97iv2pf7c@google.com
+CREATED:20131204T052922Z
+LAST-MODIFIED:20131204T052922Z
+LOCATION:Gödöllő\, Magyarország
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Csipkerózsika Beépítés
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131209T180000Z
+DTEND:20131209T190000Z
+DTSTAMP:20240106T201741Z
+UID:nfk230u860pqvfjsnr09j8ojk4@google.com
+CREATED:20131204T052947Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T052947Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131210T180000Z
+DTEND:20131210T190000Z
+DTSTAMP:20240106T201741Z
+UID:ko9b2a535qvi43iga57eh51tdc@google.com
+CREATED:20131204T053034Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053034Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131211T180000Z
+DTEND:20131211T190000Z
+DTSTAMP:20240106T201741Z
+UID:m6ri6egkh6ijrsv488pcq75edo@google.com
+CREATED:20131204T053102Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053102Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131214T140000Z
+DTEND:20131214T150000Z
+DTSTAMP:20240106T201741Z
+UID:j8hku859rqe3lfa1a0999ge2to@google.com
+CREATED:20131204T053148Z
+LAST-MODIFIED:20131204T053212Z
+LOCATION:Budapest\, Szent Imre Gimnázium
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Betlehemezés és regölés
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131214T180000Z
+DTEND:20131214T190000Z
+DTSTAMP:20240106T201741Z
+UID:4c8kpnj6p0gckknvbqj60k22l8@google.com
+CREATED:20131204T053234Z
+LAST-MODIFIED:20131204T053234Z
+LOCATION:Budapest\, Nemzeti Táncszínház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Téli tánc
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131219T180000Z
+DTEND:20131219T190000Z
+DTSTAMP:20240106T201741Z
+UID:cmetekgt5jppf956ccmbttdauc@google.com
+CREATED:20131204T053541Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053541Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131220T180000Z
+DTEND:20131220T190000Z
+DTSTAMP:20240106T201741Z
+UID:fbjlub9j1rdhf5pkvtp1k73vo4@google.com
+CREATED:20131204T053623Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053623Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131221T180000Z
+DTEND:20131221T190000Z
+DTSTAMP:20240106T201741Z
+UID:rl9p1rmbk9csefg2imh0j0ia0c@google.com
+CREATED:20131204T053709Z
+DESCRIPTION:Közreműködik a H.Férfikar\nKözreműködők beérkezése:\nÜgyelő: Kő
+ vári\nFelelős: Strausz K.\n
+LAST-MODIFIED:20131204T053709Z
+LOCATION:Budapest Nemzeti Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Johanna a máglyán
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131210T090000Z
+DTEND:20131210T100000Z
+DTSTAMP:20240106T201741Z
+UID:0ne5n7qar2eu03lgqubj2fuuc8@google.com
+CREATED:20131204T053018Z
+DESCRIPTION:H.Táncszínház\nMűszak: Bajkó\, Szalóczi\, Konta\, Jeszencsák\,
+ Laczkó\nJelmeztár: Fekecs\, Ritecz\nSzállítás: Krucsó\, Gazdag-Győri\nJármű
+ vek: \n1. JEJ-860 (Gazdag-Győri)\nMűszakkal\, Jelmeztárral indul: 06.00\n2.
+  JNL-271 (Krucsó)\nKözreműködőkkel indul: 07.00\nPróba: 08.00-09.00\nÜgyelő
+ : Hajdú\nFelelős: Valach\nKontakt: Drávucz Anita 70 934 3245\nTechnikai kon
+ takt: Deme-Sörös Gergely 70 977 2353\n
+LAST-MODIFIED:20131209T151555Z
+LOCATION:Gödöllő Művészetek Háza\, Színházterem (Szabadság út 6.)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Csipkerózsika
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131210T120000Z
+DTEND:20131210T130000Z
+DTSTAMP:20240106T201741Z
+UID:m7c9fq1vn18tpcstla0q2kna6s@google.com
+CREATED:20131209T151625Z
+DESCRIPTION:H.Táncszínház\nMűszak: Bajkó\, Szalóczi\, Konta\, Jeszencsák\,
+ Laczkó\nJelmeztár: Fekecs\, Ritecz\nSzállítás: Krucsó\, Gazdag-Győri\nJármű
+ vek: \n1. JEJ-860 (Gazdag-Győri)\nMűszakkal\, Jelmeztárral indul: 06.00\n2.
+  JNL-271 (Krucsó)\nKözreműködőkkel indul: 07.00\nPróba: 08.00-09.00\nÜgyelő
+ : Hajdú\nFelelős: Valach\nKontakt: Drávucz Anita 70 934 3245\nTechnikai kon
+ takt: Deme-Sörös Gergely 70 977 2353\n
+LAST-MODIFIED:20131209T151625Z
+LOCATION:Gödöllő Művészetek Háza\, Színházterem (Szabadság út 6.)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Csipkerózsika
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131211T090000Z
+DTEND:20131211T100000Z
+DTSTAMP:20240106T201741Z
+UID:id6kgktkg0u3s6r06nc42c2lkc@google.com
+CREATED:20131204T053048Z
+DESCRIPTION:H.Táncszínház\nMűszak: Bajkó\, Szalóczi\, Konta\, Jeszencsák\,
+ Laczkó\nJelmeztár: Fekecs\, Ritecz\nSzállítás: Krucsó\, Gazdag-Győri\, Egri
+ \nJárművek:\n1. JEJ-860  (Gazdag-Győri)\nMűszakkal\, Jelmeztárral indul: 07
+ .00\n2. JNL-271 (Krucsó)\nKözreműködőkkel indul: 08.00\n3. HLC-687 (Egri)>
+ érkezik előadás végére\nÜgyelő: Hajdú\nFelelős: Valach\nKontakt: Drávucz An
+ ita 70 934 3245\nTechnikai kontakt: Deme-Sörös Gergely 70 977 2353\n
+LAST-MODIFIED:20131209T151651Z
+LOCATION:Gödöllő Művészetek Háza\, Színházterem (Szabadság út 6.)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Csipkerózsika
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131219T070000Z
+DTEND:20131219T080000Z
+DTSTAMP:20240106T201741Z
+UID:12rldgd3s0lnkd3fmrhmol51oc@google.com
+CREATED:20131209T151942Z
+DESCRIPTION:Miskolc (szakmai fórumra)\nSzállítás:\nJármű: KCK-844 (4 fő)\nI
+ ndulás. 08.00\n
+LAST-MODIFIED:20131209T151942Z
+LOCATION:Miskolc (szakmai fórumra)
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Szállítás:
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131217T140000Z
+DTEND:20131217T150000Z
+DTSTAMP:20240106T201741Z
+UID:fn7hfme0q4vgqu5ltfsr6ksd2g@google.com
+CREATED:20131204T053439Z
+DESCRIPTION:Eke\, Fazakas\, M.Simon\, Márkus\, Marofka\nKözreműködők beérke
+ zése:\n13.15\nPróba: 13.30-14.00\nFelelős: Kovács M.\nKontakt: Bankó László
+  30 825 4466\n
+LAST-MODIFIED:20131211T125349Z
+LOCATION:HM Budapest Stefánia Palota emeleti ovál terem
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Bakanóták (részletek)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131217T180000Z
+DTEND:20131217T190000Z
+DTSTAMP:20240106T201741Z
+UID:trvgpb7v7spse0liku3n92cff4@google.com
+CREATED:20131204T053413Z
+DESCRIPTION:19.00 Táncoló tavasz \n20.00-20.30 Szünet\n20.30 Téli tánc\nH.T
+ áncszínház és zenekara\nKülsős: Söndörgő együttes\nMűszak: mindenki\nJelmez
+ tár: Fekecs\, Ritecz\, Sztolnai\, Pálmüller + 3 fő Külsős\nSztolnai beérkez
+ ése: 09.00\nFekecs\, Ritecz beérkezése: 11.00\nSzállítás: Vígh\nJárművek:\n
+ 1. JEJ-860\nMűszakkal indul: 07.30\n2. HLC-687\n3. IVV-280\nDíszlettel\, je
+ lmezzel indul: 07.30\nKözreműködők beérkezése:\n14.30\nPróba: 15.00-18.00\n
+ Produkciós felelős: Turányi\nFelelős: Zsuráfszky Zoltán\n
+LAST-MODIFIED:20131211T125406Z
+LOCATION:Budapest\, Erkel Színház
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Táncoló évszakok
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20131218
+DTEND;VALUE=DATE:20131219
+DTSTAMP:20240106T201741Z
+UID:piuqb5mn02k8lnp12ft84ic7vk@google.com
+CREATED:20131211T125419Z
+DESCRIPTION:Külsős szállítás/Budapest\nJármű: JNL-271\n
+LAST-MODIFIED:20131211T125427Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Külsős szállítás/Budapest
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131219T100000Z
+DTEND:20131219T110000Z
+DTSTAMP:20240106T201741Z
+UID:vj25jdd2jsjkdnhmp3aeklejc4@google.com
+CREATED:20131204T053526Z
+DESCRIPTION:10.00 Készenléti idő\n11.00 Alkalmi műsor \n(Árvák karácsonya)\
+ nEke\, Fazakas\, M.Simon\, Marofka\, Márkus\nMűszak: Bajkó\, Mazán\nSzállít
+ ás: Vígh\nJármű: JEJ-860\nIndulás: 08.30\nKözreműködők beérkezése:09.15\nPr
+ óba: 09.30\nFelelős: Kovács M.\nKontakt: Szabóné Szabó Andrea 30 815 0608\n
+ Technikai kontakt: Landberger Tamás: 30 230 7104\n
+LAST-MODIFIED:20131211T125452Z
+LOCATION:Budapest\, Stefánia Palota emeleti ovál
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Árvák karácsonya (30)
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
