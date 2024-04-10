@@ -109,6 +109,11 @@ while True:
     ws.column_dimensions["B"].width = 55
     ws.column_dimensions["C"].width = 55
     ws.column_dimensions["D"].width = 55
-    wb.save(f"./xls/{ws.title}.xlsx")
+    try:
+        wb.save(f"./xls/{ws.title}.xlsx")
+    except FileNotFoundError:
+        print("xls directory not found, so try to create.")
+        os.makedirs("./xls")
+        wb.save(f"./xls/{ws.title}.xlsx")
     wb.close()
     print("Writing file done.\n Restarting")
