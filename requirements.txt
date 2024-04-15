@@ -145,7 +145,7 @@ sphinxcontrib-jsmath==1.0.1
 sphinxcontrib-qthelp==1.0.6
 sphinxcontrib-serializinghtml==1.1.9
 sqlescapy==1.0.1
-sqlparse==0.4.4
+sqlparse==0.5.0
 stevedore==5.1.0
 termcolor==2.4.0
 tomli==2.0.1
