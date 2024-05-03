@@ -17,7 +17,7 @@ import aut.python.funct.process as proc
 __author__ = "Konta Boáz"
 __author_email__ = "kontab6@gmail.com"
 __copyright__ = "Konta Boáz 2024"
-BemenetiFile = "z:/NYILVÁNOS/Szereplési terv/2023/2023_Autentikus és  munkarend/_______2023_Autentikus_.xlsx"
+BemenetiFile = "q:/NYILVÁNOS/Szereplési terv/2024_Autentikus és munkarend/2024_Autentikus.xlsx"
 MasoltFile = "2024_Autentikus.xlsx"
 KimenetFile = "../sql/2024_aut.sql"
 tancnevezes = conf.TANCNEV
@@ -25,7 +25,7 @@ ferfikarnevek = conf.FERFIKARNEVEK
 
 KezdesiIdo = time.time()
 logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")
-# logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
+logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
 # logging.disable(logging.INFO)
 # logging.info(f"Program elkezdődött. {KezdesiIdo}")
 
@@ -73,10 +73,10 @@ if __name__ == "__main__":
     WorkBook = openpyxl.load_workbook(filename=BemenetFile, read_only=True)
     # read_only elvileg gyorsabb és amúgy sem akarunk írni bele.
     for sh in WorkBook.worksheets:  # Végigmegyünk a munkafüzet lapjain
-        cells = sh["A2":"J210"]  # J210 a vége
+        cells = sh["A2":"I210"]  # J210 a vége
         i = 0
         cprint.info("Munkalap neve: ", sh.title)
-        for c1, c2, c3, c4, c5, c6, c7, c8, c9, c10 in cells:
+        for c1, c2, c3, c4, c5, c6, c7, c8, c9 in cells:
             SqlSor = "( NULL,"
             if (c1.value and c3.value) and (
                 c3.value not in tancnevezes
@@ -97,7 +97,7 @@ if __name__ == "__main__":
                 )
                 datum = procad.datum
                 sqlValues.append(proc.sqlrak(procad))
-                i = i + 1  # feldolgozott sorok száma.
+                i += 1  # feldolgozott sorok száma.
             elif (c1.value and c5.value) and (
                 c5.value not in ferfikarnevek
             ):  # dátum férfikar kitöltve.
@@ -118,7 +118,7 @@ if __name__ == "__main__":
                 datum = procadf.datum
                 logging.debug("Kezdési időpont kialakult: " + str(procadf.kezdes))
                 sqlValues.append(proc.sqlrak(procadf))
-                i = i + 1  # feldolgozott sorok száma.
+                i += 1  # feldolgozott sorok száma.
                 logging.debug(proc.sqlrak(procadf))
 
         cprint.info(i, "sor feldolgozva.")

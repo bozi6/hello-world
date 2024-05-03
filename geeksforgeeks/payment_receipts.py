@@ -29,7 +29,7 @@ title = Paragraph(payment_receipts_data.HEADER, title_style)
 
 # creates a Table Style object and in it,
 # defines the styles row wise
-# the tulpes which look like coordinates
+# the tuples which look like coordinates
 # are nothing but rows and columns
 style = TableStyle(
     [
@@ -39,13 +39,13 @@ style = TableStyle(
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.whitesmoke),
         ("ALIGN", (0, 0), (-1, -1), "LEFT"),
         ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
-        ("BACKGROUND", (0, 4), (3, 4), colors.green),
+        ("BACKGROUND", (0, 4), (3, 4), colors.chartreuse),
     ]
 )
 
 # creates a table object and passes the style to it
 table = Table(payment_receipts_data.DATA, style=style)
 
-# final stepwhich builds the
-# aactual pdf putting together all the elements
+# final step which builds the
+# actual pdf putting together all the elements
 pdf.build([title, table])

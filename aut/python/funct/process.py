@@ -53,6 +53,8 @@ def sqlrak(beobj):
     SqlSor += '","'
     SqlSor += str(995)  # helykod
     SqlSor += '","'
+    SqlSor += beobj.status  # Státusz
+    SqlSor += '","'
     SqlSor += beobj.tevekenyseg
     SqlSor += '"),\n'
     return SqlSor
@@ -97,7 +99,7 @@ class Egysor:
         self.ffkar = ffikar
         self.egyez = kozrem
         self.kontakt = kontakt
-        self.stat = status
+        self.status = status
         self.megjegy = megjegy
         self.tevekenyseg = None
 
@@ -220,6 +222,24 @@ class Egysor:
             self._megjegy = v
         else:
             self._megjegy = ""
+
+    @property
+    def status(self):
+        """
+        Státusz
+
+        :return: a státusz átírása
+
+        """
+        return self._status
+
+    @status.setter
+    def status(self, v):
+        if v:
+            v = cleaner(v)
+            self._status = v
+        else:
+            self._status = ""
 
     @property
     def kontakt(self):

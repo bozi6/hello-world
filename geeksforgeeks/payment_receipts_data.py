@@ -5,22 +5,22 @@
 #   Last Modified: 2023. 12. 19. 10:14
 HEADER = "GeeksforGeeks"
 DATA = [
-    ["Dátum", "Név", "Feliratkozás", "Ár (Rs.)"],
+    ["Dátum", "Név", "Feliratkozás", "Ár (Ft.)"],
     [
         "2020-11-16",
         "Full Stack Development with React & Node JS - Live",
         "Lifetime",
-        "10,999.00/-",
+        "10,999.00 Ft./-",
     ],
     [
         "2020-11-16",
         "Geeks Classes: Live Session",
         "6 hónap",
-        "9,999.00/-",
+        "9,999.00 Ft./-",
     ],
     ["2023-12-19", "Tutorial for python", "Lifetime", "1,000.00/-"],
     ["", "", "", ""],
-    ["Sub Total", "", "", "20,9998.00/-"],
-    ["Kedvezmény", "", "", "-3,000.00/-"],
-    ["Fizetendö", "", "", "17,998.00/-"],
+    ["Sub Total", "", "", "20,9998.00 Ft./-"],
+    ["Kedvezmény", "", "", "-3,000.00 Ft./-"],
+    ["Fizetendö", "", "", "17,998.00 Ft./-"],
 ]

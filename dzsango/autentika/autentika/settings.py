@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from django.forms.renderers import TemplatesSetting
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,7 +81,7 @@ WSGI_APPLICATION = "autentika.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": "honved_test",
+        "NAME": "honved2",
         "USER": "root",
         "PASSWORD": "qwe",
         "HOST": "ds718.lan",
