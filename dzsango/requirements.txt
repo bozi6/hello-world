@@ -9,7 +9,7 @@ Automat==22.10.0
 Babel==2.14.0
 bandit==1.7.6
 beautifulsoup4==4.12.2
-black==24.1a1
+black==24.3.0
 blinker==1.7.0
 bs4==0.0.1
 build==1.0.3
