@@ -4,3 +4,5 @@
 /venv/*
 /sms2xls/env/*
 /aut/xlsxs/
+/*.xls
+/*.xlsx

@@ -57,7 +57,7 @@ def main():
     papir = Papir()
     ollo = Ollo()
     targyak = [ko, papir, ollo]
-    iteraciok = 1000000
+    iteraciok = 100000
     for i in range(iteraciok):
         egy = random.choice(targyak)
         ketto = random.choice(targyak)
@@ -72,7 +72,7 @@ def main():
             egy.addpont()
     print(iteraciok, " iterációból.")
     for i in targyak:
-        print(f"{i.nev} - {i.pont}")
+        print(f"{i.nev} - {i.pont:,.0f} db.")
 
 
 if __name__ == "__main__":

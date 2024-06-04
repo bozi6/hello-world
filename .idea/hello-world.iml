@@ -23,7 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/aut/xlsxs" />
       <excludeFolder url="file://$MODULE_DIR$/aut/sql" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12 (python_projects) (3)" jdkType="Python SDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="@popperjs/core" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
