@@ -71,7 +71,7 @@ def debugformat():
 
 if __name__ == "__main__":
     debugformat()
-    olvasando_fajl = "sms_full.xml"
+    olvasando_fajl = "sms-20240804004007.xml"
     kiirando_fajl = "./balance.xlsx"
 
     # xml fájl betöltése

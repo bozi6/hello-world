@@ -4,7 +4,7 @@ import json
 sampleJson = """[
     {
         "id":1,
-        "name":"name1",
+        "name":"Béla",
         "color":[
             "red",
             "green"
@@ -12,7 +12,7 @@ sampleJson = """[
     },
     {
         "id":2,
-        "name":"name2",
+        "name":"Mari",
         "color":[
             "pink",
             "yellow"
