@@ -31,8 +31,8 @@ def main():
 
     print('mycompany growth: ', MyCompany.growth)
 
-    Bank = MyCompany('DBA Bank', 50000, 1000)
-    print('Bank revenue:', Bank.revenue)
+    bank = MyCompany('DBA Bank', 50000, 1000)
+    print('Bank revenue:', bank.revenue)
 
     class Cab:
         # Initialize variables for first iteration
@@ -66,13 +66,13 @@ def main():
     thridcab = Cab("Dave", 20, ['Gurgaon', 'Noida'], 680, 2)
 
     print('Firstcab driver:', firstcab.driver)
-    print('Secoindcab driver:', secondcab.driver)
-    print('Thridcab driver:', thridcab.driver)
+    print('Secondcab driver:', secondcab.driver)
+    print('Thirdcab driver:', thridcab.driver)
     print('Firstcab rateperkm:', firstcab.rateperkm())
     print('Secondcab rateperkm:', secondcab.rateperkm())
-    print('Thridcab rateperkm:', thridcab.rateperkm())
-    print('Cab numberof cabs:', Cab.noofcabs())
-    print('Cab avergae number of passengers:', Cab.avgnoofpassengers())
+    print('Thirdcab rateperkm:', thridcab.rateperkm())
+    print('Cab number of cabs:', Cab.noofcabs())
+    print('Cab average number of passengers:', Cab.avgnoofpassengers())
     print('Cab number of passengers:', Cab.numberofpassengers)
 
 
