@@ -1,4 +1,4 @@
-# import winreg
+import winreg
 
 if __name__ == "__main__":
     #  connecting to key in registry
