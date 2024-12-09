@@ -17,7 +17,7 @@ import aut.python.funct.process as proc
 __author__ = "Konta Boáz"
 __author_email__ = "kontab6@gmail.com"
 __copyright__ = "Konta Boáz 2024"
-BemenetiFile = "q:/NYILVÁNOS/Szereplési terv/2024_Autentikus és munkarend/2024_Autentikus.xlsx"
+BemenetiFile = "../xlsx/Aut_2024_12_05_03_12_00.xlsx"
 MasoltFile = "2024_Autentikus.xlsx"
 KimenetFile = "../sql/2024_aut.sql"
 tancnevezes = conf.TANCNEV
@@ -26,6 +26,8 @@ ferfikarnevek = conf.FERFIKARNEVEK
 KezdesiIdo = time.time()
 logging.basicConfig(level=logging.DEBUG, format=" %(asctime)s  - %(message)s")
 logging.disable(logging.DEBUG)  # Akkor kell ha már nem akarunk Debuggolni. :-)
+
+
 # logging.disable(logging.INFO)
 # logging.info(f"Program elkezdődött. {KezdesiIdo}")
 
@@ -60,7 +62,8 @@ if __name__ == "__main__":
     Főprogram a bemeneti fájlból létrehozza az SQL filet jól.
 
     """
-    BemenetFile = tesztinputfile(BemenetiFile)
+    #  BemenetFile = tesztinputfile(BemenetiFile)
+    BemenetFile = BemenetiFile
     SqlSor = "\nINSERT INTO aut (sorsz,datum,ceg,kezd,hely,musor,kontakt,megjegyzes,helykod,szallitas,tev) VALUES \n"
 
     kiiroFajl = open(KimenetFile, "w", encoding="utf8")
@@ -79,10 +82,11 @@ if __name__ == "__main__":
         for c1, c2, c3, c4, c5, c6, c7, c8, c9 in cells:
             SqlSor = "( NULL,"
             if (c1.value and c3.value) and (
-                c3.value not in tancnevezes
+                    c3.value not in tancnevezes
             ):  # dátum tánckar kitöltve.
                 print(
-                    f"Tánckar:{i};1- {c1.value}, 2- {c2.value}, 3- {c3.value}, 4- {c4.value}, 5- {c5.value}, 6- {c6.value} 7- {c7.value}, 8- {c8.value}, 9- {c9.value}\n"
+                    f"Tánckar:{i};1- {c1.value}, 2- {c2.value}, 3- {c3.value}, 4- {c4.value}, 5- {c5.value},"
+                    f" 6- {c6.value} 7- {c7.value}, 8- {c8.value}, 9- {c9.value}\n"
                 )
                 procad = proc.Egysor(
                     c1.value,
@@ -99,22 +103,15 @@ if __name__ == "__main__":
                 sqlValues.append(proc.sqlrak(procad))
                 i += 1  # feldolgozott sorok száma.
             elif (c1.value and c5.value) and (
-                c5.value not in ferfikarnevek
+                    c5.value not in ferfikarnevek
             ):  # dátum férfikar kitöltve.
                 print(
-                    f"Férfikar:{i};1- {c1.value}, 2- {c2.value}, 3- {c3.value}, 4- {c4.value}, 5- {c5.value}, 6- {c6.value} 7- {c7.value}, 8- {c8.value}, 9- {c9.value}\n"
+                    f"Férfikar:{i};1- {c1.value}, 2- {c2.value}, 3- {c3.value}, 4- {c4.value}"
+                    f", 5- {c5.value}, 6- {c6.value} 7- {c7.value}, 8- {c8.value}, 9- {c9.value}\n"
                 )
-                procadf = proc.Egysor(
-                    c1.value,
-                    c2.value,
-                    c3.value,
-                    c4.value,
-                    c5.value,
-                    c6.value,
-                    c7.value,
-                    c8.value,
-                    c9.value,
-                )
+                procadf = proc.Egysor(c1.value, c2.value, c3.value, c4.value, c5.value, c6.value, c7.value, c8.value,
+                                      c9.value,
+                                      )
                 datum = procadf.datum
                 logging.debug("Kezdési időpont kialakult: " + str(procadf.kezdes))
                 sqlValues.append(proc.sqlrak(procadf))

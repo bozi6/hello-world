@@ -70,9 +70,12 @@ for component in ecal.walk():
     if component.name == "VEVENT":
         print(sorsz, "Summary:", component.get("summary"))
         sorsz += 1
-        # print("Description:", component.get("description"))
-        # print("Organizer:", component.get("organizer"))
-        # print("Location:", component.get("location"))
-        # print("Dtstart: ", component.decoded("dtstart"))
-        # print("Dtend: ", component.decoded("dtend"))
+        print("Description:", component.get("description"))
+        print("Organizer:", component.get("organizer"))
+        print("Location:", component.get("location"))
+        print("Dtstart: ", component.decoded("dtstart"))
+        try:
+            print("Dtend: ", component.decoded("dtend"))
+        except KeyError:
+            print("Dtend: -")
 e.close()
