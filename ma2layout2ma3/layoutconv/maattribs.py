@@ -1,16 +1,11 @@
-"""
-MA attributumok osztályai
-
-"""
+"""MA attributumok osztályai."""
 
 
 class ma2attribs(object):
-    """
-    MA2 osztályok
-
-    """
+    """MA2 osztályok."""
 
     def __init__(self):
+        """Osztály inicializáció."""
         self.info = {
             "datetime": "2022-10-02T13:45:31",
             "showfile": "hutlen_feleseg_tarr",
@@ -54,16 +49,15 @@ class ma2attribs(object):
         self.image = {"name": "Moving 2 8", "no": 8}
 
     def __str__(self):
+        """Info, csoport,alcsoport visszaadása."""
         return f"Info:{self.info} \nGroup:{self.group}\nSubfixture:{self.subfixtures}"
 
 
 class ma3attribs(object):
-    """
-    MA3 osztályok
-
-    """
+    """MA3 osztályok."""
 
     def __init__(self):
+        """Inicializálás."""
         self.layout = {
             "Name": "Tarantula",
             "Guid": "EF AB FA 0D 58 7F DE 0B 78 DD 40 1D BC 69 8A FE",

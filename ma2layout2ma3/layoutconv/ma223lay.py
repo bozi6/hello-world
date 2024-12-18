@@ -1,3 +1,4 @@
+"""Ma2 layout Ma3 konvertálás."""
 import maattribs
 
 xml2 = maattribs.ma2attribs()

@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
-"""
-14_nezoter.py,
+"""14_nezoter.py.
+
 Érettségi feladat: 2014. október, Nézőtér
 Feladatkiírások: http://www.oktatas.hu/kozneveles/erettsegi/feladatsorok
-Program: Koós Antal, 2016
-"""
+Program: Koós Antal, 2016"""
 
 
 def main():
-    """
-    Főprogram
+    """ Főprogram.
 
-    :return: Null
-
-    """
+    :return: Null"""
     # --- 1. feladat ---
     # print("\n1. feladat")
     # Így tároljuk az adatokat:

@@ -1,3 +1,4 @@
+"""Mappolás."""
 #Product fields
 PRODUCT_ID = 3
 PRODUCT_PARENT = 4

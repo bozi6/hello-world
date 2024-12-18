@@ -1,3 +1,4 @@
+"""Youtube Scraper."""
 #  main.py Copyright (C) 2024  Konta Boáz
 #      This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #      This is free software, and you are welcome to redistribute it

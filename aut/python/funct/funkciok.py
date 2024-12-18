@@ -148,12 +148,12 @@ class Bemeno:
 
     @tkzkr.setter
     def tkzkr(self, tkzkr):
-        """tánckar beállítása"""
+        """Tánckar beállítása."""
         self._erdekes["tkzkr"] = tkzkr
 
     @zkr.setter
     def zkr(self, zkr):
-        """ "zenekar beállítása"""
+        """Zenekar beállítása."""
         self._erdekes["zkr"] = zkr
 
     @ffk.setter
@@ -166,7 +166,7 @@ class Bemeno:
 
     @kont.setter
     def kont(self, kont):
-        """kontakt mező beállítása"""
+        """Kontakt mező beállítása."""
         if kont is not None:
             szkont = " ".join(kont.split())
             self._erdekes["kont"] = szkont

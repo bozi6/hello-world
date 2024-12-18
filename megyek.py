@@ -1,6 +1,4 @@
-"""
-Megyék és székhelyek kiiratása
-"""
+"""Megyék és székhelyek kiiratása."""
 megyek = [
     "Bács-Kiskun",
     "Baranya",
@@ -53,9 +51,7 @@ lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 if __name__ == "__main__":
-    """
-    A mgeadott megyékről mindeféle statisztika kiiratása
-    """
+    """A mgeadott megyékről mindeféle statisztika kiiratása."""
     # zip going through multiple lists and extract them
     for megye, szeh in zip(megyek, szekhelyek):
         print("Megye: {} - Székhely: {}".format(megye, szeh))

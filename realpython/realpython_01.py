@@ -1,3 +1,4 @@
+"""Táblázat olvasgató."""
 from datetime import datetime
 from openpyxl import load_workbook
 from realpython.classes import Product, Review

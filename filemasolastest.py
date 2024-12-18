@@ -1,3 +1,4 @@
+"""Fájl másolgatása."""
 import shutil
 import sys
 import time
@@ -5,7 +6,8 @@ import time
 
 def main():
     """
-    Átmásol egy iso fájlt
+    Átmásol egy iso fájlt.
+
     :return: a másolt file
     :rtype: object
 

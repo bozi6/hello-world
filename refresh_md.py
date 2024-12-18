@@ -1,4 +1,5 @@
-# Refresh README.md file
+"""Refresh the readme.md file."""
+
 import os
 from datetime import datetime
 from pathlib import Path
@@ -23,7 +24,8 @@ footer += str(datetime.today().strftime('%Y-%m-%d %H:%m:%S'))
 
 def dispcrmod(mappa):
     """
-    Create a dictionary from directories with some date info
+    Create a dictionary from directories with some date info.
+
     :param mappa: current working directory
     :return:dictionary: contains number, filename, creation date, modified date
     """
@@ -45,8 +47,8 @@ def dispcrmod(mappa):
 
 def mappalista(mappa):
     """
-    Returns list of directories
-    not included hidden one
+    Return list of directories not included hidden one.
+
     :param mappa: current working directory
     :return: array of directories
     """
@@ -59,6 +61,7 @@ def mappalista(mappa):
 
 
 def leirasszedo(mappa):
+    """Description.txt file reader."""
     filepath = Path.cwd() / mappa / "description.txt"
     try:
         with filepath.open("r", encoding="utf-8") as f:
@@ -71,6 +74,7 @@ def leirasszedo(mappa):
 def main():
     """
     Refresh the README.md file in current working directory.
+
     :return: nothing
     """
     link = "https://github.com/bozi6/hello-world/tree/master/"

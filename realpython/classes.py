@@ -1,9 +1,12 @@
+"""Dátumosztályok."""
 import datetime
 from dataclasses import dataclass
 
 
 @dataclass
 class Product:
+    """Termékosztály."""
+
     id: str
     parent: str
     title: str
@@ -12,6 +15,8 @@ class Product:
 
 @dataclass
 class Review:
+    """Review osztály."""
+
     id: str
     customer_id: str
     stars: int

@@ -1,4 +1,8 @@
+"""Autok osztálya."""
+
+
 def main():
+    """Legfőbb funkció function."""
     class Car:
         # attributes
         year = 2016

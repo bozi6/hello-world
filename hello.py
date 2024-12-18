@@ -1,3 +1,4 @@
+"""Read data from Excel file and write it to another."""
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 import math

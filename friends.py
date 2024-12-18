@@ -1,16 +1,18 @@
+"""Friend osztály és használata."""
+
+
 class Friend:
-    """
-    Haverok osztálya
-    """
+    """Haverok osztálya."""
 
     def __init__(self, name):
+        """név,munka,kor beállítása."""
         self.name = name
         self.job = "None"
         self.age = "None"
 
     def getAge(self):
         """
-        Return age
+        Return age.
 
         :return: self.age
         :rtype: str
@@ -20,7 +22,7 @@ class Friend:
 
     def setAge(self, age):
         """
-        Set age
+        Set age.
 
         :return: self.age
         :rtype: str
@@ -29,15 +31,17 @@ class Friend:
         self.age = age
 
     def getJob(self):
+        """Munka lekérdezése."""
         return self.job
 
     def setJob(self, job):
+        """Munka beállítása."""
         self.job = job
 
 
 def main():
     """
-    Főprogrma
+    Főprogrm.
 
     :return: emberkék nevét és életkorát írja ki
     :rtype: object

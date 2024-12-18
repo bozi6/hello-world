@@ -17,7 +17,7 @@ if __name__ == '__main__':
     for r, d, f in os.walk(src_dir):
         for file in f:
             if ".png" in file or ".bmp" in file:
-            filename = os.path.join(r, file)
+                filename = os.path.join(r, file)
             genfile.write('{},{},{};\n'.format(i, r[idx:], file))
             i += 1
     genfile.close()

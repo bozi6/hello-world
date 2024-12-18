@@ -1,3 +1,4 @@
+"""Numpy modul probálgatás."""
 #  numpyprobe.py Copyright (C) 2024  Konta Boáz
 #      This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
 #      This is free software, and you are welcome to redistribute it
@@ -22,6 +23,7 @@ print(type(b))
 
 
 def f(z):
+    """Gyök minusz egy visszaadása."""
     return np.sqrt(z) - 1
 
 
