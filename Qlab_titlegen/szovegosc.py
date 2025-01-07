@@ -55,8 +55,10 @@ if __name__ == "__main__":
             start_number = this_cue
             last_titles_was_decimal = not last_blank
             last_blank = this_blank
-        #  cues = cli.getques()
-        #  print(cues)
+        cues = cli.getques()
+        print("cues")
+        print(cues)
+
         cli.renumber(10, 1)
         """
         for id,number,uid,type in cues:

@@ -84,7 +84,7 @@ class Interface:
         self.client.send_message(b"/cueLists/uniqueID", [])
         response = self.server.get_message()
         if response:
-            return response.get("data")[0]["uniqueID"]
+            return response.get("workspace_id")
         else:
             return None
 
@@ -158,7 +158,8 @@ class Interface:
 
         """
         wpid = self.wpid
-        self.client.send_message("/workspace/{}/cueLists/shallow".format(wpid), "")
+        # self.client.send_message("/workspace/{}/cueLists".format(wpid), "")
+        self.client.send_message(f"/workspace/{wpid}/cueLists", "")
         response = self.server.get_message()
         if response:
             return response.get("data")
