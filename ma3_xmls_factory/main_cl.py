@@ -87,7 +87,7 @@ class CreateMacroFromCsv(object):
 
         """
         szoveg = "".join([random.choice(string.hexdigits[:16]) for x in range(32)])
-        uid = " ".join(szoveg[i : i + 2] for i in range(0, len(szoveg), 2))
+        uid = " ".join(szoveg[i: i + 2] for i in range(0, len(szoveg), 2))
         logging.debug(f"Generated UUID: {uid.upper()}")
         return uid.upper()
 
