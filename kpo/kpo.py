@@ -57,7 +57,7 @@ def main():
     papir = Papir()
     ollo = Ollo()
     targyak = [ko, papir, ollo]
-    iteraciok = 100000
+    iteraciok = 1000000
     for i in range(iteraciok):
         egy = random.choice(targyak)
         ketto = random.choice(targyak)

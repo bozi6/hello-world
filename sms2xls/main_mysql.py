@@ -26,6 +26,10 @@ def file_checker(filename):
         return False
 
 
+class CurrencyRates:
+    pass
+
+
 def arfolyam_feltoltes():
     if file_checker("arfolyamok.csv"):
         with open("arfolyamok.csv", mode="r") as infile:
