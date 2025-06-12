@@ -5,13 +5,16 @@
 #   Last Modified: 2024. 12. 04. 20:24
 
 import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect((socket.gethostname(), 30020))
-s.connect((socket.gethostbyname('192.168.0.172'), 30020))
+
+# Use TCP to match the server implementation in ``main.py``.
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the local server on the same host.
+s.connect((socket.gethostname(), 1234))
 full_msg = ''
 while True:
     msg = s.recv(8)
-    if len(msg) <= 0:
+    if not msg:
         break
     full_msg += msg.decode("utf-8")
 
