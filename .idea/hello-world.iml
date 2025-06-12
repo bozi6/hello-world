@@ -24,6 +24,8 @@
       <excludeFolder url="file://$MODULE_DIR$/aut/sql" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/aut/xlsx" />
+      <excludeFolder url="file://$MODULE_DIR$/banktosql/sql" />
+      <excludeFolder url="file://$MODULE_DIR$/banktosql/xlsx" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.13 (hello-world)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

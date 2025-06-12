@@ -1,94 +1,96 @@
-"""Refresh the readme.md file."""
-
+"""Module for refreshing the readme.md file with project information."""
 import os
 from datetime import datetime
 from pathlib import Path
 
-intro = """
+DATE_FORMAT = '%Y-%m-%d %H:%m:%S'
+
+README_INTRO = """
 # Python Home Projects
 ## Projects list:
 | File Name | Creation Date | Last Modificated Date | Description |
 | --------- | ------------- | --------------------- | ----------- |
 """
 
-footer = """
+README_FOOTER = f"""
 ---
 ## License  
 MIT  
 ---  
 Created by kontab@gmail.com  
-Latest version generated:
+Latest version generated: {datetime.today().strftime(DATE_FORMAT)}
 """
-footer += str(datetime.today().strftime('%Y-%m-%d %H:%m:%S'))
+
+GITHUB_BASE_URL = "https://github.com/bozi6/hello-world/tree/master/"
 
 
-def dispcrmod(mappa):
+def get_directory_info(directory_path):
     """
-    Create a dictionary from directories with some date info.
-
-    :param mappa: current working directory
-    :return:dictionary: contains number, filename, creation date, modified date
+    Create a dictionary containing file information from the given directory.
+    
+    Args:
+        directory_path: Path to the directory to analyze
+        
+    Returns:
+        Dictionary containing file number, name, creation and modification dates
     """
-    fdpaths = [fd for fd in os.listdir(mappa)]
-    szoveg = {}
-    i = 0
-    for fdpath in fdpaths:
-        statinfo = os.stat(str(mappa) + "/" + fdpath)
-        creadate = datetime.fromtimestamp(statinfo.st_ctime)
-        moddate = datetime.fromtimestamp(statinfo.st_mtime)
-        szoveg[i] = {}
-        szoveg[i]['sorsz'] = i
-        szoveg[i]['filename'] = fdpath
-        szoveg[i]['createdate'] = creadate.strftime('%Y-%m-%d %H:%m:%S')
-        szoveg[i]['moddate'] = moddate.strftime('%Y-%m-%d %H:%m:%S')
-        i += 1
-    return szoveg
+    file_paths = [fd for fd in os.listdir(directory_path)]
+    data_dict = {}
+
+    for index, file_path in enumerate(file_paths):
+        full_path = Path(directory_path) / file_path
+        stat_info = os.stat(full_path)
+        creation_date = datetime.fromtimestamp(stat_info.st_ctime)
+        modification_date = datetime.fromtimestamp(stat_info.st_mtime)
+
+        data_dict[index] = {
+            'index'      : index,
+            'filename'   : file_path,
+            'create_date': creation_date.strftime(DATE_FORMAT),
+            'mod_date'   : modification_date.strftime(DATE_FORMAT),
+            'is_dir'     : full_path.is_dir()
+        }
+
+    return data_dict
 
 
-def mappalista(mappa):
+def get_description(directory):
     """
-    Return list of directories not included hidden one.
-
-    :param mappa: current working directory
-    :return: array of directories
+    Read description from description.txt file if directory exists.
+    
+    Args:
+        directory: Path to the directory containing description.txt
+        
+    Returns:
+        Description text or '-' if file not found or path is not a directory
     """
-    dirs = []
-    for f in sorted(mappa.iterdir()):
-        if f.is_dir():
-            if f.name[0] != '.':
-                dirs.append(f.name)
-    return dirs
+    if not directory.is_dir():
+        return '-'
 
-
-def leirasszedo(mappa):
-    """Description.txt file reader."""
-    filepath = Path.cwd() / mappa / "description.txt"
+    filepath = directory / "description.txt"
     try:
         with filepath.open("r", encoding="utf-8") as f:
-            leir = f.read()
-    except:
-        leir = '-'
-    return leir
+            return f.read()
+    except (FileNotFoundError, PermissionError):
+        return '-'
 
 
 def main():
-    """
-    Refresh the README.md file in current working directory.
-
-    :return: nothing
-    """
-    link = "https://github.com/bozi6/hello-world/tree/master/"
+    """Refresh the README.md file in current working directory."""
     path = Path.cwd()
-    szovegek = dispcrmod(path)
-    filepath = path / "README.md"
-    with filepath.open("w", encoding="utf-8") as f:
-        f.write(intro)
-        for k, v in szovegek.items():
-            if v['filename'][0] != '.':
-                desc = leirasszedo(path / v['filename'])
-                irando = f"| [{v['filename']}]({link + v['filename']}) | {v["createdate"]} | {v["moddate"]} | {desc}\n"
-                f.write(irando)
-        f.write(footer)
+    directory_data = get_directory_info(path)
+
+    with Path(path / "README.md").open("w", encoding="utf-8") as f:
+        f.write(README_INTRO)
+        for _, file_data in directory_data.items():
+            if not file_data['filename'].startswith('.'):
+                description = get_description(path / file_data['filename'])
+                file_entry = (
+                    f"| [{file_data['filename']}]({GITHUB_BASE_URL + file_data['filename']}) | "
+                    f"{file_data['create_date']} | {file_data['mod_date']} | {description}\n"
+                )
+                f.write(file_entry)
+        f.write(README_FOOTER)
 
 
 if __name__ == '__main__':
