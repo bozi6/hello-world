@@ -6,13 +6,21 @@
 #   Last Modified: 2024. 12. 04. 16:02
 
 import scrapetube
+import unicodedata
 
 # Konstansok
 PLAYLIST_ID = "PLt_n2q5yoRsTKKxvpY-xzreOGO80cvBjz"
 OUTPUT_FILE = "videos.txt"
 UNKNOWN_TITLE = "Ismeretlen cím"
 SEPARATOR_LENGTH = 80
-FILE_SEPARATOR_LENGTH = 100
+FILE_SEPARATOR_LENGTH = 89
+
+
+def hungarian_sort_key(text):
+    """Hungarian sort key."""
+    normalized = unicodedata.normalize('NFD', text.lower())
+    ascii_text = ''.join(c for c in normalized if unicodedata.category(c) != 'Mn')
+    return ascii_text
 
 
 def extract_video_title(video):
@@ -43,8 +51,9 @@ def fetch_playlist_videos(playlist_id):
         video_data = create_video_data(video)
         video_list.append(video_data)
 
-    # Rendezés cím szerint
-    video_list.sort(key=lambda x: x['title'].lower())
+    # Magyar karakterek szerinti rendezés
+        video_list.sort(key=lambda x: hungarian_sort_key(x['title']))
+
     return video_list
 
 
@@ -62,20 +71,24 @@ def print_video_list(video_list, playlist_id):
 
 
 def save_to_file(video_list, filename):
-    """Videólista fájlba mentése."""
+    """Videólista fájlba mentése balra-jobbra rendezve."""
     print('Azért kiírom fájlba is, hogy meglegyen.')
+
+    # Leghosszabb cím hosszának meghatározása a megfelelő igazításhoz
+    max_title_length = max(len(video_data['title']) for video_data in video_list) if video_list else 0
+    row_num = 1
     with open(filename, 'w', encoding='utf-8') as f:
         for video_data in video_list:
-            f.write(f"{video_data['title']}\t")
-            f.write(f"URL: {video_data['url']}\n")
-            f.write("-" * FILE_SEPARATOR_LENGTH + "\n")
+            # Balra igazított cím, jobbra igazított URL
+            formatted_line = f"{row_num}; - {video_data['title']:<{max_title_length}} | {video_data['url']}\n"
+            f.write(formatted_line)
+            row_num += 1
 
 
 def main():
     """Fő program logika."""
     try:
         video_list = fetch_playlist_videos(PLAYLIST_ID)
-        # print_video_list(video_list, PLAYLIST_ID)
         print(f"\nÖsszesen {len(video_list)} videó található a lejátszási listában.")
         save_to_file(video_list, OUTPUT_FILE)
 
