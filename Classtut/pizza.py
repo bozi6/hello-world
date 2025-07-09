@@ -7,36 +7,36 @@ import math
 
 
 class Pizza:
-    def __init__(self, radius, ingredients):
+    def __init__(self, radius, ingredients=None):
+        if ingredients is None:
+            ingredients = []
         self.radius = radius
         self.ingredients = ingredients
+
 
     def __repr__(self):
         return f"Pizza({self.radius!r}, {self.ingredients!r})"
 
-    """
-    Osztályon belüli methodok
-    
-    """
-
     @classmethod
     def margherita(cls):
-        return cls(["mozzarella", "tomatoes"])
+        return cls(4, ["mozzarella", "tomatoes"])
 
     @classmethod
     def prosciutto(cls):
-        return cls(["mozarella", "tomatoes", "ham"])
+        return cls(4, ["mozarella", "tomatoes", "ham"])
 
     def area(self):
+        """Calculate and return the area of the pizza."""
         return self.circle_area(self.radius)
 
     @staticmethod
     def circle_area(r):
         return r**2 * math.pi
 
-
-p = Pizza(4, ["sajt", "paradicsom"])
-d = Pizza.margherita()
-print(p)
-print(p.area())
-print(p.circle_area(4))
+  
+if __name__ == "__main__":
+    p = Pizza(4, ["sajt", "paradicsom"])
+    d = Pizza.margherita()
+    print(p)
+    print(p.area())
+    print(p.circle_area(4))

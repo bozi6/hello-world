@@ -34,15 +34,16 @@ class Square:
         return round(self.side**2, 2)
 
 
-circle_1 = Circle(42)
-circle_2 = Circle(7)
-print(circle_2.radius)
-print(circle_2.calculate_area())
-print(circle_1.radius)
-print(circle_1.calculate_area())
-circle_1.radius = 100
-print(circle_1.radius)
-print(circle_1.calculate_area())
-circle_1.radius = 0
-circle_1.radius = -100
-circle_1.radius = "20"
+if __name__ == "__main__":
+    circle_1 = Circle(42)
+    circle_2 = Circle(7)
+    print(circle_2.radius)
+    print(circle_2.calculate_area())
+    print(circle_1.radius)
+    print(circle_1.calculate_area())
+    circle_1.radius = 100
+    print(circle_1.radius)
+    print(circle_1.calculate_area())
+    circle_1.radius = 0
+    circle_1.radius = -100
+    circle_1.radius = "20"
