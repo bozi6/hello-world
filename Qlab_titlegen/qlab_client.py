@@ -124,7 +124,10 @@ class Interface:
 
         """
         wpid = self.wpid
-        self.client.send_message("/workspace/{}/new".format(wpid), [mit])
+        try:
+            self.client.send_message("/workspace/{}/new".format(wpid), [mit])
+        except Exception as e:
+            print(f"Error sending message to QLab: {e}")
 
     def select_all_cues(self):
         """

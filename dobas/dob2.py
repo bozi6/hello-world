@@ -4,138 +4,113 @@ from matplotlib import pyplot as plt
 
 class Cannon:
     """
-    Ágyu osztály
-
+    Ágyú osztály
     """
+    GRAVITY = -9.8  # Gravity constant (m/s^2)
 
     def __init__(self, x0, y0, v, angle):
         """
-        :param x0: initial coordinate of cannon
-        :param y0: initial coordinate of cannon
+        Initializes the cannon.
+        :param x0: initial x-coordinate
+        :param y0: initial y-coordinate
         :param v: initial velocity
-        :param angle: angle of shooting in degrees
+        :param angle: shooting angle (degrees)
         """
-        # current x and y coordinates of missile
-        self.x = x0
-        self.y = y0
-        # current value of velocity components
-        self.vx = v * cos(radians(angle))
-        self.vy = v * sin(radians(angle))
+        self.x, self.y = x0, y0
+        self.vx = v * cos(radians(angle))  # Horizontal velocity
+        self.vy = v * sin(radians(angle))  # Vertical velocity
+        self.ax, self.ay = 0, self.GRAVITY  # Accelerations
+        self.time = 0  # Elapsed time
+        self.xarr = [self.x]  # List of x-coordinates
+        self.yarr = [self.y]  # List of y-coordinates
 
-        # acceleration by x and y axes
-        self.ax = 0
-        self.ay = -9.8
-        # start time
-        self.time = 0
-
-        # theese list will contain discrete set of missile coordinates
-        self.xarr = [self.x]
-        self.yarr = [self.y]
-
-    def updateVx(self, dt):
+    def update_velocity(self, dt, axis):
         """
-        VX frissítése
-        :param dt: távolság
-        :return: az x elmozdulás
-
+        Updates velocity for the given axis.
+        :param dt: time step (s)
+        :param axis: 'x' or 'y' for the respective axis
         """
-        self.vx = self.vx + self.ax * dt
-        return self.vx
+        if axis == 'x':
+            self.vx += self.ax * dt
+            return self.vx
+        elif axis == 'y':
+            self.vy += self.ay * dt
+            return self.vy
 
-    def updateVy(self, dt):
+    def update_position(self, dt, axis):
         """
-        VY frissítése
-        :param dt: távolság
-        :return: az y elmozdulás
-
+        Updates position for the given axis based on velocity and acceleration.
+        :param dt: time step (s)
+        :param axis: 'x' or 'y' for the respective axis
         """
-        self.vy = self.vy + self.ay * dt
-        return self.vy
-
-    def updateX(self, dt):
-        """
-        X frissítése
-        :param dt: távolság
-        :return: az x értéke
-
-        """
-        self.x = self.x + 0.5 * (self.vx + self.updateVx(dt)) * dt
-        return self.x
-
-    def updateY(self, dt):
-        """
-        Y frissítése
-        :param dt: távolság
-        :return: az y értéke
-
-        """
-        self.y = self.y + 0.5 * (self.vy + self.updateVy(dt)) * dt
-        return self.y
+        if axis == 'x':
+            self.x += 0.5 * (self.vx + self.update_velocity(dt, 'x')) * dt
+            return self.x
+        elif axis == 'y':
+            self.y += 0.5 * (self.vy + self.update_velocity(dt, 'y')) * dt
+            return self.y
 
     def step(self, dt):
         """
-        Lépések
-        :param dt: távolság
-        :return: az időt lépteti a távolsággal
+        Advances simulation by one time step.
+        :param dt: time step (s)
         """
-        self.xarr.append(self.updateX(dt))
-        self.yarr.append(self.updateY(dt))
-        self.time = self.time + dt
+        self.xarr.append(self.update_position(dt, 'x'))
+        self.yarr.append(self.update_position(dt, 'y'))
+        self.time += dt
 
 
-def makeShoot(x0, y0, velocity, angle):
+def make_shoot(x0, y0, velocity, angle):
     """
-    Lövés készítése
-    :param x0:
-    :param y0:
-    :param velocity:
-    :param angle:
-    :return: a tuple wiht sequential coordinates
+    Simulates a cannon shot.
+    :param x0: initial x-coordinate
+    :param y0: initial y-coordinate
+    :param velocity: initial velocity
+    :param angle: shooting angle (degrees)
+    :return: tuple of lists (x-coordinates, y-coordinates)
     """
     cannon = Cannon(x0, y0, velocity, angle)
-    dt = 0.05  # time step
-    t = 0  # initial time
-    cannon.step(dt)
+    dt = 0.05
 
-    #  The integration  #
-    while cannon.y >= -0:
+    while cannon.y >= 0:
         cannon.step(dt)
-        t = t + dt
-    #################
 
     return cannon.xarr, cannon.yarr
 
 
 def main():
     """
-    Főprogram
-    :return: lövöldözünk
+    Main program for simulating cannon shots at different angles.
     """
-    x0 = 0
-    y0 = 0
-    velocity = 10
-    x45, y45 = makeShoot(x0, y0, velocity, 45)
-    x50, y50 = makeShoot(x0, y0, velocity, 50)
-    x30, y30 = makeShoot(x0, y0, velocity, 30)
-    x60, y60 = makeShoot(x0, y0, velocity, 60)
-    plt.plot(
-        x45,
-        y45,
-        "bo-",
-        x30,
-        y30,
-        "ro-",
-        x50,
-        y50,
-        "go-",
-        x60,
-        y60,
-        "ko-",
-        [0, 12],
-        [0, 0],
-        "k-",
-    )
-    plt.legend(["45 deg shoot", "30 deg shoot", "50 deg shoot", "60 deg shoot"])
+    x0, y0, velocity = 0, 0, 10
+
+    # Simulate shots at different angles
+    angles = [45, 46, 47]
+    results = [make_shoot(x0, y0, velocity, angle) for angle in angles]
+
+    # Find the longest shot
+    max_distance = 0
+    max_angle = 0
+    max_xarr = []
+    max_yarr = []
+    for (x, y), angle in zip(results, angles):
+        if max(x) > max_distance:
+            max_distance = max(x)
+            max_angle = angle
+            max_xarr = x
+            max_yarr = y
+
+    # Plot results
+    for (x, y), angle in zip(results, angles):
+        plt.plot(x, y, label=f"{angle} deg shoot")
+
+    # Annotate the longest shot
+    plt.plot(max_xarr, max_yarr, "mo-", label=f"Longest shot ({max_angle} deg)")
+    plt.text(max_distance, 0, f"Longest: {max_distance:.2f} m",
+             horizontalalignment='center', color='purple', fontsize=10)
+
+    plt.axhline(0, color='black', linewidth=0.8)
+    plt.legend()
     plt.xlabel("x coordinate (m)")
     plt.ylabel("y coordinate (m)")
     plt.show()

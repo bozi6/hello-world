@@ -11,11 +11,11 @@ def main():
     """
     t = turtle.Turtle()
     s = turtle.Screen()
-    s.bgcolor("white")
+    s.bgcolor("black")
     t.speed(0)
     col = ("yellow", "red", "green", "lime", "light green", "blue")
 
-    for i in range(150):
+    for i in range(12):
         t.pencolor(col[i % 6])
         t.circle(190 - i / 2, 90)
         t.lt(90)

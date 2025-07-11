@@ -1,65 +1,71 @@
 #!/usr/bin/python3
 import mammoth
 
+# Constants for better readability and reuse
+INPUT_FILE = "21.09.27.-10.03.docx"
+OUTPUT_FILE = INPUT_FILE[:-4] + "html"
+
+CUSTOM_STYLES = """
+table => table.table.table-bordered.table-striped.shadow.bg-light
+#r => p.text-light.bg-dark
+p => p.my-1.px-1.mx-5
+"""
+
+HTML_START_TEMPLATE = """<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{title}</title>
+"""
+
+BOOTSTRAP_CSS = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">\n'
+BOOTSTRAP_JS = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"></script>\n'
+HTML_BODY_START = '</head><body><div class="container-fluid px-3 pb-5"><br><br>'
+HTML_BODY_END = "</div></body></html>"
+
+
+def replace_html(content, to_replace, replace_with):
+    """Replace a substring in HTML content."""
+    return content.replace(to_replace, replace_with)
+
+
+def process_html(html_content):
+    """Process and format HTML content."""
+    # Adjust table cells and add new lines for readability
+    html_content = html_content.replace("<td>\n<p>", "<td>").replace("</p>\n</td>", "</td>")
+
+    # Replace <strong> with <b>
+    html_content = html_content.replace("strong", "b")
+
+    # Add a new line after bold text inside table cells
+    html_content = html_content.replace("</b>", "<br></b>")
+
+    # Insert new line for other tags for better structure
+    html_content = replace_html(html_content, "><", ">\n<")
+    return html_content
+
 
 def main():
     """
-    Főprogram
-
-    :return: a mammoth segítségével átalakítunk egy docxet htmlre
-
+    Converts a .docx file to HTML using Mammoth.
     """
-    befile = "21.09.27.-10.03.docx"
-    outfile = befile[:-4] + "html"
+    # Generate HTML from the input file
+    with open(INPUT_FILE, "rb") as docx_file:
+        result = mammoth.convert_to_html(docx_file, style_map=CUSTOM_STYLES)
+        html_content = result.value
+        print("Conversion messages: ", result.messages)
 
-    def htmlcser(bej, mit, mire):
-        return bej.replace(mit, mire)
+    # Process the generated HTML
+    formatted_html = process_html(html_content)
 
-    custom_styles = """
-                    table => table.table.table-bordered.table-striped.shadow.bg-light
-                    #r => p.text-light.bg-dark
-                    #a pt lecseréli td class p re majd beszúr egy mt-0 class text-centert
-                    p => p.my-1.px-1.mx-5
-                    #p => td.p > mt-0.text-center
-                    #r => tr.w-25.p-3
-                    """
-    htmlkezd = (
-        """<!DOCTYPE html>
-        <html lang="hu">
-        <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>
-        """
-        + befile
-        + "</title>\n"
-    )
-    bootstrap_css = '<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">\n'
-    bootstrap_js = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>\n'
-    css = '<link rel="stylesheet" href="style.css">'
-    headerend = '</head><body><div class="container-fluid px-3 pb-5"><br><br>'
-    htmlveg = "</div></body></html>"
+    # Combine all parts to form final HTML
+    final_html = HTML_START_TEMPLATE.format(
+        title=INPUT_FILE) + BOOTSTRAP_CSS + HTML_BODY_START + formatted_html + BOOTSTRAP_JS + HTML_BODY_END
 
-    with open(befile, "rb") as docx_file:
-        result = mammoth.convert_to_html(docx_file, style_map=custom_styles)
-        html = result.value
-        messages = result.messages
-
-    # html új sorok beszúrása
-    ker = "><"
-    cser = ">\n<"
-    "".join(html.split())
-    html = html.replace("<td>\n<p>", "<td>")
-    html = html.replace("</p>\n</td>", "</td>")
-    html = html.replace("strong", "b")
-    html = html.replace(ker, cser)
-
-    edited_html = htmlkezd + bootstrap_css + headerend + html + bootstrap_js + htmlveg
-    print("Hibaüzik: ", result.messages)
-    with open(outfile, "w", encoding="utf8") as html_file:
-        html_file.write(
-            edited_html,
-        )
+    # Write the final HTML to the output file
+    with open(OUTPUT_FILE, "w", encoding="utf8") as html_file:
+        html_file.write(final_html)
 
 
 if __name__ == "__main__":

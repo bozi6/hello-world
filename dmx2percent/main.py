@@ -1,30 +1,45 @@
-def szamol(dmx: float):
-    """
-    dmx átszámolása valami teljesen mássá...
+ERR_MSG_MAXIMUM_EXCEEDED = "A DMX érték nem lehet nagyobb 255-nél."
 
-    :param dmx: Dmx address to calculate
-    :type dmx: int
-    :return: DMX százalékba átszámolva.
-    :rtype: percent
 
+def convert_to_float(value: str) -> float:
     """
-    dmx = dmx.replace(",", ".")
-    if dmx is None:
-        return 0
+    Stringet float típusra konvertál, vesszők ponttá alakításával.
+
+    :param value: A bemeneti karakterlánc.
+    :return: A konvertált float érték, vagy 0, ha nem érvényes.
+    """
     try:
-        dmx = float(dmx)
-        if float(dmx) > 255:
-            print("nem lehet nagyobb 255-nél.")
-            return 0
-        ered = (float(dmx) / 255) * 100
-        return ered
+        return float(value.replace(",", "."))
     except ValueError:
         return 0
-    return ered
+
+
+def dmx_to_percent(dmx: str) -> float:
+    """
+    DMX értéket százalékba konvertál.
+
+    :param dmx: DMX cím string formátumban.
+    :return: Százalékos érték a 0-100 tartományban.
+    """
+    if not dmx:
+        return 0
+
+    dmx_value = convert_to_float(dmx)
+
+    if dmx_value > 255:
+        print(ERR_MSG_MAXIMUM_EXCEEDED)
+        return 0
+
+    percent_value = (dmx_value / 255) * 100
+    return percent_value
 
 
 if __name__ == "__main__":
+    print("Program fut... Nyomd meg az 'q'-t a kilépéshez!")
     while True:
-        cuc = input(" dmx:")
-        a = szamol(cuc)
-        print("{:.2f}%".format(a))
+        user_input = input("DMX érték: ")
+        if user_input.strip().lower() == "q":
+            print("Kilépés...")
+            break
+        calculated_percent = dmx_to_percent(user_input)
+        print("{:.2f}%".format(calculated_percent))
