@@ -7,7 +7,7 @@ import asyncio
 from puresnmp import Client, V2C, PyWrapper
 
 # Constants for SNMP configuration
-SNMP_IP: str = "192.168.7.99"
+SNMP_IP: str = "192.168.0.78"
 SNMP_COMMUNITY: str = "public"
 SNMP_OID: str = "1.3.6.1.2.1.3.1.1.3.0.1.192.168.7.99"  # Example OID
 
