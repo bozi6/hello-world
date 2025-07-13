@@ -29,6 +29,8 @@
       <excludeFolder url="file://$MODULE_DIR$/neoaut/sql" />
       <excludeFolder url="file://$MODULE_DIR$/neoaut/xlsx" />
       <excludeFolder url="file://$MODULE_DIR$/imgdownload/downloaded" />
+      <excludeFolder url="file://$MODULE_DIR$/socket/.venv/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/socket/.venv/lib" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.13 (hello-world)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

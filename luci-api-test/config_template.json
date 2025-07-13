@@ -1,0 +1,6 @@
+{
+  "host": "router_ip_or_dns_name",
+  "port": 22,
+  "username": "root",
+  "password": "Super_Secret_Password"
+}
