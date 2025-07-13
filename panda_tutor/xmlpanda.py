@@ -1,18 +1,23 @@
 from lxml import objectify
 import pandas as pd
 
-if __name__ == "__main__":
-    xml_data = objectify.parse("../ma2xml2capture/xmlz/ntsz_old.xml")
+XML_FILE_PATH = "../ma2xml2capture/xmlz/ntsz_old.xml"
+
+
+def parse_xml_to_dataframe(file_path):
+    """Parse XML file and convert it to a Pandas DataFrame."""
+    xml_data = objectify.parse(file_path)
     root = xml_data.getroot()
 
-    data = []
-    cols = []
-    for i in range(len(root.getchildren())):
-        child = root.getchildren()[i]
-        data.append([subchild.text for subchild in child.getchildren()])
-        cols.append(child.tag)
+    children = root.getchildren()
+    row_data = [[subchild.text for subchild in child.getchildren()] for child in children]
+    column_tags = [child.tag for child in children]
 
-    df = pd.DataFrame(data).T
-    print(df)
-    df.columns = cols
-    print(df)
+    df = pd.DataFrame(row_data).T
+    df.columns = column_tags
+    return df
+
+
+if __name__ == "__main__":
+    dataframe = parse_xml_to_dataframe(XML_FILE_PATH)
+    print(dataframe)

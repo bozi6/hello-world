@@ -1,45 +1,44 @@
 from lxml import etree, objectify
 
+
+def read_file_content(file_path):
+    """Read the contents of a file and return them."""
+    with open(file_path, 'r') as file:
+        return file.read()
+
+
+def process_layer(layer):
+    """Print details of a layer and its children."""
+    try:
+        print(layer.index)
+        for element in layer.getchildren():
+            print(f"{element.attrib} => {element.text}")
+    except AttributeError:
+        pass
+
+
+def parse_xml(xml_file):
+    """Parse the XML file and process its contents."""
+    xml_content = read_file_content(xml_file)
+    root = objectify.fromstring(xml_content)
+
+    # Print root attributes
+    print("root.attrib", root.attrib)
+
+    # Extract and print Layer and Fixture attributes
+    try:
+        layer_attrib = root.Layer.attrib
+        fixture_attrib = root.Layer.Fixture.attrib
+        print("Layer attributes: ", layer_attrib)
+        print("Fixture attributes: ", fixture_attrib)
+    except AttributeError:
+        print("Error: Missing Layer or Fixture attributes")
+
+    # Process each layer
+    for layer in root.getchildren():
+        process_layer(layer)
+
+
 if __name__ == "__main__":
-
-    def parseXML(xmlFile):
-        """Parse the XML file"""
-        with open(xmlFile) as f:
-            xml = f.read()
-
-        root = objectify.fromstring(xml)
-
-        # return attributes in element noda as dict
-        attrib = root.attrib
-        print("root.attrib", attrib)
-        # how to extract element data
-        begin = root.Layer.attrib
-        uid = root.Layer.Fixture.attrib
-        print("begin: ", begin)
-        print("uid: ", uid)
-        # loop over elements and print their tags and text
-        for layer in root.getchildren():
-            try:
-                print(layer.index)
-                for e in layer.getchildren():
-                    print("{} => {}".format(e.attrib, e.text))
-            except AttributeError:
-                pass
-        print()
-
-        """
-        # How to add a new element
-        root.appointment.new_element = "new data"
-        
-        # Remove the py:pytype stuff
-        objectify.deannotate(root)
-        etree.cleanup_namespaces(root)
-        obj_xml = etree.tostring(root, pretty_print=True)
-        print(obj_xml)
-    
-        # save your xml
-        with open("new.xml", "wb") as f:
-            f.write(obj_xml)
-        """
-        f = "ntsz_old.xml"
-        parseXML(f)
+    xml_file_path = "ntsz_old.xml"
+    parse_xml(xml_file_path)
