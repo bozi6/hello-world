@@ -3,6 +3,7 @@
 #      This is free software, and you are welcome to redistribute it
 #      under certain conditions; type `show c' for details.
 #   Last Modified: 2025. 06. 19. 18:40
+# Scans a direcotry for video files and put it into an Excel file for easy categorizing
 
 import argparse
 import json
@@ -196,10 +197,25 @@ class VideoScanner:
         except Exception as e:
             print(f"Hiba történt: {e}")
 
+    def sort_excel_sheets_by_year(self):
+        """Rendezés a munkalapok között év szerint növekvő sorrendbe."""
+        # Gyűjtse össze az év munkalapokat és sorrendezze a lap neve szerint.
+        year_sheets_sorted = sorted(
+            self.year_sheets.items(),
+            key=lambda item: int(item[0])  # Év számként rendezése.
+        )
+
+        # Rendezett sorrendben helyezze át a lapokat a Workbook-ban.
+        for index, (year, sheet) in enumerate(year_sheets_sorted, start=1):
+            self.workbook.move_sheet(sheet, offset=index - len(self.workbook.sheetnames))
+    
     def save_excel(self, output_file="video_files.xlsx"):
-        """Elmenti az Excel fájlt"""
+        """Elmenti az Excel fájlt, rendezve az év munkalapokat."""
         try:
-            # Ha nincsenek évek munkalapjai, töröljük az alapértelmezett üres lapot
+            # Munkalapok közötti rendezés.
+            self.sort_excel_sheets_by_year()
+
+            # Ha nincsenek évek munkalapjai, töröljük az alapértelmezett üres lapot.
             if not self.year_sheets and len(self.workbook.worksheets) > 1:
                 self.workbook.remove(self.workbook.worksheets[1])
 

@@ -12,8 +12,8 @@ OIDS = {
     'sysDescr' : '1.3.6.1.2.1.1.1.0',
     'sysUpTime': '1.3.6.1.2.1.1.3.0',
     'sysName'  : '1.3.6.1.2.1.1.5.0',
+    'room'     : '1.3.6.1.2.1.1.6.0',
     'HDD1_temp': '1.3.6.1.4.1.6574.2.1.1.6.1',
-    'HDD2_temp': '1.3.6.1.4.1.6574.2.1.1.6.2'
 }
 
 
@@ -28,7 +28,7 @@ async def fetch_snmp_data(snmp_client: PyWrapper, oids: dict) -> list[tuple[str,
         except Exception as e:
             result = (label, oid, f"ERROR: {e}")
         results.append(result)
-        print(f"Label: {result[0]}, OID: {result[1]}, Value: {result[2]}")
+        print(f"Label: {result[0]}, OID: {result[1]}, Value:\n {result[2]}")
     print("-------------------")
     return results
 
