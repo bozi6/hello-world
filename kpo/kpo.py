@@ -3,76 +3,73 @@
 #      This is free software, and you are welcome to redistribute it
 #      under certain conditions; type `show c' for details.
 #   Last Modified: 2024. 03. 24. 9:49
-
 import random
+from dataclasses import dataclass
+
+# ... existing code ...
+
+KOROK_SZAMA = 1_000_000
 
 
-class Ko:
-    def __init__(self):
-        self.num = 1
-        self.uti = 3
-        self.kb = 2
-        self.nev = "Kaics"
-        self.pont = 0
+@dataclass
+class JatekElem:
+    azonosito: int
+    utes_ellen: int
+    nev: str
+    pont: int = 0
 
-    def addpont(self):
+    def pontot_ad(self) -> None:
         self.pont += 1
 
-    def reset(self):
+    def reset(self) -> None:
         self.pont = 0
 
 
-class Papir:
-    def __init__(self):
-        self.num = 2
-        self.uti = 1
-        self.kb = 3
-        self.nev = "Papír"
-        self.pont = 0
-
-    def addpont(self):
-        self.pont += 1
-
-    def reset(self):
-        self.pont = 0
+class Ko(JatekElem):
+    def __init__(self) -> None:
+        super().__init__(azonosito=1, utes_ellen=3, nev="Kaics")
 
 
-class Ollo:
-    def __init__(self):
-        self.num = 3
-        self.uti = 2
-        self.kb = 1
-        self.nev = "Olló"
-        self.pont = 0
-
-    def addpont(self):
-        self.pont += 1
-
-    def reset(self):
-        self.pont = 0
+class Papir(JatekElem):
+    def __init__(self) -> None:
+        super().__init__(azonosito=2, utes_ellen=1, nev="Papír")
 
 
-def main():
+class Ollo(JatekElem):
+    def __init__(self) -> None:
+        super().__init__(azonosito=3, utes_ellen=2, nev="Olló")
+
+
+def valassz_ketto_kulonbozot(elemmek: list[JatekElem]) -> tuple[JatekElem, JatekElem]:
+    """Visszaad két különböző, véletlenszerűen választott elemet."""
+    elso = random.choice(elemmek)
+    masodik = random.choice(elemmek)
+    while masodik.azonosito == elso.azonosito:
+        masodik = random.choice(elemmek)
+    return elso, masodik
+
+
+def jatsz_kor(egy: JatekElem, ketto: JatekElem) -> None:
+    """Lejátszik egy kört és kiosztja a pontokat."""
+    if egy.azonosito == ketto.utes_ellen:
+        ketto.pontot_ad()
+    elif ketto.azonosito == egy.utes_ellen:
+        egy.pontot_ad()
+
+
+def main() -> None:
     ko = Ko()
     papir = Papir()
     ollo = Ollo()
-    targyak = [ko, papir, ollo]
-    iteraciok = 1000000
-    for i in range(iteraciok):
-        egy = random.choice(targyak)
-        ketto = random.choice(targyak)
-        if egy.num == ketto.num:
-            ketto = random.choice(targyak)
-        # print(f"{egy.nev} VS {ketto.nev}")
-        if egy.num == ketto.uti:
-            # print(f"A(z) {ketto.nev} kiütötte a(z) {egy.nev}-t")
-            ketto.addpont()
-        if ketto.num == egy.uti:
-            # print(f"A(z) {egy.nev} kiütötte a(z) {ketto.nev}-t")
-            egy.addpont()
-    print(iteraciok, " iterációból.")
-    for i in targyak:
-        print(f"{i.nev} - {i.pont:,.0f} db.")
+    targyak: list[JatekElem] = [ko, papir, ollo]
+
+    for _ in range(KOROK_SZAMA):
+        egy, ketto = valassz_ketto_kulonbozot(targyak)
+        jatsz_kor(egy, ketto)
+
+    print(f"{KOROK_SZAMA} iterációból.")
+    for elem in targyak:
+        print(f"{elem.nev} - {elem.pont:,.0f} db.")
 
 
 if __name__ == "__main__":
