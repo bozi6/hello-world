@@ -226,7 +226,7 @@ def month_stats(rows, name):
                 if r and r.get("PN") == "PN":  # Explicit PN check
                     rest_days += 1
                 else:
-                    pass
+                    pas5s
             else:
                 total_minutes += diff
         else:
