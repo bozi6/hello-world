@@ -10,8 +10,8 @@ import time
 from typing import List
 import openpyxl
 from cprint import cprint
-import aut.python.funct.aut_configfile as conf
-import aut.python.funct.process as proc
+import funct.aut_configfile as conf
+import funct.process as proc
 
 __author__ = "Konta Boáz"
 __author_email__ = "kontab6@gmail.com"
