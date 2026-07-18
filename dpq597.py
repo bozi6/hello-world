@@ -19,6 +19,7 @@ print('Numbers from 1 to 100 divisible by both 3 and 5:')
 print(divisible_numbers)
 print(f'Total count: {len(divisible_numbers)}')
 
+print('Sum of all numbers from start to range:')
 start = int(input('Enter the start of the range: '))
 end = int(input('Enter the end of the range: '))
 

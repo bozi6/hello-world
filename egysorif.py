@@ -6,7 +6,7 @@
 #      under certain conditions; type `show c' for details.
 #   Last Modified: 2024. 10. 07. 17:53
 
-# Alapbaj
+# Alapban
 weather = "sunny"
 if weather == "sunny":
     print("I should take a walk outside!")
@@ -34,17 +34,6 @@ if weather == "sunny": print("It's sunny."); print("I should take a walk outside
 # elif <expression_03>: <perform_action_03>
 # else : <perform_another_action>
 # </perform_action_03></perform_action_02></perform_action_01>
-
-weather = "sunny"
-
-if weather == "sunny":
-    print("I should take a walk outside!")
-elif weather == "cloudy":
-    print("I'm not sure it will rain. Maybe I will take a walk?")
-elif weather == "rainy":
-    print("It is raining. I will stay at home.")
-else:
-    print("I don't know what the weather is...")
 
 # value = <value_if_true> if <expression> else <value_if_false>
 
