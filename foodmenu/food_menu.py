@@ -17,7 +17,7 @@ class Food(object):
 
     def getprice(self):
         """
-        Set food price
+        get food price
 
         :return: self.price
         :rtype: int
@@ -77,3 +77,5 @@ def main():
     x = int(input("ENTER THE NUMBER OF DISKS: "))
 
     print("NUMBER OF STEPS: ", hanoi(x))
+if __name__ == "__main__":
+    main()
